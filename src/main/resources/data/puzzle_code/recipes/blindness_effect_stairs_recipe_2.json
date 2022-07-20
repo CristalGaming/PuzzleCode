@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "puzzle_code:blindness_effect_block"
+  },
+  "result": "puzzle_code:blindness_effect_stairs"
+}

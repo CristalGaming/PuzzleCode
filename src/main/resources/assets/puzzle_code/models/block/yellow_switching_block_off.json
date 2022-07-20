@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/yellow_swiching_block_off",
+    "up": "puzzle_code:blocks/yellow_swiching_block_off",
+    "north": "puzzle_code:blocks/yellow_swiching_block_off",
+    "east": "puzzle_code:blocks/yellow_swiching_block_off",
+    "south": "puzzle_code:blocks/yellow_swiching_block_off",
+    "west": "puzzle_code:blocks/yellow_swiching_block_off",
+    "particle": "puzzle_code:blocks/yellow_swiching_block_off"
+  }
+}

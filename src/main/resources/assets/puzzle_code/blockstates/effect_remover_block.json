@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/effect_remover_block"
+    }
+  }
+}

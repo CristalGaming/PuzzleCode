@@ -1,0 +1,154 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 136,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "SwitchToInEffectBlockGui1"
+          },
+          "width": 13,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 162
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Effect Settings",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Effect Settings",
+          "x": 132,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[2]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[2]",
+          "x": 150,
+          "y": 167
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_jump_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_jump_logo.png",
+          "x": 276,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "tick ambient: <BNBT:logic:ambient>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "tick ambient: <BNBT:logic:ambient>",
+          "x": 132,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "true",
+          "onClick": {
+            "name": "SetAmbientTrue"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "true",
+          "x": 132,
+          "y": 72
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "false",
+          "onClick": {
+            "name": "SetAmbientFalse"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "false",
+          "x": 182,
+          "y": 72
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "true",
+          "onClick": {
+            "name": "SetParticlesTrue"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "true",
+          "x": 132,
+          "y": 113
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "false",
+          "onClick": {
+            "name": "SetParticlesFalse"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "false",
+          "x": 182,
+          "y": 113
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "particles: <BNBT:logic:particles>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "particles: <BNBT:logic:particles>",
+          "x": 132,
+          "y": 140
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 8,
+      "snapOnGrid": true
+    }
+  }
+}

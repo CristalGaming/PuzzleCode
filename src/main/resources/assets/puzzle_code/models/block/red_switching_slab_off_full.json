@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "puzzle_code:blocks/red_swiching_block_off",
+    "top": "puzzle_code:blocks/red_swiching_block_off",
+    "side": "puzzle_code:blocks/red_swiching_slab_off"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "puzzle_code:items/effect_remover_item"
+  }
+}

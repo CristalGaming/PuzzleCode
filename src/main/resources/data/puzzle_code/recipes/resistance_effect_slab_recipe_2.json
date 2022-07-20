@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "puzzle_code:resistance_effect_block"
+  },
+  "result": "puzzle_code:resistance_effect_slab"
+}

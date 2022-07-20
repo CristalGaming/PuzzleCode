@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/advanced_teleporter_block",
+    "up": "puzzle_code:blocks/advanced_teleporter_block",
+    "north": "puzzle_code:blocks/advanced_teleporter_block",
+    "east": "puzzle_code:blocks/advanced_teleporter_block",
+    "south": "puzzle_code:blocks/advanced_teleporter_block",
+    "west": "puzzle_code:blocks/advanced_teleporter_block",
+    "particle": "puzzle_code:blocks/advanced_teleporter_block"
+  }
+}

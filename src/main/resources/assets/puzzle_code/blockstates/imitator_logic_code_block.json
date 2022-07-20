@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/imitator_logic_code_block"
+    }
+  }
+}

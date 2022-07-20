@@ -1,0 +1,167 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Replace Hotbar Slots",
+          "onClick": {
+            "name": "ChangeReplaceHotbar"
+          },
+          "width": 153,
+          "height": 20,
+          "name": "Replace Hotbar Slots",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Replace Slots Inventory GUI",
+          "onClick": {
+            "name": "ChangeReplaceInventory"
+          },
+          "width": 153,
+          "height": 20,
+          "name": "Replace Slots Inventory GUI",
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Replace Armor Slots",
+          "onClick": {
+            "name": "ChangeReplaceArmor"
+          },
+          "width": 153,
+          "height": 20,
+          "name": "Replace Armor Slots",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "OpenInventoryReplacerGUI"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "OpenInventoryReplacerGUI2"
+          },
+          "width": 13,
+          "height": 20,
+          "name": "2",
+          "x": 146,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "OpenInventoryReplacerGUI3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 159,
+          "y": 175
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[4]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[4]",
+          "x": 177,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayReplaceHotbar"
+          },
+          "name": "true",
+          "x": 132,
+          "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayReplaceInventory"
+          },
+          "name": "true",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayReplaceArmor"
+          },
+          "name": "true",
+          "x": 132,
+          "y": 143
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

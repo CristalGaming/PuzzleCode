@@ -1,0 +1,136 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 128,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "getNBTField",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyGetNBT"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "From NBT: <BNBT:text:getNBT>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "From NBT: <BNBT:text:getNBT>",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_jump_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_jump_logo.png",
+          "x": 276,
+          "y": 71
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "setPropertyField",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplySetProperty"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "To Property: <BNBT:text:setProperty>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "To Property: <BNBT:text:setProperty>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditGetNBT"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditSetProperty"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 143
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

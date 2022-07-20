@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "puzzle_code:fire_resistance_effect_block"
+    },
+    "1": {
+      "item": "puzzle_code:fire_resistance_effect_block"
+    },
+    "2": {
+      "item": "puzzle_code:fire_resistance_effect_block"
+    }
+  },
+  "result": {
+    "item": "puzzle_code:fire_resistance_effect_slab",
+    "count": 6
+  }
+}

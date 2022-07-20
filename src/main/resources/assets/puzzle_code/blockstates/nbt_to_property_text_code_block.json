@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "puzzle_code:block/nbt_to_property_text_code_block"
+    },
+    "facing=east": {
+      "model": "puzzle_code:block/nbt_to_property_text_code_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "puzzle_code:block/nbt_to_property_text_code_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "puzzle_code:block/nbt_to_property_text_code_block",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_fv": 30,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:LevitationEffectBlock"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:LevitationEffectStairs"
+    },
+    "name": "levitation_effect_stairs_recipe_2",
+    "namespace": "mod"
+  }
+}

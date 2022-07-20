@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "puzzle_code:blocks/in_slow_falling_effect_stairs",
+    "top": "puzzle_code:blocks/in_slow_falling_effect_stairs",
+    "side": "puzzle_code:blocks/in_slow_falling_effect_stairs"
+  }
+}

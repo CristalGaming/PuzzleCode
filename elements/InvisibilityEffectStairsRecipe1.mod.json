@@ -1,0 +1,46 @@
+{
+  "_fv": 30,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:InvisibilityEffectStairs"
+    },
+    "name": "invisibility_effect_stairs_recipe_1",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 133,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Left",
+          "onClick": {
+            "name": "SetTerm1ToLeft"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Left",
+          "x": 168,
+          "y": 58
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "SetTerm1ToBack"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Back",
+          "x": 204,
+          "y": 58
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Right",
+          "onClick": {
+            "name": "SetTerm1ToRight"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Right",
+          "x": 240,
+          "y": 58
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:term1>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:term1>",
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Disable All",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "width": 162,
+          "height": 20,
+          "name": "Disable All",
+          "x": 132,
+          "y": 139
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Is Disabled: <BNBT:logic:isDisabled>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Is Disabled: <BNBT:logic:isDisabled>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Term 1",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Term 1",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:text:term2>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:text:term2>",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Term 2",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Term 2",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Left",
+          "onClick": {
+            "name": "SetTerm2ToLeft"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Left",
+          "x": 168,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "SetTerm2ToBack"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Back",
+          "x": 204,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Right",
+          "onClick": {
+            "name": "SetTerm2ToRight"
+          },
+          "width": 36,
+          "height": 20,
+          "name": "Right",
+          "x": 240,
+          "y": 103
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

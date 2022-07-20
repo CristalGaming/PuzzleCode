@@ -1,0 +1,163 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 155,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "From slot",
+          "width": 162,
+          "height": 20,
+          "name": "getSlotID",
+          "x": 132,
+          "y": 49
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_jump_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_jump_logo.png",
+          "x": 276,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "From slot: <BNBT:integer:getSlotNumber>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "From slot: <BNBT:integer:getSlotNumber>",
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "To Slot",
+          "width": 162,
+          "height": 20,
+          "name": "setSlotID",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "To slot: <BNBT:integer:setSlotNumber>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "To slot: <BNBT:integer:setSlotNumber>",
+          "x": 132,
+          "y": 157
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyGetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplySetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[2]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[2]",
+          "x": 150,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "TeleporterItemCodeBlockPage1"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditGetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditSetSlotID"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 130
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

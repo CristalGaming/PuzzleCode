@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/empty_number_code_block",
+    "up": "puzzle_code:blocks/nbt_to_property_number_code_block_top",
+    "north": "puzzle_code:blocks/empty_number_code_block",
+    "east": "puzzle_code:blocks/empty_number_code_block",
+    "south": "puzzle_code:blocks/empty_number_code_block",
+    "west": "puzzle_code:blocks/empty_number_code_block",
+    "particle": "puzzle_code:blocks/empty_number_code_block"
+  }
+}

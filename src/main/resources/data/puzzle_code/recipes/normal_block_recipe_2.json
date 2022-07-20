@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "puzzle_code:normal_slab"
+    },
+    "1": {
+      "item": "puzzle_code:normal_slab"
+    }
+  },
+  "result": {
+    "item": "puzzle_code:normal_block",
+    "count": 1
+  }
+}

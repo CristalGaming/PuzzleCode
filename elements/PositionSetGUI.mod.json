@@ -1,0 +1,103 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 114,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Copy",
+          "onClick": {
+            "name": "PositionSetCopyPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Copy",
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Paste",
+          "onClick": {
+            "name": "PositionSetPastePos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Paste",
+          "x": 186,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "X: <VAR:positionSetXPos2>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "X: <VAR:positionSetXPos2>",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Y: <VAR:positionSetYPos2>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Y: <VAR:positionSetYPos2>",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Z: <VAR:positionSetZPos2>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Z: <VAR:positionSetZPos2>",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Paste2",
+          "onClick": {
+            "name": "PositionSetPastePos2"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Paste2",
+          "x": 240,
+          "y": 71
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

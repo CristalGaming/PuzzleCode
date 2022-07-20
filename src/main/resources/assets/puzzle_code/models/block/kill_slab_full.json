@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "puzzle_code:blocks/kill_block",
+    "top": "puzzle_code:blocks/kill_block",
+    "side": "puzzle_code:blocks/kill_slab"
+  }
+}

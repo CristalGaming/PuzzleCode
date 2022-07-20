@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/swicher_block_blue",
+    "up": "puzzle_code:blocks/swicher_block_blue",
+    "north": "puzzle_code:blocks/swicher_block_blue",
+    "east": "puzzle_code:blocks/swicher_block_blue",
+    "south": "puzzle_code:blocks/swicher_block_blue",
+    "west": "puzzle_code:blocks/swicher_block_blue",
+    "particle": "puzzle_code:blocks/swicher_block_blue"
+  }
+}

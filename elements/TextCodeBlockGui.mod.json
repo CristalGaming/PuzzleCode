@@ -1,0 +1,71 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 71,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Message",
+          "width": 162,
+          "height": 20,
+          "name": "textCodeBlockField",
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "TextCodeBlockGuiButtonPressed"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Text: <BNBT:text:textCodeBlock>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Text: <BNBT:text:textCodeBlock>",
+          "x": 132,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 116
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

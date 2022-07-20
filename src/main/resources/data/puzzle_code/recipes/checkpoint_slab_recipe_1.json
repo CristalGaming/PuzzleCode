@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "puzzle_code:checkpoint_block"
+    },
+    "1": {
+      "item": "puzzle_code:checkpoint_block"
+    },
+    "2": {
+      "item": "puzzle_code:checkpoint_block"
+    }
+  },
+  "result": {
+    "item": "puzzle_code:checkpoint_slab",
+    "count": 6
+  }
+}

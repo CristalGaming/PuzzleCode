@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/slow_falling_effect_block"
+    }
+  }
+}

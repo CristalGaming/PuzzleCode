@@ -1,0 +1,46 @@
+{
+  "_fv": 30,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectBlock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:SlowFallingEffectStairs"
+    },
+    "name": "slow_falling_effect_stairs_recipe_1",
+    "namespace": "mod"
+  }
+}

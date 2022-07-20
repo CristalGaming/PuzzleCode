@@ -1,0 +1,11 @@
+{
+  "_fv": 30,
+  "_type": "tab",
+  "definition": {
+    "name": "Puzzle Code",
+    "icon": {
+      "value": "CUSTOM:NormalBlock"
+    },
+    "showSearch": true
+  }
+}

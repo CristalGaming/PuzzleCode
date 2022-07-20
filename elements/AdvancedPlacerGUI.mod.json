@@ -1,0 +1,178 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 119,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "X pozition: <BNBT:integer:xPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "X pozition: <BNBT:integer:xPos>",
+          "x": 133,
+          "y": 91
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Y Position: <BNBT:integer:yPos",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Y Position: <BNBT:integer:yPos",
+          "x": 133,
+          "y": 127
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Z Position: <BNBT:integer:zPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Z Position: <BNBT:integer:zPos>",
+          "x": 133,
+          "y": 163
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 157,
+          "height": 20,
+          "name": "xPosField",
+          "x": 133,
+          "y": 69
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 157,
+          "height": 20,
+          "name": "yPosField",
+          "x": 133,
+          "y": 105
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 157,
+          "height": 20,
+          "name": "zPosField",
+          "x": 133,
+          "y": 141
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyIntegerxPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 69
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyIntegeryPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 105
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyIntegerzPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 141
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditxPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 69
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 105
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditzPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 141
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 12,
+      "oy": 10,
+      "snapOnGrid": true
+    }
+  }
+}

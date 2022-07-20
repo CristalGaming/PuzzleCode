@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/a_block_is_broken_global_block"
+    }
+  }
+}

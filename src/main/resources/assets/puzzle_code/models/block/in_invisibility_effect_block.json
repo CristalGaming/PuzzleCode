@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "puzzle_code:blocks/in_invisibility_effect_block",
+    "particle": "puzzle_code:blocks/in_invisibility_effect_block"
+  }
+}

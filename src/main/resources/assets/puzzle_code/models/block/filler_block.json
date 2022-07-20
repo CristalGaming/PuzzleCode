@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/filler_block_side",
+    "up": "puzzle_code:blocks/filler_block_side",
+    "north": "puzzle_code:blocks/filler_block_side",
+    "east": "puzzle_code:blocks/filler_block_side",
+    "south": "puzzle_code:blocks/filler_block_face",
+    "west": "puzzle_code:blocks/filler_block_side",
+    "particle": "puzzle_code:blocks/filler_block_side"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/replacer_bottom",
+    "up": "puzzle_code:blocks/replacer_top",
+    "north": "puzzle_code:blocks/replacer_front",
+    "east": "puzzle_code:blocks/replacer_right",
+    "south": "puzzle_code:blocks/replacer_back",
+    "west": "puzzle_code:blocks/replacer_left",
+    "particle": "puzzle_code:blocks/replacer_bottom"
+  }
+}

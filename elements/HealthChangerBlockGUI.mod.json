@@ -1,0 +1,121 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 113,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Settings",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Settings",
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Health: <BNBT:number:healthLevel> HP",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Health: <BNBT:number:healthLevel> HP",
+          "x": 132,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Redstone Player Range: <BNBT:number:range>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Redstone Player Range: <BNBT:number:range>",
+          "x": 132,
+          "y": 161
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "Apply",
+          "x": 245,
+          "y": 134
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Range",
+          "width": 113,
+          "height": 20,
+          "name": "rangeField",
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 276,
+          "y": 71
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 113,
+          "height": 20,
+          "name": "healthLevelField",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyHealthLevel"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "Apply",
+          "x": 245,
+          "y": 89
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

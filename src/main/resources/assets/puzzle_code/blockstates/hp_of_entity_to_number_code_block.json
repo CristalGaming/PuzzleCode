@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/hp_of_entity_to_number_code_block"
+    }
+  }
+}

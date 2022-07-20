@@ -1,0 +1,77 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 47,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Logic: <BNBT:logic:logicCodeBlock>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Logic: <BNBT:logic:logicCodeBlock>",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetLogicCodeBlockToTrue"
+          },
+          "width": 41,
+          "height": 20,
+          "name": "True",
+          "x": 213,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetLogicCodeBlockToFalse"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "False",
+          "x": 254,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Switch",
+          "onClick": {
+            "name": "SwitchLogicCodeBlock"
+          },
+          "width": 81,
+          "height": 20,
+          "name": "Switch",
+          "x": 132,
+          "y": 103
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

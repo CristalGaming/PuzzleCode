@@ -1,0 +1,146 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Creative Blocks",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Creative Blocks",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Command Block",
+          "onClick": {
+            "name": "GiveCommandBlockCreativeSettings"
+          },
+          "width": 99,
+          "height": 20,
+          "name": "Command Block",
+          "x": 132,
+          "y": 58
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Barrier",
+          "onClick": {
+            "name": "GiveBarrierCreativeSettings"
+          },
+          "width": 63,
+          "height": 20,
+          "name": "Barrier",
+          "x": 231,
+          "y": 58
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Command Block Minecart",
+          "onClick": {
+            "name": "GiveCommandBlockMinecartCreativeSettings"
+          },
+          "width": 162,
+          "height": 20,
+          "name": "Command Block Minecart",
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "CreativeSettingsGUIRightClick"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "Back",
+          "x": 249,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Debug Stick",
+          "onClick": {
+            "name": "GiveDebugStickCreativeSettings"
+          },
+          "width": 81,
+          "height": 20,
+          "name": "Debug Stick",
+          "x": 132,
+          "y": 103
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "More Comming Soon",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "More Comming Soon",
+          "x": 132,
+          "y": 184
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Structure Void",
+          "onClick": {
+            "name": "GiveStructureVoidCreativeSettings"
+          },
+          "width": 81,
+          "height": 20,
+          "name": "Structure Void",
+          "x": 213,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Structure Block",
+          "onClick": {
+            "name": "GiveStructureBlockCreativeSettings"
+          },
+          "width": 103,
+          "height": 20,
+          "name": "Structure Block",
+          "x": 132,
+          "y": 125
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "puzzle_code:blocks/in_jump_boost_effect_block",
+    "top": "puzzle_code:blocks/in_jump_boost_effect_block",
+    "side": "puzzle_code:blocks/in_jump_boost_effect_slab"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 101,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 276,
+          "y": 77
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Swiching Settings",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Swiching Settings",
+          "x": 132,
+          "y": 77
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Power Needed: <BNBT:number:minPower>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Power Needed: <BNBT:number:minPower>",
+          "x": 132,
+          "y": 122
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 108,
+          "height": 20,
+          "name": "minPowerField",
+          "x": 132,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyMinPower"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "Apply",
+          "x": 240,
+          "y": 95
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 8,
+      "snapOnGrid": true
+    }
+  }
+}

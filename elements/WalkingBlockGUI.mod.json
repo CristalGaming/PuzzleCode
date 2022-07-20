@@ -1,0 +1,98 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 177,
+    "height": 104,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Waiting to swich off: <BNBT:number:waitingOff> ticks",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Waiting to swich off: <BNBT:number:waitingOff> ticks",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Waiting to swich on: <BNBT:number:waitingOn> ticks",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Waiting to swich on: <BNBT:number:waitingOn> ticks",
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyWaitingOff"
+          },
+          "width": 54,
+          "height": 20,
+          "name": "Apply",
+          "x": 240,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyWaitingOn"
+          },
+          "width": 54,
+          "height": 20,
+          "name": "Apply",
+          "x": 240,
+          "y": 125
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 108,
+          "height": 20,
+          "name": "waitingOffField",
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 108,
+          "height": 20,
+          "name": "waitingOnField",
+          "x": 132,
+          "y": 125
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

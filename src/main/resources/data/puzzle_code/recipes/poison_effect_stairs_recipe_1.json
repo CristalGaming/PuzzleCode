@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "puzzle_code:poison_effect_block"
+    },
+    "3": {
+      "item": "puzzle_code:poison_effect_block"
+    },
+    "4": {
+      "item": "puzzle_code:poison_effect_block"
+    },
+    "6": {
+      "item": "puzzle_code:poison_effect_block"
+    },
+    "7": {
+      "item": "puzzle_code:poison_effect_block"
+    },
+    "8": {
+      "item": "puzzle_code:poison_effect_block"
+    }
+  },
+  "result": {
+    "item": "puzzle_code:poison_effect_stairs",
+    "count": 4
+  }
+}

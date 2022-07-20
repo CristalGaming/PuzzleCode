@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/entity_detector",
+    "up": "puzzle_code:blocks/entity_detector",
+    "north": "puzzle_code:blocks/entity_detector",
+    "east": "puzzle_code:blocks/entity_detector",
+    "south": "puzzle_code:blocks/entity_detector",
+    "west": "puzzle_code:blocks/entity_detector",
+    "particle": "puzzle_code:blocks/entity_detector"
+  }
+}

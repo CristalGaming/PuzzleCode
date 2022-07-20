@@ -1,0 +1,139 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 147,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "min. value",
+          "width": 162,
+          "height": 20,
+          "name": "minValueField",
+          "x": 132,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Min: <BNBT:number:minValue>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Min: <BNBT:number:minValue>",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyMinValue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 76
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "max Value",
+          "width": 162,
+          "height": 20,
+          "name": "maxValueField",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyMaxValue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Max: <BNBT:number:maxValue>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Max: <BNBT:number:maxValue>",
+          "x": 132,
+          "y": 157
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Current Value: <BNBT:number:numberCodeBlock>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Current Value: <BNBT:number:numberCodeBlock>",
+          "x": 132,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditMinValue"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 76
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditMaxValue"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

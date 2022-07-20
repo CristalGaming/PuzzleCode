@@ -1,0 +1,21 @@
+{
+  "_fv": 30,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Yellow Switcher Potion",
+    "splashName": "Splash Yellow Switcher Potion",
+    "lingeringName": "Lingering Yellow Switcher Potion",
+    "arrowName": "Arrow of Yellow Switcher Potion",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:YellowSwitcherEffect"
+        },
+        "duration": 2400,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

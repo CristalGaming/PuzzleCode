@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/filler_text_code_block"
+    }
+  }
+}

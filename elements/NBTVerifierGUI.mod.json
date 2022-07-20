@@ -1,0 +1,151 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 112,
+          "height": 20,
+          "name": "NBTVerifyField",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyNBTVerifierVar"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "Apply",
+          "x": 245,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "NBT name:<VAR:NBTVerifierNBT>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "NBT name:<VAR:NBTVerifierNBT>",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "NBT Current Value:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "NBT Current Value:",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:NBTVerifierCurrentValue>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:NBTVerifierCurrentValue>",
+          "x": 132,
+          "y": 184
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Number",
+          "onClick": {
+            "name": "ApplyNBTVerifierVariableTypeNumberVar"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Number",
+          "x": 132,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Logic",
+          "onClick": {
+            "name": "ApplyNBTVerifierVariableTypeLogicVar"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Logic",
+          "x": 186,
+          "y": 103
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Text",
+          "onClick": {
+            "name": "ApplyNBTVerifierVariableTypeTextVar"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Text",
+          "x": 240,
+          "y": 103
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:NBTVerifierVariableType>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:NBTVerifierVariableType>",
+          "x": 132,
+          "y": 130
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 276,
+          "y": 44
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

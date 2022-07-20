@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "puzzle_code:block/blocky_world_portal_ew"
+    },
+    "axis=x": {
+      "model": "puzzle_code:block/blocky_world_portal_ns"
+    }
+  }
+}

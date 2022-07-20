@@ -1,0 +1,12 @@
+{
+  "_fv": 30,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "blocksAffectsYou",
+    "description": "normal blocks don't affects you in creative",
+    "category": "PLAYER",
+    "defaultValueLogic": true,
+    "defaultValueNumber": 0
+  }
+}

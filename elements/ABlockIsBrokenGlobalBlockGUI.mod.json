@@ -1,0 +1,85 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": true,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "X: <BNBT:number:xPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "X: <BNBT:number:xPos>",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Y: <BNBT:number:yPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Y: <BNBT:number:yPos>",
+          "x": 132,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Z: <BNBT:number:zPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Z: <BNBT:number:zPos>",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 276,
+          "y": 44
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

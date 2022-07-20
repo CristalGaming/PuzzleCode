@@ -1,0 +1,112 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 126,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "textCodeBlockField",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "TextCodeBlockGuiButtonPressed"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Text: <BNBT:text:textCodeBlock>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Text: <BNBT:text:textCodeBlock>",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "colorField",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyColor"
+          },
+          "width": 162,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Color: <BNBT:text:color>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Color: <BNBT:text:color>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditTextCodeBlock"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 85
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

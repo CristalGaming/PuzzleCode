@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/substraction_code_block_side",
+    "up": "puzzle_code:blocks/substration_code_block_top",
+    "north": "puzzle_code:blocks/substraction_code_block_side",
+    "east": "puzzle_code:blocks/substraction_code_block_side",
+    "south": "puzzle_code:blocks/substraction_code_block_side",
+    "west": "puzzle_code:blocks/substraction_code_block_side",
+    "particle": "puzzle_code:blocks/substraction_code_block_side"
+  }
+}

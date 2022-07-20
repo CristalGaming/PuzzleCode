@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "puzzle_code:blocks/in_invisibility_effect_stairs",
+    "top": "puzzle_code:blocks/in_invisibility_effect_stairs",
+    "side": "puzzle_code:blocks/in_invisibility_effect_stairs"
+  }
+}

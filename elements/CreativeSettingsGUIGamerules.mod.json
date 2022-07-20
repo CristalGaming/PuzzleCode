@@ -1,0 +1,166 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "doDaylightCycle",
+          "onClick": {
+            "name": "ChangeDoDaylightCycles"
+          },
+          "width": 104,
+          "height": 20,
+          "name": "doDaylightCycle",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "KeepInventory",
+          "onClick": {
+            "name": "ChangeKeepInventory"
+          },
+          "width": 104,
+          "height": 20,
+          "name": "KeepInventory",
+          "x": 132,
+          "y": 67
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "doMobSpawning",
+          "onClick": {
+            "name": "ChangeDoMobSpawining"
+          },
+          "width": 104,
+          "height": 20,
+          "name": "doMobSpawning",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "DoWeaterCycle",
+          "onClick": {
+            "name": "ChangeDoWeatherCycle"
+          },
+          "width": 104,
+          "height": 20,
+          "name": "DoWeaterCycle",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CreativeSettingsGUIGamerulesDoDaylightCycles"
+          },
+          "name": "true",
+          "x": 240,
+          "y": 49
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CreativeSettingsGUIGamerulesKeepInventory"
+          },
+          "name": "true",
+          "x": 240,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CreativeSettingsGUIGamerulesDoMobSpawining"
+          },
+          "name": "true",
+          "x": 240,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "true",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CreativeSettingsGUIGamerulesDoWeatherCycle"
+          },
+          "name": "true",
+          "x": 240,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "CreativeSettingsRightclicked"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "Back",
+          "x": 249,
+          "y": 175
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 276,
+          "y": 44
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 265,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Creative Settings",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Creative Settings",
+          "x": 85,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Blocks Affects You?",
+          "onClick": {
+            "name": "BlocksAffectsYouSwich"
+          },
+          "width": 120,
+          "height": 20,
+          "name": "Blocks Affects You?",
+          "x": 85,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 319,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Place a fake block",
+          "onClick": {
+            "name": "PlaceAFakeBlock"
+          },
+          "width": 120,
+          "height": 20,
+          "name": "Place a fake block",
+          "x": 85,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Time Set Day",
+          "onClick": {
+            "name": "TimeSetDayCreativeItem"
+          },
+          "width": 121,
+          "height": 20,
+          "name": "Time Set Day",
+          "x": 216,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "ON",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "BlocksAffectsYouTextCreativeItem"
+          },
+          "name": "ON",
+          "x": 211,
+          "y": 157
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Clean effects",
+          "onClick": {
+            "name": "CleanEffectsCreativeItem"
+          },
+          "width": 86,
+          "height": 20,
+          "name": "Clean effects",
+          "x": 252,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Reset HP",
+          "onClick": {
+            "name": "ResetHPCreativeItem"
+          },
+          "width": 59,
+          "height": 20,
+          "name": "Reset HP",
+          "x": 85,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Reset Hunger",
+          "onClick": {
+            "name": "ResetHungerCreativeItem"
+          },
+          "width": 108,
+          "height": 20,
+          "name": "Reset Hunger",
+          "x": 144,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Time Set Night",
+          "onClick": {
+            "name": "TimeSetNightCreativeItem"
+          },
+          "width": 131,
+          "height": 20,
+          "name": "Time Set Night",
+          "x": 85,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Creative",
+          "onClick": {
+            "name": "GamemodeCreativeCreativeItem"
+          },
+          "width": 59,
+          "height": 20,
+          "name": "Creative",
+          "x": 85,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Survival",
+          "onClick": {
+            "name": "GamemodeSurvivalCreativeItem"
+          },
+          "width": 58,
+          "height": 20,
+          "name": "Survival",
+          "x": 144,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Spectator",
+          "onClick": {
+            "name": "GamemodeSpectatorCreativeItem"
+          },
+          "width": 63,
+          "height": 20,
+          "name": "Spectator",
+          "x": 202,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Spawnpoint",
+          "onClick": {
+            "name": "SpawnpointCreativeItem"
+          },
+          "width": 72,
+          "height": 20,
+          "name": "Spawnpoint",
+          "x": 265,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Creative Items",
+          "onClick": {
+            "name": "OpenCreativeSettingsGuiCreativeItems"
+          },
+          "width": 117,
+          "height": 20,
+          "name": "Creative Items",
+          "x": 85,
+          "y": 175
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Game Rules",
+          "onClick": {
+            "name": "OpenCreativeSettingsGUIGamerules"
+          },
+          "width": 87,
+          "height": 20,
+          "name": "Game Rules",
+          "x": 247,
+          "y": 175
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 7,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

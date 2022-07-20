@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="Creative Commons Attribution-NonCommercial 3.0"
+
+[[mods]]
+modId="puzzle_code"
+version="1.163.1"
+displayName="Puzzle Code"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="Cristal"
+description='''
+This mod adds many blocks and items useful for making any kind of maps or games.
+'''
+
+[[dependencies.puzzle_code]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "puzzle_code:slowness_effect_block"
+    },
+    "1": {
+      "item": "puzzle_code:slowness_effect_block"
+    },
+    "2": {
+      "item": "puzzle_code:slowness_effect_block"
+    }
+  },
+  "result": {
+    "item": "puzzle_code:deleted_mod_element",
+    "count": 6
+  }
+}

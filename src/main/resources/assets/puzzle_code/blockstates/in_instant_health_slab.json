@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "puzzle_code:block/in_instant_health_slab"
+    },
+    "type=top": {
+      "model": "puzzle_code:block/in_instant_health_slab_top"
+    },
+    "type=double": {
+      "model": "puzzle_code:block/in_instant_health_slab_full"
+    }
+  }
+}

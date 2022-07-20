@@ -1,0 +1,23 @@
+{
+  "_fv": 30,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Yellow Switcher",
+    "icon": "yellow_switcher_effect.png",
+    "color": {
+      "value": -3355648,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": false,
+    "isBenefitical": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "YellowSwicherPotionPotionStartedapplied"
+    },
+    "onExpired": {
+      "name": "YellowSwicherPotionPotionExpires"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "puzzle_code:fire_resistance_effect_block"
+  },
+  "result": "puzzle_code:fire_resistance_effect_stairs"
+}

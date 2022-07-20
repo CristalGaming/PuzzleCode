@@ -1,0 +1,99 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 154,
+    "height": 100,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "puzzle_code_logo.png",
+          "use1Xscale": false,
+          "name": "puzzle_code_logo.png",
+          "x": 267,
+          "y": 75
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Time Settings",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Time Settings",
+          "x": 141,
+          "y": 75
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "<",
+          "onClick": {
+            "name": "TimeDownProcedure"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "<",
+          "x": 141,
+          "y": 93
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ">",
+          "onClick": {
+            "name": "TimeUpProcedure"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ">",
+          "x": 177,
+          "y": 93
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Time: <BNBT:number:time>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Time: <BNBT:number:time>",
+          "x": 141,
+          "y": 120
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "i forgor o_o",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "i forgor o_o",
+          "x": 141,
+          "y": 147
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 28,
+      "oy": 5,
+      "snapOnGrid": true
+    }
+  }
+}

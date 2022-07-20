@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "puzzle_code:levitation_effect_block"
+  },
+  "result": "puzzle_code:levitation_effect_slab"
+}

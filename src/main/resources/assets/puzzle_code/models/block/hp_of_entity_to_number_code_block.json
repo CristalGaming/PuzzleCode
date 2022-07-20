@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "up": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "north": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "east": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "south": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "west": "puzzle_code:blocks/hp_of_entity_to_number_code_block",
+    "particle": "puzzle_code:blocks/hp_of_entity_to_number_code_block"
+  }
+}

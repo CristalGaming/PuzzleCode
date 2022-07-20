@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/advanced_placer_side",
+    "up": "puzzle_code:blocks/advanced_placer_side",
+    "north": "puzzle_code:blocks/advanced_placer_side",
+    "east": "puzzle_code:blocks/advanced_placer_side",
+    "south": "puzzle_code:blocks/advanced_placer",
+    "west": "puzzle_code:blocks/advanced_placer_side",
+    "particle": "puzzle_code:blocks/advanced_placer_side"
+  }
+}

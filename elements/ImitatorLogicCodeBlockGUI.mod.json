@@ -1,0 +1,191 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 147,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "X Position: <BNBT:number:xPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "X Position: <BNBT:number:xPos>",
+          "x": 132,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Y Position: <BNBT:number:yPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Y Position: <BNBT:number:yPos>",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Z Position: <BNBT:number:zPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Z Position: <BNBT:number:zPos>",
+          "x": 132,
+          "y": 148
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "xPosField",
+          "x": 132,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyxPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 53
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "yPosField",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 162,
+          "height": 20,
+          "name": "zPosField",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyyPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyzPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Logic: <BNBT:logic:logicCodeBlock>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Logic: <BNBT:logic:logicCodeBlock>",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditxPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditzPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 125
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

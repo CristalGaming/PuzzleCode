@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/remote_mover_block",
+    "up": "puzzle_code:blocks/remote_mover_block",
+    "north": "puzzle_code:blocks/top_up_teleporter_block",
+    "east": "puzzle_code:blocks/yellow_swiching_block",
+    "south": "puzzle_code:blocks/top_down_teleporter_block",
+    "west": "puzzle_code:blocks/red_swiching_block",
+    "particle": "puzzle_code:blocks/remote_mover_block"
+  }
+}

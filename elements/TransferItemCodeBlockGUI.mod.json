@@ -1,0 +1,126 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 128,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "From slot",
+          "width": 162,
+          "height": 20,
+          "name": "getSlotID",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "From Slot: <BNBT:integer:getSlotNumber>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "From Slot: <BNBT:integer:getSlotNumber>",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "To Slot",
+          "width": 162,
+          "height": 20,
+          "name": "setSlotID",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "To Slot: <BNBT:integer:setSlotNumber>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "To Slot: <BNBT:integer:setSlotNumber>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyGetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplySetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditGetSlotID"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditSetSlotID"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 143
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

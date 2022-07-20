@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/night_vision_effect_block"
+    }
+  }
+}

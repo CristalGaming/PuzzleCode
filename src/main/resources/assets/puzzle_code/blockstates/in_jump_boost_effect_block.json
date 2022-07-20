@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/in_jump_boost_effect_block"
+    }
+  }
+}

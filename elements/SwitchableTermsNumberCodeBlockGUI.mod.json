@@ -1,0 +1,130 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 120,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Left",
+          "onClick": {
+            "name": "SwitchAddLeft"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Left",
+          "x": 132,
+          "y": 67
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Back",
+          "onClick": {
+            "name": "SwitchAddBack"
+          },
+          "width": 54,
+          "height": 20,
+          "name": "Back",
+          "x": 186,
+          "y": 67
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Right",
+          "onClick": {
+            "name": "SwitchAddRight"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Right",
+          "x": 245,
+          "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Left: <BNBT:logic:addLeft>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Left: <BNBT:logic:addLeft>",
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Back: <BNBT:logic:addBack>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Back: <BNBT:logic:addBack>",
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Right: <BNBT:logic:addRight>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Right: <BNBT:logic:addRight>",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Disable All",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "width": 162,
+          "height": 20,
+          "name": "Disable All",
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Is Disabled: <BNBT:logic:isDisabled>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Is Disabled: <BNBT:logic:isDisabled>",
+          "x": 132,
+          "y": 161
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

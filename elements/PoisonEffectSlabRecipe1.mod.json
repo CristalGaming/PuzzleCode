@@ -1,0 +1,46 @@
+{
+  "_fv": 30,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 6,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:PoisonEffectBlock"
+      },
+      {
+        "value": "CUSTOM:PoisonEffectBlock"
+      },
+      {
+        "value": "CUSTOM:PoisonEffectBlock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PoisonEffectSlab"
+    },
+    "name": "poison_effect_slab_recipe_1",
+    "namespace": "mod"
+  }
+}

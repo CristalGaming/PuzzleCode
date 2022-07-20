@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:blocks/box",
+    "up": "puzzle_code:blocks/box",
+    "north": "puzzle_code:blocks/box",
+    "east": "puzzle_code:blocks/box",
+    "south": "puzzle_code:blocks/box",
+    "west": "puzzle_code:blocks/box",
+    "particle": "puzzle_code:blocks/box"
+  }
+}

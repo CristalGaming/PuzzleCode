@@ -78,6 +78,7 @@ import net.mcreator.puzzle_code.block.entity.RemoteMoverBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedBlueSwitchingLogicGlobalBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RandomizerNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RandomizerIntegerNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PuzzleCrafterBlockEntity;
@@ -675,6 +676,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, WalkingSwitchingBlockOffBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block",
 			PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = register("red_blue_switching_logic_global_block",
+			PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK, RedBlueSwitchingLogicGlobalBlockBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block,
 			BlockEntityType.BlockEntitySupplier<?> supplier) {

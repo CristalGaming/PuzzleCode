@@ -108,6 +108,7 @@ import net.mcreator.puzzle_code.block.RedSwitchingBlockOffBlock;
 import net.mcreator.puzzle_code.block.RedSwitchingBlockBlock;
 import net.mcreator.puzzle_code.block.RedKillSwitchingBlockOffBlock;
 import net.mcreator.puzzle_code.block.RedKillSwitchingBlockBlock;
+import net.mcreator.puzzle_code.block.RedBlueSwitchingLogicGlobalBlockBlock;
 import net.mcreator.puzzle_code.block.RandomizerNumberCodeBlockBlock;
 import net.mcreator.puzzle_code.block.RandomizerIntegerNumberCodeBlockBlock;
 import net.mcreator.puzzle_code.block.RadiansToDegreesNumberCodeBlockBlock;
@@ -905,6 +906,8 @@ public class PuzzleCodeModBlocks {
 			() -> new FillerTextCodeBlockBlock());
 	public static final RegistryObject<Block> BLOCK_ENTITY_PLACER_BLOCK = REGISTRY.register("block_entity_placer_block",
 			() -> new BlockEntityPlacerBlockBlock());
+	public static final RegistryObject<Block> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = REGISTRY.register("red_blue_switching_logic_global_block",
+			() -> new RedBlueSwitchingLogicGlobalBlockBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

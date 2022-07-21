@@ -699,6 +699,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> BLOCK_ENTITY_PLACER_BLOCK = block(PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = block(PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

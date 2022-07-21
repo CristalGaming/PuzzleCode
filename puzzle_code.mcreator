@@ -17612,6 +17612,44 @@
       "locked_code": false,
       "registry_name": "block_entity_placer_block",
       "path": "~/Enitity Control"
+    },
+    {
+      "name": "RedBlueSwitchingLogicGlobalBlockUpdateTick",
+      "type": "procedure",
+      "sortid": 959,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_blue_switching_logic_global_block_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Global Blocks"
+    },
+    {
+      "name": "RedBlueSwitchingLogicGlobalBlock",
+      "type": "block",
+      "sortid": 959,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red_blue_switching_logic_global_block",
+      "path": "~/Global Blocks"
     }
   ],
   "variable_elements": [
@@ -17772,16 +17810,16 @@
       "block.puzzle_code.normal_block": "Normal Block",
       "block.puzzle_jump.locked_red_swicher_block": "Locked Red Swicher Block",
       "block.puzzle_code.day_number_code_block": "Day Number Code Block",
-      "effect.yellow_swicher_effect": "Yellow S Effect",
       "effect.puzzle_code.yellow_switcher_effect": "Yellow Switcher",
+      "effect.yellow_swicher_effect": "Yellow S Effect",
       "block.puzzle_jump.blue_swiching_block": "Blue Swiching Block",
-      "block.puzzle_code.smaller_than_number_code_block": "Smaller Than Number Code Block",
       "block.puzzle_jump.weakness_effect_block": "Weakness Effect Block",
+      "block.puzzle_code.smaller_than_number_code_block": "Smaller Than Number Code Block",
       "block.puzzle_jump.substraction_number_code_block": "Substaction Number Code Block",
       "block.puzzle_jump.unluck_effect_stairs": "Unluck Effect Stairs",
-      "block.puzzle_jump.instant_hunger_block": "Instant Hunger Block",
-      "block.puzzle_code.glowing_effect_block": "Glowing Effect Block",
       "block.puzzle_code.yellow_switching_slab": "Yellow Switching Slab",
+      "block.puzzle_code.glowing_effect_block": "Glowing Effect Block",
+      "block.puzzle_jump.instant_hunger_block": "Instant Hunger Block",
       "block.puzzle_code.night_vision_effect_block": "Night Vision Effect Block",
       "block.puzzle_jump.normal_block": "Normal Block",
       "block.puzzle_jump.reverse_timed_swiching_block": "Reverse Timed Swiching Block",
@@ -17792,30 +17830,30 @@
       "block.puzzle_code.saturation_effect_stairs": "Saturation Effect Stairs",
       "block.puzzle_jump.advanced_placer": "Advanced Placer",
       "block.puzzle_jump.locked_blue_swicher_block": "Locked Blue Swicher Block",
-      "biome.puzzle_code.the_zone_of_dark": "The Zone Of Dark",
       "item.puzzle_code.kill_item": "Kill Item",
+      "biome.puzzle_code.the_zone_of_dark": "The Zone Of Dark",
       "block.puzzle_jump.moving_block": "Moving Block",
       "block.puzzle_jump.kill_block": "Kill Block",
       "block.puzzle_code.degrees_to_radians_number_code_block": "Degrees To Radians Number Code Block",
       "block.puzzle_code.filler_number_code_block": "Filler Number Code Block",
       "block.puzzle_jump.poison_effect_stairs": "Poison Effect Stairs",
       "block.puzzle_code.property_to_nbt_logic_code_block": "Property To NBT Logic Code Block",
-      "block.puzzle_code.hp_of_entity_to_number_code_block": "HP Of Entity To Number Code Block",
       "block.puzzle_code.smaller_or_equal_than_number_code_block": "Smaller Or Equal Than Number Code Block",
-      "block.puzzle_code.haste_effect_stairs": "Haste Effect Stairs",
+      "block.puzzle_code.hp_of_entity_to_number_code_block": "HP Of Entity To Number Code Block",
       "block.puzzle_jump.teleporter_logic_code_block": "Teleporter Logic Code Block",
+      "block.puzzle_code.haste_effect_stairs": "Haste Effect Stairs",
       "block.puzzle_code.in_fire_resistance_effect_block": "In Fire Resistance Block",
       "block.puzzle_jump.in_kill_block": "In Kill Block",
       "block.puzzle_code.red_kill_switching_block_off": "Red Kill Switching Block Off",
       "block.puzzle_code.checkpoint_block": "Checkpoint Block",
-      "block.puzzle_code.randomizer_integer_number_code_block": "Randomizer Integer Number Code Block",
-      "block.puzzle_code.in_slow_falling_effect_block": "In Slow Falling Effect Block",
       "block.puzzle_jump.blue_kill_swiching_block_off": "Blue Kill Swiching Block Off",
+      "block.puzzle_code.in_slow_falling_effect_block": "In Slow Falling Effect Block",
+      "block.puzzle_code.randomizer_integer_number_code_block": "Randomizer Integer Number Code Block",
       "block.puzzle_code.unequal_logic_code_block": "Unequal Logic Code Block",
       "block.puzzle_jump.teleporter_text_code_block": "Teleporter Text Code Block",
       "block.puzzle_code.wither_effect_stairs": "Wither Effect Stairs",
-      "block.puzzle_code.fire_resistance_effect_slab": "Fire Resistance Effect Slab",
       "block.puzzle_jump.red_kill_swiching_block": "Red Kill Swiching Block",
+      "block.puzzle_code.fire_resistance_effect_slab": "Fire Resistance Effect Slab",
       "block.puzzle_code.item_remover_block": "Item Remover Block",
       "block.puzzle_code.substraction_number_code_block": "Substaction Number Code Block",
       "block.puzzle_jump.blindness_effect_block": "Blindness Effect Block",
@@ -18314,6 +18352,7 @@
       "block.puzzle_code.resistance_effect_stairs": "Resistance Effect Stairs",
       "item.puzzle_jump.invisibility_effect_item": "Invisibility Effect Item",
       "block.puzzle_code.luck_effect_slab": "Luck Effect Slab",
+      "block.puzzle_code.red_blue_switching_logic_global_block": "Red/Blue Switching Logic Global Block",
       "block.puzzle_code.in_poison_effect_block": "In Poison Effect Block",
       "block.puzzle_code.transfer_item_code_block": "Transfer Item Code Block",
       "block.puzzle_code.in_slowness_effect_block": "In Slowness Effect Block",

@@ -4,7 +4,7 @@
   "definition": {
     "texture": "empty_item_code_block",
     "textureTop": "number_of_items_code_block",
-    "textureLeft": "empty_item_number_code_block_2",
+    "textureLeft": "empty_item_number_code_block",
     "textureFront": "empty_number_code_block",
     "textureRight": "empty_number_item_code_block",
     "textureBack": "empty_item_code_block",

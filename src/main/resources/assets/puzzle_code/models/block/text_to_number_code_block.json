@@ -4,7 +4,7 @@
     "down": "puzzle_code:blocks/empty_text_code_block",
     "up": "puzzle_code:blocks/text_to_number_code_block",
     "north": "puzzle_code:blocks/empty_number_code_block",
-    "east": "puzzle_code:blocks/empty_number_text_code_block_2",
+    "east": "puzzle_code:blocks/empty_text_number_code_block",
     "south": "puzzle_code:blocks/empty_text_code_block",
     "west": "puzzle_code:blocks/empty_number_text_code_block",
     "particle": "puzzle_code:blocks/empty_text_code_block"

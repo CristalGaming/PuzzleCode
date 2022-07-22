@@ -84,6 +84,7 @@ import net.mcreator.puzzle_code.block.entity.RandomizerIntegerNumberCodeBlockBlo
 import net.mcreator.puzzle_code.block.entity.PuzzleCrafterBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyTransferTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyTransferNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.PropertyToNBTTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyToNBTNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyToNBTLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PowerNumberCodeBlockBlockEntity;
@@ -212,6 +213,7 @@ import net.mcreator.puzzle_code.block.entity.GlowingEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireResistanceEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireResistanceEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireResistanceEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.FillerNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.EntityTeleporterBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DolphinsGraceEffectStairsBlockEntity;
@@ -638,6 +640,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.RIGHT_TRANSFER_TEXT_CODE_BLOCK, RightTransferTextCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = register("nbt_to_property_text_code_block",
 			PuzzleCodeModBlocks.NBT_TO_PROPERTY_TEXT_CODE_BLOCK, NBTToPropertyTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = register("property_to_nbt_text_code_block",
+			PuzzleCodeModBlocks.PROPERTY_TO_NBT_TEXT_CODE_BLOCK, PropertyToNBTTextCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TRANSFER_TEXT_CODE_BLOCK = register("property_transfer_text_code_block",
 			PuzzleCodeModBlocks.PROPERTY_TRANSFER_TEXT_CODE_BLOCK, PropertyTransferTextCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> IMITATOR_TEXT_CODE_BLOCK = register("imitator_text_code_block",
@@ -674,6 +678,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK_OFF, ReverseYellowSwitchingBlockOffBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK_OFF = register("walking_switching_block_off",
 			PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, WalkingSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_NUMBER_CODE_BLOCK = register("filler_number_code_block",
+			PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK, FillerNumberCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block",
 			PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = register("red_blue_switching_logic_global_block",

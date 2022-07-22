@@ -52,6 +52,9 @@
         "type": "button",
         "data": {
           "text": "Edit",
+          "onClick": {
+            "name": "EditTextCodeBlock"
+          },
           "width": 76,
           "height": 20,
           "name": "Edit",

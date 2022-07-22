@@ -1,0 +1,219 @@
+{
+  "_fv": 30,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 152,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "X position",
+          "width": 162,
+          "height": 20,
+          "name": "xPosField",
+          "x": 132,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyxPos"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 53
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "y position",
+          "width": 162,
+          "height": 20,
+          "name": "yPosField",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "z position",
+          "width": 162,
+          "height": 20,
+          "name": "zPosField",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyyPos"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyzPos"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Apply",
+          "x": 299,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "X1 <BNBT:integer:xPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "X1 <BNBT:integer:xPos>",
+          "x": 132,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Y1 <BNBT:integer:yPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Y1 <BNBT:integer:yPos>",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Z1: <BNBT:integer:zPos>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Z1: <BNBT:integer:zPos>",
+          "x": 132,
+          "y": 148
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "FillerCodeBlockGUiPage2"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "2",
+          "x": 150,
+          "y": 166
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[1]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[1]",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditxPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditzPos"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Edit",
+          "x": 83,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "FillerCodeBlockGUIPage3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 168,
+          "y": 166
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

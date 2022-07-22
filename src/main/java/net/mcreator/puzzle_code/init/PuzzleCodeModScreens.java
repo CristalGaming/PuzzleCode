@@ -53,6 +53,9 @@ import net.mcreator.puzzle_code.client.gui.ImitatorItemCodeBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.HealthChangerBlockGUIScreen;
 import net.mcreator.puzzle_code.client.gui.FillerGui2Screen;
 import net.mcreator.puzzle_code.client.gui.FillerGui1Screen;
+import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI3Screen;
+import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI2Screen;
+import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI1Screen;
 import net.mcreator.puzzle_code.client.gui.EffectBlocksGuiScreen;
 import net.mcreator.puzzle_code.client.gui.EffectBlocksGui2Screen;
 import net.mcreator.puzzle_code.client.gui.CreativeSettingsGUIScreen;
@@ -121,6 +124,9 @@ public class PuzzleCodeModScreens {
 			MenuScreens.register(PuzzleCodeModMenus.PROPERTY_TO_NBT_CODE_BLOCK_GUI, PropertyToNBTCodeBlockGUIScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.NBT_TO_PROPERTY_CODE_BLOCK_GUI, NBTToPropertyCodeBlockGUIScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.PROPERTY_TRANSFER_CODE_BLOCK_GUI, PropertyTransferCodeBlockGUIScreen::new);
+			MenuScreens.register(PuzzleCodeModMenus.FILLER_CODE_BLOCK_GUI_1, FillerCodeBlockGUI1Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.FILLER_CODE_BLOCK_GUI_2, FillerCodeBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.FILLER_CODE_BLOCK_GUI_3, FillerCodeBlockGUI3Screen::new);
 		});
 	}
 }

@@ -63,7 +63,7 @@ public class ABlockIsPlacedGlobalBlockBlock extends Block
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
@@ -74,7 +74,7 @@ public class ABlockIsPlacedGlobalBlockBlock extends Block
 		int z = pos.getZ();
 
 		ABlockIsPlacedGlobalBlockUpdateTickProcedure.execute(world, x, y, z);
-		world.scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override

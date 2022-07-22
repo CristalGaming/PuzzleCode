@@ -133,6 +133,10 @@ public class TextCodeBlockGuiScreen extends AbstractContainerScreen<TextCodeBloc
 			}
 		}));
 		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 31, 76, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new TextCodeBlockGuiButtonMessage(1, x, y, z));
+				TextCodeBlockGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
 		}));
 	}
 }

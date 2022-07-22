@@ -318,6 +318,7 @@
     "puzzle_code:filler_item_code_block",
     "puzzle_code:filler_number_code_block",
     "puzzle_code:filler_logic_code_block",
+    "puzzle_code:filler_text_code_block",
     "puzzle_code:block_entity_placer_block",
     "puzzle_code:red_blue_switching_logic_global_block"
   ]

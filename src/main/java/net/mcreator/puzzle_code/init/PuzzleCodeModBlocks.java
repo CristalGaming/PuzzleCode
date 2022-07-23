@@ -630,6 +630,8 @@ public class PuzzleCodeModBlocks {
 			() -> new AdvancedPlacerBlockBlock());
 	public static final RegistryObject<Block> REPLACER_BLOCK = REGISTRY.register("replacer_block", () -> new ReplacerBlockBlock());
 	public static final RegistryObject<Block> FILLER_BLOCK = REGISTRY.register("filler_block", () -> new FillerBlockBlock());
+	public static final RegistryObject<Block> BLOCK_ENTITY_PLACER_BLOCK = REGISTRY.register("block_entity_placer_block",
+			() -> new BlockEntityPlacerBlockBlock());
 	public static final RegistryObject<Block> MOVING_BLOCK = REGISTRY.register("moving_block", () -> new MovingBlockBlock());
 	public static final RegistryObject<Block> ITEM_REMOVER_BLOCK = REGISTRY.register("item_remover_block", () -> new ItemRemoverBlockBlock());
 	public static final RegistryObject<Block> IN_ITEM_REMOVER = REGISTRY.register("in_item_remover", () -> new InItemRemoverBlock());
@@ -709,6 +711,8 @@ public class PuzzleCodeModBlocks {
 			() -> new ABlockIsBrokenGlobalBlockBlock());
 	public static final RegistryObject<Block> A_BLOCK_IS_PLACED_GLOBAL_BLOCK = REGISTRY.register("a_block_is_placed_global_block",
 			() -> new ABlockIsPlacedGlobalBlockBlock());
+	public static final RegistryObject<Block> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = REGISTRY.register("red_blue_switching_logic_global_block",
+			() -> new RedBlueSwitchingLogicGlobalBlockBlock());
 	public static final RegistryObject<Block> NUMBER_CODE_BLOCK = REGISTRY.register("number_code_block", () -> new NumberCodeBlockBlock());
 	public static final RegistryObject<Block> SURVIVAL_NUMBER_CODE_BLOCK = REGISTRY.register("survival_number_code_block",
 			() -> new SurvivalNumberCodeBlockBlock());
@@ -774,12 +778,18 @@ public class PuzzleCodeModBlocks {
 			() -> new ImitatorNumberCodeBlockBlock());
 	public static final RegistryObject<Block> TELEPORTER_NUMBER_CODE_BLOCK = REGISTRY.register("teleporter_number_code_block",
 			() -> new TeleporterNumberCodeBlockBlock());
+	public static final RegistryObject<Block> FILLER_NUMBER_CODE_BLOCK = REGISTRY.register("filler_number_code_block",
+			() -> new FillerNumberCodeBlockBlock());
 	public static final RegistryObject<Block> NUMBER_TO_REDSTONE_CONVERTER_CODE_BLOCK = REGISTRY.register("number_to_redstone_converter_code_block",
 			() -> new NumberToRedstoneConverterCodeBlockBlock());
 	public static final RegistryObject<Block> REDSTONE_TO_NUMBER_CONVERTER_CODE_BLOCK = REGISTRY.register("redstone_to_number_converter_code_block",
 			() -> new RedstoneToNumberConverterCodeBlockBlock());
 	public static final RegistryObject<Block> NUMBER_TO_TEXT_CODE_BLOCK = REGISTRY.register("number_to_text_code_block",
 			() -> new NumberToTextCodeBlockBlock());
+	public static final RegistryObject<Block> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = REGISTRY.register("hp_of_entity_to_number_code_block",
+			() -> new HPOfEntityToNumberCodeBlockBlock());
+	public static final RegistryObject<Block> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = REGISTRY.register("max_hp_of_entity_to_number_code_block",
+			() -> new MaxHPOfEntityToNumberCodeBlockBlock());
 	public static final RegistryObject<Block> LOGIC_CODE_BLOCK = REGISTRY.register("logic_code_block", () -> new LogicCodeBlockBlock());
 	public static final RegistryObject<Block> SURVIVAL_LOGIC_CODE_BLOCK = REGISTRY.register("survival_logic_code_block",
 			() -> new SurvivalLogicCodeBlockBlock());
@@ -810,16 +820,14 @@ public class PuzzleCodeModBlocks {
 			() -> new ImitatorLogicCodeBlockBlock());
 	public static final RegistryObject<Block> TELEPORTER_LOGIC_CODE_BLOCK = REGISTRY.register("teleporter_logic_code_block",
 			() -> new TeleporterLogicCodeBlockBlock());
+	public static final RegistryObject<Block> FILLER_LOGIC_CODE_BLOCK = REGISTRY.register("filler_logic_code_block",
+			() -> new FillerLogicCodeBlockBlock());
 	public static final RegistryObject<Block> REDSTONE_TO_LOGIC_CODE_BLOCK = REGISTRY.register("redstone_to_logic_code_block",
 			() -> new RedstoneToLogicCodeBlockBlock());
 	public static final RegistryObject<Block> LOGIC_TO_REDSTONE_CODE_BLOCK = REGISTRY.register("logic_to_redstone_code_block",
 			() -> new LogicToRedstoneCodeBlockBlock());
 	public static final RegistryObject<Block> LOGIC_TO_NUMBER_CODE_BLOCK = REGISTRY.register("logic_to_number_code_block",
 			() -> new LogicToNumberCodeBlockBlock());
-	public static final RegistryObject<Block> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = REGISTRY.register("hp_of_entity_to_number_code_block",
-			() -> new HPOfEntityToNumberCodeBlockBlock());
-	public static final RegistryObject<Block> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = REGISTRY.register("max_hp_of_entity_to_number_code_block",
-			() -> new MaxHPOfEntityToNumberCodeBlockBlock());
 	public static final RegistryObject<Block> TEXT_CODE_BLOCK = REGISTRY.register("text_code_block", () -> new TextCodeBlockBlock());
 	public static final RegistryObject<Block> SURVIVAL_TEXT_CODE_BLOCK = REGISTRY.register("survival_text_code_block",
 			() -> new SurvivalTextCodeBlockBlock());
@@ -834,6 +842,7 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> RIGHT_TRANSFER_TEXT_CODE_BLOCK = REGISTRY.register("right_transfer_text_code_block",
 			() -> new RightTransferTextCodeBlockBlock());
 	public static final RegistryObject<Block> MERGE_TEXT_CODE_BLOCK = REGISTRY.register("merge_text_code_block", () -> new MergeTextCodeBlockBlock());
+	public static final RegistryObject<Block> EQUAL_TEXT_CODE_BLOCK = REGISTRY.register("equal_text_code_block", () -> new EqualTextCodeBlockBlock());
 	public static final RegistryObject<Block> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = REGISTRY.register("nbt_to_property_text_code_block",
 			() -> new NBTToPropertyTextCodeBlockBlock());
 	public static final RegistryObject<Block> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = REGISTRY.register("property_to_nbt_text_code_block",
@@ -844,12 +853,15 @@ public class PuzzleCodeModBlocks {
 			() -> new ImitatorTextCodeBlockBlock());
 	public static final RegistryObject<Block> TELEPORTER_TEXT_CODE_BLOCK = REGISTRY.register("teleporter_text_code_block",
 			() -> new TeleporterTextCodeBlockBlock());
+	public static final RegistryObject<Block> FILLER_TEXT_CODE_BLOCK = REGISTRY.register("filler_text_code_block",
+			() -> new FillerTextCodeBlockBlock());
 	public static final RegistryObject<Block> TEXT_TO_NUMBER_CODE_BLOCK = REGISTRY.register("text_to_number_code_block",
 			() -> new TextToNumberCodeBlockBlock());
 	public static final RegistryObject<Block> ITEM_CODE_BLOCK = REGISTRY.register("item_code_block", () -> new ItemCodeBlockBlock());
 	public static final RegistryObject<Block> SURVIVAL_ITEM_CODE_BLOCK = REGISTRY.register("survival_item_code_block",
 			() -> new SurvivalItemCodeBlockBlock());
 	public static final RegistryObject<Block> CHAIN_ITEM_CODE_BLOCK = REGISTRY.register("chain_item_code_block", () -> new ChainItemCodeBlockBlock());
+	public static final RegistryObject<Block> EQUAL_ITEM_CODE_BLOCK = REGISTRY.register("equal_item_code_block", () -> new EqualItemCodeBlockBlock());
 	public static final RegistryObject<Block> TRANSFER_ITEM_CODE_BLOCK = REGISTRY.register("transfer_item_code_block",
 			() -> new TransferItemCodeBlockBlock());
 	public static final RegistryObject<Block> LEFT_TRANSFER_ITEM_CODE_BLOCK = REGISTRY.register("left_transfer_item_code_block",
@@ -860,6 +872,8 @@ public class PuzzleCodeModBlocks {
 			() -> new ImitatorItemCodeBlockBlock());
 	public static final RegistryObject<Block> TELEPORTER_ITEM_CODE_BLOCK = REGISTRY.register("teleporter_item_code_block",
 			() -> new TeleporterItemCodeBlockBlock());
+	public static final RegistryObject<Block> FILLER_ITEM_CODE_BLOCK = REGISTRY.register("filler_item_code_block",
+			() -> new FillerItemCodeBlockBlock());
 	public static final RegistryObject<Block> NUMBER_OF_ITEMS_CODE_BLOCK = REGISTRY.register("number_of_items_code_block",
 			() -> new NumberOfItemsCodeBlockBlock());
 	public static final RegistryObject<Block> PUZZLE_CRAFTER = REGISTRY.register("puzzle_crafter", () -> new PuzzleCrafterBlock());
@@ -894,20 +908,6 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> CLICKING_SWITCHING_BLOCK_OFF = REGISTRY.register("clicking_switching_block_off",
 			() -> new ClickingSwitchingBlockOffBlock());
 	public static final RegistryObject<Block> REDSTONE_CODE_BLOCK = REGISTRY.register("redstone_code_block", () -> new RedstoneCodeBlockBlock());
-	public static final RegistryObject<Block> EQUAL_TEXT_CODE_BLOCK = REGISTRY.register("equal_text_code_block", () -> new EqualTextCodeBlockBlock());
-	public static final RegistryObject<Block> EQUAL_ITEM_CODE_BLOCK = REGISTRY.register("equal_item_code_block", () -> new EqualItemCodeBlockBlock());
-	public static final RegistryObject<Block> FILLER_ITEM_CODE_BLOCK = REGISTRY.register("filler_item_code_block",
-			() -> new FillerItemCodeBlockBlock());
-	public static final RegistryObject<Block> FILLER_NUMBER_CODE_BLOCK = REGISTRY.register("filler_number_code_block",
-			() -> new FillerNumberCodeBlockBlock());
-	public static final RegistryObject<Block> FILLER_LOGIC_CODE_BLOCK = REGISTRY.register("filler_logic_code_block",
-			() -> new FillerLogicCodeBlockBlock());
-	public static final RegistryObject<Block> FILLER_TEXT_CODE_BLOCK = REGISTRY.register("filler_text_code_block",
-			() -> new FillerTextCodeBlockBlock());
-	public static final RegistryObject<Block> BLOCK_ENTITY_PLACER_BLOCK = REGISTRY.register("block_entity_placer_block",
-			() -> new BlockEntityPlacerBlockBlock());
-	public static final RegistryObject<Block> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = REGISTRY.register("red_blue_switching_logic_global_block",
-			() -> new RedBlueSwitchingLogicGlobalBlockBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

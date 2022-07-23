@@ -52,6 +52,9 @@ import net.mcreator.puzzle_code.world.inventory.ImitatorLogicCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorItemCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorItemCodeBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI3Menu;
+import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI1Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerGui2Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerGui1Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerCodeBlockGUI3Menu;
@@ -184,6 +187,12 @@ public class PuzzleCodeModMenus {
 			(id, inv, extraData) -> new FillerCodeBlockGUI2Menu(id, inv, extraData));
 	public static final MenuType<FillerCodeBlockGUI3Menu> FILLER_CODE_BLOCK_GUI_3 = register("filler_code_block_gui_3",
 			(id, inv, extraData) -> new FillerCodeBlockGUI3Menu(id, inv, extraData));
+	public static final MenuType<FillerItemCodeBlockGUI1Menu> FILLER_ITEM_CODE_BLOCK_GUI_1 = register("filler_item_code_block_gui_1",
+			(id, inv, extraData) -> new FillerItemCodeBlockGUI1Menu(id, inv, extraData));
+	public static final MenuType<FillerItemCodeBlockGUI2Menu> FILLER_ITEM_CODE_BLOCK_GUI_2 = register("filler_item_code_block_gui_2",
+			(id, inv, extraData) -> new FillerItemCodeBlockGUI2Menu(id, inv, extraData));
+	public static final MenuType<FillerItemCodeBlockGUI3Menu> FILLER_ITEM_CODE_BLOCK_GUI_3 = register("filler_item_code_block_gui_3",
+			(id, inv, extraData) -> new FillerItemCodeBlockGUI3Menu(id, inv, extraData));
 
 	private static <T extends AbstractContainerMenu> MenuType<T> register(String registryname, IContainerFactory<T> containerFactory) {
 		MenuType<T> menuType = new MenuType<T>(containerFactory);

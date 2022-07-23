@@ -398,6 +398,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> REPLACER_BLOCK = block(PuzzleCodeModBlocks.REPLACER_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> FILLER_BLOCK = block(PuzzleCodeModBlocks.FILLER_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> BLOCK_ENTITY_PLACER_BLOCK = block(PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> MOVING_BLOCK = block(PuzzleCodeModBlocks.MOVING_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> ITEM_REMOVER_BLOCK = block(PuzzleCodeModBlocks.ITEM_REMOVER_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -494,6 +496,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> A_BLOCK_IS_PLACED_GLOBAL_BLOCK = block(PuzzleCodeModBlocks.A_BLOCK_IS_PLACED_GLOBAL_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = block(PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.NUMBER_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SURVIVAL_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.SURVIVAL_NUMBER_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -561,11 +565,17 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TELEPORTER_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.TELEPORTER_NUMBER_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FILLER_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NUMBER_TO_REDSTONE_CONVERTER_CODE_BLOCK = block(
 			PuzzleCodeModBlocks.NUMBER_TO_REDSTONE_CONVERTER_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> REDSTONE_TO_NUMBER_CONVERTER_CODE_BLOCK = block(
 			PuzzleCodeModBlocks.REDSTONE_TO_NUMBER_CONVERTER_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NUMBER_TO_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.NUMBER_TO_TEXT_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.LOGIC_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SURVIVAL_LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.SURVIVAL_LOGIC_CODE_BLOCK,
@@ -600,15 +610,13 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TELEPORTER_LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.TELEPORTER_LOGIC_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FILLER_LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_LOGIC_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> REDSTONE_TO_LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.REDSTONE_TO_LOGIC_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> LOGIC_TO_REDSTONE_CODE_BLOCK = block(PuzzleCodeModBlocks.LOGIC_TO_REDSTONE_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> LOGIC_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.LOGIC_TO_NUMBER_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.TEXT_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SURVIVAL_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.SURVIVAL_TEXT_CODE_BLOCK,
@@ -628,6 +636,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> MERGE_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.MERGE_TEXT_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> EQUAL_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_TEXT_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.NBT_TO_PROPERTY_TEXT_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.PROPERTY_TO_NBT_TEXT_CODE_BLOCK,
@@ -638,12 +648,16 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TELEPORTER_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.TELEPORTER_TEXT_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FILLER_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_TEXT_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TEXT_TO_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.TEXT_TO_NUMBER_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.ITEM_CODE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SURVIVAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.SURVIVAL_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> CHAIN_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.CHAIN_ITEM_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> EQUAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TRANSFER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.TRANSFER_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -654,6 +668,8 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> IMITATOR_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.IMITATOR_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TELEPORTER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.TELEPORTER_ITEM_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FILLER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NUMBER_OF_ITEMS_CODE_BLOCK = block(PuzzleCodeModBlocks.NUMBER_OF_ITEMS_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -685,22 +701,6 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> WALKING_SWITCHING_BLOCK_OFF = block(PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, null);
 	public static final RegistryObject<Item> CLICKING_SWITCHING_BLOCK_OFF = block(PuzzleCodeModBlocks.CLICKING_SWITCHING_BLOCK_OFF, null);
 	public static final RegistryObject<Item> REDSTONE_CODE_BLOCK = block(PuzzleCodeModBlocks.REDSTONE_CODE_BLOCK, null);
-	public static final RegistryObject<Item> EQUAL_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_TEXT_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> EQUAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_ITEM_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> FILLER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_ITEM_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> FILLER_NUMBER_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> FILLER_LOGIC_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_LOGIC_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> FILLER_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.FILLER_TEXT_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> BLOCK_ENTITY_PLACER_BLOCK = block(PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = block(PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

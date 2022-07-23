@@ -214,6 +214,8 @@ import net.mcreator.puzzle_code.block.entity.FireResistanceEffectStairsBlockEnti
 import net.mcreator.puzzle_code.block.entity.FireResistanceEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireResistanceEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.FillerLogicCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.FillerItemCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.EntityTeleporterBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DolphinsGraceEffectStairsBlockEntity;
@@ -526,6 +528,8 @@ public class PuzzleCodeModBlockEntities {
 			ReplacerBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> FILLER_BLOCK = register("filler_block", PuzzleCodeModBlocks.FILLER_BLOCK,
 			FillerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block",
+			PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> HEALTH_CHANGER_BLOCK = register("health_changer_block",
 			PuzzleCodeModBlocks.HEALTH_CHANGER_BLOCK, HealthChangerBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> ADVENCED_TIME_BLOCK = register("advenced_time_block",
@@ -552,6 +556,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.A_BLOCK_IS_BROKEN_GLOBAL_BLOCK, ABlockIsBrokenGlobalBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_PLACED_GLOBAL_BLOCK = register("a_block_is_placed_global_block",
 			PuzzleCodeModBlocks.A_BLOCK_IS_PLACED_GLOBAL_BLOCK, ABlockIsPlacedGlobalBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = register("red_blue_switching_logic_global_block",
+			PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK, RedBlueSwitchingLogicGlobalBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> NUMBER_CODE_BLOCK = register("number_code_block", PuzzleCodeModBlocks.NUMBER_CODE_BLOCK,
 			NumberCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_NUMBER_CODE_BLOCK = register("survival_number_code_block",
@@ -598,6 +604,12 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.IMITATOR_NUMBER_CODE_BLOCK, ImitatorNumberCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_NUMBER_CODE_BLOCK = register("teleporter_number_code_block",
 			PuzzleCodeModBlocks.TELEPORTER_NUMBER_CODE_BLOCK, TeleporterNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_NUMBER_CODE_BLOCK = register("filler_number_code_block",
+			PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK, FillerNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("hp_of_entity_to_number_code_block",
+			PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, HPOfEntityToNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("max_hp_of_entity_to_number_code_block",
+			PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, MaxHPOfEntityToNumberCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> LOGIC_CODE_BLOCK = register("logic_code_block", PuzzleCodeModBlocks.LOGIC_CODE_BLOCK,
 			LogicCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_LOGIC_CODE_BLOCK = register("survival_logic_code_block",
@@ -616,10 +628,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.IMITATOR_LOGIC_CODE_BLOCK, ImitatorLogicCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_LOGIC_CODE_BLOCK = register("teleporter_logic_code_block",
 			PuzzleCodeModBlocks.TELEPORTER_LOGIC_CODE_BLOCK, TeleporterLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("hp_of_entity_to_number_code_block",
-			PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, HPOfEntityToNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("max_hp_of_entity_to_number_code_block",
-			PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, MaxHPOfEntityToNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_LOGIC_CODE_BLOCK = register("filler_logic_code_block",
+			PuzzleCodeModBlocks.FILLER_LOGIC_CODE_BLOCK, FillerLogicCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> TEXT_CODE_BLOCK = register("text_code_block", PuzzleCodeModBlocks.TEXT_CODE_BLOCK,
 			TextCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_TEXT_CODE_BLOCK = register("survival_text_code_block",
@@ -664,6 +674,8 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.IMITATOR_ITEM_CODE_BLOCK, ImitatorItemCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_ITEM_CODE_BLOCK = register("teleporter_item_code_block",
 			PuzzleCodeModBlocks.TELEPORTER_ITEM_CODE_BLOCK, TeleporterItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_ITEM_CODE_BLOCK = register("filler_item_code_block",
+			PuzzleCodeModBlocks.FILLER_ITEM_CODE_BLOCK, FillerItemCodeBlockBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> PUZZLE_CRAFTER = register("puzzle_crafter", PuzzleCodeModBlocks.PUZZLE_CRAFTER,
 			PuzzleCrafterBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> REMOTE_MOVER_BLOCK = register("remote_mover_block", PuzzleCodeModBlocks.REMOTE_MOVER_BLOCK,
@@ -678,12 +690,6 @@ public class PuzzleCodeModBlockEntities {
 			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK_OFF, ReverseYellowSwitchingBlockOffBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK_OFF = register("walking_switching_block_off",
 			PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, WalkingSwitchingBlockOffBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FILLER_NUMBER_CODE_BLOCK = register("filler_number_code_block",
-			PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK, FillerNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block",
-			PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = register("red_blue_switching_logic_global_block",
-			PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK, RedBlueSwitchingLogicGlobalBlockBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block,
 			BlockEntityType.BlockEntitySupplier<?> supplier) {

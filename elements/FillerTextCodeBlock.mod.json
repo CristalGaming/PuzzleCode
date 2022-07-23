@@ -123,6 +123,15 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "FillerCodeBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "FillerTextCodeBlockUpdateTick"
+    },
+    "onBlockPlayedBy": {
+      "name": "FillerTextCodeBlockBlockIsPlacedBy"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

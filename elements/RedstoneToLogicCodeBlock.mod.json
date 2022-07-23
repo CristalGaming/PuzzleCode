@@ -4,9 +4,9 @@
   "definition": {
     "texture": "empty_logic_code_block",
     "textureTop": "redstone_to_logic_code_block",
-    "textureLeft": "empty_logic_code_block",
+    "textureLeft": "empty_redstone_logic_code_block",
     "textureFront": "empty_logic_code_block",
-    "textureRight": "empty_logic_code_block",
+    "textureRight": "empty_logic_redstone_code_block",
     "textureBack": "empty_redstone_code_block",
     "renderType": 10,
     "customModelName": "Normal",

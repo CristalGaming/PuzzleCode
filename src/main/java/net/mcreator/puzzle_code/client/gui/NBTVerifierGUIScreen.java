@@ -37,10 +37,10 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageHeight = 135;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/nbt_verifier_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/nbt_verifier_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -57,10 +57,6 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 150, this.topPos + 7, 0, 0, 16, 16, 16, 16);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -84,12 +80,12 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack, "NBT name:" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierNBT) + "", 6, 52, -12829636);
-		this.font.draw(poseStack, "NBT Current Value:", 6, 133, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierNBT) + "", 6, 36, -12829636);
+		this.font.draw(poseStack, "NBT Current Value:", 6, 104, -12829636);
 		this.font.draw(poseStack, "" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierCurrentValue) + "", 6, 147, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierCurrentValue) + "", 6, 117, -12829636);
 		this.font.draw(poseStack, "" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierVariableType) + "", 6, 93, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierVariableType) + "", 6, 77, -12829636);
 	}
 
 	@Override
@@ -102,29 +98,29 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		NBTVerifyField = new EditBox(this.font, this.leftPos + 6, this.topPos + 25, 112, 20, new TextComponent(""));
+		NBTVerifyField = new EditBox(this.font, this.leftPos + 6, this.topPos + 9, 112, 20, new TextComponent(""));
 		guistate.put("text:NBTVerifyField", NBTVerifyField);
 		NBTVerifyField.setMaxLength(32767);
 		this.addWidget(this.NBTVerifyField);
-		this.addRenderableWidget(new Button(this.leftPos + 119, this.topPos + 25, 51, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 119, this.topPos + 9, 51, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(0, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 66, 50, 20, new TextComponent("Number"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 50, 50, 20, new TextComponent("Number"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(1, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 66, 50, 20, new TextComponent("Logic"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 50, 50, 20, new TextComponent("Logic"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(2, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 114, this.topPos + 66, 50, 20, new TextComponent("Text"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 114, this.topPos + 50, 50, 20, new TextComponent("Text"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(3, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);

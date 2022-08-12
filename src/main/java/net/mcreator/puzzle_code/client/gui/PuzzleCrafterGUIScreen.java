@@ -33,7 +33,7 @@ public class PuzzleCrafterGUIScreen extends AbstractContainerScreen<PuzzleCrafte
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/puzzle_crafter_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/puzzle_crafter_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -50,11 +50,8 @@ public class PuzzleCrafterGUIScreen extends AbstractContainerScreen<PuzzleCrafte
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/arrow_gui_sign.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/arrow_gui_sign.png"));
 		this.blit(ms, this.leftPos + 101, this.topPos + 34, 0, 0, 16, 16, 16, 16);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 150, this.topPos + 7, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
 	}

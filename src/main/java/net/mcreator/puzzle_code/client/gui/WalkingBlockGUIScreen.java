@@ -39,10 +39,10 @@ public class WalkingBlockGUIScreen extends AbstractContainerScreen<WalkingBlockG
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 177;
-		this.imageHeight = 104;
+		this.imageHeight = 140;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/walking_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/walking_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -85,22 +85,22 @@ public class WalkingBlockGUIScreen extends AbstractContainerScreen<WalkingBlockG
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Waiting to swich off: " + (new Object() {
+		this.font.draw(poseStack, "Waiting to switch off: " + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
 				if (BlockEntity != null)
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "waitingOff")) + " ticks", 7, 39, -12829636);
-		this.font.draw(poseStack, "Waiting to swich on: " + (new Object() {
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "waitingOff")) + " ticks", 7, 57, -12829636);
+		this.font.draw(poseStack, "Waiting to switch on: " + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
 				if (BlockEntity != null)
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "waitingOn")) + " ticks", 7, 84, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "waitingOn")) + " ticks", 7, 120, -12829636);
 	}
 
 	@Override
@@ -113,25 +113,37 @@ public class WalkingBlockGUIScreen extends AbstractContainerScreen<WalkingBlockG
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 115, this.topPos + 12, 54, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 30, 77, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new WalkingBlockGUIButtonMessage(0, x, y, z));
 				WalkingBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 115, this.topPos + 57, 54, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 7, this.topPos + 93, 77, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new WalkingBlockGUIButtonMessage(1, x, y, z));
 				WalkingBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		waitingOffField = new EditBox(this.font, this.leftPos + 7, this.topPos + 12, 108, 20, new TextComponent(""));
+		waitingOffField = new EditBox(this.font, this.leftPos + 7, this.topPos + 8, 162, 20, new TextComponent(""));
 		guistate.put("text:waitingOffField", waitingOffField);
 		waitingOffField.setMaxLength(32767);
 		this.addWidget(this.waitingOffField);
-		waitingOnField = new EditBox(this.font, this.leftPos + 7, this.topPos + 57, 108, 20, new TextComponent(""));
+		waitingOnField = new EditBox(this.font, this.leftPos + 7, this.topPos + 71, 162, 20, new TextComponent(""));
 		guistate.put("text:waitingOnField", waitingOnField);
 		waitingOnField.setMaxLength(32767);
 		this.addWidget(this.waitingOnField);
+		this.addRenderableWidget(new Button(this.leftPos + 93, this.topPos + 93, 76, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new WalkingBlockGUIButtonMessage(2, x, y, z));
+				WalkingBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 93, this.topPos + 30, 77, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new WalkingBlockGUIButtonMessage(3, x, y, z));
+				WalkingBlockGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}));
 	}
 }

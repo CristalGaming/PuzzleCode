@@ -1,8 +1,8 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
-    "texture": "in_instant_health_effect_block",
+    "texture": "in_instant_health_block",
     "textureTop": "in_instant_health_block",
     "textureLeft": "in_instant_health_block",
     "textureFront": "in_instant_health_block",
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "In Instant Health Effect Block",
+    "name": "In Instant Health Block",
     "specialInfo": [],
     "hardness": 3.0,
     "resistance": 30.0,

@@ -12,15 +12,31 @@ import net.minecraft.commands.CommandSource;
 
 public class CommandCodeBlockRedstoneOnProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (world instanceof ServerLevel _level)
-			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), (new Object() {
-						public String getValue(LevelAccessor world, BlockPos pos, String tag) {
-							BlockEntity blockEntity = world.getBlockEntity(pos);
-							if (blockEntity != null)
-								return blockEntity.getTileData().getString(tag);
-							return "";
-						}
-					}.getValue(world, new BlockPos(x, y, z), "textCodeBlock")));
+		if (new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "redstoneReact") && !(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
+						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), (new Object() {
+							public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+								BlockEntity blockEntity = world.getBlockEntity(pos);
+								if (blockEntity != null)
+									return blockEntity.getTileData().getString(tag);
+								return "";
+							}
+						}.getValue(world, new BlockPos(x, y, z), "textCodeBlock")));
+		}
 	}
 }

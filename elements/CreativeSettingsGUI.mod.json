@@ -1,28 +1,15 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 265,
+    "width": 269,
     "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "label",
-        "data": {
-          "text": "Creative Settings",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Creative Settings",
-          "x": 85,
-          "y": 44
-        }
-      },
       {
         "type": "button",
         "data": {
@@ -34,17 +21,7 @@
           "height": 20,
           "name": "Blocks Affects You?",
           "x": 85,
-          "y": 152
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "puzzle_code_logo.png",
-          "use1Xscale": false,
-          "name": "puzzle_code_logo.png",
-          "x": 319,
-          "y": 44
+          "y": 134
         }
       },
       {
@@ -58,7 +35,7 @@
           "height": 20,
           "name": "Place a fake block",
           "x": 85,
-          "y": 130
+          "y": 112
         }
       },
       {
@@ -71,8 +48,8 @@
           "width": 121,
           "height": 20,
           "name": "Time Set Day",
-          "x": 216,
-          "y": 107
+          "x": 220,
+          "y": 89
         }
       },
       {
@@ -87,8 +64,8 @@
             "name": "BlocksAffectsYouTextCreativeItem"
           },
           "name": "ON",
-          "x": 211,
-          "y": 157
+          "x": 207,
+          "y": 139
         }
       },
       {
@@ -101,8 +78,8 @@
           "width": 86,
           "height": 20,
           "name": "Clean effects",
-          "x": 252,
-          "y": 85
+          "x": 256,
+          "y": 67
         }
       },
       {
@@ -112,11 +89,11 @@
           "onClick": {
             "name": "ResetHPCreativeItem"
           },
-          "width": 59,
+          "width": 63,
           "height": 20,
           "name": "Reset HP",
           "x": 85,
-          "y": 85
+          "y": 67
         }
       },
       {
@@ -126,11 +103,11 @@
           "onClick": {
             "name": "ResetHungerCreativeItem"
           },
-          "width": 108,
+          "width": 99,
           "height": 20,
           "name": "Reset Hunger",
-          "x": 144,
-          "y": 85
+          "x": 153,
+          "y": 67
         }
       },
       {
@@ -144,7 +121,7 @@
           "height": 20,
           "name": "Time Set Night",
           "x": 85,
-          "y": 107
+          "y": 89
         }
       },
       {
@@ -158,7 +135,7 @@
           "height": 20,
           "name": "Creative",
           "x": 85,
-          "y": 62
+          "y": 44
         }
       },
       {
@@ -168,11 +145,11 @@
           "onClick": {
             "name": "GamemodeSurvivalCreativeItem"
           },
-          "width": 58,
+          "width": 63,
           "height": 20,
           "name": "Survival",
-          "x": 144,
-          "y": 62
+          "x": 148,
+          "y": 44
         }
       },
       {
@@ -182,11 +159,11 @@
           "onClick": {
             "name": "GamemodeSpectatorCreativeItem"
           },
-          "width": 63,
+          "width": 72,
           "height": 20,
           "name": "Spectator",
-          "x": 202,
-          "y": 62
+          "x": 216,
+          "y": 44
         }
       },
       {
@@ -199,8 +176,8 @@
           "width": 72,
           "height": 20,
           "name": "Spawnpoint",
-          "x": 265,
-          "y": 62
+          "x": 270,
+          "y": 134
         }
       },
       {
@@ -227,7 +204,7 @@
           "width": 87,
           "height": 20,
           "name": "Game Rules",
-          "x": 247,
+          "x": 256,
           "y": 175
         }
       }

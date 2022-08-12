@@ -40,7 +40,7 @@ public class InventoryReplacerGUI4Screen extends AbstractContainerScreen<Invento
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/inventory_replacer_gui_4.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/inventory_replacer_gui_4.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -42,7 +42,7 @@ public class TransferItemCodeBlockGUIScreen extends AbstractContainerScreen<Tran
 		this.imageHeight = 128;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/transfer_item_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/transfer_item_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

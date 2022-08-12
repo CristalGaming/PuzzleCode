@@ -40,10 +40,10 @@ public class AdvancedPlacerGUIScreen extends AbstractContainerScreen<AdvancedPla
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 174;
-		this.imageHeight = 119;
+		this.imageHeight = 150;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/advanced_placer_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/advanced_placer_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -97,7 +97,7 @@ public class AdvancedPlacerGUIScreen extends AbstractContainerScreen<AdvancedPla
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 30, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 28, -12829636);
 		this.font.draw(poseStack, "Y Position: " + ((int) new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -105,7 +105,7 @@ public class AdvancedPlacerGUIScreen extends AbstractContainerScreen<AdvancedPla
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 66, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 64, -12829636);
 		this.font.draw(poseStack, "Z Position: " + ((int) new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -113,7 +113,8 @@ public class AdvancedPlacerGUIScreen extends AbstractContainerScreen<AdvancedPla
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 102, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 100, -12829636);
+		this.font.draw(poseStack, "[1]", 6, 127, -12829636);
 	}
 
 	@Override
@@ -126,52 +127,58 @@ public class AdvancedPlacerGUIScreen extends AbstractContainerScreen<AdvancedPla
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		xPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 8, 157, 20, new TextComponent(""));
+		xPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 157, 20, new TextComponent(""));
 		guistate.put("text:xPosField", xPosField);
 		xPosField.setMaxLength(32767);
 		this.addWidget(this.xPosField);
-		yPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 44, 157, 20, new TextComponent(""));
+		yPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 42, 157, 20, new TextComponent(""));
 		guistate.put("text:yPosField", yPosField);
 		yPosField.setMaxLength(32767);
 		this.addWidget(this.yPosField);
-		zPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 80, 157, 20, new TextComponent(""));
+		zPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 78, 157, 20, new TextComponent(""));
 		guistate.put("text:zPosField", zPosField);
 		zPosField.setMaxLength(32767);
 		this.addWidget(this.zPosField);
-		this.addRenderableWidget(new Button(this.leftPos + 172, this.topPos + 8, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 168, this.topPos + 6, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(0, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 172, this.topPos + 44, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 168, this.topPos + 42, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(1, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 172, this.topPos + 80, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 168, this.topPos + 78, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(2, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 8, 45, 20, new TextComponent("Edit"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 6, 45, 20, new TextComponent("Edit"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(3, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 44, 45, 20, new TextComponent("Edit"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 42, 45, 20, new TextComponent("Edit"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(4, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 80, 45, 20, new TextComponent("Edit"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -43, this.topPos + 78, 45, 20, new TextComponent("Edit"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(5, x, y, z));
 				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 123, 13, 20, new TextComponent("2"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedPlacerGUIButtonMessage(6, x, y, z));
+				AdvancedPlacerGUIButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
 		}));
 	}

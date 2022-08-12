@@ -94,7 +94,7 @@ public class PropertyTransferLogicCodeBlockUpdateTickProcedure {
 							return blockEntity.getTileData().getString(tag);
 						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof BooleanProperty _bp
+				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof BooleanProperty _getbp18
 						&& (world.getBlockState(new BlockPos(x + ((new Object() {
 							public Direction getDirection(BlockPos pos) {
 								BlockState _bs = world.getBlockState(pos);
@@ -128,7 +128,7 @@ public class PropertyTransferLogicCodeBlockUpdateTickProcedure {
 									return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
 								return Direction.NORTH;
 							}
-						}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_bp))), 3);
+						}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_getbp18))), 3);
 		}
 	}
 }

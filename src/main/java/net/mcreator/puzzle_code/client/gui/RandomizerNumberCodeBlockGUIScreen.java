@@ -42,7 +42,7 @@ public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 		this.imageHeight = 147;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/randomizer_number_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/randomizer_number_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -1,25 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
-    "345",
-    " 7 "
+    " S ",
+    "SRS",
+    " S "
   ],
   "key": {
-    "1": {
+    "S": {
       "item": "minecraft:sponge"
     },
-    "3": {
-      "item": "minecraft:sponge"
-    },
-    "4": {
+    "R": {
       "item": "minecraft:red_concrete"
-    },
-    "5": {
-      "item": "minecraft:sponge"
-    },
-    "7": {
-      "item": "minecraft:sponge"
     }
   },
   "result": {

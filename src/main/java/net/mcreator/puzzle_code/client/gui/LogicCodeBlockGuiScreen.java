@@ -39,7 +39,7 @@ public class LogicCodeBlockGuiScreen extends AbstractContainerScreen<LogicCodeBl
 		this.imageHeight = 47;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/logic_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/logic_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

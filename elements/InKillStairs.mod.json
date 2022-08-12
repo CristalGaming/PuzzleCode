@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "in_kill_stairs",
@@ -124,8 +124,20 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "KillBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "KillBlockUpdateTick"
+    },
     "onEntityCollides": {
       "name": "KillBlockEntityWalksOnTheBlock"
+    },
+    "onBlockPlayedBy": {
+      "name": "KillBlockBlockIsPlacedBy"
+    },
+    "onRedstoneOn": {
+      "name": "KillBlockRedstoneOn"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

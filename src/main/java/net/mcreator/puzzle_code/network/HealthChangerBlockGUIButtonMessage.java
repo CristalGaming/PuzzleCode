@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.EditRangeProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyRangeProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyHealthLevelProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
@@ -70,6 +71,10 @@ public class HealthChangerBlockGUIButtonMessage {
 		if (buttonID == 1) {
 
 			ApplyHealthLevelProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 2) {
+
+			EditRangeProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 

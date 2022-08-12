@@ -34,11 +34,11 @@ public class CreativeSettingsGUIScreen extends AbstractContainerScreen<CreativeS
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 265;
+		this.imageWidth = 269;
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/creative_settings_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/creative_settings_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -54,10 +54,6 @@ public class CreativeSettingsGUIScreen extends AbstractContainerScreen<CreativeS
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 238, this.topPos + 7, 0, 0, 16, 16, 16, 16);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -77,9 +73,8 @@ public class CreativeSettingsGUIScreen extends AbstractContainerScreen<CreativeS
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Creative Settings", 4, 7, -12829636);
 		if (BlocksAffectsYouTextCreativeItemProcedure.execute(world))
-			this.font.draw(poseStack, "ON", 130, 120, -12829636);
+			this.font.draw(poseStack, "ON", 128, 102, -12829636);
 	}
 
 	@Override
@@ -92,79 +87,79 @@ public class CreativeSettingsGUIScreen extends AbstractContainerScreen<CreativeS
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 115, 120, 20, new TextComponent("Blocks Affects You?"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 97, 120, 20, new TextComponent("Blocks Affects You?"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(0, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 93, 120, 20, new TextComponent("Place a fake block"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 75, 120, 20, new TextComponent("Place a fake block"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(1, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 135, this.topPos + 70, 121, 20, new TextComponent("Time Set Day"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 141, this.topPos + 52, 121, 20, new TextComponent("Time Set Day"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(2, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 171, this.topPos + 48, 86, 20, new TextComponent("Clean effects"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 177, this.topPos + 30, 86, 20, new TextComponent("Clean effects"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(3, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 48, 59, 20, new TextComponent("Reset HP"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 30, 63, 20, new TextComponent("Reset HP"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(4, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 63, this.topPos + 48, 108, 20, new TextComponent("Reset Hunger"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 74, this.topPos + 30, 99, 20, new TextComponent("Reset Hunger"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(5, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 70, 131, 20, new TextComponent("Time Set Night"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 52, 131, 20, new TextComponent("Time Set Night"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(6, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 25, 59, 20, new TextComponent("Creative"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 7, 59, 20, new TextComponent("Creative"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(7, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 63, this.topPos + 25, 58, 20, new TextComponent("Survival"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 69, this.topPos + 7, 63, 20, new TextComponent("Survival"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(8, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 121, this.topPos + 25, 63, 20, new TextComponent("Spectator"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 137, this.topPos + 7, 72, 20, new TextComponent("Spectator"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(9, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 184, this.topPos + 25, 72, 20, new TextComponent("Spawnpoint"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 191, this.topPos + 97, 72, 20, new TextComponent("Spawnpoint"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(10, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 4, this.topPos + 138, 117, 20, new TextComponent("Creative Items"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 138, 117, 20, new TextComponent("Creative Items"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(11, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 11, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 166, this.topPos + 138, 87, 20, new TextComponent("Game Rules"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 177, this.topPos + 138, 87, 20, new TextComponent("Game Rules"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUIButtonMessage(12, x, y, z));
 				CreativeSettingsGUIButtonMessage.handleButtonAction(entity, 12, x, y, z);

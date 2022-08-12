@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "title_text_code_block",
@@ -34,9 +34,7 @@
       }
     ],
     "name": "Title Text Code Block",
-    "specialInfo": [
-      "prototype"
-    ],
+    "specialInfo": [],
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,

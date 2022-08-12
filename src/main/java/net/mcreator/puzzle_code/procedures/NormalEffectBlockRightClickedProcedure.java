@@ -17,7 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.puzzle_code.world.inventory.EffectBlocksGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI1Menu;
 import net.mcreator.puzzle_code.init.PuzzleCodeModItems;
 
 import io.netty.buffer.Unpooled;
@@ -33,12 +33,12 @@ public class NormalEffectBlockRightClickedProcedure {
 					NetworkHooks.openGui((ServerPlayer) _ent, new MenuProvider() {
 						@Override
 						public Component getDisplayName() {
-							return new TextComponent("EffectBlocksGui");
+							return new TextComponent("EffectBlockGUI1");
 						}
 
 						@Override
 						public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-							return new EffectBlocksGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+							return new EffectBlockGUI1Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}

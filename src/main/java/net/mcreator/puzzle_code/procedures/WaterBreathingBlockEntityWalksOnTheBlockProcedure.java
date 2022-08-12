@@ -15,9 +15,23 @@ public class WaterBreathingBlockEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)
+		if (((entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)
 				&& world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) == true
-				|| !(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+				|| !(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) && new Object() {
+					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {

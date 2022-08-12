@@ -18,7 +18,7 @@ public class NightVisionEffectBlockEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) && new Object() {
+		if ((world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) && new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
@@ -38,7 +38,21 @@ public class NightVisionEffectBlockEntityWalksOnTheBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity))) {
+		}.checkGamemode(entity))) && new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "IsDisabled"))) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {

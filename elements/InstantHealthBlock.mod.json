@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "instant_health_effect_block",
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "Instant Health Effect Block",
+    "name": "Instant Health Block",
     "specialInfo": [],
     "hardness": 3.0,
     "resistance": 30.0,

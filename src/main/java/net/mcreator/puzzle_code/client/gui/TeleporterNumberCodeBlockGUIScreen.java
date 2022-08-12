@@ -43,7 +43,7 @@ public class TeleporterNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 		this.imageHeight = 146;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/teleporter_number_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/teleporter_number_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

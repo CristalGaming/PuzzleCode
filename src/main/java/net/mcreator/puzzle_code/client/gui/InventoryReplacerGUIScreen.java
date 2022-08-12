@@ -37,7 +37,7 @@ public class InventoryReplacerGUIScreen extends AbstractContainerScreen<Inventor
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/inventory_replacer_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/inventory_replacer_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -54,7 +54,7 @@ public class InventoryReplacerGUIScreen extends AbstractContainerScreen<Inventor
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_jump_logo.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
 		this.blit(ms, this.leftPos + 150, this.topPos + 64, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();

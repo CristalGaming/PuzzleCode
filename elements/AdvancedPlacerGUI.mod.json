@@ -1,10 +1,10 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 174,
-    "height": 119,
+    "height": 150,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -20,7 +20,7 @@
           },
           "name": "X pozition: <BNBT:integer:xPos>",
           "x": 133,
-          "y": 91
+          "y": 73
         }
       },
       {
@@ -33,7 +33,7 @@
           },
           "name": "Y Position: <BNBT:integer:yPos",
           "x": 133,
-          "y": 127
+          "y": 109
         }
       },
       {
@@ -46,7 +46,7 @@
           },
           "name": "Z Position: <BNBT:integer:zPos>",
           "x": 133,
-          "y": 163
+          "y": 145
         }
       },
       {
@@ -57,7 +57,7 @@
           "height": 20,
           "name": "xPosField",
           "x": 133,
-          "y": 69
+          "y": 51
         }
       },
       {
@@ -68,7 +68,7 @@
           "height": 20,
           "name": "yPosField",
           "x": 133,
-          "y": 105
+          "y": 87
         }
       },
       {
@@ -79,7 +79,7 @@
           "height": 20,
           "name": "zPosField",
           "x": 133,
-          "y": 141
+          "y": 123
         }
       },
       {
@@ -92,8 +92,8 @@
           "width": 45,
           "height": 20,
           "name": "Apply",
-          "x": 299,
-          "y": 69
+          "x": 295,
+          "y": 51
         }
       },
       {
@@ -106,8 +106,8 @@
           "width": 45,
           "height": 20,
           "name": "Apply",
-          "x": 299,
-          "y": 105
+          "x": 295,
+          "y": 87
         }
       },
       {
@@ -120,8 +120,8 @@
           "width": 45,
           "height": 20,
           "name": "Apply",
-          "x": 299,
-          "y": 141
+          "x": 295,
+          "y": 123
         }
       },
       {
@@ -135,7 +135,7 @@
           "height": 20,
           "name": "Edit",
           "x": 83,
-          "y": 69
+          "y": 51
         }
       },
       {
@@ -149,7 +149,7 @@
           "height": 20,
           "name": "Edit",
           "x": 83,
-          "y": 105
+          "y": 87
         }
       },
       {
@@ -163,7 +163,34 @@
           "height": 20,
           "name": "Edit",
           "x": 83,
-          "y": 141
+          "y": 123
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "AdvancedPlacerBlockPage2"
+          },
+          "width": 13,
+          "height": 20,
+          "name": "2",
+          "x": 151,
+          "y": 168
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[1]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[1]",
+          "x": 133,
+          "y": 172
         }
       }
     ],

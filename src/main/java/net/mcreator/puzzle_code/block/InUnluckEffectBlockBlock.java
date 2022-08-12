@@ -19,21 +19,28 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
+import net.mcreator.puzzle_code.procedures.UnluckEffectBlockUpdateTickProcedure;
+import net.mcreator.puzzle_code.procedures.UnluckEffectBlockRedstoneOnProcedure;
 import net.mcreator.puzzle_code.procedures.UnluckEffectBlockEntityWalksOnTheBlockProcedure;
-import net.mcreator.puzzle_code.procedures.InEffectBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.procedures.UnluckEffectBlockBlockIsPlacedByProcedure;
+import net.mcreator.puzzle_code.procedures.InUnluckEffectBlockOnBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockRedstoneOffProcedure;
 import net.mcreator.puzzle_code.init.PuzzleCodeModBlocks;
 import net.mcreator.puzzle_code.block.entity.InUnluckEffectBlockBlockEntity;
 
+import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -76,9 +83,42 @@ public class InUnluckEffectBlockBlock extends Block
 	}
 
 	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 1);
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		if (world.getBestNeighborSignal(pos) > 0) {
+			UnluckEffectBlockRedstoneOnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		} else {
+			EffectBlockRedstoneOffProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		}
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+
+		UnluckEffectBlockUpdateTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 1);
+	}
+
+	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
 		UnluckEffectBlockEntityWalksOnTheBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+	}
+
+	@Override
+	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
+		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
+		UnluckEffectBlockBlockIsPlacedByProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -91,7 +131,7 @@ public class InUnluckEffectBlockBlock extends Block
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		InteractionResult result = InEffectBlockRightClickedProcedure.execute(world, x, y, z, entity);
+		InteractionResult result = InUnluckEffectBlockOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return result;
 	}
 

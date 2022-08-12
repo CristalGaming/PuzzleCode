@@ -30,9 +30,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.puzzle_code.procedures.EffectBlockRedstoneOffProcedure;
 import net.mcreator.puzzle_code.procedures.AdvancedPlacerUpdateTickProcedure;
 import net.mcreator.puzzle_code.procedures.AdvancedPlacerRedstoneOnProcedure;
-import net.mcreator.puzzle_code.procedures.AdvancedPlacerRedstoneOffProcedure;
 import net.mcreator.puzzle_code.procedures.AdvancedPlacerOnBlockRightClickedProcedure;
 import net.mcreator.puzzle_code.procedures.AdvancedPlacerBlockIsPlacedByProcedure;
 import net.mcreator.puzzle_code.block.entity.AdvancedPlacerBlockBlockEntity;
@@ -93,7 +93,7 @@ public class AdvancedPlacerBlockBlock extends Block
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
@@ -102,7 +102,7 @@ public class AdvancedPlacerBlockBlock extends Block
 		if (world.getBestNeighborSignal(pos) > 0) {
 			AdvancedPlacerRedstoneOnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		} else {
-			AdvancedPlacerRedstoneOffProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+			EffectBlockRedstoneOffProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		}
 	}
 
@@ -114,7 +114,7 @@ public class AdvancedPlacerBlockBlock extends Block
 		int z = pos.getZ();
 
 		AdvancedPlacerUpdateTickProcedure.execute(world, x, y, z);
-		world.scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override

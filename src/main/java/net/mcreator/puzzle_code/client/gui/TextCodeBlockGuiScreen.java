@@ -41,7 +41,7 @@ public class TextCodeBlockGuiScreen extends AbstractContainerScreen<TextCodeBloc
 		this.imageHeight = 71;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/text_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/text_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

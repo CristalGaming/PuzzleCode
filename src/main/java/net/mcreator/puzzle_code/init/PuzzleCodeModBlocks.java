@@ -38,8 +38,10 @@ import net.mcreator.puzzle_code.block.WalkingDetectorBlock;
 import net.mcreator.puzzle_code.block.UnluckEffectStairsBlock;
 import net.mcreator.puzzle_code.block.UnluckEffectSlabBlock;
 import net.mcreator.puzzle_code.block.UnluckEffectBlockBlock;
+import net.mcreator.puzzle_code.block.UnequalTextCodeBlockBlock;
 import net.mcreator.puzzle_code.block.UnequalNumberCodeBlockBlock;
 import net.mcreator.puzzle_code.block.UnequalLogicCodeBlockBlock;
+import net.mcreator.puzzle_code.block.UnequalItemCodeBlockBlock;
 import net.mcreator.puzzle_code.block.TransferTextCodeBlockBlock;
 import net.mcreator.puzzle_code.block.TransferNumberCodeBlockBlock;
 import net.mcreator.puzzle_code.block.TransferLogicCodeBlockBlock;
@@ -60,6 +62,9 @@ import net.mcreator.puzzle_code.block.SurvivalNumberCodeBlockBlock;
 import net.mcreator.puzzle_code.block.SurvivalLogicCodeBlockBlock;
 import net.mcreator.puzzle_code.block.SurvivalItemCodeBlockBlock;
 import net.mcreator.puzzle_code.block.SubstractionNumberCodeBlockBlock;
+import net.mcreator.puzzle_code.block.StrengthEffectStairsBlock;
+import net.mcreator.puzzle_code.block.StrengthEffectSlabBlock;
+import net.mcreator.puzzle_code.block.StrengthEffectBlockBlock;
 import net.mcreator.puzzle_code.block.SpeedLingeringBlockBlock;
 import net.mcreator.puzzle_code.block.SpeedEffectStairsBlock;
 import net.mcreator.puzzle_code.block.SpeedEffectSlabBlock;
@@ -183,7 +188,11 @@ import net.mcreator.puzzle_code.block.InvisibilityEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InvisibilityEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InvisibilityEffectBlockBlock;
 import net.mcreator.puzzle_code.block.InventoryReplacerBlock;
+import net.mcreator.puzzle_code.block.InstantSaturationStairsBlock;
+import net.mcreator.puzzle_code.block.InstantSaturationSlabBlock;
 import net.mcreator.puzzle_code.block.InstantSaturationBlockBlock;
+import net.mcreator.puzzle_code.block.InstantHungerStairsBlock;
+import net.mcreator.puzzle_code.block.InstantHungerSlabBlock;
 import net.mcreator.puzzle_code.block.InstantHungerBlockBlock;
 import net.mcreator.puzzle_code.block.InstantHealthStairsBlock;
 import net.mcreator.puzzle_code.block.InstantHealthSlabBlock;
@@ -203,6 +212,9 @@ import net.mcreator.puzzle_code.block.InWaterBreathingEffectBlockBlock;
 import net.mcreator.puzzle_code.block.InUnluckEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InUnluckEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InUnluckEffectBlockBlock;
+import net.mcreator.puzzle_code.block.InStrengthEffectStairsBlock;
+import net.mcreator.puzzle_code.block.InStrengthEffectSlabBlock;
+import net.mcreator.puzzle_code.block.InStrengthEffectBlockBlock;
 import net.mcreator.puzzle_code.block.InSpeedEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InSpeedEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InSpeedEffectBlockBlock;
@@ -250,6 +262,12 @@ import net.mcreator.puzzle_code.block.InItemRemoverBlock;
 import net.mcreator.puzzle_code.block.InInvisibilityEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InInvisibilityEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InInvisibilityEffectBlockBlock;
+import net.mcreator.puzzle_code.block.InInstantSaturationStairsBlock;
+import net.mcreator.puzzle_code.block.InInstantSaturationSlabBlock;
+import net.mcreator.puzzle_code.block.InInstantSaturationBlockBlock;
+import net.mcreator.puzzle_code.block.InInstantHungerStairsBlock;
+import net.mcreator.puzzle_code.block.InInstantHungerSlabBlock;
+import net.mcreator.puzzle_code.block.InInstantHungerBlockBlock;
 import net.mcreator.puzzle_code.block.InInstantHealthStairsBlock;
 import net.mcreator.puzzle_code.block.InInstantHealthSlabBlock;
 import net.mcreator.puzzle_code.block.InInstantHealthBlockBlock;
@@ -265,11 +283,17 @@ import net.mcreator.puzzle_code.block.InGlowingEffectBlockBlock;
 import net.mcreator.puzzle_code.block.InFireResistanceEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InFireResistanceEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InFireResistanceEffectBlockBlock;
+import net.mcreator.puzzle_code.block.InFireKillerStairsBlock;
+import net.mcreator.puzzle_code.block.InFireKillerSlabBlock;
+import net.mcreator.puzzle_code.block.InFireKillerBlockBlock;
 import net.mcreator.puzzle_code.block.InEffectRemoverBlockBlock;
 import net.mcreator.puzzle_code.block.InDolphinsGraceEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InDolphinsGraceEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InDolphinsGraceEffectBlockBlock;
 import net.mcreator.puzzle_code.block.InDayTimeBlockBlock;
+import net.mcreator.puzzle_code.block.InCheckpointStairsBlock;
+import net.mcreator.puzzle_code.block.InCheckpointSlabBlock;
+import net.mcreator.puzzle_code.block.InCheckpointBlockBlock;
 import net.mcreator.puzzle_code.block.InBlindnessEffectStairsBlock;
 import net.mcreator.puzzle_code.block.InBlindnessEffectSlabBlock;
 import net.mcreator.puzzle_code.block.InBlindnessEffectBlockBlock;
@@ -293,6 +317,8 @@ import net.mcreator.puzzle_code.block.GlowingEffectBlockBlock;
 import net.mcreator.puzzle_code.block.FireResistanceEffectStairsBlock;
 import net.mcreator.puzzle_code.block.FireResistanceEffectSlabBlock;
 import net.mcreator.puzzle_code.block.FireResistanceEffectBlockBlock;
+import net.mcreator.puzzle_code.block.FireKillerStairsBlock;
+import net.mcreator.puzzle_code.block.FireKillerSlabBlock;
 import net.mcreator.puzzle_code.block.FireKillerBlockBlock;
 import net.mcreator.puzzle_code.block.FireDamageBlockBlock;
 import net.mcreator.puzzle_code.block.FillerTextCodeBlockBlock;
@@ -357,6 +383,9 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> CHECKPOINT_BLOCK = REGISTRY.register("checkpoint_block", () -> new CheckpointBlockBlock());
 	public static final RegistryObject<Block> CHECKPOINT_STAIRS = REGISTRY.register("checkpoint_stairs", () -> new CheckpointStairsBlock());
 	public static final RegistryObject<Block> CHECKPOINT_SLAB = REGISTRY.register("checkpoint_slab", () -> new CheckpointSlabBlock());
+	public static final RegistryObject<Block> IN_CHECKPOINT_BLOCK = REGISTRY.register("in_checkpoint_block", () -> new InCheckpointBlockBlock());
+	public static final RegistryObject<Block> IN_CHECKPOINT_STAIRS = REGISTRY.register("in_checkpoint_stairs", () -> new InCheckpointStairsBlock());
+	public static final RegistryObject<Block> IN_CHECKPOINT_SLAB = REGISTRY.register("in_checkpoint_slab", () -> new InCheckpointSlabBlock());
 	public static final RegistryObject<Block> JUMP_BOOST_EFFECT_BLOCK = REGISTRY.register("jump_boost_effect_block",
 			() -> new JumpBoostEffectBlockBlock());
 	public static final RegistryObject<Block> JUMP_BOOST_EFFECT_STAIRS = REGISTRY.register("jump_boost_effect_stairs",
@@ -376,6 +405,17 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> IN_SPEED_EFFECT_STAIRS = REGISTRY.register("in_speed_effect_stairs",
 			() -> new InSpeedEffectStairsBlock());
 	public static final RegistryObject<Block> IN_SPEED_EFFECT_SLAB = REGISTRY.register("in_speed_effect_slab", () -> new InSpeedEffectSlabBlock());
+	public static final RegistryObject<Block> SLOWNESS_EFFECT_BLOCK = REGISTRY.register("slowness_effect_block",
+			() -> new SlownessEffectBlockBlock());
+	public static final RegistryObject<Block> SLOWNESS_EFFECT_STAIRS = REGISTRY.register("slowness_effect_stairs",
+			() -> new SlownessEffectStairsBlock());
+	public static final RegistryObject<Block> SLOWNESS_EFFECT_SLAB = REGISTRY.register("slowness_effect_slab", () -> new SlownessEffectSlabBlock());
+	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_BLOCK = REGISTRY.register("in_slowness_effect_block",
+			() -> new InSlownessEffectBlockBlock());
+	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_STAIRS = REGISTRY.register("in_slowness_effect_stairs",
+			() -> new InSlownessEffectStairsBlock());
+	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_SLAB = REGISTRY.register("in_slowness_effect_slab",
+			() -> new InSlownessEffectSlabBlock());
 	public static final RegistryObject<Block> POISON_EFFECT_BLOCK = REGISTRY.register("poison_effect_block", () -> new PoisonEffectBlockBlock());
 	public static final RegistryObject<Block> POISON_EFFECT_STAIRS = REGISTRY.register("poison_effect_stairs", () -> new PoisonEffectStairsBlock());
 	public static final RegistryObject<Block> POISON_EFFECT_SLAB = REGISTRY.register("poison_effect_slab", () -> new PoisonEffectSlabBlock());
@@ -416,6 +456,17 @@ public class PuzzleCodeModBlocks {
 			() -> new InResistanceEffectStairsBlock());
 	public static final RegistryObject<Block> IN_RESISTANCE_EFFECT_SLAB = REGISTRY.register("in_resistance_effect_slab",
 			() -> new InResistanceEffectSlabBlock());
+	public static final RegistryObject<Block> STRENGTH_EFFECT_BLOCK = REGISTRY.register("strength_effect_block",
+			() -> new StrengthEffectBlockBlock());
+	public static final RegistryObject<Block> STRENGTH_EFFECT_STAIRS = REGISTRY.register("strength_effect_stairs",
+			() -> new StrengthEffectStairsBlock());
+	public static final RegistryObject<Block> STRENGTH_EFFECT_SLAB = REGISTRY.register("strength_effect_slab", () -> new StrengthEffectSlabBlock());
+	public static final RegistryObject<Block> IN_STRENGTH_EFFECT_BLOCK = REGISTRY.register("in_strength_effect_block",
+			() -> new InStrengthEffectBlockBlock());
+	public static final RegistryObject<Block> IN_STRENGTH_EFFECT_STAIRS = REGISTRY.register("in_strength_effect_stairs",
+			() -> new InStrengthEffectStairsBlock());
+	public static final RegistryObject<Block> IN_STRENGTH_EFFECT_SLAB = REGISTRY.register("in_strength_effect_slab",
+			() -> new InStrengthEffectSlabBlock());
 	public static final RegistryObject<Block> WEAKNESS_EFFECT_BLOCK = REGISTRY.register("weakness_effect_block",
 			() -> new WeaknessEffectBlockBlock());
 	public static final RegistryObject<Block> WEAKNESS_EFFECT_STAIRS = REGISTRY.register("weakness_effect_stairs",
@@ -427,6 +478,25 @@ public class PuzzleCodeModBlocks {
 			() -> new InWeaknessEffectStairsBlock());
 	public static final RegistryObject<Block> IN_WEAKNESS_EFFECT_SLAB = REGISTRY.register("in_weakness_effect_slab",
 			() -> new InWeaknessEffectSlabBlock());
+	public static final RegistryObject<Block> HASTE_EFFECT_BLOCK = REGISTRY.register("haste_effect_block", () -> new HasteEffectBlockBlock());
+	public static final RegistryObject<Block> HASTE_EFFECT_STAIRS = REGISTRY.register("haste_effect_stairs", () -> new HasteEffectStairsBlock());
+	public static final RegistryObject<Block> HASTE_EFFECT_SLAB = REGISTRY.register("haste_effect_slab", () -> new HasteEffectSlabBlock());
+	public static final RegistryObject<Block> IN_HASTE_EFFECT_BLOCK = REGISTRY.register("in_haste_effect_block", () -> new InHasteEffectBlockBlock());
+	public static final RegistryObject<Block> IN_HASTE_EFFECT_STAIRS = REGISTRY.register("in_haste_effect_stairs",
+			() -> new InHasteEffectStairsBlock());
+	public static final RegistryObject<Block> IN_HASTE_EFFECT_SLAB = REGISTRY.register("in_haste_effect_slab", () -> new InHasteEffectSlabBlock());
+	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_BLOCK = REGISTRY.register("mining_fatigue_effect_block",
+			() -> new MiningFatigueEffectBlockBlock());
+	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_STAIRS = REGISTRY.register("mining_fatigue_effect_stairs",
+			() -> new MiningFatigueEffectStairsBlock());
+	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_SLAB = REGISTRY.register("mining_fatigue_effect_slab",
+			() -> new MiningFatigueEffectSlabBlock());
+	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_BLOCK = REGISTRY.register("in_mining_fatigue_effect_block",
+			() -> new InMiningFatigueEffectBlockBlock());
+	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_STAIRS = REGISTRY.register("in_mining_fatigue_effect_stairs",
+			() -> new InMiningFatigueEffectStairsBlock());
+	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_SLAB = REGISTRY.register("in_mining_fatigue_effect_slab",
+			() -> new InMiningFatigueEffectSlabBlock());
 	public static final RegistryObject<Block> LEVITATION_EFFECT_BLOCK = REGISTRY.register("levitation_effect_block",
 			() -> new LevitationEffectBlockBlock());
 	public static final RegistryObject<Block> LEVITATION_EFFECT_STAIRS = REGISTRY.register("levitation_effect_stairs",
@@ -473,25 +543,6 @@ public class PuzzleCodeModBlocks {
 			() -> new InGlowingEffectStairsBlock());
 	public static final RegistryObject<Block> IN_GLOWING_EFFECT_SLAB = REGISTRY.register("in_glowing_effect_slab",
 			() -> new InGlowingEffectSlabBlock());
-	public static final RegistryObject<Block> HASTE_EFFECT_BLOCK = REGISTRY.register("haste_effect_block", () -> new HasteEffectBlockBlock());
-	public static final RegistryObject<Block> HASTE_EFFECT_STAIRS = REGISTRY.register("haste_effect_stairs", () -> new HasteEffectStairsBlock());
-	public static final RegistryObject<Block> HASTE_EFFECT_SLAB = REGISTRY.register("haste_effect_slab", () -> new HasteEffectSlabBlock());
-	public static final RegistryObject<Block> IN_HASTE_EFFECT_BLOCK = REGISTRY.register("in_haste_effect_block", () -> new InHasteEffectBlockBlock());
-	public static final RegistryObject<Block> IN_HASTE_EFFECT_STAIRS = REGISTRY.register("in_haste_effect_stairs",
-			() -> new InHasteEffectStairsBlock());
-	public static final RegistryObject<Block> IN_HASTE_EFFECT_SLAB = REGISTRY.register("in_haste_effect_slab", () -> new InHasteEffectSlabBlock());
-	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_BLOCK = REGISTRY.register("mining_fatigue_effect_block",
-			() -> new MiningFatigueEffectBlockBlock());
-	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_STAIRS = REGISTRY.register("mining_fatigue_effect_stairs",
-			() -> new MiningFatigueEffectStairsBlock());
-	public static final RegistryObject<Block> MINING_FATIGUE_EFFECT_SLAB = REGISTRY.register("mining_fatigue_effect_slab",
-			() -> new MiningFatigueEffectSlabBlock());
-	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_BLOCK = REGISTRY.register("in_mining_fatigue_effect_block",
-			() -> new InMiningFatigueEffectBlockBlock());
-	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_STAIRS = REGISTRY.register("in_mining_fatigue_effect_stairs",
-			() -> new InMiningFatigueEffectStairsBlock());
-	public static final RegistryObject<Block> IN_MINING_FATIGUE_EFFECT_SLAB = REGISTRY.register("in_mining_fatigue_effect_slab",
-			() -> new InMiningFatigueEffectSlabBlock());
 	public static final RegistryObject<Block> FIRE_RESISTANCE_EFFECT_BLOCK = REGISTRY.register("fire_resistance_effect_block",
 			() -> new FireResistanceEffectBlockBlock());
 	public static final RegistryObject<Block> FIRE_RESISTANCE_EFFECT_STAIRS = REGISTRY.register("fire_resistance_effect_stairs",
@@ -528,17 +579,6 @@ public class PuzzleCodeModBlocks {
 			() -> new InDolphinsGraceEffectStairsBlock());
 	public static final RegistryObject<Block> IN_DOLPHINS_GRACE_EFFECT_SLAB = REGISTRY.register("in_dolphins_grace_effect_slab",
 			() -> new InDolphinsGraceEffectSlabBlock());
-	public static final RegistryObject<Block> SLOWNESS_EFFECT_BLOCK = REGISTRY.register("slowness_effect_block",
-			() -> new SlownessEffectBlockBlock());
-	public static final RegistryObject<Block> SLOWNESS_EFFECT_STAIRS = REGISTRY.register("slowness_effect_stairs",
-			() -> new SlownessEffectStairsBlock());
-	public static final RegistryObject<Block> SLOWNESS_EFFECT_SLAB = REGISTRY.register("slowness_effect_slab", () -> new SlownessEffectSlabBlock());
-	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_BLOCK = REGISTRY.register("in_slowness_effect_block",
-			() -> new InSlownessEffectBlockBlock());
-	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_STAIRS = REGISTRY.register("in_slowness_effect_stairs",
-			() -> new InSlownessEffectStairsBlock());
-	public static final RegistryObject<Block> IN_SLOWNESS_EFFECT_SLAB = REGISTRY.register("in_slowness_effect_slab",
-			() -> new InSlownessEffectSlabBlock());
 	public static final RegistryObject<Block> BLINDNESS_EFFECT_BLOCK = REGISTRY.register("blindness_effect_block",
 			() -> new BlindnessEffectBlockBlock());
 	public static final RegistryObject<Block> BLINDNESS_EFFECT_STAIRS = REGISTRY.register("blindness_effect_stairs",
@@ -642,9 +682,13 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> IN_KILL_BLOCK = REGISTRY.register("in_kill_block", () -> new InKillBlockBlock());
 	public static final RegistryObject<Block> IN_KILL_STAIRS = REGISTRY.register("in_kill_stairs", () -> new InKillStairsBlock());
 	public static final RegistryObject<Block> IN_KILL_SLAB = REGISTRY.register("in_kill_slab", () -> new InKillSlabBlock());
-	public static final RegistryObject<Block> FIRE_KILLER_BLOCK = REGISTRY.register("fire_killer_block", () -> new FireKillerBlockBlock());
 	public static final RegistryObject<Block> FIRE_DAMAGE_BLOCK = REGISTRY.register("fire_damage_block", () -> new FireDamageBlockBlock());
-	public static final RegistryObject<Block> HEALTH_CHANGER_BLOCK = REGISTRY.register("health_changer_block", () -> new HealthChangerBlockBlock());
+	public static final RegistryObject<Block> FIRE_KILLER_BLOCK = REGISTRY.register("fire_killer_block", () -> new FireKillerBlockBlock());
+	public static final RegistryObject<Block> FIRE_KILLER_STAIRS = REGISTRY.register("fire_killer_stairs", () -> new FireKillerStairsBlock());
+	public static final RegistryObject<Block> FIRE_KILLER_SLAB = REGISTRY.register("fire_killer_slab", () -> new FireKillerSlabBlock());
+	public static final RegistryObject<Block> IN_FIRE_KILLER_BLOCK = REGISTRY.register("in_fire_killer_block", () -> new InFireKillerBlockBlock());
+	public static final RegistryObject<Block> IN_FIRE_KILLER_STAIRS = REGISTRY.register("in_fire_killer_stairs", () -> new InFireKillerStairsBlock());
+	public static final RegistryObject<Block> IN_FIRE_KILLER_SLAB = REGISTRY.register("in_fire_killer_slab", () -> new InFireKillerSlabBlock());
 	public static final RegistryObject<Block> HEALTH_REGENERATION_BLOCK = REGISTRY.register("health_regeneration_block",
 			() -> new HealthRegenerationBlockBlock());
 	public static final RegistryObject<Block> INSTANT_HEALTH_BLOCK = REGISTRY.register("instant_health_block", () -> new InstantHealthBlockBlock());
@@ -657,28 +701,48 @@ public class PuzzleCodeModBlocks {
 			() -> new InInstantHealthStairsBlock());
 	public static final RegistryObject<Block> IN_INSTANT_HEALTH_SLAB = REGISTRY.register("in_instant_health_slab",
 			() -> new InInstantHealthSlabBlock());
+	public static final RegistryObject<Block> HEALTH_CHANGER_BLOCK = REGISTRY.register("health_changer_block", () -> new HealthChangerBlockBlock());
 	public static final RegistryObject<Block> HUNGER_BLOCK = REGISTRY.register("hunger_block", () -> new HungerBlockBlock());
 	public static final RegistryObject<Block> INSTANT_HUNGER_BLOCK = REGISTRY.register("instant_hunger_block", () -> new InstantHungerBlockBlock());
+	public static final RegistryObject<Block> INSTANT_HUNGER_STAIRS = REGISTRY.register("instant_hunger_stairs",
+			() -> new InstantHungerStairsBlock());
+	public static final RegistryObject<Block> INSTANT_HUNGER_SLAB = REGISTRY.register("instant_hunger_slab", () -> new InstantHungerSlabBlock());
+	public static final RegistryObject<Block> IN_INSTANT_HUNGER_BLOCK = REGISTRY.register("in_instant_hunger_block",
+			() -> new InInstantHungerBlockBlock());
+	public static final RegistryObject<Block> IN_INSTANT_HUNGER_STAIRS = REGISTRY.register("in_instant_hunger_stairs",
+			() -> new InInstantHungerStairsBlock());
+	public static final RegistryObject<Block> IN_INSTANT_HUNGER_SLAB = REGISTRY.register("in_instant_hunger_slab",
+			() -> new InInstantHungerSlabBlock());
 	public static final RegistryObject<Block> SATURATION_BLOCK = REGISTRY.register("saturation_block", () -> new SaturationBlockBlock());
 	public static final RegistryObject<Block> INSTANT_SATURATION_BLOCK = REGISTRY.register("instant_saturation_block",
 			() -> new InstantSaturationBlockBlock());
+	public static final RegistryObject<Block> INSTANT_SATURATION_STAIRS = REGISTRY.register("instant_saturation_stairs",
+			() -> new InstantSaturationStairsBlock());
+	public static final RegistryObject<Block> INSTANT_SATURATION_SLAB = REGISTRY.register("instant_saturation_slab",
+			() -> new InstantSaturationSlabBlock());
+	public static final RegistryObject<Block> IN_INSTANT_SATURATION_BLOCK = REGISTRY.register("in_instant_saturation_block",
+			() -> new InInstantSaturationBlockBlock());
+	public static final RegistryObject<Block> IN_INSTANT_SATURATION_STAIRS = REGISTRY.register("in_instant_saturation_stairs",
+			() -> new InInstantSaturationStairsBlock());
+	public static final RegistryObject<Block> IN_INSTANT_SATURATION_SLAB = REGISTRY.register("in_instant_saturation_slab",
+			() -> new InInstantSaturationSlabBlock());
 	public static final RegistryObject<Block> ADVENCED_TIME_BLOCK = REGISTRY.register("advenced_time_block", () -> new AdvencedTimeBlockBlock());
 	public static final RegistryObject<Block> DAY_TIME_BLOCK = REGISTRY.register("day_time_block", () -> new DayTimeBlockBlock());
 	public static final RegistryObject<Block> IN_DAY_TIME_BLOCK = REGISTRY.register("in_day_time_block", () -> new InDayTimeBlockBlock());
 	public static final RegistryObject<Block> NIGHT_TIME_BLOCK = REGISTRY.register("night_time_block", () -> new NightTimeBlockBlock());
 	public static final RegistryObject<Block> IN_NIGHT_TIME_BLOCK = REGISTRY.register("in_night_time_block", () -> new InNightTimeBlockBlock());
-	public static final RegistryObject<Block> BLUE_SWITCHING_BLOCK = REGISTRY.register("blue_switching_block", () -> new BlueSwitchingBlockBlock());
-	public static final RegistryObject<Block> BLUE_SWITCING_SLAB = REGISTRY.register("blue_switcing_slab", () -> new BlueSwitcingSlabBlock());
-	public static final RegistryObject<Block> BLUE_SWITCHING_SLAB_OFF = REGISTRY.register("blue_switching_slab_off",
-			() -> new BlueSwitchingSlabOffBlock());
 	public static final RegistryObject<Block> RED_SWITCHING_BLOCK = REGISTRY.register("red_switching_block", () -> new RedSwitchingBlockBlock());
 	public static final RegistryObject<Block> RED_SWITCHING_SLAB = REGISTRY.register("red_switching_slab", () -> new RedSwitchingSlabBlock());
 	public static final RegistryObject<Block> RED_SWITCHING_SLAB_OFF = REGISTRY.register("red_switching_slab_off",
 			() -> new RedSwitchingSlabOffBlock());
-	public static final RegistryObject<Block> BLUE_KILL_SWITCHING_BLOCK = REGISTRY.register("blue_kill_switching_block",
-			() -> new BlueKillSwitchingBlockBlock());
 	public static final RegistryObject<Block> RED_KILL_SWITCHING_BLOCK = REGISTRY.register("red_kill_switching_block",
 			() -> new RedKillSwitchingBlockBlock());
+	public static final RegistryObject<Block> BLUE_SWITCHING_BLOCK = REGISTRY.register("blue_switching_block", () -> new BlueSwitchingBlockBlock());
+	public static final RegistryObject<Block> BLUE_SWITCING_SLAB = REGISTRY.register("blue_switcing_slab", () -> new BlueSwitcingSlabBlock());
+	public static final RegistryObject<Block> BLUE_SWITCHING_SLAB_OFF = REGISTRY.register("blue_switching_slab_off",
+			() -> new BlueSwitchingSlabOffBlock());
+	public static final RegistryObject<Block> BLUE_KILL_SWITCHING_BLOCK = REGISTRY.register("blue_kill_switching_block",
+			() -> new BlueKillSwitchingBlockBlock());
 	public static final RegistryObject<Block> SWITCHING_BLOCK_RED = REGISTRY.register("switching_block_red", () -> new SwitchingBlockRedBlock());
 	public static final RegistryObject<Block> LOCKED_RED_SWITCHER_BLOCK = REGISTRY.register("locked_red_switcher_block",
 			() -> new LockedRedSwitcherBlockBlock());
@@ -843,6 +907,8 @@ public class PuzzleCodeModBlocks {
 			() -> new RightTransferTextCodeBlockBlock());
 	public static final RegistryObject<Block> MERGE_TEXT_CODE_BLOCK = REGISTRY.register("merge_text_code_block", () -> new MergeTextCodeBlockBlock());
 	public static final RegistryObject<Block> EQUAL_TEXT_CODE_BLOCK = REGISTRY.register("equal_text_code_block", () -> new EqualTextCodeBlockBlock());
+	public static final RegistryObject<Block> UNEQUAL_TEXT_CODE_BLOCK = REGISTRY.register("unequal_text_code_block",
+			() -> new UnequalTextCodeBlockBlock());
 	public static final RegistryObject<Block> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = REGISTRY.register("nbt_to_property_text_code_block",
 			() -> new NBTToPropertyTextCodeBlockBlock());
 	public static final RegistryObject<Block> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = REGISTRY.register("property_to_nbt_text_code_block",
@@ -861,13 +927,15 @@ public class PuzzleCodeModBlocks {
 	public static final RegistryObject<Block> SURVIVAL_ITEM_CODE_BLOCK = REGISTRY.register("survival_item_code_block",
 			() -> new SurvivalItemCodeBlockBlock());
 	public static final RegistryObject<Block> CHAIN_ITEM_CODE_BLOCK = REGISTRY.register("chain_item_code_block", () -> new ChainItemCodeBlockBlock());
-	public static final RegistryObject<Block> EQUAL_ITEM_CODE_BLOCK = REGISTRY.register("equal_item_code_block", () -> new EqualItemCodeBlockBlock());
 	public static final RegistryObject<Block> TRANSFER_ITEM_CODE_BLOCK = REGISTRY.register("transfer_item_code_block",
 			() -> new TransferItemCodeBlockBlock());
 	public static final RegistryObject<Block> LEFT_TRANSFER_ITEM_CODE_BLOCK = REGISTRY.register("left_transfer_item_code_block",
 			() -> new LeftTransferItemCodeBlockBlock());
 	public static final RegistryObject<Block> RIGHT_TRANSFER_ITEM_CODE_BLOCK = REGISTRY.register("right_transfer_item_code_block",
 			() -> new RightTransferItemCodeBlockBlock());
+	public static final RegistryObject<Block> EQUAL_ITEM_CODE_BLOCK = REGISTRY.register("equal_item_code_block", () -> new EqualItemCodeBlockBlock());
+	public static final RegistryObject<Block> UNEQUAL_ITEM_CODE_BLOCK = REGISTRY.register("unequal_item_code_block",
+			() -> new UnequalItemCodeBlockBlock());
 	public static final RegistryObject<Block> IMITATOR_ITEM_CODE_BLOCK = REGISTRY.register("imitator_item_code_block",
 			() -> new ImitatorItemCodeBlockBlock());
 	public static final RegistryObject<Block> TELEPORTER_ITEM_CODE_BLOCK = REGISTRY.register("teleporter_item_code_block",
@@ -913,12 +981,18 @@ public class PuzzleCodeModBlocks {
 	public static class ClientSideHandler {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {
+			InCheckpointBlockBlock.registerRenderLayer();
+			InCheckpointStairsBlock.registerRenderLayer();
+			InCheckpointSlabBlock.registerRenderLayer();
 			InJumpBoostEffectBlockBlock.registerRenderLayer();
 			InJumpBoostEffectStairsBlock.registerRenderLayer();
 			InJumpBoostEffectSlabBlock.registerRenderLayer();
 			InSpeedEffectBlockBlock.registerRenderLayer();
 			InSpeedEffectStairsBlock.registerRenderLayer();
 			InSpeedEffectSlabBlock.registerRenderLayer();
+			InSlownessEffectBlockBlock.registerRenderLayer();
+			InSlownessEffectStairsBlock.registerRenderLayer();
+			InSlownessEffectSlabBlock.registerRenderLayer();
 			InPoisonEffectBlockBlock.registerRenderLayer();
 			InPoisonEffectStairsBlock.registerRenderLayer();
 			InPoisonEffectSlabBlock.registerRenderLayer();
@@ -931,9 +1005,18 @@ public class PuzzleCodeModBlocks {
 			InResistanceEffectBlockBlock.registerRenderLayer();
 			InResistanceEffectStairsBlock.registerRenderLayer();
 			InResistanceEffectSlabBlock.registerRenderLayer();
+			InStrengthEffectBlockBlock.registerRenderLayer();
+			InStrengthEffectStairsBlock.registerRenderLayer();
+			InStrengthEffectSlabBlock.registerRenderLayer();
 			InWeaknessEffectBlockBlock.registerRenderLayer();
 			InWeaknessEffectStairsBlock.registerRenderLayer();
 			InWeaknessEffectSlabBlock.registerRenderLayer();
+			InHasteEffectBlockBlock.registerRenderLayer();
+			InHasteEffectStairsBlock.registerRenderLayer();
+			InHasteEffectSlabBlock.registerRenderLayer();
+			InMiningFatigueEffectBlockBlock.registerRenderLayer();
+			InMiningFatigueEffectStairsBlock.registerRenderLayer();
+			InMiningFatigueEffectSlabBlock.registerRenderLayer();
 			InLevitationEffectBlockBlock.registerRenderLayer();
 			InLevitationEffectStairsBlock.registerRenderLayer();
 			InLevitationEffectSlabBlock.registerRenderLayer();
@@ -946,12 +1029,6 @@ public class PuzzleCodeModBlocks {
 			InGlowingEffectBlockBlock.registerRenderLayer();
 			InGlowingEffectStairsBlock.registerRenderLayer();
 			InGlowingEffectSlabBlock.registerRenderLayer();
-			InHasteEffectBlockBlock.registerRenderLayer();
-			InHasteEffectStairsBlock.registerRenderLayer();
-			InHasteEffectSlabBlock.registerRenderLayer();
-			InMiningFatigueEffectBlockBlock.registerRenderLayer();
-			InMiningFatigueEffectStairsBlock.registerRenderLayer();
-			InMiningFatigueEffectSlabBlock.registerRenderLayer();
 			InFireResistanceEffectBlockBlock.registerRenderLayer();
 			InFireResistanceEffectStairsBlock.registerRenderLayer();
 			InFireResistanceEffectSlabBlock.registerRenderLayer();
@@ -961,9 +1038,6 @@ public class PuzzleCodeModBlocks {
 			InDolphinsGraceEffectBlockBlock.registerRenderLayer();
 			InDolphinsGraceEffectStairsBlock.registerRenderLayer();
 			InDolphinsGraceEffectSlabBlock.registerRenderLayer();
-			InSlownessEffectBlockBlock.registerRenderLayer();
-			InSlownessEffectStairsBlock.registerRenderLayer();
-			InSlownessEffectSlabBlock.registerRenderLayer();
 			InBlindnessEffectBlockBlock.registerRenderLayer();
 			InBlindnessEffectStairsBlock.registerRenderLayer();
 			InBlindnessEffectSlabBlock.registerRenderLayer();
@@ -994,14 +1068,23 @@ public class PuzzleCodeModBlocks {
 			InKillBlockBlock.registerRenderLayer();
 			InKillStairsBlock.registerRenderLayer();
 			InKillSlabBlock.registerRenderLayer();
-			HealthChangerBlockBlock.registerRenderLayer();
+			InFireKillerBlockBlock.registerRenderLayer();
+			InFireKillerStairsBlock.registerRenderLayer();
+			InFireKillerSlabBlock.registerRenderLayer();
 			InInstantHealthBlockBlock.registerRenderLayer();
 			InInstantHealthStairsBlock.registerRenderLayer();
 			InInstantHealthSlabBlock.registerRenderLayer();
+			HealthChangerBlockBlock.registerRenderLayer();
+			InInstantHungerBlockBlock.registerRenderLayer();
+			InInstantHungerStairsBlock.registerRenderLayer();
+			InInstantHungerSlabBlock.registerRenderLayer();
+			InInstantSaturationBlockBlock.registerRenderLayer();
+			InInstantSaturationStairsBlock.registerRenderLayer();
+			InInstantSaturationSlabBlock.registerRenderLayer();
 			InDayTimeBlockBlock.registerRenderLayer();
 			InNightTimeBlockBlock.registerRenderLayer();
-			BlueSwitchingSlabOffBlock.registerRenderLayer();
 			RedSwitchingSlabOffBlock.registerRenderLayer();
+			BlueSwitchingSlabOffBlock.registerRenderLayer();
 			YellowSwitchingSlabOffBlock.registerRenderLayer();
 			LadderBlockBlock.registerRenderLayer();
 			FakeBlockBlock.registerRenderLayer();

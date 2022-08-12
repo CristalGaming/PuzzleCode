@@ -18,7 +18,7 @@ public class SpeedBlockEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(new Object() {
+		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
@@ -28,7 +28,7 @@ public class SpeedBlockEntityWalksOnTheBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) || new Object() {
+		}.checkGamemode(entity) && world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) == true || !(new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
@@ -38,9 +38,21 @@ public class SpeedBlockEntityWalksOnTheBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity) && world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) == true) {
-			if (entity instanceof LivingEntity _entity)
-				_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+		}.checkGamemode(entity))) && new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {

@@ -18,7 +18,7 @@ public class WeaknessEffectBlockEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (new Object() {
+		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
@@ -38,7 +38,21 @@ public class WeaknessEffectBlockEntityWalksOnTheBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity))) {
+		}.checkGamemode(entity))) && new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
@@ -47,14 +61,28 @@ public class WeaknessEffectBlockEntityWalksOnTheBlockProcedure {
 							return blockEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "powerEffect")), (int) (new Object() {
+				}.getValue(world, new BlockPos(x, y, z), "durationEffect")), (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
 							return blockEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "durationEffect")), (false), (false)));
+				}.getValue(world, new BlockPos(x, y, z), "powerEffect")), (new Object() {
+					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "ambient")), (new Object() {
+					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "particles"))));
 		}
 	}
 }

@@ -1,12 +1,12 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
-    "texture": "empty_number_code_block",
-    "textureTop": "number_to_redstone_converter_code_block",
-    "textureLeft": "empty_number_redstone_code_block",
+    "texture": "number_to_redstone_code_block_bottom",
+    "textureTop": "number_to_redstone_code_block",
+    "textureLeft": "number_to_redstone_code_block_right",
     "textureFront": "empty_redstone_code_block",
-    "textureRight": "empty_redstone_number_code_block",
+    "textureRight": "number_to_redstone_code_block_left",
     "textureBack": "empty_number_code_block",
     "renderType": 10,
     "customModelName": "Normal",

@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -142,16 +142,6 @@
           "name": "Back",
           "x": 249,
           "y": 175
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "puzzle_code_logo.png",
-          "use1Xscale": false,
-          "name": "puzzle_code_logo.png",
-          "x": 276,
-          "y": 44
         }
       }
     ],

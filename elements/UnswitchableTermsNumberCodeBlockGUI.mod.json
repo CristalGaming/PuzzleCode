@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -68,13 +68,13 @@
       {
         "type": "button",
         "data": {
-          "text": "Disable All",
+          "text": "Switch",
           "onClick": {
             "name": "SwitchIsDisabled"
           },
           "width": 162,
           "height": 20,
-          "name": "Disable All",
+          "name": "Switch",
           "x": 132,
           "y": 139
         }

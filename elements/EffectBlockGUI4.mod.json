@@ -1,0 +1,226 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 170,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "EffectBlockGUIPage1"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 179
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "EffectBlockGUIPage2"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "2",
+          "x": 150,
+          "y": 179
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "EffectBlockGUIPage3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 168,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[4]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[4]",
+          "x": 186,
+          "y": 184
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "React when is clicked?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "React when is clicked?",
+          "x": 132,
+          "y": 40
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetClickingReactTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetClickingReactFalse"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:clickingReact>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:clickingReact>",
+          "x": 132,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "is disabled: <BNBT:logic:isDisabled>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "is disabled: <BNBT:logic:isDisabled>",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Switch",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "width": 162,
+          "height": 20,
+          "name": "Switch",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "React when is walked",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "React when is walked",
+          "x": 132,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetWalkingReactTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetWalkingReactFalse"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:walkingReact>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:walkingReact>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "5",
+          "onClick": {
+            "name": "EffectBlockGUIPage5"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "5",
+          "x": 204,
+          "y": 179
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

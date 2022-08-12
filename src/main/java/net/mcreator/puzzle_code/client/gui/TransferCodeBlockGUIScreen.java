@@ -42,7 +42,7 @@ public class TransferCodeBlockGUIScreen extends AbstractContainerScreen<Transfer
 		this.imageHeight = 128;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/transfer_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/transfer_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -61,7 +61,7 @@ public class TransferCodeBlockGUIScreen extends AbstractContainerScreen<Transfer
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_jump_logo.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
 		this.blit(ms, this.leftPos + 149, this.topPos + 15, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();

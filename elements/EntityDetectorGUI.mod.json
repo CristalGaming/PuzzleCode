@@ -1,0 +1,74 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 76,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "range",
+          "width": 162,
+          "height": 20,
+          "name": "rangeField",
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 213,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Range: <BNBT:integer:range>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Range: <BNBT:integer:range>",
+          "x": 132,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

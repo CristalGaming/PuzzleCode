@@ -22,7 +22,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.puzzle_code.world.inventory.InEffectBlocksGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI1Menu;
 import net.mcreator.puzzle_code.init.PuzzleCodeModBlockEntities;
 
 import javax.annotation.Nullable;
@@ -90,7 +90,7 @@ public class InResistanceEffectSlabBlockEntity extends RandomizableContainerBloc
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new InEffectBlocksGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new InEffectBlockGUI1Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

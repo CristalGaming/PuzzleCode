@@ -51,7 +51,7 @@ public class PropertyTransferNumberCodeBlockUpdateTickProcedure {
 						return blockEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof IntegerProperty _ip
+			}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof IntegerProperty _getip18
 					? (world.getBlockState(new BlockPos(((new Object() {
 						public Direction getDirection(BlockPos pos) {
 							BlockState _bs = world.getBlockState(pos);
@@ -85,7 +85,7 @@ public class PropertyTransferNumberCodeBlockUpdateTickProcedure {
 								return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
 							return Direction.NORTH;
 						}
-					}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ() + z))).getValue(_ip)
+					}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ() + z))).getValue(_getip18)
 					: -1;
 			BlockPos _pos = new BlockPos((new Object() {
 				public Direction getDirection(BlockPos pos) {

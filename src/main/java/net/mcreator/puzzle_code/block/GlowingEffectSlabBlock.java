@@ -1,6 +1,8 @@
 
 package net.mcreator.puzzle_code.block;
 
+import net.minecraftforge.network.NetworkHooks;
+
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -18,21 +20,35 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.puzzle_code.procedures.NormalEffectBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI1Menu;
+import net.mcreator.puzzle_code.procedures.GlowingEffectBlockUpdateTickProcedure;
 import net.mcreator.puzzle_code.procedures.GlowingEffectBlockRedstoneOnProcedure;
+import net.mcreator.puzzle_code.procedures.GlowingEffectBlockOnBlockRightClickedProcedure;
 import net.mcreator.puzzle_code.procedures.GlowingEffectBlockEntityWalksOnTheBlockProcedure;
+import net.mcreator.puzzle_code.procedures.GlowingEffectBlockBlockIsPlacedByProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockRedstoneOffProcedure;
 import net.mcreator.puzzle_code.block.entity.GlowingEffectSlabBlockEntity;
 
+import java.util.Random;
 import java.util.List;
 import java.util.Collections;
+
+import io.netty.buffer.Unpooled;
 
 public class GlowingEffectSlabBlock extends SlabBlock
 		implements
@@ -63,11 +79,30 @@ public class GlowingEffectSlabBlock extends SlabBlock
 	}
 
 	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 1);
+	}
+
+	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		if (world.getBestNeighborSignal(pos) > 0) {
 			GlowingEffectBlockRedstoneOnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		} else {
+			EffectBlockRedstoneOffProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		}
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+
+		GlowingEffectBlockUpdateTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
@@ -77,8 +112,27 @@ public class GlowingEffectSlabBlock extends SlabBlock
 	}
 
 	@Override
+	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
+		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
+		GlowingEffectBlockBlockIsPlacedByProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
+		if (entity instanceof ServerPlayer player) {
+			NetworkHooks.openGui(player, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return new TextComponent("Glowing Effect Slab");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new EffectBlockGUI1Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+				}
+			}, pos);
+		}
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
@@ -86,8 +140,8 @@ public class GlowingEffectSlabBlock extends SlabBlock
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		InteractionResult result = NormalEffectBlockRightClickedProcedure.execute(world, x, y, z, entity);
-		return result;
+		InteractionResult result = GlowingEffectBlockOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

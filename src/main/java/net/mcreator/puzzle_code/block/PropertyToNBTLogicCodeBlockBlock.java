@@ -57,7 +57,7 @@ public class PropertyToNBTLogicCodeBlockBlock extends Block
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77(disabled for tehnical issues)"));
+		list.add(new TextComponent("\u00A77disabled for tehnical problems"));
 	}
 
 	@Override
@@ -111,7 +111,7 @@ public class PropertyToNBTLogicCodeBlockBlock extends Block
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		PropertyToNBTLogicCodeBlockUpdateTickProcedure.execute();
+		PropertyToNBTLogicCodeBlockUpdateTickProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 1);
 	}
 

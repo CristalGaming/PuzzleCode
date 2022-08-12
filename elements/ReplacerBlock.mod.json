@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "replacer_bottom",
@@ -107,9 +107,9 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "EffectBlocksGui",
+    "guiBoundTo": "ReplacerGUI",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,

@@ -43,14 +43,19 @@ import net.mcreator.puzzle_code.client.gui.InventoryReplacerGUIScreen;
 import net.mcreator.puzzle_code.client.gui.InventoryReplacerGUI4Screen;
 import net.mcreator.puzzle_code.client.gui.InventoryReplacerGUI3Screen;
 import net.mcreator.puzzle_code.client.gui.InventoryReplacerGUI2Screen;
-import net.mcreator.puzzle_code.client.gui.InEffectBlocksGuiScreen;
-import net.mcreator.puzzle_code.client.gui.InEffectBlocksGui2Screen;
+import net.mcreator.puzzle_code.client.gui.InEffectBlockGUI5Screen;
+import net.mcreator.puzzle_code.client.gui.InEffectBlockGUI4Screen;
+import net.mcreator.puzzle_code.client.gui.InEffectBlockGUI3Screen;
+import net.mcreator.puzzle_code.client.gui.InEffectBlockGUI2Screen;
+import net.mcreator.puzzle_code.client.gui.InEffectBlockGUI1Screen;
 import net.mcreator.puzzle_code.client.gui.ImitatorTextCodeBlockGUIScreen;
 import net.mcreator.puzzle_code.client.gui.ImitatorNumberCodeBlockGUIScreen;
 import net.mcreator.puzzle_code.client.gui.ImitatorLogicCodeBlockGUIScreen;
 import net.mcreator.puzzle_code.client.gui.ImitatorItemCodeBlockGUIScreen;
 import net.mcreator.puzzle_code.client.gui.ImitatorItemCodeBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.HealthChangerBlockGUIScreen;
+import net.mcreator.puzzle_code.client.gui.HealthBlockGUIScreen;
+import net.mcreator.puzzle_code.client.gui.HealthBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.FillerItemCodeBlockGUI3Screen;
 import net.mcreator.puzzle_code.client.gui.FillerItemCodeBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.FillerItemCodeBlockGUI1Screen;
@@ -59,15 +64,25 @@ import net.mcreator.puzzle_code.client.gui.FillerGui1Screen;
 import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI3Screen;
 import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.FillerCodeBlockGUI1Screen;
-import net.mcreator.puzzle_code.client.gui.EffectBlocksGuiScreen;
-import net.mcreator.puzzle_code.client.gui.EffectBlocksGui2Screen;
+import net.mcreator.puzzle_code.client.gui.EntityDetectorGUIScreen;
+import net.mcreator.puzzle_code.client.gui.EffectBlockGUI5Screen;
+import net.mcreator.puzzle_code.client.gui.EffectBlockGUI4Screen;
+import net.mcreator.puzzle_code.client.gui.EffectBlockGUI3Screen;
+import net.mcreator.puzzle_code.client.gui.EffectBlockGUI2Screen;
+import net.mcreator.puzzle_code.client.gui.EffectBlockGUI1Screen;
 import net.mcreator.puzzle_code.client.gui.CreativeSettingsGUIScreen;
 import net.mcreator.puzzle_code.client.gui.CreativeSettingsGUIGamerulesScreen;
 import net.mcreator.puzzle_code.client.gui.CreativeSettingsGUICreativeItemsScreen;
 import net.mcreator.puzzle_code.client.gui.CommandCodeBlockGUIScreen;
+import net.mcreator.puzzle_code.client.gui.CommandCodeBlockGUI2Screen;
+import net.mcreator.puzzle_code.client.gui.CheckpointBlockGUI2Screen;
+import net.mcreator.puzzle_code.client.gui.CheckpointBlockGUI1Screen;
 import net.mcreator.puzzle_code.client.gui.AdvencedTimeBlockGuiScreen;
 import net.mcreator.puzzle_code.client.gui.AdvancedTeleporterBlockGuiScreen;
+import net.mcreator.puzzle_code.client.gui.AdvancedTeleporterBlockGUI3Screen;
+import net.mcreator.puzzle_code.client.gui.AdvancedTeleporterBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.AdvancedPlacerGUIScreen;
+import net.mcreator.puzzle_code.client.gui.AdvancedPlacerBlockGUI2Screen;
 import net.mcreator.puzzle_code.client.gui.ABlockIsBrokenGlobalBlockGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -76,12 +91,9 @@ public class PuzzleCodeModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(PuzzleCodeModMenus.CREATIVE_SETTINGS_GUI, CreativeSettingsGUIScreen::new);
-			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCKS_GUI, EffectBlocksGuiScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.ADVANCED_TELEPORTER_BLOCK_GUI, AdvancedTeleporterBlockGuiScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.ADVENCED_TIME_BLOCK_GUI, AdvencedTimeBlockGuiScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.ADVANCED_PLACER_GUI, AdvancedPlacerGUIScreen::new);
-			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCKS_GUI_2, EffectBlocksGui2Screen::new);
-			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCKS_GUI, InEffectBlocksGuiScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.YELLOW_SWICHER_BLOCK_GUI, YellowSwicherBlockGUIScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.WALKING_BLOCK_GUI, WalkingBlockGUIScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.HEALTH_CHANGER_BLOCK_GUI, HealthChangerBlockGUIScreen::new);
@@ -105,7 +117,6 @@ public class PuzzleCodeModScreens {
 			MenuScreens.register(PuzzleCodeModMenus.INVENTORY_REPLACER_GUI_2, InventoryReplacerGUI2Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.INVENTORY_REPLACER_GUI_3, InventoryReplacerGUI3Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.INVENTORY_REPLACER_GUI_4, InventoryReplacerGUI4Screen::new);
-			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCKS_GUI_2, InEffectBlocksGui2Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.IMITATOR_ITEM_CODE_BLOCK_GUI, ImitatorItemCodeBlockGUIScreen::new);
 			MenuScreens.register(PuzzleCodeModMenus.IMITATOR_ITEM_CODE_BLOCK_GUI_2, ImitatorItemCodeBlockGUI2Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.SWITCHABLE_TERMS_NUMBER_CODE_BLOCK_GUI, SwitchableTermsNumberCodeBlockGUIScreen::new);
@@ -133,6 +144,25 @@ public class PuzzleCodeModScreens {
 			MenuScreens.register(PuzzleCodeModMenus.FILLER_ITEM_CODE_BLOCK_GUI_1, FillerItemCodeBlockGUI1Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.FILLER_ITEM_CODE_BLOCK_GUI_2, FillerItemCodeBlockGUI2Screen::new);
 			MenuScreens.register(PuzzleCodeModMenus.FILLER_ITEM_CODE_BLOCK_GUI_3, FillerItemCodeBlockGUI3Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCK_GUI_3, EffectBlockGUI3Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCK_GUI_4, EffectBlockGUI4Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCK_GUI_1, EffectBlockGUI1Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCK_GUI_2, EffectBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.EFFECT_BLOCK_GUI_5, EffectBlockGUI5Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCK_GUI_1, InEffectBlockGUI1Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCK_GUI_3, InEffectBlockGUI3Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCK_GUI_4, InEffectBlockGUI4Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCK_GUI_5, InEffectBlockGUI5Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.ENTITY_DETECTOR_GUI, EntityDetectorGUIScreen::new);
+			MenuScreens.register(PuzzleCodeModMenus.CHECKPOINT_BLOCK_GUI_1, CheckpointBlockGUI1Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.CHECKPOINT_BLOCK_GUI_2, CheckpointBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.COMMAND_CODE_BLOCK_GUI_2, CommandCodeBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.HEALTH_BLOCK_GUI, HealthBlockGUIScreen::new);
+			MenuScreens.register(PuzzleCodeModMenus.HEALTH_BLOCK_GUI_2, HealthBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.ADVANCED_TELEPORTER_BLOCK_GUI_2, AdvancedTeleporterBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.ADVANCED_TELEPORTER_BLOCK_GUI_3, AdvancedTeleporterBlockGUI3Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.ADVANCED_PLACER_BLOCK_GUI_2, AdvancedPlacerBlockGUI2Screen::new);
+			MenuScreens.register(PuzzleCodeModMenus.IN_EFFECT_BLOCK_GUI_2, InEffectBlockGUI2Screen::new);
 		});
 	}
 }

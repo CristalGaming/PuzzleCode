@@ -1,0 +1,173 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 125,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "EffectBlockGUIPage1"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 153
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[2]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[2]",
+          "x": 150,
+          "y": 158
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "tick ambient: <BNBT:logic:ambient>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "tick ambient: <BNBT:logic:ambient>",
+          "x": 132,
+          "y": 90
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetAmbientTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 68
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetAmbientFalse"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 68
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetParticlesTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 108
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetParticlesFalse"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 108
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "particles: <BNBT:logic:particles>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "particles: <BNBT:logic:particles>",
+          "x": 132,
+          "y": 131
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "EffectBlockGUIPage3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 168,
+          "y": 153
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "4",
+          "onClick": {
+            "name": "EffectBlockGUIPage4"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "4",
+          "x": 186,
+          "y": 153
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "5",
+          "onClick": {
+            "name": "EffectBlockGUIPage5"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "5",
+          "x": 204,
+          "y": 153
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 8,
+      "snapOnGrid": true
+    }
+  }
+}

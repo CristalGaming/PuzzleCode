@@ -42,7 +42,7 @@ public class TitleTextCodeBlockGUIScreen extends AbstractContainerScreen<TitleTe
 		this.imageHeight = 126;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/title_text_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/title_text_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

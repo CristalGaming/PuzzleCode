@@ -33,7 +33,7 @@ public class ReplacerGUIScreen extends AbstractContainerScreen<ReplacerGUIMenu> 
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/replacer_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/replacer_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

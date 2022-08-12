@@ -22,7 +22,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.puzzle_code.world.inventory.InEffectBlocksGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI1Menu;
 import net.mcreator.puzzle_code.init.PuzzleCodeModBlockEntities;
 
 import javax.annotation.Nullable;
@@ -32,7 +32,7 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 public class InBlindnessEffectBlockBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(0, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public InBlindnessEffectBlockBlockEntity(BlockPos position, BlockState state) {
@@ -90,7 +90,7 @@ public class InBlindnessEffectBlockBlockEntity extends RandomizableContainerBloc
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new InEffectBlocksGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new InEffectBlockGUI1Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

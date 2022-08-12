@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "puzzle_code:blocks/instant_hunger_block",
-    "up": "puzzle_code:blocks/instant_hunger_block",
-    "north": "puzzle_code:blocks/instant_hunger_block",
-    "east": "puzzle_code:blocks/instant_hunger_block",
-    "south": "puzzle_code:blocks/instant_hunger_block",
-    "west": "puzzle_code:blocks/instant_hunger_block",
+    "all": "puzzle_code:blocks/instant_hunger_block",
     "particle": "puzzle_code:blocks/instant_hunger_block"
   }
 }

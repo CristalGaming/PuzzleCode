@@ -1,10 +1,10 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 82,
+    "height": 146,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -21,7 +21,7 @@
           "height": 20,
           "name": "Apply",
           "x": 132,
-          "y": 116
+          "y": 76
         }
       },
       {
@@ -44,7 +44,7 @@
           },
           "name": "Text: <BNBT:text:textCodeBlock>",
           "x": 132,
-          "y": 143
+          "y": 103
         }
       },
       {
@@ -55,7 +55,7 @@
           "height": 20,
           "name": "textCodeBlockField",
           "x": 132,
-          "y": 89
+          "y": 53
         }
       },
       {
@@ -69,7 +69,74 @@
           "height": 20,
           "name": "Edit",
           "x": 218,
-          "y": 116
+          "y": 76
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "CommandCodeBlockPage2"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "2",
+          "x": 150,
+          "y": 166
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[1]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[1]",
+          "x": 132,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "is disabled?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "is disabled?",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Switch",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Switch",
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:isDisabled>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:isDisabled>",
+          "x": 213,
+          "y": 139
         }
       }
     ],

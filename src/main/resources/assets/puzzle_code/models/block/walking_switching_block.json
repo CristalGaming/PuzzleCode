@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "puzzle_code:blocks/walking_block",
-    "up": "puzzle_code:blocks/walking_block",
-    "north": "puzzle_code:blocks/walking_block",
-    "east": "puzzle_code:blocks/walking_block",
-    "south": "puzzle_code:blocks/walking_block",
-    "west": "puzzle_code:blocks/walking_block",
-    "particle": "puzzle_code:blocks/walking_block"
+    "all": "puzzle_code:blocks/walking_switching_block",
+    "particle": "puzzle_code:blocks/walking_switching_block"
   }
 }

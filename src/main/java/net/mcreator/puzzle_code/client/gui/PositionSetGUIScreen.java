@@ -35,10 +35,10 @@ public class PositionSetGUIScreen extends AbstractContainerScreen<PositionSetGUI
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 114;
+		this.imageHeight = 84;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/position_set_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/position_set_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -74,11 +74,11 @@ public class PositionSetGUIScreen extends AbstractContainerScreen<PositionSetGUI
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack, "X: " + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetXPos2) + "", 6, 35, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetXPos2) + "", 6, 38, -12829636);
 		this.font.draw(poseStack, "Y: " + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetYPos2) + "", 6, 49, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetYPos2) + "", 6, 52, -12829636);
 		this.font.draw(poseStack, "Z: " + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetZPos2) + "", 6, 62, -12829636);
+				.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetZPos2) + "", 6, 65, -12829636);
 	}
 
 	@Override
@@ -91,19 +91,19 @@ public class PositionSetGUIScreen extends AbstractContainerScreen<PositionSetGUI
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 8, 45, 20, new TextComponent("Copy"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 7, 63, 20, new TextComponent("Copy"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new PositionSetGUIButtonMessage(0, x, y, z));
 				PositionSetGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 8, 45, 20, new TextComponent("Paste"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 74, this.topPos + 7, 45, 20, new TextComponent("Paste"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new PositionSetGUIButtonMessage(1, x, y, z));
 				PositionSetGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 114, this.topPos + 8, 45, 20, new TextComponent("Paste2"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 123, this.topPos + 7, 45, 20, new TextComponent("Paste2"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new PositionSetGUIButtonMessage(2, x, y, z));
 				PositionSetGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);

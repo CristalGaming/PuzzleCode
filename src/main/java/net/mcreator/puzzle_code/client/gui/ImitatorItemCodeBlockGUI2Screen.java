@@ -41,7 +41,7 @@ public class ImitatorItemCodeBlockGUI2Screen extends AbstractContainerScreen<Imi
 		this.imageHeight = 148;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/imitator_item_code_block_gui_2.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/imitator_item_code_block_gui_2.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

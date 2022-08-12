@@ -41,7 +41,7 @@ public class NumberCodeBlockGuiScreen extends AbstractContainerScreen<NumberCode
 		this.imageHeight = 71;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/number_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/number_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -96,7 +96,7 @@ public class PropertyToNBTNumberCodeBlockUpdateTickProcedure {
 							return blockEntity.getTileData().getString(tag);
 						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof IntegerProperty _ip
+				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof IntegerProperty _getip18
 						? (world.getBlockState(new BlockPos(x + ((new Object() {
 							public Direction getDirection(BlockPos pos) {
 								BlockState _bs = world.getBlockState(pos);
@@ -130,7 +130,7 @@ public class PropertyToNBTNumberCodeBlockUpdateTickProcedure {
 									return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
 								return Direction.NORTH;
 							}
-						}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_ip)
+						}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_getip18)
 						: -1));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);

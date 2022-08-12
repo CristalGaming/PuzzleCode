@@ -25,11 +25,6 @@ public class PositionSetItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
-
-	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		InteractionResult retval = super.useOn(context);
 		PositionSetRightClickedOnBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),

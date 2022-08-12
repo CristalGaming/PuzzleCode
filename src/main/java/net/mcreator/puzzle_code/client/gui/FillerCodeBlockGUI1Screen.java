@@ -43,7 +43,7 @@ public class FillerCodeBlockGUI1Screen extends AbstractContainerScreen<FillerCod
 		this.imageHeight = 152;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/filler_code_block_gui_1.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/filler_code_block_gui_1.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

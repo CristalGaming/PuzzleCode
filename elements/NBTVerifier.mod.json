@@ -1,12 +1,12 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "nbt_verifier",
     "customModelName": "Normal",
     "name": "NBT Verifier",
-    "rarity": "COMMON",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:PuzzleCodeTab"
     },
@@ -32,7 +32,6 @@
     "onItemInUseTick": {
       "name": "NBTVerifierItemInHandTick"
     },
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

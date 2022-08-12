@@ -96,7 +96,7 @@ public class PropertyToNBTTextCodeBlockUpdateTickProcedure {
 							return blockEntity.getTileData().getString(tag);
 						return "";
 					}
-				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof EnumProperty _ep
+				}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof EnumProperty _getep15
 						? (world.getBlockState(new BlockPos(x + (new Object() {
 							public Direction getDirection(BlockPos pos) {
 								BlockState _bs = world.getBlockState(pos);
@@ -130,7 +130,7 @@ public class PropertyToNBTTextCodeBlockUpdateTickProcedure {
 									return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
 								return Direction.NORTH;
 							}
-						}.getDirection(new BlockPos(x, y, z))).getStepZ()))).getValue(_ep).toString()
+						}.getDirection(new BlockPos(x, y, z))).getStepZ()))).getValue(_getep15).toString()
 						: ""));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);

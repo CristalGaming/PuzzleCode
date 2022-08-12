@@ -16,6 +16,8 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -25,6 +27,8 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.procedures.CommandCodeBlockRedstoneOnProcedure;
 import net.mcreator.puzzle_code.procedures.CommandCodeBlockOnBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.procedures.CommandCodeBlockEntityWalksOnTheBlockProcedure;
+import net.mcreator.puzzle_code.procedures.CommandCodeBlockBlockIsPlacedByProcedure;
 import net.mcreator.puzzle_code.block.entity.CommandCodeBlockBlockEntity;
 
 import java.util.List;
@@ -64,6 +68,18 @@ public class CommandCodeBlockBlock extends Block
 		if (world.getBestNeighborSignal(pos) > 0) {
 			CommandCodeBlockRedstoneOnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		}
+	}
+
+	@Override
+	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
+		super.stepOn(world, pos, blockstate, entity);
+		CommandCodeBlockEntityWalksOnTheBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
+	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
+		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
+		CommandCodeBlockBlockIsPlacedByProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

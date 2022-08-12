@@ -2,6 +2,7 @@ package net.mcreator.puzzle_code.procedures;
 
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -42,6 +43,70 @@ public class AdvancedTeleporterBlockOnBlockRightClickedProcedure {
 						}
 					}, _bpos);
 				}
+			}
+			return InteractionResult.SUCCESS;
+		} else if (new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "clickingReact") && !(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
+			{
+				Entity _ent = entity;
+				_ent.teleportTo((new Object() {
+					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "xPos")), (new Object() {
+					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "yPos")), (new Object() {
+					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(world, new BlockPos(x, y, z), "zPos")));
+				if (_ent instanceof ServerPlayer _serverPlayer)
+					_serverPlayer.connection.teleport((new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, new BlockPos(x, y, z), "xPos")), (new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, new BlockPos(x, y, z), "yPos")), (new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, new BlockPos(x, y, z), "zPos")), _ent.getYRot(), _ent.getXRot());
 			}
 			return InteractionResult.SUCCESS;
 		}

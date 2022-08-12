@@ -43,7 +43,7 @@ public class TeleporterItemCodeBlockGUI1Screen extends AbstractContainerScreen<T
 		this.imageHeight = 146;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/teleporter_item_code_block_gui_1.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/teleporter_item_code_block_gui_1.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -63,7 +63,7 @@ public class TeleporterItemCodeBlockGUI1Screen extends AbstractContainerScreen<T
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_jump_logo.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
 		this.blit(ms, this.leftPos + 150, this.topPos + -12, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();

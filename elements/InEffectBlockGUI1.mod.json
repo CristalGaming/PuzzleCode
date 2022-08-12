@@ -1,0 +1,195 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 155,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Duration: <BNBT:integer:durationEffect> ticks",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Duration: <BNBT:integer:durationEffect> ticks",
+          "x": 132,
+          "y": 153
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Power: <BNBT:integer:powerEffect>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Power: <BNBT:integer:powerEffect>",
+          "x": 132,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyPowerEffect"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 72
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyDurationEffect"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Apply",
+          "x": 132,
+          "y": 131
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Power",
+          "width": 162,
+          "height": 20,
+          "name": "powerEffectField",
+          "x": 132,
+          "y": 50
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Duration",
+          "width": 162,
+          "height": 20,
+          "name": "durationEffectField",
+          "x": 132,
+          "y": 108
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[1]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[1]",
+          "x": 132,
+          "y": 176
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "InEffectBlockPage2"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "2",
+          "x": 150,
+          "y": 171
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditPowerEffect"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 72
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditDurationEffect"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 131
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "InEffectBlockPage3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 168,
+          "y": 171
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "4",
+          "onClick": {
+            "name": "InEffectBlockPage4"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "4",
+          "x": 186,
+          "y": 171
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "5",
+          "onClick": {
+            "name": "EffectBlockGUIPage5"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "5",
+          "x": 204,
+          "y": 171
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 8,
+      "snapOnGrid": true
+    }
+  }
+}

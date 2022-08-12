@@ -1,0 +1,197 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 229,
+    "height": 117,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "React when entity is near the range?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "React when entity is near the range?",
+          "x": 105,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetNearReactTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 105,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetNearReactFalse"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "False",
+          "x": 186,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:nearReact>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:nearReact>",
+          "x": 267,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "InEffectBlockPage1"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "2",
+          "onClick": {
+            "name": "InEffectBlockPage2"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "2",
+          "x": 150,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "3",
+          "onClick": {
+            "name": "InEffectBlockPage3"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "3",
+          "x": 168,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "4",
+          "onClick": {
+            "name": "InEffectBlockPage4"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "4",
+          "x": 186,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[5]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[5]",
+          "x": 204,
+          "y": 157
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 108,
+          "height": 20,
+          "name": "rangeField",
+          "x": 105,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Range: <BNBT:integer:range>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Range: <BNBT:integer:range>",
+          "x": 105,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Apply",
+          "x": 218,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Edit",
+          "x": 272,
+          "y": 107
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

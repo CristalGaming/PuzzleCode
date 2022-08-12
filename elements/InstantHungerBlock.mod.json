@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "instant_hunger_block",
@@ -8,8 +8,8 @@
     "textureFront": "instant_hunger_block",
     "textureRight": "instant_hunger_block",
     "textureBack": "instant_hunger_block",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 11,
+    "customModelName": "Single texture",
     "rotationMode": 0,
     "enablePitch": false,
     "emissiveRendering": false,

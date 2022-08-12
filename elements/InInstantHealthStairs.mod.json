@@ -1,11 +1,11 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
-    "texture": "in_instant_health_effect_stairs",
-    "textureTop": "in_instant_health_effect_stairs",
+    "texture": "in_instant_health_stairs",
+    "textureTop": "in_instant_health_stairs",
     "textureLeft": "in_instant_health_effect_stairs",
-    "textureFront": "in_instant_health_effect_stairs",
+    "textureFront": "in_instant_health_stairs",
     "textureRight": "in_instant_health_effect_stairs",
     "textureBack": "in_instant_health_effect_stairs",
     "renderType": 11,

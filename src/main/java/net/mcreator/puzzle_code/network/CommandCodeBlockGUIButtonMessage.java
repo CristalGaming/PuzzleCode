@@ -13,7 +13,9 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.CommandCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.procedures.TextCodeBlockGuiButtonPressedProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchIsDisabledProcedure;
 import net.mcreator.puzzle_code.procedures.EditTextCodeBlockProcedure;
+import net.mcreator.puzzle_code.procedures.CommandCodeBlockPage2Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -70,6 +72,14 @@ public class CommandCodeBlockGUIButtonMessage {
 		if (buttonID == 1) {
 
 			EditTextCodeBlockProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 2) {
+
+			CommandCodeBlockPage2Procedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 3) {
+
+			SwitchIsDisabledProcedure.execute(world, x, y, z);
 		}
 	}
 

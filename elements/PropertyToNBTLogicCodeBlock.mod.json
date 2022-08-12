@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "empty_logic_code_block",
@@ -35,7 +35,7 @@
     ],
     "name": "Property To NBT Logic Code Block",
     "specialInfo": [
-      "§7(disabled for tehnical issues)"
+      "§7disabled for tehnical problems"
     ],
     "hardness": 3.0,
     "resistance": 30.0,

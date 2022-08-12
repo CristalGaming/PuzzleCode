@@ -37,7 +37,7 @@ public class CreativeSettingsGUICreativeItemsScreen extends AbstractContainerScr
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/creative_settings_gui_creative_items.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/creative_settings_gui_creative_items.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -43,7 +43,7 @@ public class FillerGui2Screen extends AbstractContainerScreen<FillerGui2Menu> {
 		this.imageHeight = 152;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/filler_gui_2.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/filler_gui_2.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

@@ -1,0 +1,209 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 185,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "React when it gets redstone?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "React when it gets redstone?",
+          "x": 132,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:redstoneReact>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:redstoneReact>",
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetRedstoneReactTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetRedstoneReactFalse"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "1",
+          "onClick": {
+            "name": "AdvancedPlacerBlockPage1"
+          },
+          "width": 14,
+          "height": 20,
+          "name": "1",
+          "x": 132,
+          "y": 184
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[2]",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "[2]",
+          "x": 150,
+          "y": 188
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Does react continuously?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Does react continuously?",
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "True",
+          "onClick": {
+            "name": "SetRedstoneContinuouslyTrue"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "True",
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "False",
+          "onClick": {
+            "name": "SetRedstoneContinuouslyFalse"
+          },
+          "width": 76,
+          "height": 20,
+          "name": "False",
+          "x": 218,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:redstoneContinuously>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:redstoneContinuously>",
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Range: <BNBT:number:range>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Range: <BNBT:number:range>",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "width": 81,
+          "height": 20,
+          "name": "rangeField",
+          "x": 132,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Apply",
+          "x": 213,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Edit",
+          "x": 254,
+          "y": 139
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

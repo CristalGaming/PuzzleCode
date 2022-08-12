@@ -1,12 +1,12 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "empty_text_code_block",
     "textureTop": "right_transfer_text_code_block",
     "textureLeft": "empty_text_code_block",
     "textureFront": "transfer_text_code_block_left",
-    "textureRight": "empty_text_code_block",
+    "textureRight": "transfer_text_code_block_left",
     "textureBack": "empty_text_code_block",
     "renderType": 10,
     "customModelName": "Normal",

@@ -10,7 +10,7 @@ public class FireKillerBlockEntityWalksOnTheBlockProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity _livEnt ? _livEnt.getMobType() == MobType.UNDEFINED : false) {
-			entity.hurt(DamageSource.ON_FIRE, entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+			entity.hurt(DamageSource.ON_FIRE, 200000000);
 		}
 	}
 }

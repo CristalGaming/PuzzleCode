@@ -1,37 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "WSW",
+    "RBR",
+    "WRW"
   ],
   "key": {
-    "0": {
+    "W": {
       "item": "minecraft:white_concrete"
     },
-    "1": {
+    "S": {
       "item": "minecraft:stone_pressure_plate"
     },
-    "2": {
-      "item": "minecraft:white_concrete"
-    },
-    "3": {
+    "R": {
       "item": "minecraft:redstone"
     },
-    "4": {
+    "B": {
       "item": "minecraft:bucket"
-    },
-    "5": {
-      "item": "minecraft:redstone"
-    },
-    "6": {
-      "item": "minecraft:white_concrete"
-    },
-    "7": {
-      "item": "minecraft:redstone"
-    },
-    "8": {
-      "item": "minecraft:white_concrete"
     }
   },
   "result": {

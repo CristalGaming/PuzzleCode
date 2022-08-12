@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -61,16 +61,6 @@
           "name": "Z: <BNBT:number:zPos>",
           "x": 132,
           "y": 89
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "puzzle_code_logo.png",
-          "use1Xscale": false,
-          "name": "puzzle_code_logo.png",
-          "x": 276,
-          "y": 44
         }
       }
     ],

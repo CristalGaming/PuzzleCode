@@ -18,19 +18,25 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.puzzle_code.procedures.SlownessEffectBlockUpdateTickProcedure;
+import net.mcreator.puzzle_code.procedures.SlownessEffectBlockOnBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.procedures.SlownessEffectBlockBlockIsPlacedByProcedure;
 import net.mcreator.puzzle_code.procedures.SlownessBlockRedstoneOnProcedure;
 import net.mcreator.puzzle_code.procedures.SlownessBlockEntityWalksOnTheBlockProcedure;
-import net.mcreator.puzzle_code.procedures.NormalEffectBlockRightClickedProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockRedstoneOffProcedure;
 import net.mcreator.puzzle_code.block.entity.SlownessEffectStairsBlockEntity;
 
+import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -74,17 +80,42 @@ public class SlownessEffectStairsBlock extends StairBlock
 	}
 
 	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 1);
+	}
+
+	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		if (world.getBestNeighborSignal(pos) > 0) {
 			SlownessBlockRedstoneOnProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		} else {
+			EffectBlockRedstoneOffProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		}
+	}
+
+	@Override
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+		super.tick(blockstate, world, pos, random);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+
+		SlownessEffectBlockUpdateTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
 		SlownessBlockEntityWalksOnTheBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+	}
+
+	@Override
+	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
+		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
+		SlownessEffectBlockBlockIsPlacedByProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -97,7 +128,7 @@ public class SlownessEffectStairsBlock extends StairBlock
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		InteractionResult result = NormalEffectBlockRightClickedProcedure.execute(world, x, y, z, entity);
+		InteractionResult result = SlownessEffectBlockOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return result;
 	}
 

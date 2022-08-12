@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "puzzle_code:block/instant_saturation_slab"
+    },
+    "type=top": {
+      "model": "puzzle_code:block/instant_saturation_slab_top"
+    },
+    "type=double": {
+      "model": "puzzle_code:block/instant_saturation_slab_full"
+    }
+  }
+}

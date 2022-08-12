@@ -40,10 +40,10 @@ public class AdvancedTeleporterBlockGuiScreen extends AbstractContainerScreen<Ad
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 132;
+		this.imageHeight = 145;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/advanced_teleporter_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/advanced_teleporter_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -97,7 +97,7 @@ public class AdvancedTeleporterBlockGuiScreen extends AbstractContainerScreen<Ad
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 31, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 28, -12829636);
 		this.font.draw(poseStack, "Y Position: " + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -105,7 +105,7 @@ public class AdvancedTeleporterBlockGuiScreen extends AbstractContainerScreen<Ad
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 71, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 64, -12829636);
 		this.font.draw(poseStack, "Z Position: " + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -113,7 +113,8 @@ public class AdvancedTeleporterBlockGuiScreen extends AbstractContainerScreen<Ad
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 112, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 100, -12829636);
+		this.font.draw(poseStack, "[1]", 6, 122, -12829636);
 	}
 
 	@Override
@@ -126,34 +127,64 @@ public class AdvancedTeleporterBlockGuiScreen extends AbstractContainerScreen<Ad
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		xPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 8, 162, 20, new TextComponent(""));
+		xPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 5, 162, 20, new TextComponent(""));
 		guistate.put("text:xPosField", xPosField);
 		xPosField.setMaxLength(32767);
 		this.addWidget(this.xPosField);
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 8, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 5, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(0, x, y, z));
 				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		yPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 49, 162, 20, new TextComponent(""));
+		yPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 41, 162, 20, new TextComponent(""));
 		guistate.put("text:yPosField", yPosField);
 		yPosField.setMaxLength(32767);
 		this.addWidget(this.yPosField);
-		zPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 89, 162, 20, new TextComponent(""));
+		zPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 77, 162, 20, new TextComponent(""));
 		guistate.put("text:zPosField", zPosField);
 		zPosField.setMaxLength(32767);
 		this.addWidget(this.zPosField);
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 49, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 41, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(1, x, y, z));
 				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 89, 45, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 77, 45, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(2, x, y, z));
 				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 5, 45, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(3, x, y, z));
+				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 41, 45, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(4, x, y, z));
+				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 4, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 77, 45, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(5, x, y, z));
+				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 118, 14, 20, new TextComponent("2"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(6, x, y, z));
+				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 6, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 42, this.topPos + 118, 14, 20, new TextComponent("3"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new AdvancedTeleporterBlockGuiButtonMessage(7, x, y, z));
+				AdvancedTeleporterBlockGuiButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		}));
 	}

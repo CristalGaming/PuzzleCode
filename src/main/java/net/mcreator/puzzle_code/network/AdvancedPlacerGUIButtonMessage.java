@@ -18,6 +18,7 @@ import net.mcreator.puzzle_code.procedures.EditxPosProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyIntegerzPosProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyIntegeryPosProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyIntegerxPosProcedure;
+import net.mcreator.puzzle_code.procedures.AdvancedPlacerBlockPage2Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -90,6 +91,10 @@ public class AdvancedPlacerGUIButtonMessage {
 		if (buttonID == 5) {
 
 			EditzPosProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 6) {
+
+			AdvancedPlacerBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 	}
 

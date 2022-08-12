@@ -1,8 +1,8 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
-    "texture": "yellow_swicher_effect_block",
+    "texture": "yellow_switcher_effect_block",
     "textureTop": "yellow_swicher_block",
     "textureLeft": "yellow_swicher_block",
     "textureFront": "yellow_swicher_block",
@@ -56,7 +56,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 10,
+    "tickRate": 1,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -107,7 +107,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "EffectBlocksGui",
+    "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
     "inventorySize": 0,
     "inventoryStackSize": 64,
@@ -124,13 +124,22 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "NormalEffectBlockRightClicked"
+      "name": "YellowSwitcherEffectBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "YellowSwitcherEffectBlockUpdateTick"
     },
     "onEntityWalksOn": {
       "name": "YellowSwicherBlockEntityWalksOnTheBlock"
     },
+    "onBlockPlayedBy": {
+      "name": "YellowSwitcherEffectBlockBlockIsPlacedBy"
+    },
     "onRedstoneOn": {
       "name": "YellowSwicherEffectBlockRedstoneOn"
+    },
+    "onRedstoneOff": {
+      "name": "EffectBlockRedstoneOff"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

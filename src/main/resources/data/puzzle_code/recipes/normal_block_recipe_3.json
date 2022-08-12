@@ -1,20 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01",
-    "23"
+    "##",
+    "##"
   ],
   "key": {
-    "0": {
-      "item": "puzzle_code:normal_stairs"
-    },
-    "1": {
-      "item": "puzzle_code:normal_stairs"
-    },
-    "2": {
-      "item": "puzzle_code:normal_stairs"
-    },
-    "3": {
+    "#": {
       "item": "puzzle_code:normal_stairs"
     }
   },

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "puzzle_code:blocks/fire_kill_block",
+    "top": "puzzle_code:blocks/fire_kill_block",
+    "side": "puzzle_code:blocks/fire_kill_slab"
+  }
+}

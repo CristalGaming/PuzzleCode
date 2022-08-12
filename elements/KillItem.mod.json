@@ -1,12 +1,12 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "kill_item",
     "customModelName": "Normal",
     "name": "Kill Item",
-    "rarity": "COMMON",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:PuzzleCodeTab"
     },
@@ -32,10 +32,6 @@
     "onRightClickedInAir": {
       "name": "ResetItemRightClickedInAir"
     },
-    "onRightClickedOnBlock": {
-      "name": "ResetItemRightClickedInAir"
-    },
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

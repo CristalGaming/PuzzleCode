@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.YellowSwicherBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.EditMinPowerProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyMinPowerProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -65,6 +66,10 @@ public class YellowSwicherBlockGUIButtonMessage {
 		if (buttonID == 0) {
 
 			ApplyMinPowerProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 1) {
+
+			EditMinPowerProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 

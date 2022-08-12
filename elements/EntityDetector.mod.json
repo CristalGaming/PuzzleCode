@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "entity_detector",
@@ -107,10 +107,10 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
-    "guiBoundTo": "<NONE>",
+    "hasInventory": true,
+    "guiBoundTo": "EntityDetectorGUI",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -124,8 +124,14 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "EntityDetectorOnBlockRightClicked"
+    },
     "onTickUpdate": {
       "name": "EntityDetectorUpdateTick"
+    },
+    "onBlockPlayedBy": {
+      "name": "EntityDetectorBlockIsPlacedBy"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

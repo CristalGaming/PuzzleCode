@@ -39,7 +39,7 @@ public class SwitchableTermsNumberCodeBlockGUIScreen extends AbstractContainerSc
 		this.imageHeight = 120;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/switchable_terms_number_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/switchable_terms_number_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -136,7 +136,7 @@ public class SwitchableTermsNumberCodeBlockGUIScreen extends AbstractContainerSc
 				SwitchableTermsNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 74, 162, 20, new TextComponent("Disable All"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 74, 162, 20, new TextComponent("Switch"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new SwitchableTermsNumberCodeBlockGUIButtonMessage(3, x, y, z));
 				SwitchableTermsNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);

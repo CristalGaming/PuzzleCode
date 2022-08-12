@@ -42,7 +42,7 @@ public class TeleporterTextCodeBlockGUI2Screen extends AbstractContainerScreen<T
 		this.imageHeight = 155;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/teleporter_text_code_block_gui_2.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/teleporter_text_code_block_gui_2.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

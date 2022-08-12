@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "wither_effect_stairs",
@@ -57,7 +57,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 10,
+    "tickRate": 0,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -108,7 +108,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "EffectBlocksGui",
+    "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
     "inventorySize": 0,
     "inventoryStackSize": 64,
@@ -125,13 +125,22 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "NormalEffectBlockRightClicked"
+      "name": "WitherEffectBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "WitherEffectBlockUpdateTick"
     },
     "onEntityWalksOn": {
       "name": "WitherBlockEntityWalksOnTheBlock"
     },
+    "onBlockPlayedBy": {
+      "name": "WitherEffectBlockBlockIsPlacedBy"
+    },
     "onRedstoneOn": {
       "name": "WitherBlockRedstoneOn"
+    },
+    "onRedstoneOff": {
+      "name": "EffectBlockRedstoneOff"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

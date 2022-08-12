@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "puzzle_code:blocks/yellow_switcher_effect_stairs",
+    "top": "puzzle_code:blocks/strength_effect_block",
+    "side": "puzzle_code:blocks/strength_effect_slab"
+  }
+}

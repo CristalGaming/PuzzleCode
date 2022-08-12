@@ -42,7 +42,7 @@ public class FillerCodeBlockGUI3Screen extends AbstractContainerScreen<FillerCod
 		this.imageHeight = 155;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/filler_code_block_gui_3.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/filler_code_block_gui_3.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -61,7 +61,7 @@ public class FillerCodeBlockGUI3Screen extends AbstractContainerScreen<FillerCod
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_jump_logo.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
 		this.blit(ms, this.leftPos + 149, this.topPos + 28, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();

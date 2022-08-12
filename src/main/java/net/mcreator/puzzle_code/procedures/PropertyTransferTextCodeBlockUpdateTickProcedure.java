@@ -51,7 +51,7 @@ public class PropertyTransferTextCodeBlockUpdateTickProcedure {
 						return blockEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof EnumProperty _ep
+			}.getValue(world, new BlockPos(x, y, z), "getProperty"))) instanceof EnumProperty _getep18
 					? (world.getBlockState(new BlockPos(x + ((new Object() {
 						public Direction getDirection(BlockPos pos) {
 							BlockState _bs = world.getBlockState(pos);
@@ -85,7 +85,7 @@ public class PropertyTransferTextCodeBlockUpdateTickProcedure {
 								return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
 							return Direction.NORTH;
 						}
-					}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_ep).toString()
+					}.getDirection(new BlockPos(x, y, z))).getOpposite()).getStepZ()))).getValue(_getep18).toString()
 					: "");
 			BlockPos _pos = new BlockPos(x + (new Object() {
 				public Direction getDirection(BlockPos pos) {

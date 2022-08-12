@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "levitation_effect_stairs",
@@ -57,7 +57,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 10,
+    "tickRate": 1,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -107,8 +107,8 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
-    "guiBoundTo": "<NONE>",
+    "hasInventory": true,
+    "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -125,13 +125,22 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "NormalEffectBlockRightClicked"
+      "name": "LevitationEffectBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "LevitationEffectBlockUpdateTick"
     },
     "onEntityWalksOn": {
       "name": "LevitationBlockEntityWalksOnTheBlock"
     },
+    "onBlockPlayedBy": {
+      "name": "LevitationEffectBlockBlockIsPlacedBy"
+    },
     "onRedstoneOn": {
       "name": "LevitationBlockRedstoneOn"
+    },
+    "onRedstoneOff": {
+      "name": "EffectBlockRedstoneOff"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

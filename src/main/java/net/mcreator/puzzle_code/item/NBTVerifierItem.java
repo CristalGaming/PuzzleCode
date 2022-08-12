@@ -35,17 +35,12 @@ import io.netty.buffer.Unpooled;
 
 public class NBTVerifierItem extends Item {
 	public NBTVerifierItem() {
-		super(new Item.Properties().tab(PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB).stacksTo(1).rarity(Rarity.COMMON));
+		super(new Item.Properties().tab(PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB).stacksTo(1).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.BLOCK;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
 	}
 
 	@Override

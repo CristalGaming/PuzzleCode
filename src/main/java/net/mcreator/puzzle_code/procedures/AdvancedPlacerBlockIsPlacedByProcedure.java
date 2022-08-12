@@ -8,23 +8,68 @@ import net.minecraft.core.BlockPos;
 
 public class AdvancedPlacerBlockIsPlacedByProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
-			BlockEntity _blockEntity = world.getBlockEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("yPos", 1);
-			if (world instanceof Level _level)
-				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-		}
-		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
-			BlockEntity _blockEntity = world.getBlockEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_blockEntity != null)
-				_blockEntity.getTileData().putBoolean("isDisabled", (true));
-			if (world instanceof Level _level)
-				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		if (!(new Object() {
+			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getTileData().getBoolean(tag);
+				return false;
+			}
+		}.getValue(world, new BlockPos(x, y, z), "newNBT"))) {
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putDouble("xPos", x);
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putDouble("yPos", (y + 1));
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putDouble("xpos", z);
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putBoolean("redstoneReact", (true));
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putBoolean("isDisabled", (true));
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (!world.isClientSide()) {
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null)
+					_blockEntity.getTileData().putBoolean("newNBT", (true));
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		}
 	}
 }

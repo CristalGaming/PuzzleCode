@@ -6,7 +6,7 @@
     "north": "puzzle_code:blocks/transfer_number_code_block_left",
     "east": "puzzle_code:blocks/empty_number_code_block",
     "south": "puzzle_code:blocks/empty_number_code_block",
-    "west": "puzzle_code:blocks/empty_number_code_block",
+    "west": "puzzle_code:blocks/transfer_number_code_block_left",
     "particle": "puzzle_code:blocks/empty_number_code_block"
   }
 }

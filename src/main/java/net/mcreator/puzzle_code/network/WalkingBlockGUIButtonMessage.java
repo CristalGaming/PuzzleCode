@@ -12,6 +12,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.WalkingBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.EditWaitingOnProcedure;
+import net.mcreator.puzzle_code.procedures.EditWaitingOffProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyWaitingOnProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyWaitingOffProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
@@ -70,6 +72,14 @@ public class WalkingBlockGUIButtonMessage {
 		if (buttonID == 1) {
 
 			ApplyWaitingOnProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 2) {
+
+			EditWaitingOnProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 3) {
+
+			EditWaitingOffProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 

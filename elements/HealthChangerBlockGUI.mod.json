@@ -1,28 +1,15 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 113,
+    "height": 140,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "label",
-        "data": {
-          "text": "Settings",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Settings",
-          "x": 132,
-          "y": 71
-        }
-      },
       {
         "type": "label",
         "data": {
@@ -33,20 +20,20 @@
           },
           "name": "Health: <BNBT:number:healthLevel> HP",
           "x": 132,
-          "y": 116
+          "y": 107
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Redstone Player Range: <BNBT:number:range>",
+          "text": "Range: <BNBT:number:range>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Redstone Player Range: <BNBT:number:range>",
+          "name": "Range: <BNBT:number:range>",
           "x": 132,
-          "y": 161
+          "y": 170
         }
       },
       {
@@ -56,22 +43,22 @@
           "onClick": {
             "name": "ApplyRange"
           },
-          "width": 51,
+          "width": 77,
           "height": 20,
           "name": "Apply",
-          "x": 245,
-          "y": 134
+          "x": 132,
+          "y": 143
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "Range",
-          "width": 113,
+          "width": 162,
           "height": 20,
           "name": "rangeField",
           "x": 132,
-          "y": 134
+          "y": 121
         }
       },
       {
@@ -88,11 +75,11 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 113,
+          "width": 162,
           "height": 20,
           "name": "healthLevelField",
           "x": 132,
-          "y": 89
+          "y": 58
         }
       },
       {
@@ -102,11 +89,25 @@
           "onClick": {
             "name": "ApplyHealthLevel"
           },
-          "width": 51,
+          "width": 162,
           "height": 20,
           "name": "Apply",
-          "x": 245,
-          "y": 89
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 143
         }
       }
     ],

@@ -1,38 +1,15 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 101,
+    "height": 71,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "image",
-        "data": {
-          "image": "puzzle_code_logo.png",
-          "use1Xscale": false,
-          "name": "puzzle_code_logo.png",
-          "x": 276,
-          "y": 77
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Swiching Settings",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Swiching Settings",
-          "x": 132,
-          "y": 77
-        }
-      },
       {
         "type": "label",
         "data": {
@@ -43,18 +20,18 @@
           },
           "name": "Power Needed: <BNBT:number:minPower>",
           "x": 132,
-          "y": 122
+          "y": 135
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 108,
+          "width": 162,
           "height": 20,
           "name": "minPowerField",
           "x": 132,
-          "y": 95
+          "y": 90
         }
       },
       {
@@ -64,11 +41,25 @@
           "onClick": {
             "name": "ApplyMinPower"
           },
-          "width": 51,
+          "width": 77,
           "height": 20,
           "name": "Apply",
-          "x": 240,
-          "y": 95
+          "x": 132,
+          "y": 113
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Edit",
+          "onClick": {
+            "name": "EditMinPower"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Edit",
+          "x": 218,
+          "y": 113
         }
       }
     ],

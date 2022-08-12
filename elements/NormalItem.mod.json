@@ -1,12 +1,12 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "normal_item",
     "customModelName": "Normal",
     "name": "Normal Item",
-    "rarity": "COMMON",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:PuzzleCodeTab"
     },
@@ -29,7 +29,6 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "hunger_effect_block",
@@ -57,7 +57,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 10,
+    "tickRate": 1,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -107,10 +107,10 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
-    "guiBoundTo": "<NONE>",
+    "hasInventory": true,
+    "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -125,13 +125,22 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "NormalEffectBlockRightClicked"
+      "name": "HungerEffectBlockOnBlockRightClicked"
+    },
+    "onTickUpdate": {
+      "name": "HungerEffectBlockUpdateTick"
     },
     "onEntityWalksOn": {
       "name": "HungerEffectBlockEntityWalksOnTheBlock"
     },
+    "onBlockPlayedBy": {
+      "name": "HungerEffectBlockBlockIsPlacedBy"
+    },
     "onRedstoneOn": {
       "name": "HungerEffectBlockRedstoneOn"
+    },
+    "onRedstoneOff": {
+      "name": "EffectBlockRedstoneOff"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

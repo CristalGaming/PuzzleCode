@@ -1,5 +1,5 @@
 {
-  "_fv": 30,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "command_code_block",
@@ -125,6 +125,12 @@
     "fluidRestrictions": [],
     "onRightClicked": {
       "name": "CommandCodeBlockOnBlockRightClicked"
+    },
+    "onEntityWalksOn": {
+      "name": "CommandCodeBlockEntityWalksOnTheBlock"
+    },
+    "onBlockPlayedBy": {
+      "name": "CommandCodeBlockBlockIsPlacedBy"
     },
     "onRedstoneOn": {
       "name": "CommandCodeBlockRedstoneOn"

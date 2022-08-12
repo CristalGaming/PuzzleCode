@@ -39,7 +39,7 @@ public class AdvencedTimeBlockGuiScreen extends AbstractContainerScreen<Advenced
 		this.imageHeight = 100;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/advenced_time_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/advenced_time_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -56,8 +56,8 @@ public class AdvencedTimeBlockGuiScreen extends AbstractContainerScreen<Advenced
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 130, this.topPos + 5, 0, 0, 16, 16, 16, 16);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_code_logo.png"));
+		this.blit(ms, this.leftPos + 130, this.topPos + 5, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();
 	}

@@ -43,7 +43,7 @@ public class ImitatorTextCodeBlockGUIScreen extends AbstractContainerScreen<Imit
 		this.imageHeight = 147;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/imitator_text_code_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/imitator_text_code_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

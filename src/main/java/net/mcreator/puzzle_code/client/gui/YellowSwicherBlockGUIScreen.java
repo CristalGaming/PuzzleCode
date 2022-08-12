@@ -38,10 +38,10 @@ public class YellowSwicherBlockGUIScreen extends AbstractContainerScreen<YellowS
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 101;
+		this.imageHeight = 71;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/yellow_swicher_block_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/yellow_swicher_block_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,10 +58,6 @@ public class YellowSwicherBlockGUIScreen extends AbstractContainerScreen<YellowS
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 150, this.topPos + 7, 0, 0, 16, 16, 16, 16);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -84,7 +80,6 @@ public class YellowSwicherBlockGUIScreen extends AbstractContainerScreen<YellowS
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Swiching Settings", 6, 7, -12829636);
 		this.font.draw(poseStack, "Power Needed: " + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -92,7 +87,7 @@ public class YellowSwicherBlockGUIScreen extends AbstractContainerScreen<YellowS
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "minPower")) + "", 6, 52, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "minPower")) + "", 6, 50, -12829636);
 	}
 
 	@Override
@@ -105,14 +100,20 @@ public class YellowSwicherBlockGUIScreen extends AbstractContainerScreen<YellowS
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		minPowerField = new EditBox(this.font, this.leftPos + 6, this.topPos + 25, 108, 20, new TextComponent(""));
+		minPowerField = new EditBox(this.font, this.leftPos + 6, this.topPos + 5, 162, 20, new TextComponent(""));
 		guistate.put("text:minPowerField", minPowerField);
 		minPowerField.setMaxLength(32767);
 		this.addWidget(this.minPowerField);
-		this.addRenderableWidget(new Button(this.leftPos + 114, this.topPos + 25, 51, 20, new TextComponent("Apply"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 28, 77, 20, new TextComponent("Apply"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new YellowSwicherBlockGUIButtonMessage(0, x, y, z));
 				YellowSwicherBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 28, 77, 20, new TextComponent("Edit"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new YellowSwicherBlockGUIButtonMessage(1, x, y, z));
+				YellowSwicherBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
 	}

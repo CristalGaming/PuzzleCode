@@ -16,12 +16,14 @@ import net.minecraft.world.item.BlockItem;
 import net.mcreator.puzzle_code.item.YellowSwicherEffectItemItem;
 import net.mcreator.puzzle_code.item.WestRemoterMoverItemItem;
 import net.mcreator.puzzle_code.item.WaterBreathingEffectItemItem;
+import net.mcreator.puzzle_code.item.StrengthEffectItemItem;
 import net.mcreator.puzzle_code.item.SpeedEffectItemItem;
 import net.mcreator.puzzle_code.item.SouthRemoterMoverItemItem;
 import net.mcreator.puzzle_code.item.SlownessEffectItemItem;
 import net.mcreator.puzzle_code.item.SlowFallingEffectItemItem;
 import net.mcreator.puzzle_code.item.ResistanceEffectItemItem;
 import net.mcreator.puzzle_code.item.RegenerationEffectItemItem;
+import net.mcreator.puzzle_code.item.RedSwitchingItemItem;
 import net.mcreator.puzzle_code.item.RedOrBlueSwitchingItemItem;
 import net.mcreator.puzzle_code.item.PositionSetItem;
 import net.mcreator.puzzle_code.item.NorthRemoterMoverItemItem;
@@ -38,11 +40,15 @@ import net.mcreator.puzzle_code.item.HasteEffectItemItem;
 import net.mcreator.puzzle_code.item.GlowingEffectItemItem;
 import net.mcreator.puzzle_code.item.GUISetItem;
 import net.mcreator.puzzle_code.item.FireResistanceEffectItemItem;
+import net.mcreator.puzzle_code.item.FireKillerItemItem;
+import net.mcreator.puzzle_code.item.FireDamageItemItem;
 import net.mcreator.puzzle_code.item.EffectRemoverItemItem;
 import net.mcreator.puzzle_code.item.EastRemoterMoverItemItem;
 import net.mcreator.puzzle_code.item.DolphinsGraceEffectItemItem;
 import net.mcreator.puzzle_code.item.DamageItemItem;
 import net.mcreator.puzzle_code.item.CreativeSettingsItem;
+import net.mcreator.puzzle_code.item.CheckpointItemItem;
+import net.mcreator.puzzle_code.item.BlueSwitchingItemItem;
 import net.mcreator.puzzle_code.item.BlockyWorldItem;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -59,6 +65,13 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> CHECKPOINT_BLOCK = block(PuzzleCodeModBlocks.CHECKPOINT_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> CHECKPOINT_STAIRS = block(PuzzleCodeModBlocks.CHECKPOINT_STAIRS, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> CHECKPOINT_SLAB = block(PuzzleCodeModBlocks.CHECKPOINT_SLAB, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_CHECKPOINT_BLOCK = block(PuzzleCodeModBlocks.IN_CHECKPOINT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_CHECKPOINT_STAIRS = block(PuzzleCodeModBlocks.IN_CHECKPOINT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_CHECKPOINT_SLAB = block(PuzzleCodeModBlocks.IN_CHECKPOINT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> CHECKPOINT_ITEM = REGISTRY.register("checkpoint_item", () -> new CheckpointItemItem());
 	public static final RegistryObject<Item> JUMP_BOOST_EFFECT_BLOCK = block(PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> JUMP_BOOST_EFFECT_STAIRS = block(PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_STAIRS,
@@ -85,6 +98,19 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> IN_SPEED_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_SPEED_EFFECT_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SPEED_EFFECT_ITEM = REGISTRY.register("speed_effect_item", () -> new SpeedEffectItemItem());
+	public static final RegistryObject<Item> SLOWNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> SLOWNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> SLOWNESS_EFFECT_SLAB = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> SLOWNESS_EFFECT_ITEM = REGISTRY.register("slowness_effect_item", () -> new SlownessEffectItemItem());
 	public static final RegistryObject<Item> POISON_EFFECT_BLOCK = block(PuzzleCodeModBlocks.POISON_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> POISON_EFFECT_STAIRS = block(PuzzleCodeModBlocks.POISON_EFFECT_STAIRS,
@@ -137,6 +163,19 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RESISTANCE_EFFECT_ITEM = REGISTRY.register("resistance_effect_item",
 			() -> new ResistanceEffectItemItem());
+	public static final RegistryObject<Item> STRENGTH_EFFECT_BLOCK = block(PuzzleCodeModBlocks.STRENGTH_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> STRENGTH_EFFECT_STAIRS = block(PuzzleCodeModBlocks.STRENGTH_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> STRENGTH_EFFECT_SLAB = block(PuzzleCodeModBlocks.STRENGTH_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_STRENGTH_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_STRENGTH_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_STRENGTH_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> STRENGTH_EFFECT_ITEM = REGISTRY.register("strength_effect_item", () -> new StrengthEffectItemItem());
 	public static final RegistryObject<Item> WEAKNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.WEAKNESS_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> WEAKNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.WEAKNESS_EFFECT_STAIRS,
@@ -148,6 +187,30 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> IN_WEAKNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_STAIRS,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> IN_WEAKNESS_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HASTE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.HASTE_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HASTE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.HASTE_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HASTE_EFFECT_SLAB = block(PuzzleCodeModBlocks.HASTE_EFFECT_SLAB, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_HASTE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_HASTE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_HASTE_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HASTE_EFFECT_ITEM = REGISTRY.register("haste_effect_item", () -> new HasteEffectItemItem());
+	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_SLAB = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> LEVITATION_EFFECT_BLOCK = block(PuzzleCodeModBlocks.LEVITATION_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -204,30 +267,6 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> IN_GLOWING_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_GLOWING_EFFECT_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> GLOWING_EFFECT_ITEM = REGISTRY.register("glowing_effect_item", () -> new GlowingEffectItemItem());
-	public static final RegistryObject<Item> HASTE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.HASTE_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> HASTE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.HASTE_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> HASTE_EFFECT_SLAB = block(PuzzleCodeModBlocks.HASTE_EFFECT_SLAB, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_HASTE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_HASTE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_HASTE_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_HASTE_EFFECT_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> HASTE_EFFECT_ITEM = REGISTRY.register("haste_effect_item", () -> new HasteEffectItemItem());
-	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> MINING_FATIGUE_EFFECT_SLAB = block(PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_MINING_FATIGUE_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> FIRE_RESISTANCE_EFFECT_BLOCK = block(PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> FIRE_RESISTANCE_EFFECT_STAIRS = block(PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_STAIRS,
@@ -270,19 +309,6 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> DOLPHINS_GRACE_EFFECT_ITEM = REGISTRY.register("dolphins_grace_effect_item",
 			() -> new DolphinsGraceEffectItemItem());
-	public static final RegistryObject<Item> SLOWNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> SLOWNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> SLOWNESS_EFFECT_SLAB = block(PuzzleCodeModBlocks.SLOWNESS_EFFECT_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_STAIRS,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> IN_SLOWNESS_EFFECT_SLAB = block(PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> SLOWNESS_EFFECT_ITEM = REGISTRY.register("slowness_effect_item", () -> new SlownessEffectItemItem());
 	public static final RegistryObject<Item> BLINDNESS_EFFECT_BLOCK = block(PuzzleCodeModBlocks.BLINDNESS_EFFECT_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> BLINDNESS_EFFECT_STAIRS = block(PuzzleCodeModBlocks.BLINDNESS_EFFECT_STAIRS,
@@ -414,10 +440,19 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> IN_KILL_STAIRS = block(PuzzleCodeModBlocks.IN_KILL_STAIRS, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> IN_KILL_SLAB = block(PuzzleCodeModBlocks.IN_KILL_SLAB, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> KILL_ITEM = REGISTRY.register("kill_item", () -> new KillItemItem());
-	public static final RegistryObject<Item> FIRE_KILLER_BLOCK = block(PuzzleCodeModBlocks.FIRE_KILLER_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> FIRE_DAMAGE_BLOCK = block(PuzzleCodeModBlocks.FIRE_DAMAGE_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> HEALTH_CHANGER_BLOCK = block(PuzzleCodeModBlocks.HEALTH_CHANGER_BLOCK,
+	public static final RegistryObject<Item> FIRE_DAMAGE_ITEM = REGISTRY.register("fire_damage_item", () -> new FireDamageItemItem());
+	public static final RegistryObject<Item> FIRE_KILLER_BLOCK = block(PuzzleCodeModBlocks.FIRE_KILLER_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FIRE_KILLER_STAIRS = block(PuzzleCodeModBlocks.FIRE_KILLER_STAIRS,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FIRE_KILLER_SLAB = block(PuzzleCodeModBlocks.FIRE_KILLER_SLAB, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_FIRE_KILLER_BLOCK = block(PuzzleCodeModBlocks.IN_FIRE_KILLER_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_FIRE_KILLER_STAIRS = block(PuzzleCodeModBlocks.IN_FIRE_KILLER_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_FIRE_KILLER_SLAB = block(PuzzleCodeModBlocks.IN_FIRE_KILLER_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> FIRE_KILLER_ITEM = REGISTRY.register("fire_killer_item", () -> new FireKillerItemItem());
 	public static final RegistryObject<Item> HEALTH_REGENERATION_BLOCK = block(PuzzleCodeModBlocks.HEALTH_REGENERATION_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> INSTANT_HEALTH_BLOCK = block(PuzzleCodeModBlocks.INSTANT_HEALTH_BLOCK,
@@ -432,11 +467,33 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> IN_INSTANT_HEALTH_SLAB = block(PuzzleCodeModBlocks.IN_INSTANT_HEALTH_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> HEALTH_CHANGER_BLOCK = block(PuzzleCodeModBlocks.HEALTH_CHANGER_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> HUNGER_BLOCK = block(PuzzleCodeModBlocks.HUNGER_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> INSTANT_HUNGER_BLOCK = block(PuzzleCodeModBlocks.INSTANT_HUNGER_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> INSTANT_HUNGER_STAIRS = block(PuzzleCodeModBlocks.INSTANT_HUNGER_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> INSTANT_HUNGER_SLAB = block(PuzzleCodeModBlocks.INSTANT_HUNGER_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_HUNGER_BLOCK = block(PuzzleCodeModBlocks.IN_INSTANT_HUNGER_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_HUNGER_STAIRS = block(PuzzleCodeModBlocks.IN_INSTANT_HUNGER_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_HUNGER_SLAB = block(PuzzleCodeModBlocks.IN_INSTANT_HUNGER_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SATURATION_BLOCK = block(PuzzleCodeModBlocks.SATURATION_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> INSTANT_SATURATION_BLOCK = block(PuzzleCodeModBlocks.INSTANT_SATURATION_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> INSTANT_SATURATION_STAIRS = block(PuzzleCodeModBlocks.INSTANT_SATURATION_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> INSTANT_SATURATION_SLAB = block(PuzzleCodeModBlocks.INSTANT_SATURATION_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_SATURATION_BLOCK = block(PuzzleCodeModBlocks.IN_INSTANT_SATURATION_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_SATURATION_STAIRS = block(PuzzleCodeModBlocks.IN_INSTANT_SATURATION_STAIRS,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> IN_INSTANT_SATURATION_SLAB = block(PuzzleCodeModBlocks.IN_INSTANT_SATURATION_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> ADVENCED_TIME_BLOCK = block(PuzzleCodeModBlocks.ADVENCED_TIME_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -445,21 +502,21 @@ public class PuzzleCodeModItems {
 	public static final RegistryObject<Item> NIGHT_TIME_BLOCK = block(PuzzleCodeModBlocks.NIGHT_TIME_BLOCK, PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> IN_NIGHT_TIME_BLOCK = block(PuzzleCodeModBlocks.IN_NIGHT_TIME_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> BLUE_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.BLUE_SWITCHING_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> BLUE_SWITCING_SLAB = block(PuzzleCodeModBlocks.BLUE_SWITCING_SLAB,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> BLUE_SWITCHING_SLAB_OFF = block(PuzzleCodeModBlocks.BLUE_SWITCHING_SLAB_OFF,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RED_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.RED_SWITCHING_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RED_SWITCHING_SLAB = block(PuzzleCodeModBlocks.RED_SWITCHING_SLAB,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RED_SWITCHING_SLAB_OFF = block(PuzzleCodeModBlocks.RED_SWITCHING_SLAB_OFF,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> BLUE_KILL_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.BLUE_KILL_SWITCHING_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RED_KILL_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.RED_KILL_SWITCHING_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> BLUE_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.BLUE_SWITCHING_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> BLUE_SWITCING_SLAB = block(PuzzleCodeModBlocks.BLUE_SWITCING_SLAB,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> BLUE_SWITCHING_SLAB_OFF = block(PuzzleCodeModBlocks.BLUE_SWITCHING_SLAB_OFF,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> BLUE_KILL_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.BLUE_KILL_SWITCHING_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> SWITCHING_BLOCK_RED = block(PuzzleCodeModBlocks.SWITCHING_BLOCK_RED,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
@@ -469,6 +526,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RED_OR_BLUE_SWITCHING_ITEM = REGISTRY.register("red_or_blue_switching_item",
 			() -> new RedOrBlueSwitchingItemItem());
+	public static final RegistryObject<Item> RED_SWITCHING_ITEM = REGISTRY.register("red_switching_item", () -> new RedSwitchingItemItem());
+	public static final RegistryObject<Item> BLUE_SWITCHING_ITEM = REGISTRY.register("blue_switching_item", () -> new BlueSwitchingItemItem());
 	public static final RegistryObject<Item> YELLOW_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.YELLOW_SWITCHING_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> REVERSE_YELLOW_SWITCHING_BLOCK = block(PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK,
@@ -638,6 +697,8 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> EQUAL_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_TEXT_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> UNEQUAL_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.UNEQUAL_TEXT_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.NBT_TO_PROPERTY_TEXT_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = block(PuzzleCodeModBlocks.PROPERTY_TO_NBT_TEXT_CODE_BLOCK,
@@ -657,13 +718,15 @@ public class PuzzleCodeModItems {
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> CHAIN_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.CHAIN_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
-	public static final RegistryObject<Item> EQUAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_ITEM_CODE_BLOCK,
-			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> TRANSFER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.TRANSFER_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> LEFT_TRANSFER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.LEFT_TRANSFER_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> RIGHT_TRANSFER_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.RIGHT_TRANSFER_ITEM_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> EQUAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.EQUAL_ITEM_CODE_BLOCK,
+			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
+	public static final RegistryObject<Item> UNEQUAL_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.UNEQUAL_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);
 	public static final RegistryObject<Item> IMITATOR_ITEM_CODE_BLOCK = block(PuzzleCodeModBlocks.IMITATOR_ITEM_CODE_BLOCK,
 			PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB);

@@ -1,12 +1,8 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "puzzle_code:blocks/swicher_block_red",
-    "up": "puzzle_code:blocks/swicher_block_red",
-    "north": "puzzle_code:blocks/swicher_block_red",
-    "east": "puzzle_code:blocks/swicher_block_red",
-    "south": "puzzle_code:blocks/swicher_block_red",
-    "west": "puzzle_code:blocks/swicher_block_red",
-    "particle": "puzzle_code:blocks/swicher_block_red"
-  }
+    "all": "puzzle_code:block/switcher_block_red",
+    "particle": "puzzle_code:block/switcher_block_red"
+  },
+  "render_type": "solid"
 }

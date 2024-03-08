@@ -1,10 +1,12 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "creative_settings",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Creative Settings",
     "rarity": "RARE",
     "creativeTab": {
@@ -24,13 +26,22 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 0,
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
       "name": "CreativeSettingsRightclicked"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "projectile": {
+      "value": "Arrow"
     },
     "isFood": false,
     "nutritionalValue": 0,

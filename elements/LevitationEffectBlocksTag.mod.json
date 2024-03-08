@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:LevitationEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InLevitationEffectBlock"
+      },
+      {
+        "value": "CUSTOM:LevitationEffectSlab"
+      },
+      {
+        "value": "CUSTOM:LevitationEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InLevitationEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InLevitationEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/levitation",
+    "namespace": "mod"
+  }
+}

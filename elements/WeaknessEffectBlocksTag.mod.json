@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:WeaknessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InWeaknessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:WeaknessEffectSlab"
+      },
+      {
+        "value": "CUSTOM:WeaknessEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InWeaknessEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InWeaknessEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/weakness",
+    "namespace": "mod"
+  }
+}

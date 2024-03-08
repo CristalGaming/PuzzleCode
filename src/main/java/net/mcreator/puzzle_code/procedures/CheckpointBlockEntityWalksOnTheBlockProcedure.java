@@ -14,20 +14,19 @@ public class CheckpointBlockEntityWalksOnTheBlockProcedure {
 			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
 				if (blockEntity != null)
-					return blockEntity.getTileData().getBoolean(tag);
+					return blockEntity.getPersistentData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+		}.getValue(world, BlockPos.containing(x, y, z), "walkingReact") && !(new Object() {
 			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
 				if (blockEntity != null)
-					return blockEntity.getTileData().getBoolean(tag);
+					return blockEntity.getPersistentData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
+		}.getValue(world, BlockPos.containing(x, y, z), "isDisabled"))) {
 			if (entity instanceof ServerPlayer _serverPlayer)
-				_serverPlayer.setRespawnPosition(_serverPlayer.level.dimension(), new BlockPos(x + 0.5, y + 1, z + 0.5), _serverPlayer.getYRot(),
-						true, false);
+				_serverPlayer.setRespawnPosition(_serverPlayer.level().dimension(), BlockPos.containing(x + 0.5, y + 1, z + 0.5), _serverPlayer.getYRot(), true, false);
 		}
 	}
 }

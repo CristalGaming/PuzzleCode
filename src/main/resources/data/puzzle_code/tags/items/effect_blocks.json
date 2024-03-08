@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "#puzzle_code:effect_blocks/blindness",
+    "#puzzle_code:effect_blocks/conduit_power",
+    "#puzzle_code:effect_blocks/darkness",
+    "#puzzle_code:effect_blocks/dolphins_grace",
+    "#puzzle_code:effect_blocks/fire_resistance",
+    "#puzzle_code:effect_blocks/glowing",
+    "#puzzle_code:effect_blocks/haste",
+    "#puzzle_code:effect_blocks/hunger",
+    "#puzzle_code:effect_blocks/invisibility",
+    "#puzzle_code:effect_blocks/jump_boost",
+    "#puzzle_code:effect_blocks/levitation",
+    "#puzzle_code:effect_blocks/luck",
+    "#puzzle_code:effect_blocks/mining_fatigue",
+    "#puzzle_code:effeect_blocks/nausea",
+    "#puzzle_code:effect_blocks/night_vision",
+    "#puzzle_code:effect_blocks/poison",
+    "#puzzle_code:effect_blocks/regeneration",
+    "#puzzle_code:effect_blocks/resistance",
+    "#puzzle_code:effect_blocks/saturation",
+    "#puzzle_code:effect_blocks/slow_falling",
+    "#puzzle_code:effect_blocks/slowness",
+    "#puzzle_code:effect_blocks/speed",
+    "#puzzle_code:effect_blocks/strength",
+    "#puzzle_code:effect_blocks/unluck",
+    "#puzzle_code:effect_blocks/water_breathing",
+    "#puzzle_code:effect_blocks/weakness",
+    "#puzzle_code:effect_blocks/wither",
+    "#puzzle_code:effect_blocks/yellow_switcher"
+  ]
+}

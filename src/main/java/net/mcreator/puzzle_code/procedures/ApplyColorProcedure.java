@@ -14,12 +14,11 @@ public class ApplyColorProcedure {
 		if (guistate == null)
 			return;
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putString("color",
-						(guistate.containsKey("text:colorField") ? ((EditBox) guistate.get("text:colorField")).getValue() : ""));
+				_blockEntity.getPersistentData().putString("color", (guistate.containsKey("text:colorField") ? ((EditBox) guistate.get("text:colorField")).getValue() : ""));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

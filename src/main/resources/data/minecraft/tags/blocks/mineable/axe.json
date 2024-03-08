@@ -3,6 +3,7 @@
   "values": [
     "puzzle_code:in_haste_effect_block",
     "puzzle_code:survival_logic_code_block",
+    "puzzle_code:is_block_in_block_tag_code_block",
     "puzzle_code:box"
   ]
 }

@@ -1,13 +1,13 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "substraction_code_block_side",
-    "textureTop": "substration_code_block_top",
-    "textureLeft": "substraction_code_block_side",
-    "textureFront": "substraction_code_block_side",
-    "textureRight": "substraction_code_block_side",
-    "textureBack": "substraction_code_block_side",
+    "texture": "subsctraction_number_code_block",
+    "textureTop": "substraction_number_code_block_top",
+    "textureLeft": "subsctraction_number_code_block",
+    "textureFront": "subsctraction_number_code_block",
+    "textureRight": "subsctraction_number_code_block",
+    "textureBack": "subsctraction_number_code_block",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 1,
@@ -34,13 +34,15 @@
       }
     ],
     "name": "Substaction Number Code Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:PuzzleCodeTab"
+      "value": "CUSTOM:CodeBlocksTab"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
@@ -99,13 +101,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "UnswitchableTermsNumberCodeBlockGUI",
     "openGUIOnRightClick": false,
@@ -129,11 +125,20 @@
     "onTickUpdate": {
       "name": "SubstractionCodeBlockUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

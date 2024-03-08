@@ -63,7 +63,7 @@ public class UnswitchableTermsNumberCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = UnswitchableTermsNumberCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -82,26 +82,25 @@ public class UnswitchableTermsNumberCodeBlockGUIButtonMessage {
 		}
 		if (buttonID == 3) {
 
-			SwitchIsDisabledProcedure.execute(world, x, y, z);
+			SetTerm2ToLeftProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 4) {
 
-			SetTerm2ToLeftProcedure.execute(world, x, y, z);
+			SetTerm2ToBackProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 5) {
 
-			SetTerm2ToBackProcedure.execute(world, x, y, z);
+			SetTerm2ToRightProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 6) {
 
-			SetTerm2ToRightProcedure.execute(world, x, y, z);
+			SwitchIsDisabledProcedure.execute(world, x, y, z);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(UnswitchableTermsNumberCodeBlockGUIButtonMessage.class,
-				UnswitchableTermsNumberCodeBlockGUIButtonMessage::buffer, UnswitchableTermsNumberCodeBlockGUIButtonMessage::new,
+		PuzzleCodeMod.addNetworkMessage(UnswitchableTermsNumberCodeBlockGUIButtonMessage.class, UnswitchableTermsNumberCodeBlockGUIButtonMessage::buffer, UnswitchableTermsNumberCodeBlockGUIButtonMessage::new,
 				UnswitchableTermsNumberCodeBlockGUIButtonMessage::handler);
 	}
 }

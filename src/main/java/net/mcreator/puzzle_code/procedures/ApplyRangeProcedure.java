@@ -16,11 +16,11 @@ public class ApplyRangeProcedure {
 		if (guistate == null)
 			return;
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("range", Math.floor(new Object() {
+				_blockEntity.getPersistentData().putDouble("range", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());
@@ -28,7 +28,7 @@ public class ApplyRangeProcedure {
 						}
 						return 0;
 					}
-				}.convert(guistate.containsKey("text:rangeField") ? ((EditBox) guistate.get("text:rangeField")).getValue() : "")));
+				}.convert(guistate.containsKey("text:rangeField") ? ((EditBox) guistate.get("text:rangeField")).getValue() : ""));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

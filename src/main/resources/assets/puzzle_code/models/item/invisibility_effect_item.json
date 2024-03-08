@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/invisiblility_effect_item"
+    "layer0": "puzzle_code:item/invisiblility_effect_item"
   }
 }

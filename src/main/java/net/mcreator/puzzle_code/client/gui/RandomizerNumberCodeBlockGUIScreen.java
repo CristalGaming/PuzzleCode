@@ -1,26 +1,24 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.RandomizerNumberCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.ReturnNumberCodeBlockProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnMinValueProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnMaxValueProcedure;
 import net.mcreator.puzzle_code.network.RandomizerNumberCodeBlockGUIButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<RandomizerNumberCodeBlockGUIMenu> {
@@ -30,6 +28,10 @@ public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 	private final Player entity;
 	EditBox minValueField;
 	EditBox maxValueField;
+	ImageButton imagebutton_enter_button;
+	ImageButton imagebutton_edit_button;
+	ImageButton imagebutton_edit_button1;
+	ImageButton imagebutton_enter_button1;
 
 	public RandomizerNumberCodeBlockGUIScreen(RandomizerNumberCodeBlockGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -39,27 +41,26 @@ public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 147;
+		this.imageHeight = 132;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/randomizer_number_code_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		minValueField.render(ms, mouseX, mouseY, partialTicks);
-		maxValueField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		minValueField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		maxValueField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -84,53 +85,37 @@ public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Min: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "minValue")) + "", 6, 51, -12829636);
-		this.font.draw(poseStack, "Max: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "maxValue")) + "", 6, 110, -12829636);
-		this.font.draw(poseStack, "Current Value: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "numberCodeBlock")) + "", 6, 128, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.label_min_bnbtnumberminvalue"), 6, 44, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.label_max_bnbtnumbermaxvalue"), 6, 94, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.label_current_value_bnbtnumbernumb"), 6, 112, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnMinValueProcedure.execute(world, x, y, z), 33, 44, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnMaxValueProcedure.execute(world, x, y, z), 33, 94, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnNumberCodeBlockProcedure.execute(world, x, y, z), 83, 112, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.label_nbt_minvalue"), 6, 31, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.label_nbt_maxvalue"), 6, 80, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		minValueField = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 162, 20, new TextComponent("min. value")) {
-			{
-				setSuggestion("min. value");
-			}
-
+		minValueField = new EditBox(this.font, this.leftPos + 7, this.topPos + 9, 111, 18, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.minValueField")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("min. value");
+					setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.minValueField").getString());
 				else
 					setSuggestion(null);
 			}
@@ -139,63 +124,69 @@ public class RandomizerNumberCodeBlockGUIScreen extends AbstractContainerScreen<
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("min. value");
+					setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.minValueField").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:minValueField", minValueField);
+		minValueField.setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.minValueField").getString());
 		minValueField.setMaxLength(32767);
+		guistate.put("text:minValueField", minValueField);
 		this.addWidget(this.minValueField);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 29, 77, 20, new TextComponent("Apply"), e -> {
+		maxValueField = new EditBox(this.font, this.leftPos + 7, this.topPos + 59, 111, 18, Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.maxValueField")) {
+			@Override
+			public void insertText(String text) {
+				super.insertText(text);
+				if (getValue().isEmpty())
+					setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.maxValueField").getString());
+				else
+					setSuggestion(null);
+			}
+
+			@Override
+			public void moveCursorTo(int pos) {
+				super.moveCursorTo(pos);
+				if (getValue().isEmpty())
+					setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.maxValueField").getString());
+				else
+					setSuggestion(null);
+			}
+		};
+		maxValueField.setSuggestion(Component.translatable("gui.puzzle_code.randomizer_number_code_block_gui.maxValueField").getString());
+		maxValueField.setMaxLength(32767);
+		guistate.put("text:maxValueField", maxValueField);
+		this.addWidget(this.maxValueField);
+		imagebutton_enter_button = new ImageButton(this.leftPos + 146, this.topPos + 8, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new RandomizerNumberCodeBlockGUIButtonMessage(0, x, y, z));
 				RandomizerNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		maxValueField = new EditBox(this.font, this.leftPos + 6, this.topPos + 65, 162, 20, new TextComponent("max Value")) {
-			{
-				setSuggestion("max Value");
-			}
-
-			@Override
-			public void insertText(String text) {
-				super.insertText(text);
-				if (getValue().isEmpty())
-					setSuggestion("max Value");
-				else
-					setSuggestion(null);
-			}
-
-			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
-				if (getValue().isEmpty())
-					setSuggestion("max Value");
-				else
-					setSuggestion(null);
-			}
-		};
-		guistate.put("text:maxValueField", maxValueField);
-		maxValueField.setMaxLength(32767);
-		this.addWidget(this.maxValueField);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 87, 77, 20, new TextComponent("Apply"), e -> {
+		});
+		guistate.put("button:imagebutton_enter_button", imagebutton_enter_button);
+		this.addRenderableWidget(imagebutton_enter_button);
+		imagebutton_edit_button = new ImageButton(this.leftPos + 123, this.topPos + 8, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_edit_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new RandomizerNumberCodeBlockGUIButtonMessage(1, x, y, z));
 				RandomizerNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 29, 76, 20, new TextComponent("Edit"), e -> {
+		});
+		guistate.put("button:imagebutton_edit_button", imagebutton_edit_button);
+		this.addRenderableWidget(imagebutton_edit_button);
+		imagebutton_edit_button1 = new ImageButton(this.leftPos + 123, this.topPos + 58, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_edit_button1.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new RandomizerNumberCodeBlockGUIButtonMessage(2, x, y, z));
 				RandomizerNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 87, 76, 20, new TextComponent("Edit"), e -> {
+		});
+		guistate.put("button:imagebutton_edit_button1", imagebutton_edit_button1);
+		this.addRenderableWidget(imagebutton_edit_button1);
+		imagebutton_enter_button1 = new ImageButton(this.leftPos + 146, this.topPos + 58, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button1.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new RandomizerNumberCodeBlockGUIButtonMessage(3, x, y, z));
 				RandomizerNumberCodeBlockGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:imagebutton_enter_button1", imagebutton_enter_button1);
+		this.addRenderableWidget(imagebutton_enter_button1);
 	}
 }

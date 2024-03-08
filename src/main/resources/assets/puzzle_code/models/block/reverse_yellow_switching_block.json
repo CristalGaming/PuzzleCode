@@ -1,12 +1,8 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "puzzle_code:blocks/yellow_swiching_block",
-    "up": "puzzle_code:blocks/yellow_swiching_block",
-    "north": "puzzle_code:blocks/yellow_swiching_block",
-    "east": "puzzle_code:blocks/yellow_swiching_block",
-    "south": "puzzle_code:blocks/yellow_swiching_block",
-    "west": "puzzle_code:blocks/yellow_swiching_block",
-    "particle": "puzzle_code:blocks/yellow_swiching_block"
-  }
+    "all": "puzzle_code:block/yellow_switching_block",
+    "particle": "puzzle_code:block/yellow_switching_block"
+  },
+  "render_type": "solid"
 }

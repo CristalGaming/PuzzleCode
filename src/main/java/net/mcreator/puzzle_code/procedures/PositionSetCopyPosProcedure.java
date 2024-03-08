@@ -9,24 +9,21 @@ public class PositionSetCopyPosProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetXPos;
+			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetXPos;
 			entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.positionSetXPos2 = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetYPos;
+			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetYPos;
 			entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.positionSetYPos2 = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetZPos;
+			double _setval = (entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new PuzzleCodeModVariables.PlayerVariables())).positionSetZPos;
 			entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.positionSetZPos2 = _setval;
 				capability.syncPlayerVariables(entity);

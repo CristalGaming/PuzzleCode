@@ -60,7 +60,7 @@ public class NBTToPropertyCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = NBTToPropertyCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -71,21 +71,20 @@ public class NBTToPropertyCodeBlockGUIButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			ApplySetPropertyProcedure.execute(world, x, y, z, guistate);
+			EditGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 2) {
 
-			EditGetNBTProcedure.execute(world, x, y, z, guistate);
+			EditSetPropertyProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
-			EditSetPropertyProcedure.execute(world, x, y, z, guistate);
+			ApplySetPropertyProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(NBTToPropertyCodeBlockGUIButtonMessage.class, NBTToPropertyCodeBlockGUIButtonMessage::buffer,
-				NBTToPropertyCodeBlockGUIButtonMessage::new, NBTToPropertyCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(NBTToPropertyCodeBlockGUIButtonMessage.class, NBTToPropertyCodeBlockGUIButtonMessage::buffer, NBTToPropertyCodeBlockGUIButtonMessage::new, NBTToPropertyCodeBlockGUIButtonMessage::handler);
 	}
 }

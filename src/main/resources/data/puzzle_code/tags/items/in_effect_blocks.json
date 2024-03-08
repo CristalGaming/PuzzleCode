@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "#puzzle_code:in_effect_blocks/blindness",
+    "#puzzle_code:in_effect_blocks/darkness",
+    "#minecraft:in_effect_blocks/conduit_power",
+    "#puzzle_code:in_effect_blocks/dolphins_grace",
+    "#puzzle_code:in_effect_blocks/glowing",
+    "#puzzle_code:in_effect_blocks/haste",
+    "#puzzle_code:in_effect_blocks/hunger",
+    "#puzzle_code:in_effect_blocks/invisibility",
+    "#puzzle_code:in_effect_blocks/jump_boost",
+    "#puzzle_code:in_effect_blocks/levitation",
+    "#puzzle_code:in_effect_blocks/luck",
+    "#puzzle_code:in_effect_blocks/mining_fatigue",
+    "#puzzle_code:in_effect_blocks/nausea",
+    "#puzzle_code:in_effect_blocks/night_vision",
+    "#puzzle_code:in_effect_blocks/poison",
+    "#puzzle_code:in_effect_blocks/regeneration",
+    "#puzzle_code:in_effect_blocks/resistance",
+    "#puzzle_code:in_effect_blocks/saturation",
+    "#puzzle_code:in_effect_blocks/slow_falling",
+    "#puzzle_code:in_effect_blocks/slowness",
+    "#puzzle_code:in_effect_blocks/strength",
+    "#puzzle_code:in_effect_blocks/unluck",
+    "#puzzle_code:in_effect_blocks/water_breathing",
+    "#puzzle_code:in_effect_blocks/weakness",
+    "#puzzle_code:in_effect_blocks/wither",
+    "#puzzle_code:in_effect_blocks/yellow_switcher"
+  ]
+}

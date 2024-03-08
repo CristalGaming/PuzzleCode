@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:blindness_effect_block",
+    "puzzle_code:blindness_effect_slab",
+    "puzzle_code:blindness_effect_stairs"
+  ]
+}

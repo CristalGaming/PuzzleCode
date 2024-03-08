@@ -1,8 +1,9 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "puzzle_code:blocks/night_vision_effect_block",
-    "top": "puzzle_code:blocks/night_vision_effect_block",
-    "side": "puzzle_code:blocks/night_vision_effect_slab"
-  }
+    "bottom": "puzzle_code:block/night_vision_effect_block",
+    "top": "puzzle_code:block/night_vision_effect_block",
+    "side": "puzzle_code:block/night_vision_effect_slab"
+  },
+  "render_type": "solid"
 }

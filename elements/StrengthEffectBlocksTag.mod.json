@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:StrengthEffectBlock"
+      },
+      {
+        "value": "CUSTOM:StrengthEffectSlab"
+      },
+      {
+        "value": "CUSTOM:StrengthEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InStrengthEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InStrengthEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InStrengthEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/strength",
+    "namespace": "mod"
+  }
+}

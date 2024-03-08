@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "puzzle_code:block/near_entity_switching_block",
+    "particle": "puzzle_code:block/near_entity_switching_block"
+  },
+  "render_type": "solid"
+}

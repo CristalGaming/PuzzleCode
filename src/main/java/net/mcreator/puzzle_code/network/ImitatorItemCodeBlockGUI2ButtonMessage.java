@@ -13,6 +13,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.ImitatorItemCodeBlockGUI2Menu;
 import net.mcreator.puzzle_code.procedures.OpenImitatorItemCodeBlockGUIProcedure;
+import net.mcreator.puzzle_code.procedures.OpenImitatorItemCodeBlockGUI2Procedure;
 import net.mcreator.puzzle_code.procedures.EditGetSlotIDProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyGetSlotIDProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
@@ -59,20 +60,24 @@ public class ImitatorItemCodeBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = ImitatorItemCodeBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyGetSlotIDProcedure.execute(world, x, y, z, guistate);
+			OpenImitatorItemCodeBlockGUIProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			OpenImitatorItemCodeBlockGUIProcedure.execute(world, x, y, z, entity);
+			OpenImitatorItemCodeBlockGUI2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
+
+			ApplyGetSlotIDProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 3) {
 
 			EditGetSlotIDProcedure.execute(world, x, y, z, guistate);
 		}
@@ -80,7 +85,6 @@ public class ImitatorItemCodeBlockGUI2ButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(ImitatorItemCodeBlockGUI2ButtonMessage.class, ImitatorItemCodeBlockGUI2ButtonMessage::buffer,
-				ImitatorItemCodeBlockGUI2ButtonMessage::new, ImitatorItemCodeBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(ImitatorItemCodeBlockGUI2ButtonMessage.class, ImitatorItemCodeBlockGUI2ButtonMessage::buffer, ImitatorItemCodeBlockGUI2ButtonMessage::new, ImitatorItemCodeBlockGUI2ButtonMessage::handler);
 	}
 }

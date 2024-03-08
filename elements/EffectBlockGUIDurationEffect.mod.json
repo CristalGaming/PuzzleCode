@@ -1,0 +1,120 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 96,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "durationEffectField",
+          "width": 117,
+          "height": 20,
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_back",
+          "text": "Back",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EffectBlockGUIPage1"
+          },
+          "width": 162,
+          "height": 20,
+          "x": 132,
+          "y": 139
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_duration",
+          "text": {
+            "fixedValue": "Duration"
+          },
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_bnbtintegerdurationeffect",
+          "text": {
+            "fixedValue": "<BNBT:integer:durationEffect>",
+            "name": "ReturnDurationEffectTicks"
+          },
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_durationeffect",
+          "text": {
+            "fixedValue": "NBT: durationEffect"
+          },
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditDurationEffect"
+          },
+          "x": 253,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyDurationEffect"
+          },
+          "x": 276,
+          "y": 89
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "puzzle_code:nausea_effect_block"
-  },
-  "result": "puzzle_code:nausea_effect_stairs"
-}

@@ -1,0 +1,131 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 141,
+    "height": 105,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionUp"
+          },
+          "x": 200,
+          "y": 76
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button1",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionNorth"
+          },
+          "x": 200,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button2",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionDown"
+          },
+          "x": 200,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button3",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionWest"
+          },
+          "x": 177,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button4",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionEast"
+          },
+          "x": 222,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button5",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SetDirectionSouth"
+          },
+          "x": 222,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_direction_code_block",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnDirectionCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 150,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_directioncodeblock",
+          "text": {
+            "fixedValue": "NBT: directionCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 150,
+          "y": 157
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

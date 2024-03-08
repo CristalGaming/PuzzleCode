@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:WitherEffectBlock"
+      },
+      {
+        "value": "CUSTOM:WitherEffectSlab"
+      },
+      {
+        "value": "CUSTOM:WitherEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/wither",
+    "namespace": "mod"
+  }
+}

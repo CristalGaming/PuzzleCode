@@ -1,15 +1,15 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "timed_swiching_block_off",
+    "texture": "timed_switching_block_off",
     "textureTop": "timed_swiching_block_off",
     "textureLeft": "timed_swiching_block_off",
     "textureFront": "timed_swiching_block_off",
     "textureRight": "timed_swiching_block_off",
     "textureBack": "timed_swiching_block_off",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 11,
+    "customModelName": "Single texture",
     "rotationMode": 0,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -19,7 +19,7 @@
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": false,
-    "connectedSides": false,
+    "connectedSides": true,
     "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Timed Switching Block Off",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -99,13 +101,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
@@ -126,11 +122,20 @@
     "onTickUpdate": {
       "name": "TimedSwichingBlockOffUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

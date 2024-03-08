@@ -1,0 +1,37 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:FireKillerBlock"
+      },
+      {
+        "value": "CUSTOM:FireDamageBlock"
+      },
+      {
+        "value": "CUSTOM:FireKillerSlab"
+      },
+      {
+        "value": "CUSTOM:FireKillerStairs"
+      },
+      {
+        "value": "CUSTOM:InFireKillerBlock"
+      },
+      {
+        "value": "CUSTOM:InFireKillerSlab"
+      },
+      {
+        "value": "CUSTOM:InFireKillerStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "on_fire_damage_blocks",
+    "namespace": "mod"
+  }
+}

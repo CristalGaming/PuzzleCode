@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -16,10 +16,14 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 204,
           "y": 71
         }
@@ -29,7 +33,6 @@
         "data": {
           "image": "puzzle_jump_logo.png",
           "use1Xscale": false,
-          "name": "puzzle_jump_logo.png",
           "x": 276,
           "y": 71
         }

@@ -10,6 +10,5 @@ import net.minecraft.world.level.GameRules;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PuzzleCodeModGameRules {
-	public static final GameRules.Key<GameRules.BooleanValue> BLOCKSAFFECTSYOU = GameRules.register("blocksAffectsYou", GameRules.Category.PLAYER,
-			GameRules.BooleanValue.create(true));
+	public static final GameRules.Key<GameRules.BooleanValue> BLOCKSAFFECTSYOU = GameRules.register("blocksAffectsYou", GameRules.Category.PLAYER, GameRules.BooleanValue.create(true));
 }

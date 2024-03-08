@@ -1,0 +1,37 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:HealthRegenerationBlock"
+      },
+      {
+        "value": "CUSTOM:InstantHealthBlock"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthBlock"
+      },
+      {
+        "value": "CUSTOM:InstantHealthSlab"
+      },
+      {
+        "value": "CUSTOM:InstantHealthStairs"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthSlab"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "healing_blocks",
+    "namespace": "mod"
+  }
+}

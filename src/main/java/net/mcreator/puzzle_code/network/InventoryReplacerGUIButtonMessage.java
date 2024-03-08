@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUIMenu;
+import net.mcreator.puzzle_code.procedures.OpenInventoryReplacerGUIProcedure;
 import net.mcreator.puzzle_code.procedures.OpenInventoryReplacerGUI4Procedure;
 import net.mcreator.puzzle_code.procedures.OpenInventoryReplacerGUI3Procedure;
 import net.mcreator.puzzle_code.procedures.OpenInventoryReplacerGUI2Procedure;
@@ -59,7 +60,7 @@ public class InventoryReplacerGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = InventoryReplacerGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -76,11 +77,14 @@ public class InventoryReplacerGUIButtonMessage {
 
 			OpenInventoryReplacerGUI4Procedure.execute(world, x, y, z, entity);
 		}
+		if (buttonID == 3) {
+
+			OpenInventoryReplacerGUIProcedure.execute(world, x, y, z, entity);
+		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(InventoryReplacerGUIButtonMessage.class, InventoryReplacerGUIButtonMessage::buffer,
-				InventoryReplacerGUIButtonMessage::new, InventoryReplacerGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(InventoryReplacerGUIButtonMessage.class, InventoryReplacerGUIButtonMessage::buffer, InventoryReplacerGUIButtonMessage::new, InventoryReplacerGUIButtonMessage::handler);
 	}
 }

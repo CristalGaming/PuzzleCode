@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 177,
-    "height": 140,
+    "height": 110,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,53 +13,29 @@
       {
         "type": "label",
         "data": {
-          "text": "Waiting to switch off: <BNBT:number:waitingOff> ticks",
+          "name": "label_waiting_to_switch_off_bnbtnum",
+          "text": {
+            "fixedValue": "Waiting On Delay:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Waiting to switch off: <BNBT:number:waitingOff> ticks",
           "x": 132,
-          "y": 107
+          "y": 94
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Waiting to switch on: <BNBT:number:waitingOn> ticks",
+          "name": "label_waiting_to_switch_on_bnbtnumb",
+          "text": {
+            "fixedValue": "Waiting Off Delay:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Waiting to switch on: <BNBT:number:waitingOn> ticks",
-          "x": 132,
-          "y": 170
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyWaitingOff"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 80
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyWaitingOn"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
           "x": 132,
           "y": 143
         }
@@ -68,50 +44,136 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "waitingOffField",
+          "width": 113,
+          "height": 20,
           "x": 132,
-          "y": 58
+          "y": 71
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "waitingOnField",
+          "width": 113,
+          "height": 20,
           "x": 132,
           "y": 121
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditWaitingOn"
+          "name": "label_proc_return_waiting_off_ticks",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnWaitingOffTicks"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 231,
           "y": 143
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
+          "name": "label_proc_return_waiting_on_ticks",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnWaitingOnTicks"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 227,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_waitingoffticks",
+          "text": {
+            "fixedValue": "NBT: waitingOff"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 157
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_waitingonticks",
+          "text": {
+            "fixedValue": "NBT: WaitingOn"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyWaitingOff"
+          },
+          "x": 272,
+          "y": 71
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditWaitingOn"
+          },
+          "x": 249,
+          "y": 71
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyWaitingOff"
+          },
+          "x": 272,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditWaitingOff"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 80
+          "x": 249,
+          "y": 121
         }
       }
     ],

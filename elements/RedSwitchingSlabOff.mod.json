@@ -1,11 +1,11 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "red_swiching_block_off",
-    "textureTop": "red_swiching_block_off",
+    "texture": "red_switching_block_off",
+    "textureTop": "red_switching_block_off",
     "textureLeft": "",
-    "textureFront": "red_swiching_slab_off",
+    "textureFront": "red_switching_slab_off",
     "textureRight": "",
     "textureBack": "",
     "renderType": 11,
@@ -19,8 +19,8 @@
     "blockBase": "Slab",
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": true,
-    "connectedSides": false,
+    "hasTransparency": false,
+    "connectedSides": true,
     "transparencyType": "TRANSLUCENT",
     "disableOffset": false,
     "boundingBoxes": [
@@ -35,9 +35,11 @@
       }
     ],
     "name": "Red Switching Slab Off",
-    "specialInfo": [
-      "§7for making a full block"
-    ],
+    "specialInformation": {
+      "fixedValue": [
+        "§7for making a full block"
+      ]
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -102,17 +104,11 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
-    "hasInventory": false,
+    "isBonemealable": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -129,11 +125,20 @@
     "onTickUpdate": {
       "name": "RedSwichingSlabOffUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

@@ -1,0 +1,556 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "transfer_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "default"
+    },
+    "number_to_text_code_block": {
+      "map": {
+        "0": "number_to_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "number_to_text_code_block"
+    },
+    "text_to_number_code_block": {
+      "map": {
+        "0": "text_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "text_to_number_code_block"
+    },
+    "property_transfer_number_code_block": {
+      "map": {
+        "0": "property_transfer_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "property_transfer_number_code_block"
+    },
+    "redstone_to_number_code_block": {
+      "map": {
+        "0": "redstone_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_redstone_code_block"
+      },
+      "name": "redstone_to_number_code_block"
+    },
+    "number_to_redstone_code_block": {
+      "map": {
+        "0": "number_to_redstone_code_block",
+        "1": "empty_redstone_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "number_to_redstone_code_block"
+    },
+    "opposite_transfer_number_code_block": {
+      "map": {
+        "0": "opposite_transfer_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "opposite_transfer_number_code_block"
+    },
+    "nbt_to_property_number_code_block": {
+      "map": {
+        "0": "nbt_to_property_number_code_block_top",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "nbt_to_property_number_code_block"
+    },
+    "property_to_nbt_number_code_block": {
+      "map": {
+        "0": "property_to_nbt_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "property_to_nbt_number_code_block"
+    },
+    "radians_to_degrees_number_code_block": {
+      "map": {
+        "0": "radians_to_degrees_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "radians_to_degrees_number_code_block"
+    },
+    "degrees_to_radians_number_code_block": {
+      "map": {
+        "0": "degrees_to_radians_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "degrees_to_radians_number_code_block"
+    },
+    "number_to_direction_code_block": {
+      "map": {
+        "0": "number_to_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "number_to_direction_code_block"
+    },
+    "transfer_logic_code_block": {
+      "map": {
+        "0": "transfer_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "transfer_logic_code_block"
+    },
+    "property_transfer_logic_code_block": {
+      "map": {
+        "0": "property_transfer_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "property_transfer_logic_code_block"
+    },
+    "nbt_to_property_logic_code_block": {
+      "map": {
+        "0": "nbt_to_property_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "nbt_to_property_logic_code_block"
+    },
+    "property_to_nbt_logic_code_block": {
+      "map": {
+        "0": "property_to_nbt_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "property_to_nbt_logic_code_block"
+    },
+    "logic_to_number_code_block": {
+      "map": {
+        "0": "logic_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "logic_to_number_code_block"
+    },
+    "opposite_logic_code_block": {
+      "map": {
+        "0": "opposite_transfer_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "opposite_logic_code_block"
+    },
+    "logic_to_redstone_code_block": {
+      "map": {
+        "0": "logic_to_redstone_code_block",
+        "1": "empty_redstone_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "logic_to_redstone_code_block"
+    },
+    "redstone_to_logic_code_block": {
+      "map": {
+        "0": "redstone_to_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_redstone_code_block"
+      },
+      "name": "redstone_to_logic_code_block"
+    },
+    "transfer_text_code_block": {
+      "map": {
+        "0": "transfer_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "transfer_text_code_block"
+    },
+    "uppercase_text_code_block": {
+      "map": {
+        "0": "uppercase_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "uppercase_text_code_block"
+    },
+    "lowercase_text_code_block": {
+      "map": {
+        "0": "lowercase_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "lowercase_text_code_block"
+    },
+    "property_transfer_text_code_block": {
+      "map": {
+        "0": "property_transfer_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "property_transfer_text_code_block"
+    },
+    "nbt_to_property_text_code_block": {
+      "map": {
+        "0": "nbt_to_property_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "nbt_to_property_text_code_block"
+    },
+    "property_to_nbt_text_code_block": {
+      "map": {
+        "0": "property_to_nbt_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "property_to_nbt_text_code_block"
+    },
+    "text_to_direction_code_block": {
+      "map": {
+        "0": "text_to_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "text_to_direction_code_block"
+    },
+    "opposite_direction_code_block": {
+      "map": {
+        "0": "opposite_transfer_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "opposite_direction_code_block"
+    },
+    "rotate_clockwise_transfer_direction_code_block": {
+      "map": {
+        "0": "rotate_clockwise_transfer_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "rotate_clockwise_transfer_direction_code_block"
+    },
+    "roate_counterclockwise_transfer_direction_code_block": {
+      "map": {
+        "0": "rotate_counterclockwise_transfer_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "roate_counterclockwise_transfer_direction_code_block"
+    },
+    "chain_switching_block": {
+      "map": {
+        "0": "chain_switching_block_up",
+        "1": "chain_switching_block_front",
+        "2": "chain_switching_block_back"
+      },
+      "name": "chain_switching_block"
+    },
+    "chain_switching_block_off": {
+      "map": {
+        "0": "chain_switching_block_up_off",
+        "1": "chain_switching_block_front_off",
+        "2": "chain_switching_block_back_off"
+      },
+      "name": "chain_switching_block_off"
+    },
+    "transfer_item_code_block": {
+      "map": {
+        "0": "transfer_item_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "transfer_item_code_block"
+    },
+    "number_of_items_code_block": {
+      "map": {
+        "0": "number_of_items_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "number_of_items_code_block"
+    },
+    "item_to_text_code_block": {
+      "map": {
+        "0": "item_to_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_to_text_code_block"
+    },
+    "name_of_item_code_block": {
+      "map": {
+        "0": "name_of_item_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "name_of_item_code_block"
+    },
+    "length_of_text_code_block": {
+      "map": {
+        "0": "length_of_text_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "length_of_text_code_block"
+    },
+    "transfer_neutral_code_block": {
+      "map": {
+        "0": "transfer_neutral_code_block",
+        "1": "empty_neutral_code_block",
+        "2": "empty_neutral_code_block"
+      },
+      "name": "transfer_neutral_code_block"
+    },
+    "redstone_to_direction_code_block": {
+      "map": {
+        "0": "redstone_to_direction_code_block",
+        "1": "empty_direction_code_block",
+        "2": "empty_redstone_code_block"
+      },
+      "name": "redstone_to_direction_code_block"
+    },
+    "direction_to_redstone_code_block": {
+      "map": {
+        "0": "direction_to_redstone_code_block",
+        "1": "empty_redstone_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "direction_to_redstone_code_block"
+    },
+    "energy_to_number_code_block": {
+      "map": {
+        "0": "energy_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_energy_code_block"
+      },
+      "name": "energy_to_number_code_block"
+    },
+    "fluid_to_number_code_block": {
+      "map": {
+        "0": "fluid_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_fluid_code_block"
+      },
+      "name": "fluid_to_number_code_block"
+    },
+    "item_nbt_to_number_code_block": {
+      "map": {
+        "0": "item_nbt_to_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_nbt_to_number_code_block"
+    },
+    "item_nbt_to_logic_code_block": {
+      "map": {
+        "0": "item_nbt_to_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_nbt_to_logic_code_block"
+    },
+    "item_nbt_to_text_code_block": {
+      "map": {
+        "0": "item_nbt_to_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_nbt_to_text_code_block"
+    },
+    "direction_to_position_code_block": {
+      "map": {
+        "0": "direction_to_position_code_block",
+        "1": "empty_position_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "direction_to_position_code_block"
+    },
+    "transfer_position_code_block": {
+      "map": {
+        "0": "transfer_position_code_block",
+        "1": "empty_position_code_block",
+        "2": "empty_position_code_block"
+      },
+      "name": "transfer_position_code_block"
+    },
+    "direction_to_axis_code_block": {
+      "map": {
+        "0": "direction_to_axis_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "direction_to_axis_code_block"
+    },
+    "item_inventory_to_item_code_block": {
+      "map": {
+        "0": "item_inventory_to_item_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_inventory_to_item_code_block"
+    },
+    "number_to_item_nbt_code_block": {
+      "map": {
+        "0": "number_to_item_nbt_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "number_to_item_nbt_code_block"
+    },
+    "logic_to_item_nbt_code_block": {
+      "map": {
+        "0": "logic_to_item_nbt_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "logic_to_item_nbt_code_block"
+    },
+    "text_to_item_nbt_code_block": {
+      "map": {
+        "0": "text_to_item_nbt_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "text_to_item_nbt_code_block"
+    },
+    "item_to_item_inventory_code_block": {
+      "map": {
+        "0": "item_to_item_inventory_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "item_to_item_inventory_code_block"
+    },
+    "max_stack_of_items_code_block": {
+      "map": {
+        "0": "max_stack_of_items_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "max_stack_of_items_code_block"
+    },
+    "block_from_position_code_block": {
+      "map": {
+        "0": "block_from_position_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_position_code_block"
+      },
+      "name": "block_from_position_code_block"
+    },
+    "chain_number_code_block": {
+      "map": {
+        "0": "chain_number_code_block",
+        "1": "number_code_block",
+        "2": "number_code_block"
+      },
+      "name": "chain_number_code_block"
+    },
+    "chain_logic_code_block": {
+      "map": {
+        "0": "chain_logic_code_block",
+        "1": "logic_code_block",
+        "2": "logic_code_block"
+      },
+      "name": "chain_logic_code_block"
+    },
+    "chain_text_code_block": {
+      "map": {
+        "0": "chain_text_code_block",
+        "1": "text_code_block",
+        "2": "text_code_block"
+      },
+      "name": "chain_text_code_block"
+    },
+    "chain_direction_code_block": {
+      "map": {
+        "0": "chain_direction_code_block",
+        "1": "direction_code_block",
+        "2": "direction_code_block"
+      },
+      "name": "chain_direction_code_block"
+    },
+    "chain_item_code_block": {
+      "map": {
+        "0": "chain_item_code_block",
+        "1": "item_code_block",
+        "2": "item_code_block"
+      },
+      "name": "chain_item_code_block"
+    },
+    "teleporter_number_code_block": {
+      "map": {
+        "0": "teleporter_number_code_block_top",
+        "1": "teleporter_number_code_block",
+        "2": "empty_number_code_block"
+      },
+      "name": "teleporter_number_code_block"
+    },
+    "teleporter_logic_code_block": {
+      "map": {
+        "0": "teleporter_logic_code_block_top",
+        "1": "teleporter_logic_code_block",
+        "2": "empty_logic_code_block"
+      },
+      "name": "teleporter_logic_code_block"
+    },
+    "teleporter_text_code_block": {
+      "map": {
+        "0": "teleporter_text_code_block_top",
+        "1": "teleporter_text_code_block",
+        "2": "empty_text_code_block"
+      },
+      "name": "teleporter_text_code_block"
+    },
+    "teleporter_item_code_block": {
+      "map": {
+        "0": "teleporter_item_code_block_top",
+        "1": "teleporter_item_code_block",
+        "2": "empty_item_code_block"
+      },
+      "name": "teleporter_item_code_block"
+    },
+    "teleporter_direction_code_block": {
+      "map": {
+        "0": "teleporter_direction_code_block_top",
+        "1": "teleporter_direction_code_block",
+        "2": "empty_direction_code_block"
+      },
+      "name": "teleporter_direction_code_block"
+    },
+    "transfer_area_code_block": {
+      "map": {
+        "0": "transfer_area_code_block",
+        "1": "empty_area_code_block",
+        "2": "empty_area_code_block"
+      },
+      "name": "transfer_area_code_block"
+    },
+    "chain_area_code_block": {
+      "map": {
+        "0": "chain_area_code_block",
+        "1": "area_code_block",
+        "2": "area_code_block"
+      },
+      "name": "chain_area_code_block"
+    },
+    "chain_position_code_block": {
+      "map": {
+        "0": "chain_position_code_block",
+        "1": "position_code_block",
+        "2": "position_code_block"
+      },
+      "name": "chain_position_code_block"
+    },
+    "chain_neutral_code_block": {
+      "map": {
+        "0": "chain_neutral_code_block",
+        "1": "neutral_code_block",
+        "2": "neutral_code_block"
+      },
+      "name": "chain_neutral_code_block"
+    }
+  }
+}

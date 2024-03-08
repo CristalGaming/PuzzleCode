@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:wither_effect_block",
+    "puzzle_code:wither_effect_slab",
+    "puzzle_code:wither_effect_stairs"
+  ]
+}

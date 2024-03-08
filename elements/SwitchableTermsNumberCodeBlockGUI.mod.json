@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 176,
-    "height": 120,
+    "width": 177,
+    "height": 83,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,116 +13,177 @@
       {
         "type": "button",
         "data": {
+          "name": "button_left",
           "text": "Left",
+          "isUndecorated": false,
           "onClick": {
             "name": "SwitchAddLeft"
           },
-          "width": 50,
+          "width": 48,
           "height": 20,
-          "name": "Left",
           "x": 132,
-          "y": 67
+          "y": 84
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_back",
           "text": "Back",
+          "isUndecorated": false,
           "onClick": {
             "name": "SwitchAddBack"
           },
-          "width": 54,
+          "width": 48,
           "height": 20,
-          "name": "Back",
-          "x": 186,
-          "y": 67
+          "x": 188,
+          "y": 84
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_right",
           "text": "Right",
+          "isUndecorated": false,
           "onClick": {
             "name": "SwitchAddRight"
           },
-          "width": 50,
+          "width": 48,
           "height": 20,
-          "name": "Right",
-          "x": 245,
-          "y": 67
+          "x": 244,
+          "y": 84
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Left: <BNBT:logic:addLeft>",
+          "name": "label_is_disabled_bnbtlogicisdisab",
+          "text": {
+            "fixedValue": "Is Disabled:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Left: <BNBT:logic:addLeft>",
           "x": 132,
-          "y": 94
+          "y": 140
         }
       },
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "text": "Back: <BNBT:logic:addBack>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddLeftDisplayOn"
           },
-          "name": "Back: <BNBT:logic:addBack>",
           "x": 132,
-          "y": 107
+          "y": 112
         }
       },
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "text": "Right: <BNBT:logic:addRight>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddLeftDisplayOff"
           },
-          "name": "Right: <BNBT:logic:addRight>",
           "x": 132,
-          "y": 121
+          "y": 112
         }
       },
       {
-        "type": "button",
+        "type": "image",
         "data": {
-          "text": "Switch",
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddBackDisplayOn"
+          },
+          "x": 188,
+          "y": 112
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddBackDisplayOff"
+          },
+          "x": 188,
+          "y": 112
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddRightDisplayOn"
+          },
+          "x": 244,
+          "y": 112
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AddRightDisplayOff"
+          },
+          "x": 244,
+          "y": 112
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOn"
+          },
+          "x": 200,
+          "y": 136
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOff"
+          },
+          "x": 200,
+          "y": 136
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
           "onClick": {
             "name": "SwitchIsDisabled"
           },
-          "width": 162,
-          "height": 20,
-          "name": "Switch",
-          "x": 132,
-          "y": 134
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Is Disabled: <BNBT:logic:isDisabled>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Is Disabled: <BNBT:logic:isDisabled>",
-          "x": 132,
-          "y": 161
+          "x": 276,
+          "y": 136
         }
       }
     ],
     "gridSettings": {
-      "sx": 9,
-      "sy": 9,
-      "ox": 11,
+      "sx": 8,
+      "sy": 8,
+      "ox": 15,
       "oy": 15,
       "snapOnGrid": true
     }

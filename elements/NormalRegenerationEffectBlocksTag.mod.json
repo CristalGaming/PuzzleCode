@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:RegenerationEffectBlock"
+      },
+      {
+        "value": "CUSTOM:RegenerationEffectSlab"
+      },
+      {
+        "value": "CUSTOM:RegenerationEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/regeneration",
+    "namespace": "mod"
+  }
+}

@@ -1,194 +1,277 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 174,
-    "height": 155,
+    "width": 161,
+    "height": 145,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
-    "renderBgLayer": true,
+    "renderBgLayer": false,
     "doesPauseGame": false,
     "components": [
       {
-        "type": "textfield",
+        "type": "image",
         "data": {
-          "placeholder": "Power",
-          "width": 162,
-          "height": 20,
-          "name": "powerEffectField",
-          "x": 132,
-          "y": 50
+          "image": "effect_block_gui_1.png",
+          "use1Xscale": false,
+          "x": 133,
+          "y": 48
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Power: <BNBT:integer:powerEffect>",
+          "name": "label_power",
+          "text": {
+            "fixedValue": "Power"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Power: <BNBT:integer:powerEffect>",
-          "x": 132,
-          "y": 95
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyPowerEffect"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 72
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "Duration",
-          "width": 162,
-          "height": 20,
-          "name": "durationEffectField",
-          "x": 132,
-          "y": 108
+          "x": 173,
+          "y": 71
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Duration: <BNBT:integer:durationEffect> ticks",
+          "name": "label_duration",
+          "text": {
+            "fixedValue": "Duration"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Duration: <BNBT:integer:durationEffect> ticks",
-          "x": 132,
-          "y": 158
+          "x": 243,
+          "y": 73
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyDurationEffect"
+          "name": "label_bnbtintegerpowereffect",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnPowerEffect"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 131
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 142,
+          "y": 92
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "2",
+          "name": "label_bnbtintegerdurationeffect_ti",
+          "text": {
+            "fixedValue": "<BNBT:integer:durationEffect> ticks",
+            "name": "ReturnDurationEffectTicks"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 216,
+          "y": 92
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ambient",
+          "text": {
+            "fixedValue": "Ambient"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_particles",
+          "text": {
+            "fixedValue": "Particles"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 238,
+          "y": 114
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AmbientDisplayOn"
+          },
+          "x": 151,
+          "y": 133
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "AmbientDisplayOff"
+          },
+          "x": 151,
+          "y": 133
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ParticlesDisplayOn"
+          },
+          "x": 227,
+          "y": 133
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ParticlesDisplayOff"
+          },
+          "x": 227,
+          "y": 133
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_block_name",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnBlockName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 140,
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "EffectBlockGUIPagePowerEffect"
+          },
+          "x": 143,
+          "y": 68
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "EffectBlockGUIPageDurationEffect"
+          },
+          "x": 216,
+          "y": 68
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button2",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "EffectBlockGUIPageAmbient"
+          },
+          "x": 142,
+          "y": 110
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button3",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "EffectBlockGUIPageParticles"
+          },
+          "x": 216,
+          "y": 109
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_tab_potion",
+          "image": "tab_potion.png",
+          "hoveredImage": "tab_potion.png",
+          "onClick": {
+            "name": "EffectBlockGUIPage1"
+          },
+          "x": 133,
+          "y": 161
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_tab_redstone_deselected",
+          "image": "tab_redstone_deselected.png",
+          "hoveredImage": "",
           "onClick": {
             "name": "EffectBlockGUIPage2"
           },
-          "width": 14,
-          "height": 20,
-          "name": "2",
-          "x": 150,
-          "y": 171
+          "x": 198,
+          "y": 161
         }
       },
       {
-        "type": "label",
+        "type": "imagebutton",
         "data": {
-          "text": "[1]",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "[1]",
-          "x": 132,
-          "y": 176
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditPowerEffect"
-          },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 72
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditDurationEffect"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 131
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "3",
+          "name": "imagebutton_tab_interaction_deselected",
+          "image": "tab_interaction_deselected.png",
+          "hoveredImage": "",
           "onClick": {
             "name": "EffectBlockGUIPage3"
           },
-          "width": 14,
-          "height": 20,
-          "name": "3",
-          "x": 168,
-          "y": 171
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "4",
-          "onClick": {
-            "name": "EffectBlockGUIPage4"
-          },
-          "width": 14,
-          "height": 20,
-          "name": "4",
-          "x": 186,
-          "y": 171
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "5",
-          "onClick": {
-            "name": "EffectBlockGUIPage5"
-          },
-          "width": 14,
-          "height": 20,
-          "name": "5",
-          "x": 204,
-          "y": 171
+          "x": 261,
+          "y": 161
         }
       }
     ],
     "gridSettings": {
       "sx": 9,
       "sy": 9,
-      "ox": 11,
-      "oy": 8,
+      "ox": 17,
+      "oy": 19,
       "snapOnGrid": true
     }
   }

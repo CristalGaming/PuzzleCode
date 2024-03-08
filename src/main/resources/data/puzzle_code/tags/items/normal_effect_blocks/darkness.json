@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:darkness_effect_block",
+    "puzzle_code:darkness_effect_slab",
+    "puzzle_code:darkness_effect_stairs"
+  ]
+}

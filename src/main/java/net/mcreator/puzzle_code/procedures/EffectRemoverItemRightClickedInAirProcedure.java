@@ -14,8 +14,7 @@ public class EffectRemoverItemRightClickedInAirProcedure {
 		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
 			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = new ItemStack(PuzzleCodeModItems.EFFECT_REMOVER_ITEM.get());
-				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
-						_player.inventoryMenu.getCraftSlots());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if (entity instanceof LivingEntity _entity)

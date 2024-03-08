@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/jump_boost_item"
+    "layer0": "puzzle_code:item/jump_boost_effect_item"
   }
 }

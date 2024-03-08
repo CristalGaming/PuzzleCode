@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:dolphins_grace_effect_block",
+    "puzzle_code:dolphins_grace_effect_slab",
+    "puzzle_code:dolphins_grace_effect_stairs"
+  ]
+}

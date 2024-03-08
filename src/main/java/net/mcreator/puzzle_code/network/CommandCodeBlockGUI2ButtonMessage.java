@@ -12,12 +12,13 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.CommandCodeBlockGUI2Menu;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactFalseProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchWalkingReactProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchRedstoneReactProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchClickingReactProcedure;
+import net.mcreator.puzzle_code.procedures.OpenWalkingReactGUIPageProcedure;
+import net.mcreator.puzzle_code.procedures.OpenRedstoneReactGUIPageProcedure;
+import net.mcreator.puzzle_code.procedures.OpenClickingReactGUIPageProcedure;
+import net.mcreator.puzzle_code.procedures.CommandCodeBlockPage2Procedure;
 import net.mcreator.puzzle_code.procedures.CommandCodeBlockPage1Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -63,44 +64,47 @@ public class CommandCodeBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = CommandCodeBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			SetWalkingReactTrueProcedure.execute(world, x, y, z);
+			CommandCodeBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			SetWalkingReactFalseProcedure.execute(world, x, y, z);
+			CommandCodeBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			SetClickingReactTrueProcedure.execute(world, x, y, z);
+			SwitchWalkingReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 3) {
 
-			SetClickingReactFalseProcedure.execute(world, x, y, z);
+			SwitchRedstoneReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 4) {
 
-			SetRedstoneReactTrueProcedure.execute(world, x, y, z);
+			SwitchClickingReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 5) {
 
-			SetRedstoneReactFalseProcedure.execute(world, x, y, z);
+			OpenWalkingReactGUIPageProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 6) {
 
-			CommandCodeBlockPage1Procedure.execute(world, x, y, z, entity);
+			OpenClickingReactGUIPageProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 7) {
+
+			OpenRedstoneReactGUIPageProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(CommandCodeBlockGUI2ButtonMessage.class, CommandCodeBlockGUI2ButtonMessage::buffer,
-				CommandCodeBlockGUI2ButtonMessage::new, CommandCodeBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(CommandCodeBlockGUI2ButtonMessage.class, CommandCodeBlockGUI2ButtonMessage::buffer, CommandCodeBlockGUI2ButtonMessage::new, CommandCodeBlockGUI2ButtonMessage::handler);
 	}
 }

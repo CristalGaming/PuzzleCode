@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/placer_bottom",
-    "up": "puzzle_code:blocks/placer_top",
-    "north": "puzzle_code:blocks/placer_front",
-    "east": "puzzle_code:blocks/placer_right",
-    "south": "puzzle_code:blocks/placer_front",
-    "west": "puzzle_code:blocks/placer_left",
-    "particle": "puzzle_code:blocks/placer_bottom"
-  }
+    "down": "puzzle_code:block/placer_bottom",
+    "up": "puzzle_code:block/placer_top",
+    "north": "puzzle_code:block/placer_front",
+    "east": "puzzle_code:block/placer_right",
+    "south": "puzzle_code:block/placer_front",
+    "west": "puzzle_code:block/placer_left",
+    "particle": "puzzle_code:block/placer_bottom"
+  },
+  "render_type": "solid"
 }

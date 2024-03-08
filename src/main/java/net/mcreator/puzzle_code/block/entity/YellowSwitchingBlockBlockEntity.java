@@ -2,8 +2,8 @@ package net.mcreator.puzzle_code.block.entity;
 
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
@@ -32,7 +31,7 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 public class YellowSwitchingBlockBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(0, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public YellowSwitchingBlockBlockEntity(BlockPos position, BlockState state) {
@@ -80,7 +79,7 @@ public class YellowSwitchingBlockBlockEntity extends RandomizableContainerBlockE
 
 	@Override
 	public Component getDefaultName() {
-		return new TextComponent("yellow_switching_block");
+		return Component.literal("yellow_switching_block");
 	}
 
 	@Override
@@ -95,7 +94,7 @@ public class YellowSwitchingBlockBlockEntity extends RandomizableContainerBlockE
 
 	@Override
 	public Component getDisplayName() {
-		return new TextComponent("Yellow Switching Block");
+		return Component.literal("Yellow Switching Block");
 	}
 
 	@Override
@@ -130,7 +129,7 @@ public class YellowSwitchingBlockBlockEntity extends RandomizableContainerBlockE
 
 	@Override
 	public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
-		if (!this.remove && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
 			return handlers[facing.ordinal()].cast();
 		return super.getCapability(capability, facing);
 	}

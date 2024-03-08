@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:poison_effect_block",
+    "puzzle_code:in_poison_effect_block",
+    "puzzle_code:poison_effect_slab",
+    "puzzle_code:poison_effect_stairs",
+    "puzzle_code:in_poison_effect_slab",
+    "puzzle_code:in_poison_effect_stairs"
+  ]
+}

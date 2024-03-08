@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:block/empty_position_code_block",
+    "up": "puzzle_code:block/positions_to_area_code_block",
+    "north": "puzzle_code:block/empty_area_code_block",
+    "east": "puzzle_code:block/empty_position_code_block",
+    "south": "puzzle_code:block/empty_position_code_block",
+    "west": "puzzle_code:block/empty_position_code_block",
+    "particle": "puzzle_code:block/empty_position_code_block"
+  },
+  "render_type": "solid"
+}

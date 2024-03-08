@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:HungerEffectBlock"
+      },
+      {
+        "value": "CUSTOM:HungerEffectSlab"
+      },
+      {
+        "value": "CUSTOM:HungerEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/hunger",
+    "namespace": "mod"
+  }
+}

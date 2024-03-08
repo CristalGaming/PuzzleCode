@@ -1,0 +1,143 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 82,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_number",
+          "text": "Number",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "NBTTypeNumberButton"
+          },
+          "width": 54,
+          "height": 20,
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_logic",
+          "text": "Logic",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "NBTTypeLogicButton"
+          },
+          "width": 54,
+          "height": 20,
+          "x": 191,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_text",
+          "text": "Text",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "NBTTypeTextButton"
+          },
+          "width": 45,
+          "height": 20,
+          "x": 249,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_type",
+          "text": {
+            "fixedValue": "NBT Type:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_nbttype",
+          "text": {
+            "fixedValue": "NBT: NBTType"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_nbt_type",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnNBTType"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TransferNeutralCodeBlockGUIPage1"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 186,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TransferNeutralCodeBlockGUIPage2"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 213,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "puzzle_code:item/instant_health_item"
+  }
+}

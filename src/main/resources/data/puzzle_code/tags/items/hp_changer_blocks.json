@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:kill_block",
+    "puzzle_code:in_kill_block",
+    "puzzle_code:kill_slab",
+    "puzzle_code:kill_stairs",
+    "puzzle_code:fire_killer_block",
+    "puzzle_code:blue_kill_switching_block",
+    "puzzle_code:blue_kill_switching_block_off",
+    "puzzle_code:red_kill_switching_block",
+    "puzzle_code:red_kill_switching_block_off",
+    "puzzle_code:in_kill_slab",
+    "puzzle_code:in_kill_stairs",
+    "puzzle_code:fire_killer_slab",
+    "puzzle_code:fire_killer_stairs",
+    "puzzle_code:in_fire_killer_block",
+    "puzzle_code:in_fire_killer_slab",
+    "puzzle_code:in_fire_killer_stairs",
+    "puzzle_code:yellow_kill_switching_block",
+    "puzzle_code:yellow_kill_switching_block_off",
+    "puzzle_code:reverse_yellow_kill_switching_block",
+    "puzzle_code:reverse_yellow_kill_switching_block_off",
+    "puzzle_code:health_changer_block",
+    "puzzle_code:health_regeneration_block",
+    "puzzle_code:instant_health_block",
+    "puzzle_code:in_instant_health_block",
+    "puzzle_code:instant_health_slab",
+    "puzzle_code:instant_health_stairs",
+    "puzzle_code:in_instant_health_slab",
+    "puzzle_code:in_instant_health_stairs"
+  ]
+}

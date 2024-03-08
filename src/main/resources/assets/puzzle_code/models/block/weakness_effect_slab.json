@@ -1,8 +1,9 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "puzzle_code:blocks/weakness_effect_block",
-    "top": "puzzle_code:blocks/weakness_effect_block",
-    "side": "puzzle_code:blocks/weakness_effect_slab"
-  }
+    "bottom": "puzzle_code:block/weakness_effect_block",
+    "top": "puzzle_code:block/weakness_effect_block",
+    "side": "puzzle_code:block/weakness_effect_slab"
+  },
+  "render_type": "solid"
 }

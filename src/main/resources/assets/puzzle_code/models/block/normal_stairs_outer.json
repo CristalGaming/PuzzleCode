@@ -1,8 +1,9 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/normal_block_3",
-    "top": "puzzle_code:blocks/normal_block_3",
-    "side": "puzzle_code:blocks/normal_block_3"
-  }
+    "bottom": "puzzle_code:block/normal_block_3",
+    "top": "puzzle_code:block/normal_block_3",
+    "side": "puzzle_code:block/normal_block_3"
+  },
+  "render_type": "solid"
 }

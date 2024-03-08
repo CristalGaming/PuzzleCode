@@ -58,24 +58,23 @@ public class NumberCodeBlockGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = NumberCodeBlockGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyNumberCodeBlockProcedure.execute(world, x, y, z, guistate);
+			EditNumberCodeBlockProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 1) {
 
-			EditNumberCodeBlockProcedure.execute(world, x, y, z, guistate);
+			ApplyNumberCodeBlockProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(NumberCodeBlockGuiButtonMessage.class, NumberCodeBlockGuiButtonMessage::buffer,
-				NumberCodeBlockGuiButtonMessage::new, NumberCodeBlockGuiButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(NumberCodeBlockGuiButtonMessage.class, NumberCodeBlockGuiButtonMessage::buffer, NumberCodeBlockGuiButtonMessage::new, NumberCodeBlockGuiButtonMessage::handler);
 	}
 }

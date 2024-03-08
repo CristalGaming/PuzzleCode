@@ -1,0 +1,100 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "TAG:puzzle_code:effect_blocks/blindness"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/conduit_power"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/darkness"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/dolphins_grace"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/fire_resistance"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/glowing"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/haste"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/hunger"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/invisibility"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/jump_boost"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/levitation"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/luck"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/mining_fatigue"
+      },
+      {
+        "value": "TAG:puzzle_code:effeect_blocks/nausea"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/night_vision"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/poison"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/regeneration"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/resistance"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/saturation"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/slow_falling"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/slowness"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/speed"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/strength"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/unluck"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/water_breathing"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/weakness"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/wither"
+      },
+      {
+        "value": "TAG:puzzle_code:effect_blocks/yellow_switcher"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks",
+    "namespace": "mod"
+  }
+}

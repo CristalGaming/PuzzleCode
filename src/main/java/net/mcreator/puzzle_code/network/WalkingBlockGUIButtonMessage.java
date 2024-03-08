@@ -14,7 +14,6 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.puzzle_code.world.inventory.WalkingBlockGUIMenu;
 import net.mcreator.puzzle_code.procedures.EditWaitingOnProcedure;
 import net.mcreator.puzzle_code.procedures.EditWaitingOffProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyWaitingOnProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyWaitingOffProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -60,7 +59,7 @@ public class WalkingBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = WalkingBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -71,11 +70,11 @@ public class WalkingBlockGUIButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			ApplyWaitingOnProcedure.execute(world, x, y, z, guistate);
+			EditWaitingOnProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 2) {
 
-			EditWaitingOnProcedure.execute(world, x, y, z, guistate);
+			ApplyWaitingOffProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
@@ -85,7 +84,6 @@ public class WalkingBlockGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(WalkingBlockGUIButtonMessage.class, WalkingBlockGUIButtonMessage::buffer, WalkingBlockGUIButtonMessage::new,
-				WalkingBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(WalkingBlockGUIButtonMessage.class, WalkingBlockGUIButtonMessage::buffer, WalkingBlockGUIButtonMessage::new, WalkingBlockGUIButtonMessage::handler);
 	}
 }

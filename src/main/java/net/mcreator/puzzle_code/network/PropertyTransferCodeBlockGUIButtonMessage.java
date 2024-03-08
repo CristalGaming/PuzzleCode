@@ -60,18 +60,18 @@ public class PropertyTransferCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = PropertyTransferCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyGetPropertyProcedure.execute(world, x, y, z, guistate);
+			ApplySetPropertyProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 1) {
 
-			ApplySetPropertyProcedure.execute(world, x, y, z, guistate);
+			EditSetPropertyProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 2) {
 
@@ -79,13 +79,12 @@ public class PropertyTransferCodeBlockGUIButtonMessage {
 		}
 		if (buttonID == 3) {
 
-			EditSetPropertyProcedure.execute(world, x, y, z, guistate);
+			ApplyGetPropertyProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(PropertyTransferCodeBlockGUIButtonMessage.class, PropertyTransferCodeBlockGUIButtonMessage::buffer,
-				PropertyTransferCodeBlockGUIButtonMessage::new, PropertyTransferCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(PropertyTransferCodeBlockGUIButtonMessage.class, PropertyTransferCodeBlockGUIButtonMessage::buffer, PropertyTransferCodeBlockGUIButtonMessage::new, PropertyTransferCodeBlockGUIButtonMessage::handler);
 	}
 }

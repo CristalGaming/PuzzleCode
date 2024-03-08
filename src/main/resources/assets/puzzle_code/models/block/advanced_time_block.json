@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "puzzle_code:block/advanced_time_block",
+    "particle": "puzzle_code:block/advanced_time_block"
+  },
+  "render_type": "solid"
+}

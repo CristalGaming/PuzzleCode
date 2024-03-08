@@ -1,8 +1,9 @@
 {
   "parent": "block/slab_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/saturation_effect_block",
-    "top": "puzzle_code:blocks/saturation_effect_block",
-    "side": "puzzle_code:blocks/saturation_effect_slab"
-  }
+    "bottom": "puzzle_code:block/saturation_effect_block",
+    "top": "puzzle_code:block/saturation_effect_block",
+    "side": "puzzle_code:block/saturation_effect_slab"
+  },
+  "render_type": "solid"
 }

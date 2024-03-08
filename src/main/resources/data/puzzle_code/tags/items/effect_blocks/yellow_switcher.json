@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:yellow_switcher_effect_block",
+    "puzzle_code:in_yellow_switcher_effect_block",
+    "puzzle_code:yellow_switcher_effect_slab",
+    "puzzle_code:yellow_switcher_effect_stairs",
+    "puzzle_code:in_yellow_switcher_effect_slab",
+    "puzzle_code:in_yellow_switcher_effect_stairs"
+  ]
+}

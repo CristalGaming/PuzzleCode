@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:GlowingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:GlowingEffectSlab"
+      },
+      {
+        "value": "CUSTOM:GlowingEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InGlowingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InGlowingEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InGlowingEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/glowing",
+    "namespace": "mod"
+  }
+}

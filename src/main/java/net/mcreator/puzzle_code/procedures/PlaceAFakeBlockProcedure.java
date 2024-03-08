@@ -7,6 +7,6 @@ import net.mcreator.puzzle_code.init.PuzzleCodeModBlocks;
 
 public class PlaceAFakeBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		world.setBlock(new BlockPos(x, y, z), PuzzleCodeModBlocks.FAKE_BLOCK.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), PuzzleCodeModBlocks.FAKE_BLOCK.get().defaultBlockState(), 3);
 	}
 }

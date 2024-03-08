@@ -1,25 +1,25 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.NBTVerifierGUIMenu;
-import net.mcreator.puzzle_code.network.PuzzleCodeModVariables;
+import net.mcreator.puzzle_code.procedures.VarReturnNBTVerifierVariableTypeProcedure;
+import net.mcreator.puzzle_code.procedures.VarReturnNBTVerifierNBTProcedure;
+import net.mcreator.puzzle_code.procedures.VarReturnNBTVerifierCurrentValueProcedure;
 import net.mcreator.puzzle_code.network.NBTVerifierGUIButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUIMenu> {
@@ -28,6 +28,10 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 	private final int x, y, z;
 	private final Player entity;
 	EditBox NBTVerifyField;
+	Button button_number;
+	Button button_logic;
+	Button button_text;
+	ImageButton imagebutton_enter_button;
 
 	public NBTVerifierGUIScreen(NBTVerifierGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -37,26 +41,25 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 135;
+		this.imageHeight = 119;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/nbt_verifier_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		NBTVerifyField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		NBTVerifyField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -78,53 +81,63 @@ public class NBTVerifierGUIScreen extends AbstractContainerScreen<NBTVerifierGUI
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "NBT name:" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierNBT) + "", 6, 36, -12829636);
-		this.font.draw(poseStack, "NBT Current Value:", 6, 104, -12829636);
-		this.font.draw(poseStack, "" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierCurrentValue) + "", 6, 117, -12829636);
-		this.font.draw(poseStack, "" + ((entity.getCapability(PuzzleCodeModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PuzzleCodeModVariables.PlayerVariables())).NBTVerifierVariableType) + "", 6, 77, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_verifier_gui.label_nbt_namevarnbtverifiernbt"), 6, 28, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_verifier_gui.label_nbt_current_value"), 6, 87, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				VarReturnNBTVerifierCurrentValueProcedure.execute(entity), 6, 100, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				VarReturnNBTVerifierVariableTypeProcedure.execute(entity), 6, 69, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				VarReturnNBTVerifierNBTProcedure.execute(entity), 60, 28, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		NBTVerifyField = new EditBox(this.font, this.leftPos + 6, this.topPos + 9, 112, 20, new TextComponent(""));
-		guistate.put("text:NBTVerifyField", NBTVerifyField);
+		NBTVerifyField = new EditBox(this.font, this.leftPos + 7, this.topPos + 7, 133, 18, Component.translatable("gui.puzzle_code.nbt_verifier_gui.NBTVerifyField"));
 		NBTVerifyField.setMaxLength(32767);
+		guistate.put("text:NBTVerifyField", NBTVerifyField);
 		this.addWidget(this.NBTVerifyField);
-		this.addRenderableWidget(new Button(this.leftPos + 119, this.topPos + 9, 51, 20, new TextComponent("Apply"), e -> {
+		button_number = Button.builder(Component.translatable("gui.puzzle_code.nbt_verifier_gui.button_number"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(0, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 50, 50, 20, new TextComponent("Number"), e -> {
+		}).bounds(this.leftPos + 6, this.topPos + 46, 50, 20).build();
+		guistate.put("button:button_number", button_number);
+		this.addRenderableWidget(button_number);
+		button_logic = Button.builder(Component.translatable("gui.puzzle_code.nbt_verifier_gui.button_logic"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(1, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 50, 50, 20, new TextComponent("Logic"), e -> {
+		}).bounds(this.leftPos + 60, this.topPos + 46, 54, 20).build();
+		guistate.put("button:button_logic", button_logic);
+		this.addRenderableWidget(button_logic);
+		button_text = Button.builder(Component.translatable("gui.puzzle_code.nbt_verifier_gui.button_text"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(2, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 114, this.topPos + 50, 50, 20, new TextComponent("Text"), e -> {
+		}).bounds(this.leftPos + 119, this.topPos + 46, 50, 20).build();
+		guistate.put("button:button_text", button_text);
+		this.addRenderableWidget(button_text);
+		imagebutton_enter_button = new ImageButton(this.leftPos + 146, this.topPos + 6, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTVerifierGUIButtonMessage(3, x, y, z));
 				NBTVerifierGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:imagebutton_enter_button", imagebutton_enter_button);
+		this.addRenderableWidget(imagebutton_enter_button);
 	}
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "puzzle_code:block/positions_to_area_code_blocks"
+    },
+    "facing=east": {
+      "model": "puzzle_code:block/positions_to_area_code_blocks",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "puzzle_code:block/positions_to_area_code_blocks",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "puzzle_code:block/positions_to_area_code_blocks",
+      "y": 270
+    }
+  }
+}

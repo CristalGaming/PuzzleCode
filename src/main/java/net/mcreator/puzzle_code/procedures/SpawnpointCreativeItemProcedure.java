@@ -9,6 +9,6 @@ public class SpawnpointCreativeItemProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof ServerPlayer _serverPlayer)
-			_serverPlayer.setRespawnPosition(_serverPlayer.level.dimension(), new BlockPos(x, y, z), _serverPlayer.getYRot(), true, false);
+			_serverPlayer.setRespawnPosition(_serverPlayer.level().dimension(), BlockPos.containing(x, y, z), _serverPlayer.getYRot(), true, false);
 	}
 }

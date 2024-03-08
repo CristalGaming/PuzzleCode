@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 174,
-    "height": 133,
+    "height": 120,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,164 +13,205 @@
       {
         "type": "button",
         "data": {
+          "name": "button_left",
           "text": "Left",
+          "isUndecorated": false,
           "onClick": {
             "name": "SetTerm1ToLeft"
           },
           "width": 36,
           "height": 20,
-          "name": "Left",
           "x": 168,
-          "y": 58
+          "y": 67
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_back",
           "text": "Back",
+          "isUndecorated": false,
           "onClick": {
             "name": "SetTerm1ToBack"
           },
           "width": 36,
           "height": 20,
-          "name": "Back",
-          "x": 204,
-          "y": 58
+          "x": 213,
+          "y": 67
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_right",
           "text": "Right",
+          "isUndecorated": false,
           "onClick": {
             "name": "SetTerm1ToRight"
           },
           "width": 36,
           "height": 20,
-          "name": "Right",
-          "x": 240,
-          "y": 58
+          "x": 258,
+          "y": 67
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<BNBT:text:term1>",
+          "name": "label_bnbttextterm1",
+          "text": {
+            "fixedValue": "<BNBT:text:term1>",
+            "name": "ReturnTerm1"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:text:term1>",
           "x": 132,
-          "y": 80
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_is_disabled_bnbtlogicisdisab",
+          "text": {
+            "fixedValue": "Is Disabled:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 157
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_term_1",
+          "text": {
+            "fixedValue": "Term 1"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_bnbttextterm2",
+          "text": {
+            "fixedValue": "<BNBT:text:term2>",
+            "name": "ReturnTerm2"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_term_2",
+          "text": {
+            "fixedValue": "Term 2"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 112
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Switch",
+          "name": "button_left1",
+          "text": "Left",
+          "isUndecorated": false,
           "onClick": {
-            "name": "SwitchIsDisabled"
+            "name": "SetTerm2ToLeft"
           },
-          "width": 162,
+          "width": 36,
           "height": 20,
-          "name": "Switch",
-          "x": 132,
-          "y": 139
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Is Disabled: <BNBT:logic:isDisabled>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Is Disabled: <BNBT:logic:isDisabled>",
-          "x": 132,
-          "y": 166
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Term 1",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Term 1",
-          "x": 132,
-          "y": 62
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:text:term2>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:text:term2>",
-          "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Term 2",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Term 2",
-          "x": 132,
+          "x": 168,
           "y": 107
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Left",
-          "onClick": {
-            "name": "SetTerm2ToLeft"
-          },
-          "width": 36,
-          "height": 20,
-          "name": "Left",
-          "x": 168,
-          "y": 103
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_back1",
           "text": "Back",
+          "isUndecorated": false,
           "onClick": {
             "name": "SetTerm2ToBack"
           },
           "width": 36,
           "height": 20,
-          "name": "Back",
-          "x": 204,
-          "y": 103
+          "x": 213,
+          "y": 107
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_right1",
           "text": "Right",
+          "isUndecorated": false,
           "onClick": {
             "name": "SetTerm2ToRight"
           },
           "width": 36,
           "height": 20,
-          "name": "Right",
-          "x": 240,
-          "y": 103
+          "x": 258,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOn"
+          },
+          "x": 200,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOff"
+          },
+          "x": 200,
+          "y": 152
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "x": 272,
+          "y": 152
         }
       }
     ],

@@ -12,12 +12,11 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.HealthBlockGUI2Menu;
-import net.mcreator.puzzle_code.procedures.SwitchIsDisabledProcedure;
-import net.mcreator.puzzle_code.procedures.SetNearReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetNearReactFalseProcedure;
+import net.mcreator.puzzle_code.procedures.HealthBlockPage2Procedure;
 import net.mcreator.puzzle_code.procedures.HealthBlockPage1Procedure;
-import net.mcreator.puzzle_code.procedures.EditRangeProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyRangeProcedure;
+import net.mcreator.puzzle_code.procedures.HealthBlockGUIPageRangeProcedure;
+import net.mcreator.puzzle_code.procedures.HealthBlockGUIPageNearReactProcedure;
+import net.mcreator.puzzle_code.procedures.HealthBlockGUIPageIsDisabledProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -62,40 +61,35 @@ public class HealthBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = HealthBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			SetNearReactTrueProcedure.execute(world, x, y, z);
+			HealthBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			SetNearReactFalseProcedure.execute(world, x, y, z);
+			HealthBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			HealthBlockPage1Procedure.execute(world, x, y, z, entity);
+			HealthBlockGUIPageNearReactProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			ApplyRangeProcedure.execute(world, x, y, z, guistate);
+			HealthBlockGUIPageRangeProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 4) {
 
-			EditRangeProcedure.execute(world, x, y, z, guistate);
-		}
-		if (buttonID == 5) {
-
-			SwitchIsDisabledProcedure.execute(world, x, y, z);
+			HealthBlockGUIPageIsDisabledProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(HealthBlockGUI2ButtonMessage.class, HealthBlockGUI2ButtonMessage::buffer, HealthBlockGUI2ButtonMessage::new,
-				HealthBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(HealthBlockGUI2ButtonMessage.class, HealthBlockGUI2ButtonMessage::buffer, HealthBlockGUI2ButtonMessage::new, HealthBlockGUI2ButtonMessage::handler);
 	}
 }

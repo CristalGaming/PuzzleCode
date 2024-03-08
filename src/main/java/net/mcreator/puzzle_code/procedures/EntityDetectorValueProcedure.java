@@ -20,30 +20,21 @@ public class EntityDetectorValueProcedure {
 			public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
 				if (blockEntity != null)
-					return blockEntity.getTileData().getDouble(tag);
+					return blockEntity.getPersistentData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "range");
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-				.isEmpty()) {
+		}.getValue(world, BlockPos.containing(x, y, z), "range");
+		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()) {
 			return 15;
-		} else if (!world.getEntitiesOfClass(Mob.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-				.isEmpty()) {
+		} else if (!world.getEntitiesOfClass(Mob.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()) {
 			return 13;
-		} else if (!world
-				.getEntitiesOfClass(FallingBlockEntity.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-				.isEmpty()) {
+		} else if (!world.getEntitiesOfClass(FallingBlockEntity.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()) {
 			return 10;
-		} else if (!world
-				.getEntitiesOfClass(ThrowableProjectile.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-				.isEmpty()
-				|| !world.getEntitiesOfClass(Arrow.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-						.isEmpty()
-				|| !world.getEntitiesOfClass(SpectralArrow.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range),
-						e -> true).isEmpty()) {
+		} else if (!world.getEntitiesOfClass(ThrowableProjectile.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()
+				|| !world.getEntitiesOfClass(Arrow.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()
+				|| !world.getEntitiesOfClass(SpectralArrow.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()) {
 			return 7;
-		} else if (!world.getEntitiesOfClass(ItemEntity.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true)
-				.isEmpty()) {
+		} else if (!world.getEntitiesOfClass(ItemEntity.class, AABB.ofSize(new Vec3((x + 0.5), (y + 0.5), (z + 0.5)), range, range, range), e -> true).isEmpty()) {
 			return 5;
 		}
 		return 0;

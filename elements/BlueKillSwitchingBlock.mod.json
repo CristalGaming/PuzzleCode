@@ -1,15 +1,15 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "blue_kill_swiching_block",
+    "texture": "blue_kill_switching_block",
     "textureTop": "blue_kill_swiching_block",
     "textureLeft": "blue_kill_swiching_block",
     "textureFront": "blue_kill_swiching_block",
     "textureRight": "blue_kill_swiching_block",
     "textureBack": "blue_kill_swiching_block",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 11,
+    "customModelName": "Single texture",
     "rotationMode": 0,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -33,8 +33,10 @@
         "subtract": false
       }
     ],
-    "name": "Blue Kill Swiching Block",
-    "specialInfo": [],
+    "name": "Blue Kill Switching Block",
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -99,17 +101,11 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
-    "hasInventory": false,
+    "isBonemealable": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -127,13 +123,22 @@
       "name": "BlueKillSwichingBlockUpdateTick"
     },
     "onEntityWalksOn": {
-      "name": "KillBlockEntityWalksOnTheBlock"
+      "name": "KillSwitchingBlockEntityWalksOnTheBlock"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

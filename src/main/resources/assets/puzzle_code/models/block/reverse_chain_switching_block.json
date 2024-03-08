@@ -1,0 +1,11 @@
+{
+  "parent": "puzzle_code:custom/transfer_block",
+  "textures": {
+    "all": "puzzle_code:block/chain_switching_block_up",
+    "particle": "puzzle_code:block/chain_switching_block_up",
+    "0": "puzzle_code:block/chain_switching_block_up",
+    "1": "puzzle_code:block/chain_switching_block_front",
+    "2": "puzzle_code:block/chain_switching_block_back"
+  },
+  "render_type": "solid"
+}

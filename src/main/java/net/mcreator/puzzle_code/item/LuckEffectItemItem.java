@@ -3,19 +3,22 @@ package net.mcreator.puzzle_code.item;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.puzzle_code.procedures.LuckEffectItemRightClickedInAirProcedure;
-import net.mcreator.puzzle_code.init.PuzzleCodeModTabs;
+
+import java.util.List;
 
 public class LuckEffectItemItem extends Item {
 	public LuckEffectItemItem() {
-		super(new Item.Properties().tab(PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB).stacksTo(64).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
 	}
 
 	@Override
@@ -24,14 +27,14 @@ public class LuckEffectItemItem extends Item {
 	}
 
 	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+	}
+
+	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		ItemStack itemstack = ar.getObject();
-		double x = entity.getX();
-		double y = entity.getY();
-		double z = entity.getZ();
-
-		LuckEffectItemRightClickedInAirProcedure.execute(entity, itemstack);
+		LuckEffectItemRightClickedInAirProcedure.execute(entity, ar.getObject());
 		return ar;
 	}
 }

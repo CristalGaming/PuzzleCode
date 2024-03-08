@@ -1,0 +1,256 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 142,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "xPosField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 58
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_x_position",
+          "text": {
+            "fixedValue": "X Velocity:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnx_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnxPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "yPosField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "zPosField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_y_position",
+          "text": {
+            "fixedValue": "Y Velocity:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_z_position",
+          "text": {
+            "fixedValue": "Z Velocity:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returny_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnyPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnz_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnzPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CatapulterBlockGUIPage1"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 191,
+          "y": 166
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CatapulterBlockGUIPage2"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 218,
+          "y": 166
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyxPos"
+          },
+          "x": 272,
+          "y": 58
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditxPos"
+          },
+          "x": 249,
+          "y": 58
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button.png",
+          "onClick": {
+            "name": "ApplyyPos"
+          },
+          "x": 272,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "x": 249,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button2",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyzPos"
+          },
+          "x": 272,
+          "y": 130
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button2",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditzPos"
+          },
+          "x": 249,
+          "y": 130
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

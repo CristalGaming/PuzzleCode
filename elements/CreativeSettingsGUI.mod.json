@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_blocks_affects_you",
           "text": "Blocks Affects You?",
+          "isUndecorated": false,
           "onClick": {
             "name": "BlocksAffectsYouSwich"
           },
           "width": 120,
           "height": 20,
-          "name": "Blocks Affects You?",
           "x": 85,
           "y": 134
         }
@@ -27,13 +28,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_place_a_fake_block",
           "text": "Place a fake block",
+          "isUndecorated": false,
           "onClick": {
             "name": "PlaceAFakeBlock"
           },
           "width": 120,
           "height": 20,
-          "name": "Place a fake block",
           "x": 85,
           "y": 112
         }
@@ -41,13 +43,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_time_set_day",
           "text": "Time Set Day",
+          "isUndecorated": false,
           "onClick": {
             "name": "TimeSetDayCreativeItem"
           },
           "width": 121,
           "height": 20,
-          "name": "Time Set Day",
           "x": 220,
           "y": 89
         }
@@ -55,7 +58,10 @@
       {
         "type": "label",
         "data": {
-          "text": "ON",
+          "name": "label_on",
+          "text": {
+            "fixedValue": "ON"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
@@ -63,7 +69,6 @@
           "displayCondition": {
             "name": "BlocksAffectsYouTextCreativeItem"
           },
-          "name": "ON",
           "x": 207,
           "y": 139
         }
@@ -71,13 +76,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_clean_effects",
           "text": "Clean effects",
+          "isUndecorated": false,
           "onClick": {
             "name": "CleanEffectsCreativeItem"
           },
           "width": 86,
           "height": 20,
-          "name": "Clean effects",
           "x": 256,
           "y": 67
         }
@@ -85,13 +91,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_reset_hp",
           "text": "Reset HP",
+          "isUndecorated": false,
           "onClick": {
             "name": "ResetHPCreativeItem"
           },
           "width": 63,
           "height": 20,
-          "name": "Reset HP",
           "x": 85,
           "y": 67
         }
@@ -99,13 +106,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_reset_hunger",
           "text": "Reset Hunger",
+          "isUndecorated": false,
           "onClick": {
             "name": "ResetHungerCreativeItem"
           },
           "width": 99,
           "height": 20,
-          "name": "Reset Hunger",
           "x": 153,
           "y": 67
         }
@@ -113,13 +121,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_time_set_night",
           "text": "Time Set Night",
+          "isUndecorated": false,
           "onClick": {
             "name": "TimeSetNightCreativeItem"
           },
           "width": 131,
           "height": 20,
-          "name": "Time Set Night",
           "x": 85,
           "y": 89
         }
@@ -127,13 +136,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_creative",
           "text": "Creative",
+          "isUndecorated": false,
           "onClick": {
             "name": "GamemodeCreativeCreativeItem"
           },
           "width": 59,
           "height": 20,
-          "name": "Creative",
           "x": 85,
           "y": 44
         }
@@ -141,13 +151,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_survival",
           "text": "Survival",
+          "isUndecorated": false,
           "onClick": {
             "name": "GamemodeSurvivalCreativeItem"
           },
           "width": 63,
           "height": 20,
-          "name": "Survival",
           "x": 148,
           "y": 44
         }
@@ -155,13 +166,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_spectator",
           "text": "Spectator",
+          "isUndecorated": false,
           "onClick": {
             "name": "GamemodeSpectatorCreativeItem"
           },
           "width": 72,
           "height": 20,
-          "name": "Spectator",
           "x": 216,
           "y": 44
         }
@@ -169,13 +181,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_spawnpoint",
           "text": "Spawnpoint",
+          "isUndecorated": false,
           "onClick": {
             "name": "SpawnpointCreativeItem"
           },
           "width": 72,
           "height": 20,
-          "name": "Spawnpoint",
           "x": 270,
           "y": 134
         }
@@ -183,13 +196,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_creative_items",
           "text": "Creative Items",
+          "isUndecorated": false,
           "onClick": {
             "name": "OpenCreativeSettingsGuiCreativeItems"
           },
           "width": 117,
           "height": 20,
-          "name": "Creative Items",
           "x": 85,
           "y": 175
         }
@@ -197,13 +211,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_game_rules",
           "text": "Game Rules",
+          "isUndecorated": false,
           "onClick": {
             "name": "OpenCreativeSettingsGUIGamerules"
           },
           "width": 87,
           "height": 20,
-          "name": "Game Rules",
           "x": 256,
           "y": 175
         }

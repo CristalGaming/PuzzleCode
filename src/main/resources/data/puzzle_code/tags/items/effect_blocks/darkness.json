@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:darkness_effect_block",
+    "puzzle_code:darkness_effect_slab",
+    "puzzle_code:darkness_effect_stairs",
+    "puzzle_code:in_darkness_effect_block",
+    "puzzle_code:in_darkness_effect_slab",
+    "puzzle_code:in_darkness_effect_stairs"
+  ]
+}

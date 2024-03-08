@@ -13,12 +13,8 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.TeleporterNumberCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.procedures.TeleporterNumberCodeBlockGUIPage2Procedure;
-import net.mcreator.puzzle_code.procedures.EditzPosProcedure;
-import net.mcreator.puzzle_code.procedures.EdityPosProcedure;
-import net.mcreator.puzzle_code.procedures.EditxPosProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyzPosProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyyPosProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyxPosProcedure;
+import net.mcreator.puzzle_code.procedures.TeleporterNumberCodeBlockGUIPage1Procedure;
+import net.mcreator.puzzle_code.procedures.OpenPositionGUIProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -63,44 +59,27 @@ public class TeleporterNumberCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = TeleporterNumberCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyxPosProcedure.execute(world, x, y, z, guistate);
+			TeleporterNumberCodeBlockGUIPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			ApplyyPosProcedure.execute(world, x, y, z, guistate);
+			TeleporterNumberCodeBlockGUIPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			ApplyzPosProcedure.execute(world, x, y, z, guistate);
-		}
-		if (buttonID == 3) {
-
-			TeleporterNumberCodeBlockGUIPage2Procedure.execute(world, x, y, z, entity);
-		}
-		if (buttonID == 4) {
-
-			EditxPosProcedure.execute(world, x, y, z, guistate);
-		}
-		if (buttonID == 5) {
-
-			EdityPosProcedure.execute(world, x, y, z, guistate);
-		}
-		if (buttonID == 6) {
-
-			EditzPosProcedure.execute(world, x, y, z, guistate);
+			OpenPositionGUIProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(TeleporterNumberCodeBlockGUIButtonMessage.class, TeleporterNumberCodeBlockGUIButtonMessage::buffer,
-				TeleporterNumberCodeBlockGUIButtonMessage::new, TeleporterNumberCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(TeleporterNumberCodeBlockGUIButtonMessage.class, TeleporterNumberCodeBlockGUIButtonMessage::buffer, TeleporterNumberCodeBlockGUIButtonMessage::new, TeleporterNumberCodeBlockGUIButtonMessage::handler);
 	}
 }

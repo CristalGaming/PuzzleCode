@@ -12,13 +12,11 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.AdvancedTeleporterBlockGUI2Menu;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactFalseProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchWalkingReactProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchRedstoneReactProcedure;
+import net.mcreator.puzzle_code.procedures.SwitchClickingReactProcedure;
 import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage3Procedure;
+import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage2Procedure;
 import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage1Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -64,48 +62,39 @@ public class AdvancedTeleporterBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = AdvancedTeleporterBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			SetWalkingReactTrueProcedure.execute(world, x, y, z);
+			EntityTeleporterBlockPage3Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			SetWalkingReactFalseProcedure.execute(world, x, y, z);
+			EntityTeleporterBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			SetClickingReactTrueProcedure.execute(world, x, y, z);
+			EntityTeleporterBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			SetClickingReactFalseProcedure.execute(world, x, y, z);
+			SwitchRedstoneReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 4) {
 
-			SetRedstoneReactTrueProcedure.execute(world, x, y, z);
+			SwitchClickingReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 5) {
 
-			SetRedstoneReactFalseProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 6) {
-
-			EntityTeleporterBlockPage3Procedure.execute(world, x, y, z, entity);
-		}
-		if (buttonID == 7) {
-
-			EntityTeleporterBlockPage1Procedure.execute(world, x, y, z, entity);
+			SwitchWalkingReactProcedure.execute(world, x, y, z);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(AdvancedTeleporterBlockGUI2ButtonMessage.class, AdvancedTeleporterBlockGUI2ButtonMessage::buffer,
-				AdvancedTeleporterBlockGUI2ButtonMessage::new, AdvancedTeleporterBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(AdvancedTeleporterBlockGUI2ButtonMessage.class, AdvancedTeleporterBlockGUI2ButtonMessage::buffer, AdvancedTeleporterBlockGUI2ButtonMessage::new, AdvancedTeleporterBlockGUI2ButtonMessage::handler);
 	}
 }

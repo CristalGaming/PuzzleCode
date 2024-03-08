@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/gui_set"
+    "layer0": "puzzle_code:item/gui_set"
   }
 }

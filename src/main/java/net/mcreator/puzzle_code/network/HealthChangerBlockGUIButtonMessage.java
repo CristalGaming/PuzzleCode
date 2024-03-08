@@ -12,8 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIMenu;
-import net.mcreator.puzzle_code.procedures.EditRangeProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyRangeProcedure;
+import net.mcreator.puzzle_code.procedures.HealthChangerBlockGUIPageRangeProcedure;
 import net.mcreator.puzzle_code.procedures.ApplyHealthLevelProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -59,28 +58,23 @@ public class HealthChangerBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = HealthChangerBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyRangeProcedure.execute(world, x, y, z, guistate);
+			ApplyHealthLevelProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 1) {
 
-			ApplyHealthLevelProcedure.execute(world, x, y, z, guistate);
-		}
-		if (buttonID == 2) {
-
-			EditRangeProcedure.execute(world, x, y, z, guistate);
+			HealthChangerBlockGUIPageRangeProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(HealthChangerBlockGUIButtonMessage.class, HealthChangerBlockGUIButtonMessage::buffer,
-				HealthChangerBlockGUIButtonMessage::new, HealthChangerBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(HealthChangerBlockGUIButtonMessage.class, HealthChangerBlockGUIButtonMessage::buffer, HealthChangerBlockGUIButtonMessage::new, HealthChangerBlockGUIButtonMessage::handler);
 	}
 }

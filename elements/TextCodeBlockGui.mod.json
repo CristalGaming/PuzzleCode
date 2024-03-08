@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 71,
+    "height": 59,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,52 +14,83 @@
         "type": "textfield",
         "data": {
           "placeholder": "Message",
-          "width": 162,
-          "height": 20,
           "name": "textCodeBlockField",
-          "x": 132,
-          "y": 94
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "TextCodeBlockGuiButtonPressed"
-          },
-          "width": 77,
+          "width": 113,
           "height": 20,
-          "name": "Apply",
           "x": 132,
-          "y": 116
+          "y": 98
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Text: <BNBT:text:textCodeBlock>",
+          "name": "label_text_bnbttexttextcodeblock",
+          "text": {
+            "fixedValue": "Text:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Text: <BNBT:text:textCodeBlock>",
           "x": 132,
-          "y": 139
+          "y": 121
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
+          "name": "label_nbt_textcodeblock",
+          "text": {
+            "fixedValue": "NBT: textCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_retrun_text_code_block",
+          "text": {
+            "fixedValue": "",
+            "name": "RetrunTextCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 164,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "TextCodeBlockGuiButtonPressed"
+          },
+          "x": 272,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditTextCodeBlock"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 116
+          "x": 249,
+          "y": 98
         }
       }
     ],

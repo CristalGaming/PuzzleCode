@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:invisibility_effect_block",
+    "puzzle_code:invisibility_effect_slab",
+    "puzzle_code:invisibility_effect_stairs",
+    "puzzle_code:in_invisibility_effect_block",
+    "puzzle_code:in_invisibility_effect_slab",
+    "puzzle_code:in_invisibility_effect_stairs"
+  ]
+}

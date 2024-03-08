@@ -1,8 +1,9 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/in_instant_health_block",
-    "top": "puzzle_code:blocks/in_instant_health_block",
-    "side": "puzzle_code:blocks/in_instant_health_slab"
-  }
+    "bottom": "puzzle_code:block/in_instant_health_block",
+    "top": "puzzle_code:block/in_instant_health_block",
+    "side": "puzzle_code:block/in_instant_health_slab"
+  },
+  "render_type": "translucent"
 }

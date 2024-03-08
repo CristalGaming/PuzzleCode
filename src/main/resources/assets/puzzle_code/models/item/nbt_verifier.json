@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/nbt_verifier"
+    "layer0": "puzzle_code:item/nbt_verifier"
   }
 }

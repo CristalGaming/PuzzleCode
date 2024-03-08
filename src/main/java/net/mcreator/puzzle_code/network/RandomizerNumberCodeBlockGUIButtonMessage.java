@@ -60,7 +60,7 @@ public class RandomizerNumberCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = RandomizerNumberCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -71,21 +71,20 @@ public class RandomizerNumberCodeBlockGUIButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			ApplyMaxValueProcedure.execute(world, x, y, z, guistate);
+			EditMinValueProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 2) {
 
-			EditMinValueProcedure.execute(world, x, y, z, guistate);
+			EditMaxValueProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
-			EditMaxValueProcedure.execute(world, x, y, z, guistate);
+			ApplyMaxValueProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(RandomizerNumberCodeBlockGUIButtonMessage.class, RandomizerNumberCodeBlockGUIButtonMessage::buffer,
-				RandomizerNumberCodeBlockGUIButtonMessage::new, RandomizerNumberCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(RandomizerNumberCodeBlockGUIButtonMessage.class, RandomizerNumberCodeBlockGUIButtonMessage::buffer, RandomizerNumberCodeBlockGUIButtonMessage::new, RandomizerNumberCodeBlockGUIButtonMessage::handler);
 	}
 }

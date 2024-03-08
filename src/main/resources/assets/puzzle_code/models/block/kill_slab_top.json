@@ -1,8 +1,9 @@
 {
   "parent": "block/slab_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/kill_block",
-    "top": "puzzle_code:blocks/kill_block",
-    "side": "puzzle_code:blocks/kill_slab"
-  }
+    "bottom": "puzzle_code:block/kill_block",
+    "top": "puzzle_code:block/kill_block",
+    "side": "puzzle_code:block/kill_slab"
+  },
+  "render_type": "solid"
 }

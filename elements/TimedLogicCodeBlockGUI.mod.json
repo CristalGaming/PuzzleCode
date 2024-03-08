@@ -1,0 +1,197 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "trueDelayField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyTrueDelay"
+          },
+          "x": 272,
+          "y": 44
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditTrueDelay"
+          },
+          "x": 249,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_truedelay",
+          "text": {
+            "fixedValue": "NBT: trueDelay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 67
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "falseDelayField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditFalseDelay"
+          },
+          "x": 249,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyFalseDelay"
+          },
+          "x": 272,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_falsedelay",
+          "text": {
+            "fixedValue": "NBT: falseDelay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "LogicCodeBlockDisplayOn"
+          },
+          "x": 195,
+          "y": 175
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "LogicCodeBlockDisplayOff"
+          },
+          "x": 195,
+          "y": 175
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_logiccodeblock",
+          "text": {
+            "fixedValue": "NBT: logicCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_true_delay",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnTrueDelay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_false_delay",
+          "text": {
+            "fixedValue": "fa",
+            "name": "ReturnFalseDelay"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 130
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

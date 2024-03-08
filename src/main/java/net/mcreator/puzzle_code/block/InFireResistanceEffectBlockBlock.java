@@ -1,12 +1,9 @@
 
 package net.mcreator.puzzle_code.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -15,7 +12,8 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
@@ -25,31 +23,31 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import net.mcreator.puzzle_code.procedures.InFireResistanceEffectBlockOnBlockRightClickedProcedure;
 import net.mcreator.puzzle_code.procedures.FireResistanceEffectBlockUpdateTickProcedure;
+import net.mcreator.puzzle_code.procedures.FireResistanceEffectBlockOnBlockRightClickedProcedure;
 import net.mcreator.puzzle_code.procedures.FireResistanceEffectBlockIsPlacedByProcedure;
 import net.mcreator.puzzle_code.procedures.FireResistanceBlockRedstoneOnProcedure;
 import net.mcreator.puzzle_code.procedures.FireResistanceBlockEntityWalksOnTheBlockProcedure;
 import net.mcreator.puzzle_code.procedures.EffectBlockRedstoneOffProcedure;
-import net.mcreator.puzzle_code.init.PuzzleCodeModBlocks;
 import net.mcreator.puzzle_code.block.entity.InFireResistanceEffectBlockBlockEntity;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
-public class InFireResistanceEffectBlockBlock extends Block
-		implements
-
-			EntityBlock {
+public class InFireResistanceEffectBlockBlock extends Block implements EntityBlock {
 	public InFireResistanceEffectBlockBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 30f).requiresCorrectToolForDrops().noCollission());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(3f, 30f).requiresCorrectToolForDrops().noCollission());
+	}
+
+	@Override
+	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
 	}
 
 	@Override
@@ -69,13 +67,13 @@ public class InFireResistanceEffectBlockBlock extends Block
 
 	@Override
 	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
-		if (player.getInventory().getSelected().getItem() instanceof TieredItem tieredItem)
+		if (player.getInventory().getSelected().getItem() instanceof PickaxeItem tieredItem)
 			return tieredItem.getTier().getLevel() >= 1;
 		return false;
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
@@ -99,12 +97,11 @@ public class InFireResistanceEffectBlockBlock extends Block
 	}
 
 	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-
 		FireResistanceEffectBlockUpdateTickProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 1);
 	}
@@ -131,7 +128,7 @@ public class InFireResistanceEffectBlockBlock extends Block
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		InteractionResult result = InFireResistanceEffectBlockOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
+		InteractionResult result = FireResistanceEffectBlockOnBlockRightClickedProcedure.execute(world, x, y, z, entity);
 		return result;
 	}
 
@@ -178,11 +175,4 @@ public class InFireResistanceEffectBlockBlock extends Block
 		else
 			return 0;
 	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_BLOCK.get(),
-				renderType -> renderType == RenderType.translucent());
-	}
-
 }

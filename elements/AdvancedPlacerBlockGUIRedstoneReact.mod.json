@@ -1,0 +1,106 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 105,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_back",
+          "text": "Back",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AdvancedPlacerBlockPage2"
+          },
+          "width": 162,
+          "height": 20,
+          "x": 132,
+          "y": 145
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_does_react_to_redstone",
+          "text": {
+            "fixedValue": "Does react to redstone?"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 72
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_redstonereact",
+          "text": {
+            "fixedValue": "NBT: redstoneReact"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 109
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_switch",
+          "text": "Switch",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SwitchRedstoneReact"
+          },
+          "width": 162,
+          "height": 20,
+          "x": 132,
+          "y": 123
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "RedstoneReactDisplayOn"
+          },
+          "x": 191,
+          "y": 86
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "RedstoneReactDisplayOff"
+          },
+          "x": 191,
+          "y": 86
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 19,
+      "snapOnGrid": true
+    }
+  }
+}

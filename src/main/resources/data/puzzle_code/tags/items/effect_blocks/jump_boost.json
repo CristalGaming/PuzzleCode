@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:jump_boost_effect_block",
+    "puzzle_code:in_jump_boost_effect_block",
+    "puzzle_code:jump_boost_effect_stairs",
+    "puzzle_code:jump_boost_effect_slab",
+    "puzzle_code:in_jump_boost_effect_slab",
+    "puzzle_code:in_jump_boost_effect_stairs"
+  ]
+}

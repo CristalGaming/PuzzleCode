@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:BlindnessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InBlindnessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:BlindnessEffectSlab"
+      },
+      {
+        "value": "CUSTOM:BlindnessEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InBlindnessEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InBlindnessEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/blindness",
+    "namespace": "mod"
+  }
+}

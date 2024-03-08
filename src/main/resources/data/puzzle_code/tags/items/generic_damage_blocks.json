@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:damage_block",
+    "puzzle_code:kill_block",
+    "puzzle_code:in_kill_block",
+    "puzzle_code:kill_slab",
+    "puzzle_code:kill_stairs",
+    "puzzle_code:in_kill_slab",
+    "puzzle_code:in_kill_stairs",
+    "puzzle_code:blue_kill_switching_block",
+    "puzzle_code:blue_kill_switching_block_off",
+    "puzzle_code:red_kill_switching_block",
+    "puzzle_code:red_kill_switching_block_off",
+    "puzzle_code:yellow_kill_switching_block",
+    "puzzle_code:yellow_kill_switching_block_off",
+    "puzzle_code:reverse_yellow_kill_switching_block",
+    "puzzle_code:reverse_yellow_kill_switching_block_off"
+  ]
+}

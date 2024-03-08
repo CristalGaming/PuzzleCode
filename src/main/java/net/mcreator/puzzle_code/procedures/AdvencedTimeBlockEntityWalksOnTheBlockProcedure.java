@@ -14,17 +14,16 @@ public class AdvencedTimeBlockEntityWalksOnTheBlockProcedure {
 		if (entity == null)
 			return;
 		if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)
-				&& (world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU)
-						|| (entity instanceof Player _plr ? _plr.getAbilities().instabuild : false))) {
+				&& (world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU) || (entity instanceof Player _plr ? _plr.getAbilities().instabuild : false))) {
 			if (world instanceof ServerLevel _level)
 				_level.setDayTime((int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getDouble(tag);
+							return blockEntity.getPersistentData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "time")));
+				}.getValue(world, BlockPos.containing(x, y, z), "time")));
 		}
 	}
 }

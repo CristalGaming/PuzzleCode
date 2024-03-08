@@ -1,0 +1,11 @@
+{
+  "parent": "puzzle_code:custom/transfer_block",
+  "textures": {
+    "all": "puzzle_code:block/text_to_direction_code_block",
+    "particle": "puzzle_code:block/text_to_direction_code_block",
+    "0": "puzzle_code:block/text_to_direction_code_block",
+    "1": "puzzle_code:block/empty_direction_code_block",
+    "2": "puzzle_code:block/empty_text_code_block"
+  },
+  "render_type": "solid"
+}

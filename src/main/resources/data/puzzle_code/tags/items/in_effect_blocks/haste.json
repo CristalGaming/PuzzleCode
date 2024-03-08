@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:in_haste_effect_block",
+    "puzzle_code:in_haste_effect_slab",
+    "puzzle_code:in_haste_effect_stairs"
+  ]
+}

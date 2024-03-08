@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:night_vision_effect_block",
+    "puzzle_code:night_vision_effect_slab",
+    "puzzle_code:night_vision_effect_stairs",
+    "puzzle_code:in_night_vision_effect_block",
+    "puzzle_code:in_night_vision_effect_slab",
+    "puzzle_code:in_night_vision_effect_stairs"
+  ]
+}

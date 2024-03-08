@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:CheckpointBlock"
+      },
+      {
+        "value": "CUSTOM:CheckpointSlab"
+      },
+      {
+        "value": "CUSTOM:CheckpointStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_checkpoint_blocks",
+    "namespace": "mod"
+  }
+}

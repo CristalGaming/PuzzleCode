@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -14,9 +14,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
+          "name": "textCodeBlockField",
           "width": 162,
           "height": 20,
-          "name": "textCodeBlockField",
           "x": 132,
           "y": 62
         }
@@ -24,13 +24,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_apply",
           "text": "Apply",
+          "isUndecorated": false,
           "onClick": {
             "name": "TextCodeBlockGuiButtonPressed"
           },
           "width": 77,
           "height": 20,
-          "name": "Apply",
           "x": 132,
           "y": 85
         }
@@ -38,12 +39,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Text: <BNBT:text:textCodeBlock>",
+          "name": "label_text_bnbttexttextcodeblock",
+          "text": {
+            "fixedValue": "Text:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Text: <BNBT:text:textCodeBlock>",
           "x": 132,
           "y": 107
         }
@@ -52,9 +55,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
+          "name": "colorField",
           "width": 162,
           "height": 20,
-          "name": "colorField",
           "x": 132,
           "y": 121
         }
@@ -62,13 +65,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_apply1",
           "text": "Apply",
+          "isUndecorated": false,
           "onClick": {
             "name": "ApplyColor"
           },
           "width": 162,
           "height": 20,
-          "name": "Apply",
           "x": 132,
           "y": 143
         }
@@ -76,12 +80,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Color: <BNBT:text:color>",
+          "name": "label_color_bnbttextcolor",
+          "text": {
+            "fixedValue": "Color:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Color: <BNBT:text:color>",
           "x": 132,
           "y": 166
         }
@@ -89,15 +95,48 @@
       {
         "type": "button",
         "data": {
+          "name": "button_edit",
           "text": "Edit",
+          "isUndecorated": false,
           "onClick": {
             "name": "EditTextCodeBlock"
           },
           "width": 76,
           "height": 20,
-          "name": "Edit",
           "x": 218,
           "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_retrun_text_code_block",
+          "text": {
+            "fixedValue": "",
+            "name": "RetrunTextCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 164,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_color",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnColor"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 166
         }
       }
     ],

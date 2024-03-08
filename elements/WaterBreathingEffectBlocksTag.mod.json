@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:WaterBreathingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InWaterBreathingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:WaterBreathingEffectSlab"
+      },
+      {
+        "value": "CUSTOM:WaterBreathingEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InWaterBreathingEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InWaterBreathingEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/water_breathing",
+    "namespace": "mod"
+  }
+}

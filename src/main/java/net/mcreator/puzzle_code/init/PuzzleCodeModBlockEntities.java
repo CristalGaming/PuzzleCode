@@ -18,6 +18,8 @@ import net.mcreator.puzzle_code.block.entity.YellowSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.YellowSwitcherEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.YellowSwitcherEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.YellowSwitcherEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.YellowKillSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.YellowKillSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.YearNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.WitherEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.WitherEffectSlabBlockEntity;
@@ -30,27 +32,35 @@ import net.mcreator.puzzle_code.block.entity.WaterBreathingEffectSlabBlockEntity
 import net.mcreator.puzzle_code.block.entity.WaterBreathingEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.WalkingSwitchingBlockOffBlockEntity;
 import net.mcreator.puzzle_code.block.entity.WalkingSwitchingBlockBlockEntity;
-import net.mcreator.puzzle_code.block.entity.WalkingDetectorBlockEntity;
 import net.mcreator.puzzle_code.block.entity.UnluckEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.UnluckEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.UnluckEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.UnequalNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TransferTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TransferNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.TransferNeutralCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TransferLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TransferItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.TransferAreaCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TitleTextCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.TimedSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.TimedLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TeleporterTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TeleporterNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TeleporterLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.TeleporterItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.TeleporterDirectionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SwitchingBlockRedBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SwitcherBlockBlueBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SurvivalTextCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.SurvivalPositionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SurvivalNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.SurvivalNeutralCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SurvivalLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SurvivalItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.SurvivalDirectionCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.SurvivalAreaCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SubstractionNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.StrengthEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.StrengthEffectSlabBlockEntity;
@@ -69,29 +79,46 @@ import net.mcreator.puzzle_code.block.entity.SaturationEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.SaturationEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RightTransferTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RightTransferNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RightTransferNeutralCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RightTransferItemCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ReverseYellowSwitchingSlabOffBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ReverseYellowSwitchingSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ReverseYellowSwitchingBlockOffBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ReverseYellowSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseYellowKillSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseYellowKillSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseNearEntityYellowSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseNearEntityYellowSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseNearEntitySwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseNearEntitySwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseImitatorSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseImitatorSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseChainSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ReverseChainSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ResistanceEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ResistanceEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ResistanceEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ReplacerBlockBlockEntity;
-import net.mcreator.puzzle_code.block.entity.RemoteMoverBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RegenerationEffectBlockBlockEntity;
-import net.mcreator.puzzle_code.block.entity.RedBlueSwitchingLogicGlobalBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedSwitchingSlabOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedSwitchingSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RedKillSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RandomizerNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.RandomizerIntegerNumberCodeBlockBlockEntity;
-import net.mcreator.puzzle_code.block.entity.PuzzleCrafterBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RandomizerDirectionCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RandomItemFromTagCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.RadicalNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyTransferTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyTransferNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyToNBTTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyToNBTNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PropertyToNBTLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PowerNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.PositionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PoisonEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PoisonEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.PoisonEffectBlockBlockEntity;
@@ -101,14 +128,21 @@ import net.mcreator.puzzle_code.block.entity.NumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NightVisionEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NightVisionEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NightVisionEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NeutralCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NearEntityYellowSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NearEntityYellowSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NearEntitySwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NearEntitySwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NauseaEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NauseaEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NauseaEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.NameOfItemCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NBTToPropertyTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NBTToPropertyNumberClodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.NBTToPropertyLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.MultiplicationNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.MonthNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ModuloNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.MiningFatigueEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.MiningFatigueEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.MiningFatigueEffectBlockBlockEntity;
@@ -118,11 +152,15 @@ import net.mcreator.puzzle_code.block.entity.LuckEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LuckEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LuckEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LogicCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.LogicClickingSwitchingCodeBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.LogicClickingSwitchingCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.LogarithmNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LevitationEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LevitationEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LevitationEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LeftTransferTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LeftTransferNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.LeftTransferNeutralCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LeftTransferLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.LeftTransferItemCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.KillStairsBlockEntity;
@@ -131,11 +169,19 @@ import net.mcreator.puzzle_code.block.entity.KillBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.JumpBoostEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.JumpBoostEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.JumpBoostEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ItemNBTToTextCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ItemNBTToNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ItemNBTToLogicCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ItemInventoryToItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ItemConfiguratorBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ItemCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InvisibilityEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InvisibilityEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InvisibilityEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InventoryReplacerBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InstantHealthStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InstantHealthSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InstantHealthBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InYellowSwitcherEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InYellowSwitcherEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InYellowSwitcherEffectBlockBlockEntity;
@@ -196,6 +242,9 @@ import net.mcreator.puzzle_code.block.entity.InJumpBoostEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InInvisibilityEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InInvisibilityEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InInvisibilityEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InInstantHealthStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InInstantHealthSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InInstantHealthBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InHungerEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InHungerEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InHungerEffectBlockBlockEntity;
@@ -215,16 +264,28 @@ import net.mcreator.puzzle_code.block.entity.InDolphinsGraceEffectStairsBlockEnt
 import net.mcreator.puzzle_code.block.entity.InDolphinsGraceEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InDolphinsGraceEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InDayTimeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InDarknessEffectStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InDarknessEffectSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InDarknessEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InConduitPowerEffectStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InConduitPowerEffectSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InConduitPowerEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InCheckpointStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InCheckpointSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InCheckpointBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InCatapulterStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InCatapulterSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.InCatapulterBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InBlindnessEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InBlindnessEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.InBlindnessEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ImitatorTextCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ImitatorSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ImitatorSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ImitatorNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ImitatorLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ImitatorItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ImitatorDirectionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.HungerEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.HungerEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.HungerEffectBlockBlockEntity;
@@ -242,558 +303,430 @@ import net.mcreator.puzzle_code.block.entity.FireResistanceEffectBlockBlockEntit
 import net.mcreator.puzzle_code.block.entity.FireKillerStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireKillerSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FireKillerBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.FillerTextCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerNumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.FillerDirectionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.FillerBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.EntityTeleporterBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.EntityDetectorBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ENumberCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DolphinsGraceEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DolphinsGraceEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DolphinsGraceEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DivizionNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.DirectionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.DayNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.DarknessEffectStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.DarknessEffectSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.DarknessEffectBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ConduitPowerEffectStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ConduitPowerEffectSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ConduitPowerEffectBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.CommandCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ClickingSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ClickingSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.CheckpointStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.CheckpointSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.CheckpointBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ChainTextCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainPositionCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ChainNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainNeutralCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ChainLogicCodeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ChainItemCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainDirectionCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ChainAreaCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.CatapulterStairsBlockEntity;
+import net.mcreator.puzzle_code.block.entity.CatapulterSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.CatapulterBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.BlueSwitcingSlabBlockEntity;
+import net.mcreator.puzzle_code.block.entity.BlueSwitchingSlabOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.BlueSwitchingBlockOffBlockEntity;
+import net.mcreator.puzzle_code.block.entity.BlueSwitchingBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.BlueKillSwitchingBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.BlockEntityPlacerBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.BlindnessEffectStairsBlockEntity;
 import net.mcreator.puzzle_code.block.entity.BlindnessEffectSlabBlockEntity;
 import net.mcreator.puzzle_code.block.entity.BlindnessEffectBlockBlockEntity;
-import net.mcreator.puzzle_code.block.entity.AdvencedTimeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.AreaCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.AdvancedTimeBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.AdvancedPlacerBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.AdditionNumberCodeBlockBlockEntity;
+import net.mcreator.puzzle_code.block.entity.ABlockIsRightClickedGlobalBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ABlockIsPlacedGlobalBlockBlockEntity;
 import net.mcreator.puzzle_code.block.entity.ABlockIsBrokenGlobalBlockBlockEntity;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 public class PuzzleCodeModBlockEntities {
-	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, PuzzleCodeMod.MODID);
-	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_BLOCK = register("checkpoint_block", PuzzleCodeModBlocks.CHECKPOINT_BLOCK,
-			CheckpointBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_STAIRS = register("checkpoint_stairs", PuzzleCodeModBlocks.CHECKPOINT_STAIRS,
-			CheckpointStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_SLAB = register("checkpoint_slab", PuzzleCodeModBlocks.CHECKPOINT_SLAB,
-			CheckpointSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_BLOCK = register("in_checkpoint_block",
-			PuzzleCodeModBlocks.IN_CHECKPOINT_BLOCK, InCheckpointBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_STAIRS = register("in_checkpoint_stairs",
-			PuzzleCodeModBlocks.IN_CHECKPOINT_STAIRS, InCheckpointStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_SLAB = register("in_checkpoint_slab", PuzzleCodeModBlocks.IN_CHECKPOINT_SLAB,
-			InCheckpointSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_BLOCK = register("jump_boost_effect_block",
-			PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_BLOCK, JumpBoostEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_STAIRS = register("jump_boost_effect_stairs",
-			PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_STAIRS, JumpBoostEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_SLAB = register("jump_boost_effect_slab",
-			PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_SLAB, JumpBoostEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_BLOCK = register("in_jump_boost_effect_block",
-			PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_BLOCK, InJumpBoostEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_STAIRS = register("in_jump_boost_effect_stairs",
-			PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_STAIRS, InJumpBoostEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_SLAB = register("in_jump_boost_effect_slab",
-			PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_SLAB, InJumpBoostEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_BLOCK = register("speed_effect_block", PuzzleCodeModBlocks.SPEED_EFFECT_BLOCK,
-			SpeedEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_STAIRS = register("speed_effect_stairs",
-			PuzzleCodeModBlocks.SPEED_EFFECT_STAIRS, SpeedEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_SLAB = register("speed_effect_slab", PuzzleCodeModBlocks.SPEED_EFFECT_SLAB,
-			SpeedEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_BLOCK = register("in_speed_effect_block",
-			PuzzleCodeModBlocks.IN_SPEED_EFFECT_BLOCK, InSpeedEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_STAIRS = register("in_speed_effect_stairs",
-			PuzzleCodeModBlocks.IN_SPEED_EFFECT_STAIRS, InSpeedEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_SLAB = register("in_speed_effect_slab",
-			PuzzleCodeModBlocks.IN_SPEED_EFFECT_SLAB, InSpeedEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_BLOCK = register("slowness_effect_block",
-			PuzzleCodeModBlocks.SLOWNESS_EFFECT_BLOCK, SlownessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_STAIRS = register("slowness_effect_stairs",
-			PuzzleCodeModBlocks.SLOWNESS_EFFECT_STAIRS, SlownessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_SLAB = register("slowness_effect_slab",
-			PuzzleCodeModBlocks.SLOWNESS_EFFECT_SLAB, SlownessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_BLOCK = register("in_slowness_effect_block",
-			PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_BLOCK, InSlownessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_STAIRS = register("in_slowness_effect_stairs",
-			PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_STAIRS, InSlownessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_SLAB = register("in_slowness_effect_slab",
-			PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_SLAB, InSlownessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_BLOCK = register("poison_effect_block",
-			PuzzleCodeModBlocks.POISON_EFFECT_BLOCK, PoisonEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_STAIRS = register("poison_effect_stairs",
-			PuzzleCodeModBlocks.POISON_EFFECT_STAIRS, PoisonEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_SLAB = register("poison_effect_slab", PuzzleCodeModBlocks.POISON_EFFECT_SLAB,
-			PoisonEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_BLOCK = register("in_poison_effect_block",
-			PuzzleCodeModBlocks.IN_POISON_EFFECT_BLOCK, InPoisonEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_STAIRS = register("in_poison_effect_stairs",
-			PuzzleCodeModBlocks.IN_POISON_EFFECT_STAIRS, InPoisonEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_SLAB = register("in_poison_effect_slab",
-			PuzzleCodeModBlocks.IN_POISON_EFFECT_SLAB, InPoisonEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_BLOCK = register("wither_effect_block",
-			PuzzleCodeModBlocks.WITHER_EFFECT_BLOCK, WitherEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_STAIRS = register("wither_effect_stairs",
-			PuzzleCodeModBlocks.WITHER_EFFECT_STAIRS, WitherEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_SLAB = register("wither_effect_slab", PuzzleCodeModBlocks.WITHER_EFFECT_SLAB,
-			WitherEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_BLOCK = register("in_wither_effect_block",
-			PuzzleCodeModBlocks.IN_WITHER_EFFECT_BLOCK, InWitherEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_STAIRS = register("in_wither_effect_stairs",
-			PuzzleCodeModBlocks.IN_WITHER_EFFECT_STAIRS, InWitherEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_SLAB = register("in_wither_effect_slab",
-			PuzzleCodeModBlocks.IN_WITHER_EFFECT_SLAB, InWitherEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_BLOCK = register("regeneration_effect_block",
-			PuzzleCodeModBlocks.REGENERATION_EFFECT_BLOCK, RegenerationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_STAIRS = register("regeneration_effect_stairs",
-			PuzzleCodeModBlocks.REGENERATION_EFFECT_STAIRS, RegenerationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_SLAB = register("regeneration_effect_slab",
-			PuzzleCodeModBlocks.REGENERATION_EFFECT_SLAB, RegenerationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_BLOCK = register("in_regeneration_effect_block",
-			PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_BLOCK, InRegenerationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_STAIRS = register("in_regeneration_effect_stairs",
-			PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_STAIRS, InRegenerationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_SLAB = register("in_regeneration_effect_slab",
-			PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_SLAB, InRegenerationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_BLOCK = register("resistance_effect_block",
-			PuzzleCodeModBlocks.RESISTANCE_EFFECT_BLOCK, ResistanceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_STAIRS = register("resistance_effect_stairs",
-			PuzzleCodeModBlocks.RESISTANCE_EFFECT_STAIRS, ResistanceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_SLAB = register("resistance_effect_slab",
-			PuzzleCodeModBlocks.RESISTANCE_EFFECT_SLAB, ResistanceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_BLOCK = register("in_resistance_effect_block",
-			PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_BLOCK, InResistanceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_STAIRS = register("in_resistance_effect_stairs",
-			PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_STAIRS, InResistanceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_SLAB = register("in_resistance_effect_slab",
-			PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_SLAB, InResistanceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_BLOCK = register("strength_effect_block",
-			PuzzleCodeModBlocks.STRENGTH_EFFECT_BLOCK, StrengthEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_STAIRS = register("strength_effect_stairs",
-			PuzzleCodeModBlocks.STRENGTH_EFFECT_STAIRS, StrengthEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_SLAB = register("strength_effect_slab",
-			PuzzleCodeModBlocks.STRENGTH_EFFECT_SLAB, StrengthEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_BLOCK = register("in_strength_effect_block",
-			PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_BLOCK, InStrengthEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_STAIRS = register("in_strength_effect_stairs",
-			PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_STAIRS, InStrengthEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_SLAB = register("in_strength_effect_slab",
-			PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_SLAB, InStrengthEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_BLOCK = register("weakness_effect_block",
-			PuzzleCodeModBlocks.WEAKNESS_EFFECT_BLOCK, WeaknessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_STAIRS = register("weakness_effect_stairs",
-			PuzzleCodeModBlocks.WEAKNESS_EFFECT_STAIRS, WeaknessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_SLAB = register("weakness_effect_slab",
-			PuzzleCodeModBlocks.WEAKNESS_EFFECT_SLAB, WeaknessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_BLOCK = register("in_weakness_effect_block",
-			PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_BLOCK, InWeaknessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_STAIRS = register("in_weakness_effect_stairs",
-			PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_STAIRS, InWeaknessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_SLAB = register("in_weakness_effect_slab",
-			PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_SLAB, InWeaknessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_BLOCK = register("haste_effect_block", PuzzleCodeModBlocks.HASTE_EFFECT_BLOCK,
-			HasteEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_STAIRS = register("haste_effect_stairs",
-			PuzzleCodeModBlocks.HASTE_EFFECT_STAIRS, HasteEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_SLAB = register("haste_effect_slab", PuzzleCodeModBlocks.HASTE_EFFECT_SLAB,
-			HasteEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_BLOCK = register("in_haste_effect_block",
-			PuzzleCodeModBlocks.IN_HASTE_EFFECT_BLOCK, InHasteEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_STAIRS = register("in_haste_effect_stairs",
-			PuzzleCodeModBlocks.IN_HASTE_EFFECT_STAIRS, InHasteEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_SLAB = register("in_haste_effect_slab",
-			PuzzleCodeModBlocks.IN_HASTE_EFFECT_SLAB, InHasteEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_BLOCK = register("mining_fatigue_effect_block",
-			PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_BLOCK, MiningFatigueEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_STAIRS = register("mining_fatigue_effect_stairs",
-			PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_STAIRS, MiningFatigueEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_SLAB = register("mining_fatigue_effect_slab",
-			PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_SLAB, MiningFatigueEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_BLOCK = register("in_mining_fatigue_effect_block",
-			PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_BLOCK, InMiningFatigueEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_STAIRS = register("in_mining_fatigue_effect_stairs",
-			PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_STAIRS, InMiningFatigueEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_SLAB = register("in_mining_fatigue_effect_slab",
-			PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_SLAB, InMiningFatigueEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_BLOCK = register("levitation_effect_block",
-			PuzzleCodeModBlocks.LEVITATION_EFFECT_BLOCK, LevitationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_STAIRS = register("levitation_effect_stairs",
-			PuzzleCodeModBlocks.LEVITATION_EFFECT_STAIRS, LevitationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_SLAB = register("levitation_effect_slab",
-			PuzzleCodeModBlocks.LEVITATION_EFFECT_SLAB, LevitationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_BLOCK = register("in_levitation_effect_block",
-			PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_BLOCK, InLevitationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_STAIRS = register("in_levitation_effect_stairs",
-			PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_STAIRS, InLevitationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_SLAB = register("in_levitation_effect_slab",
-			PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_SLAB, InLevitationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_BLOCK = register("slow_falling_effect_block",
-			PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_BLOCK, SlowFallingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_STAIRS = register("slow_falling_effect_stairs",
-			PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_STAIRS, SlowFallingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_SLAB = register("slow_falling_effect_slab",
-			PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_SLAB, SlowFallingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_BLOCK = register("in_slow_falling_effect_block",
-			PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_BLOCK, InSlowFallingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_STAIRS = register("in_slow_falling_effect_stairs",
-			PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_STAIRS, InSlowFallingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_SLAB = register("in_slow_falling_effect_slab",
-			PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_SLAB, InSlowFallingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_BLOCK = register("invisibility_effect_block",
-			PuzzleCodeModBlocks.INVISIBILITY_EFFECT_BLOCK, InvisibilityEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_STAIRS = register("invisibility_effect_stairs",
-			PuzzleCodeModBlocks.INVISIBILITY_EFFECT_STAIRS, InvisibilityEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_SLAB = register("invisibility_effect_slab",
-			PuzzleCodeModBlocks.INVISIBILITY_EFFECT_SLAB, InvisibilityEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_BLOCK = register("in_invisibility_effect_block",
-			PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_BLOCK, InInvisibilityEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_STAIRS = register("in_invisibility_effect_stairs",
-			PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_STAIRS, InInvisibilityEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_SLAB = register("in_invisibility_effect_slab",
-			PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_SLAB, InInvisibilityEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_BLOCK = register("glowing_effect_block",
-			PuzzleCodeModBlocks.GLOWING_EFFECT_BLOCK, GlowingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_STAIRS = register("glowing_effect_stairs",
-			PuzzleCodeModBlocks.GLOWING_EFFECT_STAIRS, GlowingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_SLAB = register("glowing_effect_slab",
-			PuzzleCodeModBlocks.GLOWING_EFFECT_SLAB, GlowingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_BLOCK = register("in_glowing_effect_block",
-			PuzzleCodeModBlocks.IN_GLOWING_EFFECT_BLOCK, InGlowingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_STAIRS = register("in_glowing_effect_stairs",
-			PuzzleCodeModBlocks.IN_GLOWING_EFFECT_STAIRS, InGlowingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_SLAB = register("in_glowing_effect_slab",
-			PuzzleCodeModBlocks.IN_GLOWING_EFFECT_SLAB, InGlowingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_BLOCK = register("fire_resistance_effect_block",
-			PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_BLOCK, FireResistanceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_STAIRS = register("fire_resistance_effect_stairs",
-			PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_STAIRS, FireResistanceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_SLAB = register("fire_resistance_effect_slab",
-			PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_SLAB, FireResistanceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_BLOCK = register("in_fire_resistance_effect_block",
-			PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_BLOCK, InFireResistanceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_STAIRS = register("in_fire_resistance_effect_stairs",
-			PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_STAIRS, InFireResistanceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_SLAB = register("in_fire_resistance_effect_slab",
-			PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_SLAB, InFireResistanceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_BLOCK = register("water_breathing_effect_block",
-			PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_BLOCK, WaterBreathingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_STAIRS = register("water_breathing_effect_stairs",
-			PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_STAIRS, WaterBreathingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_SLAB = register("water_breathing_effect_slab",
-			PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_SLAB, WaterBreathingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_BLOCK = register("in_water_breathing_effect_block",
-			PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_BLOCK, InWaterBreathingEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_STAIRS = register("in_water_breathing_effect_stairs",
-			PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_STAIRS, InWaterBreathingEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_SLAB = register("in_water_breathing_effect_slab",
-			PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_SLAB, InWaterBreathingEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_BLOCK = register("dolphins_grace_effect_block",
-			PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_BLOCK, DolphinsGraceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_STAIRS = register("dolphins_grace_effect_stairs",
-			PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_STAIRS, DolphinsGraceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_SLAB = register("dolphins_grace_effect_slab",
-			PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_SLAB, DolphinsGraceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_BLOCK = register("in_dolphins_grace_effect_block",
-			PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_BLOCK, InDolphinsGraceEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_STAIRS = register("in_dolphins_grace_effect_stairs",
-			PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_STAIRS, InDolphinsGraceEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_SLAB = register("in_dolphins_grace_effect_slab",
-			PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_SLAB, InDolphinsGraceEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_BLOCK = register("blindness_effect_block",
-			PuzzleCodeModBlocks.BLINDNESS_EFFECT_BLOCK, BlindnessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_STAIRS = register("blindness_effect_stairs",
-			PuzzleCodeModBlocks.BLINDNESS_EFFECT_STAIRS, BlindnessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_SLAB = register("blindness_effect_slab",
-			PuzzleCodeModBlocks.BLINDNESS_EFFECT_SLAB, BlindnessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_BLOCK = register("in_blindness_effect_block",
-			PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_BLOCK, InBlindnessEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_STAIRS = register("in_blindness_effect_stairs",
-			PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_STAIRS, InBlindnessEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_SLAB = register("in_blindness_effect_slab",
-			PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_SLAB, InBlindnessEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_BLOCK = register("nausea_effect_block",
-			PuzzleCodeModBlocks.NAUSEA_EFFECT_BLOCK, NauseaEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_STAIRS = register("nausea_effect_stairs",
-			PuzzleCodeModBlocks.NAUSEA_EFFECT_STAIRS, NauseaEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_SLAB = register("nausea_effect_slab", PuzzleCodeModBlocks.NAUSEA_EFFECT_SLAB,
-			NauseaEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_BLOCK = register("in_nausea_effect_block",
-			PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_BLOCK, InNauseaEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_STAIRS = register("in_nausea_effect_stairs",
-			PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_STAIRS, InNauseaEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_SLAB = register("in_nausea_effect_slab",
-			PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_SLAB, InNauseaEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_BLOCK = register("night_vision_effect_block",
-			PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_BLOCK, NightVisionEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_STAIRS = register("night_vision_effect_stairs",
-			PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_STAIRS, NightVisionEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_SLAB = register("night_vision_effect_slab",
-			PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_SLAB, NightVisionEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_BLOCK = register("in_night_vision_effect_block",
-			PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_BLOCK, InNightVisionEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_STAIRS = register("in_night_vision_effect_stairs",
-			PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_STAIRS, InNightVisionEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_SLAB = register("in_night_vision_effect_slab",
-			PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_SLAB, InNightVisionEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_BLOCK = register("saturation_effect_block",
-			PuzzleCodeModBlocks.SATURATION_EFFECT_BLOCK, SaturationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_STAIRS = register("saturation_effect_stairs",
-			PuzzleCodeModBlocks.SATURATION_EFFECT_STAIRS, SaturationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_SLAB = register("saturation_effect_slab",
-			PuzzleCodeModBlocks.SATURATION_EFFECT_SLAB, SaturationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_BLOCK = register("in_saturation_effect_block",
-			PuzzleCodeModBlocks.IN_SATURATION_EFFECT_BLOCK, InSaturationEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_STAIRS = register("in_saturation_effect_stairs",
-			PuzzleCodeModBlocks.IN_SATURATION_EFFECT_STAIRS, InSaturationEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_SLAB = register("in_saturation_effect_slab",
-			PuzzleCodeModBlocks.IN_SATURATION_EFFECT_SLAB, InSaturationEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_BLOCK = register("hunger_effect_block",
-			PuzzleCodeModBlocks.HUNGER_EFFECT_BLOCK, HungerEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_STAIRS = register("hunger_effect_stairs",
-			PuzzleCodeModBlocks.HUNGER_EFFECT_STAIRS, HungerEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_SLAB = register("hunger_effect_slab", PuzzleCodeModBlocks.HUNGER_EFFECT_SLAB,
-			HungerEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_BLOCK = register("in_hunger_effect_block",
-			PuzzleCodeModBlocks.IN_HUNGER_EFFECT_BLOCK, InHungerEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_STAIRS = register("in_hunger_effect_stairs",
-			PuzzleCodeModBlocks.IN_HUNGER_EFFECT_STAIRS, InHungerEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_SLAB = register("in_hunger_effect_slab",
-			PuzzleCodeModBlocks.IN_HUNGER_EFFECT_SLAB, InHungerEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_BLOCK = register("yellow_switcher_effect_block",
-			PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_BLOCK, YellowSwitcherEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_STAIRS = register("yellow_switcher_effect_stairs",
-			PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_STAIRS, YellowSwitcherEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_SLAB = register("yellow_switcher_effect_slab",
-			PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_SLAB, YellowSwitcherEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_BLOCK = register("in_yellow_switcher_effect_block",
-			PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_BLOCK, InYellowSwitcherEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_STAIRS = register("in_yellow_switcher_effect_stairs",
-			PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_STAIRS, InYellowSwitcherEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_SLAB = register("in_yellow_switcher_effect_slab",
-			PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_SLAB, InYellowSwitcherEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_BLOCK = register("luck_effect_block", PuzzleCodeModBlocks.LUCK_EFFECT_BLOCK,
-			LuckEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_STAIRS = register("luck_effect_stairs", PuzzleCodeModBlocks.LUCK_EFFECT_STAIRS,
-			LuckEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_SLAB = register("luck_effect_slab", PuzzleCodeModBlocks.LUCK_EFFECT_SLAB,
-			LuckEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFECT_BLOCK = register("in_luck_effect_block",
-			PuzzleCodeModBlocks.IN_LUCK_EFFECT_BLOCK, InLuckEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFEST_STAIRS = register("in_luck_effest_stairs",
-			PuzzleCodeModBlocks.IN_LUCK_EFFEST_STAIRS, InLuckEffestStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFECT_SLAB = register("in_luck_effect_slab",
-			PuzzleCodeModBlocks.IN_LUCK_EFFECT_SLAB, InLuckEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_BLOCK = register("unluck_effect_block",
-			PuzzleCodeModBlocks.UNLUCK_EFFECT_BLOCK, UnluckEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_STAIRS = register("unluck_effect_stairs",
-			PuzzleCodeModBlocks.UNLUCK_EFFECT_STAIRS, UnluckEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_SLAB = register("unluck_effect_slab", PuzzleCodeModBlocks.UNLUCK_EFFECT_SLAB,
-			UnluckEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_BLOCK = register("in_unluck_effect_block",
-			PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_BLOCK, InUnluckEffectBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_STAIRS = register("in_unluck_effect_stairs",
-			PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_STAIRS, InUnluckEffectStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_SLAB = register("in_unluck_effect_slab",
-			PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_SLAB, InUnluckEffectSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> INVENTORY_REPLACER = register("inventory_replacer", PuzzleCodeModBlocks.INVENTORY_REPLACER,
-			InventoryReplacerBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ENTITY_TELEPORTER_BLOCK = register("entity_teleporter_block",
-			PuzzleCodeModBlocks.ENTITY_TELEPORTER_BLOCK, EntityTeleporterBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PLACER_BLOCK = register("placer_block", PuzzleCodeModBlocks.PLACER_BLOCK,
-			PlacerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ADVANCED_PLACER_BLOCK = register("advanced_placer_block",
-			PuzzleCodeModBlocks.ADVANCED_PLACER_BLOCK, AdvancedPlacerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REPLACER_BLOCK = register("replacer_block", PuzzleCodeModBlocks.REPLACER_BLOCK,
-			ReplacerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FILLER_BLOCK = register("filler_block", PuzzleCodeModBlocks.FILLER_BLOCK,
-			FillerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block",
-			PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> KILL_BLOCK = register("kill_block", PuzzleCodeModBlocks.KILL_BLOCK,
-			KillBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> KILL_STAIRS = register("kill_stairs", PuzzleCodeModBlocks.KILL_STAIRS,
-			KillStairsBlockEntity::new);
+	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PuzzleCodeMod.MODID);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_CONFIGURATOR = register("item_configurator", PuzzleCodeModBlocks.ITEM_CONFIGURATOR, ItemConfiguratorBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_BLOCK = register("checkpoint_block", PuzzleCodeModBlocks.CHECKPOINT_BLOCK, CheckpointBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_STAIRS = register("checkpoint_stairs", PuzzleCodeModBlocks.CHECKPOINT_STAIRS, CheckpointStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHECKPOINT_SLAB = register("checkpoint_slab", PuzzleCodeModBlocks.CHECKPOINT_SLAB, CheckpointSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_BLOCK = register("in_checkpoint_block", PuzzleCodeModBlocks.IN_CHECKPOINT_BLOCK, InCheckpointBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_STAIRS = register("in_checkpoint_stairs", PuzzleCodeModBlocks.IN_CHECKPOINT_STAIRS, InCheckpointStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CHECKPOINT_SLAB = register("in_checkpoint_slab", PuzzleCodeModBlocks.IN_CHECKPOINT_SLAB, InCheckpointSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_BLOCK = register("jump_boost_effect_block", PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_BLOCK, JumpBoostEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_STAIRS = register("jump_boost_effect_stairs", PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_STAIRS, JumpBoostEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> JUMP_BOOST_EFFECT_SLAB = register("jump_boost_effect_slab", PuzzleCodeModBlocks.JUMP_BOOST_EFFECT_SLAB, JumpBoostEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_BLOCK = register("in_jump_boost_effect_block", PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_BLOCK, InJumpBoostEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_STAIRS = register("in_jump_boost_effect_stairs", PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_STAIRS, InJumpBoostEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_JUMP_BOOST_EFFECT_SLAB = register("in_jump_boost_effect_slab", PuzzleCodeModBlocks.IN_JUMP_BOOST_EFFECT_SLAB, InJumpBoostEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_BLOCK = register("speed_effect_block", PuzzleCodeModBlocks.SPEED_EFFECT_BLOCK, SpeedEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_STAIRS = register("speed_effect_stairs", PuzzleCodeModBlocks.SPEED_EFFECT_STAIRS, SpeedEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SPEED_EFFECT_SLAB = register("speed_effect_slab", PuzzleCodeModBlocks.SPEED_EFFECT_SLAB, SpeedEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_BLOCK = register("in_speed_effect_block", PuzzleCodeModBlocks.IN_SPEED_EFFECT_BLOCK, InSpeedEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_STAIRS = register("in_speed_effect_stairs", PuzzleCodeModBlocks.IN_SPEED_EFFECT_STAIRS, InSpeedEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SPEED_EFFECT_SLAB = register("in_speed_effect_slab", PuzzleCodeModBlocks.IN_SPEED_EFFECT_SLAB, InSpeedEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_BLOCK = register("slowness_effect_block", PuzzleCodeModBlocks.SLOWNESS_EFFECT_BLOCK, SlownessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_STAIRS = register("slowness_effect_stairs", PuzzleCodeModBlocks.SLOWNESS_EFFECT_STAIRS, SlownessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOWNESS_EFFECT_SLAB = register("slowness_effect_slab", PuzzleCodeModBlocks.SLOWNESS_EFFECT_SLAB, SlownessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_BLOCK = register("in_slowness_effect_block", PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_BLOCK, InSlownessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_STAIRS = register("in_slowness_effect_stairs", PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_STAIRS, InSlownessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOWNESS_EFFECT_SLAB = register("in_slowness_effect_slab", PuzzleCodeModBlocks.IN_SLOWNESS_EFFECT_SLAB, InSlownessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_BLOCK = register("poison_effect_block", PuzzleCodeModBlocks.POISON_EFFECT_BLOCK, PoisonEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_STAIRS = register("poison_effect_stairs", PuzzleCodeModBlocks.POISON_EFFECT_STAIRS, PoisonEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> POISON_EFFECT_SLAB = register("poison_effect_slab", PuzzleCodeModBlocks.POISON_EFFECT_SLAB, PoisonEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_BLOCK = register("in_poison_effect_block", PuzzleCodeModBlocks.IN_POISON_EFFECT_BLOCK, InPoisonEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_STAIRS = register("in_poison_effect_stairs", PuzzleCodeModBlocks.IN_POISON_EFFECT_STAIRS, InPoisonEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_POISON_EFFECT_SLAB = register("in_poison_effect_slab", PuzzleCodeModBlocks.IN_POISON_EFFECT_SLAB, InPoisonEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_BLOCK = register("wither_effect_block", PuzzleCodeModBlocks.WITHER_EFFECT_BLOCK, WitherEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_STAIRS = register("wither_effect_stairs", PuzzleCodeModBlocks.WITHER_EFFECT_STAIRS, WitherEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WITHER_EFFECT_SLAB = register("wither_effect_slab", PuzzleCodeModBlocks.WITHER_EFFECT_SLAB, WitherEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_BLOCK = register("in_wither_effect_block", PuzzleCodeModBlocks.IN_WITHER_EFFECT_BLOCK, InWitherEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_STAIRS = register("in_wither_effect_stairs", PuzzleCodeModBlocks.IN_WITHER_EFFECT_STAIRS, InWitherEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WITHER_EFFECT_SLAB = register("in_wither_effect_slab", PuzzleCodeModBlocks.IN_WITHER_EFFECT_SLAB, InWitherEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_BLOCK = register("regeneration_effect_block", PuzzleCodeModBlocks.REGENERATION_EFFECT_BLOCK, RegenerationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_STAIRS = register("regeneration_effect_stairs", PuzzleCodeModBlocks.REGENERATION_EFFECT_STAIRS, RegenerationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REGENERATION_EFFECT_SLAB = register("regeneration_effect_slab", PuzzleCodeModBlocks.REGENERATION_EFFECT_SLAB, RegenerationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_BLOCK = register("in_regeneration_effect_block", PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_BLOCK, InRegenerationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_STAIRS = register("in_regeneration_effect_stairs", PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_STAIRS, InRegenerationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_REGENERATION_EFFECT_SLAB = register("in_regeneration_effect_slab", PuzzleCodeModBlocks.IN_REGENERATION_EFFECT_SLAB, InRegenerationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_BLOCK = register("resistance_effect_block", PuzzleCodeModBlocks.RESISTANCE_EFFECT_BLOCK, ResistanceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_STAIRS = register("resistance_effect_stairs", PuzzleCodeModBlocks.RESISTANCE_EFFECT_STAIRS, ResistanceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RESISTANCE_EFFECT_SLAB = register("resistance_effect_slab", PuzzleCodeModBlocks.RESISTANCE_EFFECT_SLAB, ResistanceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_BLOCK = register("in_resistance_effect_block", PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_BLOCK, InResistanceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_STAIRS = register("in_resistance_effect_stairs", PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_STAIRS, InResistanceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_RESISTANCE_EFFECT_SLAB = register("in_resistance_effect_slab", PuzzleCodeModBlocks.IN_RESISTANCE_EFFECT_SLAB, InResistanceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_BLOCK = register("strength_effect_block", PuzzleCodeModBlocks.STRENGTH_EFFECT_BLOCK, StrengthEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_STAIRS = register("strength_effect_stairs", PuzzleCodeModBlocks.STRENGTH_EFFECT_STAIRS, StrengthEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> STRENGTH_EFFECT_SLAB = register("strength_effect_slab", PuzzleCodeModBlocks.STRENGTH_EFFECT_SLAB, StrengthEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_BLOCK = register("in_strength_effect_block", PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_BLOCK, InStrengthEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_STAIRS = register("in_strength_effect_stairs", PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_STAIRS, InStrengthEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_STRENGTH_EFFECT_SLAB = register("in_strength_effect_slab", PuzzleCodeModBlocks.IN_STRENGTH_EFFECT_SLAB, InStrengthEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_BLOCK = register("weakness_effect_block", PuzzleCodeModBlocks.WEAKNESS_EFFECT_BLOCK, WeaknessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_STAIRS = register("weakness_effect_stairs", PuzzleCodeModBlocks.WEAKNESS_EFFECT_STAIRS, WeaknessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WEAKNESS_EFFECT_SLAB = register("weakness_effect_slab", PuzzleCodeModBlocks.WEAKNESS_EFFECT_SLAB, WeaknessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_BLOCK = register("in_weakness_effect_block", PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_BLOCK, InWeaknessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_STAIRS = register("in_weakness_effect_stairs", PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_STAIRS, InWeaknessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WEAKNESS_EFFECT_SLAB = register("in_weakness_effect_slab", PuzzleCodeModBlocks.IN_WEAKNESS_EFFECT_SLAB, InWeaknessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_BLOCK = register("haste_effect_block", PuzzleCodeModBlocks.HASTE_EFFECT_BLOCK, HasteEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_STAIRS = register("haste_effect_stairs", PuzzleCodeModBlocks.HASTE_EFFECT_STAIRS, HasteEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HASTE_EFFECT_SLAB = register("haste_effect_slab", PuzzleCodeModBlocks.HASTE_EFFECT_SLAB, HasteEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_BLOCK = register("in_haste_effect_block", PuzzleCodeModBlocks.IN_HASTE_EFFECT_BLOCK, InHasteEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_STAIRS = register("in_haste_effect_stairs", PuzzleCodeModBlocks.IN_HASTE_EFFECT_STAIRS, InHasteEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HASTE_EFFECT_SLAB = register("in_haste_effect_slab", PuzzleCodeModBlocks.IN_HASTE_EFFECT_SLAB, InHasteEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_BLOCK = register("mining_fatigue_effect_block", PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_BLOCK, MiningFatigueEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_STAIRS = register("mining_fatigue_effect_stairs", PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_STAIRS, MiningFatigueEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MINING_FATIGUE_EFFECT_SLAB = register("mining_fatigue_effect_slab", PuzzleCodeModBlocks.MINING_FATIGUE_EFFECT_SLAB, MiningFatigueEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_BLOCK = register("in_mining_fatigue_effect_block", PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_BLOCK, InMiningFatigueEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_STAIRS = register("in_mining_fatigue_effect_stairs", PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_STAIRS, InMiningFatigueEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_MINING_FATIGUE_EFFECT_SLAB = register("in_mining_fatigue_effect_slab", PuzzleCodeModBlocks.IN_MINING_FATIGUE_EFFECT_SLAB, InMiningFatigueEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_BLOCK = register("levitation_effect_block", PuzzleCodeModBlocks.LEVITATION_EFFECT_BLOCK, LevitationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_STAIRS = register("levitation_effect_stairs", PuzzleCodeModBlocks.LEVITATION_EFFECT_STAIRS, LevitationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEVITATION_EFFECT_SLAB = register("levitation_effect_slab", PuzzleCodeModBlocks.LEVITATION_EFFECT_SLAB, LevitationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_BLOCK = register("in_levitation_effect_block", PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_BLOCK, InLevitationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_STAIRS = register("in_levitation_effect_stairs", PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_STAIRS, InLevitationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LEVITATION_EFFECT_SLAB = register("in_levitation_effect_slab", PuzzleCodeModBlocks.IN_LEVITATION_EFFECT_SLAB, InLevitationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_BLOCK = register("slow_falling_effect_block", PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_BLOCK, SlowFallingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_STAIRS = register("slow_falling_effect_stairs", PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_STAIRS, SlowFallingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SLOW_FALLING_EFFECT_SLAB = register("slow_falling_effect_slab", PuzzleCodeModBlocks.SLOW_FALLING_EFFECT_SLAB, SlowFallingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_BLOCK = register("in_slow_falling_effect_block", PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_BLOCK, InSlowFallingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_STAIRS = register("in_slow_falling_effect_stairs", PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_STAIRS, InSlowFallingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SLOW_FALLING_EFFECT_SLAB = register("in_slow_falling_effect_slab", PuzzleCodeModBlocks.IN_SLOW_FALLING_EFFECT_SLAB, InSlowFallingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_BLOCK = register("invisibility_effect_block", PuzzleCodeModBlocks.INVISIBILITY_EFFECT_BLOCK, InvisibilityEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_STAIRS = register("invisibility_effect_stairs", PuzzleCodeModBlocks.INVISIBILITY_EFFECT_STAIRS, InvisibilityEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INVISIBILITY_EFFECT_SLAB = register("invisibility_effect_slab", PuzzleCodeModBlocks.INVISIBILITY_EFFECT_SLAB, InvisibilityEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_BLOCK = register("in_invisibility_effect_block", PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_BLOCK, InInvisibilityEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_STAIRS = register("in_invisibility_effect_stairs", PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_STAIRS, InInvisibilityEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INVISIBILITY_EFFECT_SLAB = register("in_invisibility_effect_slab", PuzzleCodeModBlocks.IN_INVISIBILITY_EFFECT_SLAB, InInvisibilityEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_BLOCK = register("glowing_effect_block", PuzzleCodeModBlocks.GLOWING_EFFECT_BLOCK, GlowingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_STAIRS = register("glowing_effect_stairs", PuzzleCodeModBlocks.GLOWING_EFFECT_STAIRS, GlowingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> GLOWING_EFFECT_SLAB = register("glowing_effect_slab", PuzzleCodeModBlocks.GLOWING_EFFECT_SLAB, GlowingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_BLOCK = register("in_glowing_effect_block", PuzzleCodeModBlocks.IN_GLOWING_EFFECT_BLOCK, InGlowingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_STAIRS = register("in_glowing_effect_stairs", PuzzleCodeModBlocks.IN_GLOWING_EFFECT_STAIRS, InGlowingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_GLOWING_EFFECT_SLAB = register("in_glowing_effect_slab", PuzzleCodeModBlocks.IN_GLOWING_EFFECT_SLAB, InGlowingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_BLOCK = register("fire_resistance_effect_block", PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_BLOCK, FireResistanceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_STAIRS = register("fire_resistance_effect_stairs", PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_STAIRS, FireResistanceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_RESISTANCE_EFFECT_SLAB = register("fire_resistance_effect_slab", PuzzleCodeModBlocks.FIRE_RESISTANCE_EFFECT_SLAB, FireResistanceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_BLOCK = register("in_fire_resistance_effect_block", PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_BLOCK, InFireResistanceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_STAIRS = register("in_fire_resistance_effect_stairs", PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_STAIRS, InFireResistanceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_RESISTANCE_EFFECT_SLAB = register("in_fire_resistance_effect_slab", PuzzleCodeModBlocks.IN_FIRE_RESISTANCE_EFFECT_SLAB, InFireResistanceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_BLOCK = register("water_breathing_effect_block", PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_BLOCK, WaterBreathingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_STAIRS = register("water_breathing_effect_stairs", PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_STAIRS, WaterBreathingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WATER_BREATHING_EFFECT_SLAB = register("water_breathing_effect_slab", PuzzleCodeModBlocks.WATER_BREATHING_EFFECT_SLAB, WaterBreathingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_BLOCK = register("in_water_breathing_effect_block", PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_BLOCK, InWaterBreathingEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_STAIRS = register("in_water_breathing_effect_stairs", PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_STAIRS, InWaterBreathingEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_WATER_BREATHING_EFFECT_SLAB = register("in_water_breathing_effect_slab", PuzzleCodeModBlocks.IN_WATER_BREATHING_EFFECT_SLAB, InWaterBreathingEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_BLOCK = register("dolphins_grace_effect_block", PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_BLOCK, DolphinsGraceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_STAIRS = register("dolphins_grace_effect_stairs", PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_STAIRS, DolphinsGraceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DOLPHINS_GRACE_EFFECT_SLAB = register("dolphins_grace_effect_slab", PuzzleCodeModBlocks.DOLPHINS_GRACE_EFFECT_SLAB, DolphinsGraceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_BLOCK = register("in_dolphins_grace_effect_block", PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_BLOCK, InDolphinsGraceEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_STAIRS = register("in_dolphins_grace_effect_stairs", PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_STAIRS, InDolphinsGraceEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DOLPHINS_GRACE_EFFECT_SLAB = register("in_dolphins_grace_effect_slab", PuzzleCodeModBlocks.IN_DOLPHINS_GRACE_EFFECT_SLAB, InDolphinsGraceEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CONDUIT_POWER_EFFECT_BLOCK = register("conduit_power_effect_block", PuzzleCodeModBlocks.CONDUIT_POWER_EFFECT_BLOCK, ConduitPowerEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CONDUIT_POWER_EFFECT_STAIRS = register("conduit_power_effect_stairs", PuzzleCodeModBlocks.CONDUIT_POWER_EFFECT_STAIRS, ConduitPowerEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CONDUIT_POWER_EFFECT_SLAB = register("conduit_power_effect_slab", PuzzleCodeModBlocks.CONDUIT_POWER_EFFECT_SLAB, ConduitPowerEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CONDUIT_POWER_EFFECT_BLOCK = register("in_conduit_power_effect_block", PuzzleCodeModBlocks.IN_CONDUIT_POWER_EFFECT_BLOCK, InConduitPowerEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CONDUIT_POWER_EFFECT_STAIRS = register("in_conduit_power_effect_stairs", PuzzleCodeModBlocks.IN_CONDUIT_POWER_EFFECT_STAIRS, InConduitPowerEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CONDUIT_POWER_EFFECT_SLAB = register("in_conduit_power_effect_slab", PuzzleCodeModBlocks.IN_CONDUIT_POWER_EFFECT_SLAB, InConduitPowerEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_BLOCK = register("blindness_effect_block", PuzzleCodeModBlocks.BLINDNESS_EFFECT_BLOCK, BlindnessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_STAIRS = register("blindness_effect_stairs", PuzzleCodeModBlocks.BLINDNESS_EFFECT_STAIRS, BlindnessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLINDNESS_EFFECT_SLAB = register("blindness_effect_slab", PuzzleCodeModBlocks.BLINDNESS_EFFECT_SLAB, BlindnessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_BLOCK = register("in_blindness_effect_block", PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_BLOCK, InBlindnessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_STAIRS = register("in_blindness_effect_stairs", PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_STAIRS, InBlindnessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_BLINDNESS_EFFECT_SLAB = register("in_blindness_effect_slab", PuzzleCodeModBlocks.IN_BLINDNESS_EFFECT_SLAB, InBlindnessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_BLOCK = register("nausea_effect_block", PuzzleCodeModBlocks.NAUSEA_EFFECT_BLOCK, NauseaEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_STAIRS = register("nausea_effect_stairs", PuzzleCodeModBlocks.NAUSEA_EFFECT_STAIRS, NauseaEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NAUSEA_EFFECT_SLAB = register("nausea_effect_slab", PuzzleCodeModBlocks.NAUSEA_EFFECT_SLAB, NauseaEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_BLOCK = register("in_nausea_effect_block", PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_BLOCK, InNauseaEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_STAIRS = register("in_nausea_effect_stairs", PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_STAIRS, InNauseaEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NAUSEA_EFFECT_SLAB = register("in_nausea_effect_slab", PuzzleCodeModBlocks.IN_NAUSEA_EFFECT_SLAB, InNauseaEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DARKNESS_EFFECT_BLOCK = register("darkness_effect_block", PuzzleCodeModBlocks.DARKNESS_EFFECT_BLOCK, DarknessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DARKNESS_EFFECT_STAIRS = register("darkness_effect_stairs", PuzzleCodeModBlocks.DARKNESS_EFFECT_STAIRS, DarknessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DARKNESS_EFFECT_SLAB = register("darkness_effect_slab", PuzzleCodeModBlocks.DARKNESS_EFFECT_SLAB, DarknessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DARKNESS_EFFECT_BLOCK = register("in_darkness_effect_block", PuzzleCodeModBlocks.IN_DARKNESS_EFFECT_BLOCK, InDarknessEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DARKNESS_EFFECT_STAIRS = register("in_darkness_effect_stairs", PuzzleCodeModBlocks.IN_DARKNESS_EFFECT_STAIRS, InDarknessEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DARKNESS_EFFECT_SLAB = register("in_darkness_effect_slab", PuzzleCodeModBlocks.IN_DARKNESS_EFFECT_SLAB, InDarknessEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_BLOCK = register("night_vision_effect_block", PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_BLOCK, NightVisionEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_STAIRS = register("night_vision_effect_stairs", PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_STAIRS, NightVisionEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NIGHT_VISION_EFFECT_SLAB = register("night_vision_effect_slab", PuzzleCodeModBlocks.NIGHT_VISION_EFFECT_SLAB, NightVisionEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_BLOCK = register("in_night_vision_effect_block", PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_BLOCK, InNightVisionEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_STAIRS = register("in_night_vision_effect_stairs", PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_STAIRS, InNightVisionEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_NIGHT_VISION_EFFECT_SLAB = register("in_night_vision_effect_slab", PuzzleCodeModBlocks.IN_NIGHT_VISION_EFFECT_SLAB, InNightVisionEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_BLOCK = register("saturation_effect_block", PuzzleCodeModBlocks.SATURATION_EFFECT_BLOCK, SaturationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_STAIRS = register("saturation_effect_stairs", PuzzleCodeModBlocks.SATURATION_EFFECT_STAIRS, SaturationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SATURATION_EFFECT_SLAB = register("saturation_effect_slab", PuzzleCodeModBlocks.SATURATION_EFFECT_SLAB, SaturationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_BLOCK = register("in_saturation_effect_block", PuzzleCodeModBlocks.IN_SATURATION_EFFECT_BLOCK, InSaturationEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_STAIRS = register("in_saturation_effect_stairs", PuzzleCodeModBlocks.IN_SATURATION_EFFECT_STAIRS, InSaturationEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_SATURATION_EFFECT_SLAB = register("in_saturation_effect_slab", PuzzleCodeModBlocks.IN_SATURATION_EFFECT_SLAB, InSaturationEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_BLOCK = register("hunger_effect_block", PuzzleCodeModBlocks.HUNGER_EFFECT_BLOCK, HungerEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_STAIRS = register("hunger_effect_stairs", PuzzleCodeModBlocks.HUNGER_EFFECT_STAIRS, HungerEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HUNGER_EFFECT_SLAB = register("hunger_effect_slab", PuzzleCodeModBlocks.HUNGER_EFFECT_SLAB, HungerEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_BLOCK = register("in_hunger_effect_block", PuzzleCodeModBlocks.IN_HUNGER_EFFECT_BLOCK, InHungerEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_STAIRS = register("in_hunger_effect_stairs", PuzzleCodeModBlocks.IN_HUNGER_EFFECT_STAIRS, InHungerEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_HUNGER_EFFECT_SLAB = register("in_hunger_effect_slab", PuzzleCodeModBlocks.IN_HUNGER_EFFECT_SLAB, InHungerEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_BLOCK = register("yellow_switcher_effect_block", PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_BLOCK, YellowSwitcherEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_STAIRS = register("yellow_switcher_effect_stairs", PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_STAIRS, YellowSwitcherEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHER_EFFECT_SLAB = register("yellow_switcher_effect_slab", PuzzleCodeModBlocks.YELLOW_SWITCHER_EFFECT_SLAB, YellowSwitcherEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_BLOCK = register("in_yellow_switcher_effect_block", PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_BLOCK, InYellowSwitcherEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_STAIRS = register("in_yellow_switcher_effect_stairs", PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_STAIRS, InYellowSwitcherEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_YELLOW_SWITCHER_EFFECT_SLAB = register("in_yellow_switcher_effect_slab", PuzzleCodeModBlocks.IN_YELLOW_SWITCHER_EFFECT_SLAB, InYellowSwitcherEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_BLOCK = register("luck_effect_block", PuzzleCodeModBlocks.LUCK_EFFECT_BLOCK, LuckEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_STAIRS = register("luck_effect_stairs", PuzzleCodeModBlocks.LUCK_EFFECT_STAIRS, LuckEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LUCK_EFFECT_SLAB = register("luck_effect_slab", PuzzleCodeModBlocks.LUCK_EFFECT_SLAB, LuckEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFECT_BLOCK = register("in_luck_effect_block", PuzzleCodeModBlocks.IN_LUCK_EFFECT_BLOCK, InLuckEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFEST_STAIRS = register("in_luck_effest_stairs", PuzzleCodeModBlocks.IN_LUCK_EFFEST_STAIRS, InLuckEffestStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_LUCK_EFFECT_SLAB = register("in_luck_effect_slab", PuzzleCodeModBlocks.IN_LUCK_EFFECT_SLAB, InLuckEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_BLOCK = register("unluck_effect_block", PuzzleCodeModBlocks.UNLUCK_EFFECT_BLOCK, UnluckEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_STAIRS = register("unluck_effect_stairs", PuzzleCodeModBlocks.UNLUCK_EFFECT_STAIRS, UnluckEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> UNLUCK_EFFECT_SLAB = register("unluck_effect_slab", PuzzleCodeModBlocks.UNLUCK_EFFECT_SLAB, UnluckEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_BLOCK = register("in_unluck_effect_block", PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_BLOCK, InUnluckEffectBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_STAIRS = register("in_unluck_effect_stairs", PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_STAIRS, InUnluckEffectStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_UNLUCK_EFFECT_SLAB = register("in_unluck_effect_slab", PuzzleCodeModBlocks.IN_UNLUCK_EFFECT_SLAB, InUnluckEffectSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CATAPULTER_BLOCK = register("catapulter_block", PuzzleCodeModBlocks.CATAPULTER_BLOCK, CatapulterBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CATAPULTER_STAIRS = register("catapulter_stairs", PuzzleCodeModBlocks.CATAPULTER_STAIRS, CatapulterStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CATAPULTER_SLAB = register("catapulter_slab", PuzzleCodeModBlocks.CATAPULTER_SLAB, CatapulterSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CATAPULTER_BLOCK = register("in_catapulter_block", PuzzleCodeModBlocks.IN_CATAPULTER_BLOCK, InCatapulterBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CATAPULTER_STAIRS = register("in_catapulter_stairs", PuzzleCodeModBlocks.IN_CATAPULTER_STAIRS, InCatapulterStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_CATAPULTER_SLAB = register("in_catapulter_slab", PuzzleCodeModBlocks.IN_CATAPULTER_SLAB, InCatapulterSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_DAY_TIME_BLOCK = register("in_day_time_block", PuzzleCodeModBlocks.IN_DAY_TIME_BLOCK, InDayTimeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ADVANCED_TIME_BLOCK = register("advanced_time_block", PuzzleCodeModBlocks.ADVANCED_TIME_BLOCK, AdvancedTimeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PLACER_BLOCK = register("placer_block", PuzzleCodeModBlocks.PLACER_BLOCK, PlacerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ADVANCED_PLACER_BLOCK = register("advanced_placer_block", PuzzleCodeModBlocks.ADVANCED_PLACER_BLOCK, AdvancedPlacerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REPLACER_BLOCK = register("replacer_block", PuzzleCodeModBlocks.REPLACER_BLOCK, ReplacerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_BLOCK = register("filler_block", PuzzleCodeModBlocks.FILLER_BLOCK, FillerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLOCK_ENTITY_PLACER_BLOCK = register("block_entity_placer_block", PuzzleCodeModBlocks.BLOCK_ENTITY_PLACER_BLOCK, BlockEntityPlacerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INVENTORY_REPLACER = register("inventory_replacer", PuzzleCodeModBlocks.INVENTORY_REPLACER, InventoryReplacerBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ENTITY_TELEPORTER_BLOCK = register("entity_teleporter_block", PuzzleCodeModBlocks.ENTITY_TELEPORTER_BLOCK, EntityTeleporterBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HEALTH_CHANGER_BLOCK = register("health_changer_block", PuzzleCodeModBlocks.HEALTH_CHANGER_BLOCK, HealthChangerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> KILL_BLOCK = register("kill_block", PuzzleCodeModBlocks.KILL_BLOCK, KillBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> KILL_STAIRS = register("kill_stairs", PuzzleCodeModBlocks.KILL_STAIRS, KillStairsBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> KILL_SLAB = register("kill_slab", PuzzleCodeModBlocks.KILL_SLAB, KillSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_BLOCK = register("fire_killer_block", PuzzleCodeModBlocks.FIRE_KILLER_BLOCK,
-			FireKillerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_STAIRS = register("fire_killer_stairs", PuzzleCodeModBlocks.FIRE_KILLER_STAIRS,
-			FireKillerStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_SLAB = register("fire_killer_slab", PuzzleCodeModBlocks.FIRE_KILLER_SLAB,
-			FireKillerSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_BLOCK = register("in_fire_killer_block",
-			PuzzleCodeModBlocks.IN_FIRE_KILLER_BLOCK, InFireKillerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_STAIRS = register("in_fire_killer_stairs",
-			PuzzleCodeModBlocks.IN_FIRE_KILLER_STAIRS, InFireKillerStairsBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_SLAB = register("in_fire_killer_slab",
-			PuzzleCodeModBlocks.IN_FIRE_KILLER_SLAB, InFireKillerSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HEALTH_CHANGER_BLOCK = register("health_changer_block",
-			PuzzleCodeModBlocks.HEALTH_CHANGER_BLOCK, HealthChangerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ADVENCED_TIME_BLOCK = register("advenced_time_block",
-			PuzzleCodeModBlocks.ADVENCED_TIME_BLOCK, AdvencedTimeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IN_DAY_TIME_BLOCK = register("in_day_time_block", PuzzleCodeModBlocks.IN_DAY_TIME_BLOCK,
-			InDayTimeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SWITCHING_BLOCK_RED = register("switching_block_red",
-			PuzzleCodeModBlocks.SWITCHING_BLOCK_RED, SwitchingBlockRedBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_BLOCK = register("yellow_switching_block",
-			PuzzleCodeModBlocks.YELLOW_SWITCHING_BLOCK, YellowSwitchingBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_BLOCK = register("reverse_yellow_switching_block",
-			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK, ReverseYellowSwitchingBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_SLAB = register("yellow_switching_slab",
-			PuzzleCodeModBlocks.YELLOW_SWITCHING_SLAB, YellowSwitchingSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_SLAB_OFF = register("yellow_switching_slab_off",
-			PuzzleCodeModBlocks.YELLOW_SWITCHING_SLAB_OFF, YellowSwitchingSlabOffBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_SLAB = register("reverse_yellow_switching_slab",
-			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_SLAB, ReverseYellowSwitchingSlabBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_SLAB_OFF = register("reverse_yellow_switching_slab_off",
-			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_SLAB_OFF, ReverseYellowSwitchingSlabOffBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK = register("walking_switching_block",
-			PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK, WalkingSwitchingBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ENTITY_DETECTOR = register("entity_detector", PuzzleCodeModBlocks.ENTITY_DETECTOR,
-			EntityDetectorBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_BROKEN_GLOBAL_BLOCK = register("a_block_is_broken_global_block",
-			PuzzleCodeModBlocks.A_BLOCK_IS_BROKEN_GLOBAL_BLOCK, ABlockIsBrokenGlobalBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_PLACED_GLOBAL_BLOCK = register("a_block_is_placed_global_block",
-			PuzzleCodeModBlocks.A_BLOCK_IS_PLACED_GLOBAL_BLOCK, ABlockIsPlacedGlobalBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK = register("red_blue_switching_logic_global_block",
-			PuzzleCodeModBlocks.RED_BLUE_SWITCHING_LOGIC_GLOBAL_BLOCK, RedBlueSwitchingLogicGlobalBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NUMBER_CODE_BLOCK = register("number_code_block", PuzzleCodeModBlocks.NUMBER_CODE_BLOCK,
-			NumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_NUMBER_CODE_BLOCK = register("survival_number_code_block",
-			PuzzleCodeModBlocks.SURVIVAL_NUMBER_CODE_BLOCK, SurvivalNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHAIN_NUMBER_CODE_BLOCK = register("chain_number_code_block",
-			PuzzleCodeModBlocks.CHAIN_NUMBER_CODE_BLOCK, ChainNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PI_NUMBER_CODE_BLOCK = register("pi_number_code_block",
-			PuzzleCodeModBlocks.PI_NUMBER_CODE_BLOCK, PiNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RANDOMIZER_INTEGER_NUMBER_CODE_BLOCK = register("randomizer_integer_number_code_block",
-			PuzzleCodeModBlocks.RANDOMIZER_INTEGER_NUMBER_CODE_BLOCK, RandomizerIntegerNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RANDOMIZER_NUMBER_CODE_BLOCK = register("randomizer_number_code_block",
-			PuzzleCodeModBlocks.RANDOMIZER_NUMBER_CODE_BLOCK, RandomizerNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ADDITION_NUMBER_CODE_BLOCK = register("addition_number_code_block",
-			PuzzleCodeModBlocks.ADDITION_NUMBER_CODE_BLOCK, AdditionNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SUBSTRACTION_NUMBER_CODE_BLOCK = register("substraction_number_code_block",
-			PuzzleCodeModBlocks.SUBSTRACTION_NUMBER_CODE_BLOCK, SubstractionNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> DIVIZION_NUMBER_CODE_BLOCK = register("divizion_number_code_block",
-			PuzzleCodeModBlocks.DIVIZION_NUMBER_CODE_BLOCK, DivizionNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MULTIPLICATION_NUMBER_CODE_BLOCK = register("multiplication_number_code_block",
-			PuzzleCodeModBlocks.MULTIPLICATION_NUMBER_CODE_BLOCK, MultiplicationNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> POWER_NUMBER_CODE_BLOCK = register("power_number_code_block",
-			PuzzleCodeModBlocks.POWER_NUMBER_CODE_BLOCK, PowerNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> UNEQUAL_NUMBER_CODE_BLOCK = register("unequal_number_code_block",
-			PuzzleCodeModBlocks.UNEQUAL_NUMBER_CODE_BLOCK, UnequalNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> DAY_NUMBER_CODE_BLOCK = register("day_number_code_block",
-			PuzzleCodeModBlocks.DAY_NUMBER_CODE_BLOCK, DayNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MONTH_NUMBER_CODE_BLOCK = register("month_number_code_block",
-			PuzzleCodeModBlocks.MONTH_NUMBER_CODE_BLOCK, MonthNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YEAR_NUMBER_CODE_BLOCK = register("year_number_code_block",
-			PuzzleCodeModBlocks.YEAR_NUMBER_CODE_BLOCK, YearNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TRANSFER_NUMBER_CODE_BLOCK = register("transfer_number_code_block",
-			PuzzleCodeModBlocks.TRANSFER_NUMBER_CODE_BLOCK, TransferNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_NUMBER_CODE_BLOCK = register("left_transfer_number_code_block",
-			PuzzleCodeModBlocks.LEFT_TRANSFER_NUMBER_CODE_BLOCK, LeftTransferNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_NUMBER_CODE_BLOCK = register("right_transfer_number_code_block",
-			PuzzleCodeModBlocks.RIGHT_TRANSFER_NUMBER_CODE_BLOCK, RightTransferNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_NUMBER_CODE_BLOCK = register("property_to_nbt_number_code_block",
-			PuzzleCodeModBlocks.PROPERTY_TO_NBT_NUMBER_CODE_BLOCK, PropertyToNBTNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_NUMBER_CLODE_BLOCK = register("nbt_to_property_number_clode_block",
-			PuzzleCodeModBlocks.NBT_TO_PROPERTY_NUMBER_CLODE_BLOCK, NBTToPropertyNumberClodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TRANSFER_NUMBER_CODE_BLOCK = register("property_transfer_number_code_block",
-			PuzzleCodeModBlocks.PROPERTY_TRANSFER_NUMBER_CODE_BLOCK, PropertyTransferNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IMITATOR_NUMBER_CODE_BLOCK = register("imitator_number_code_block",
-			PuzzleCodeModBlocks.IMITATOR_NUMBER_CODE_BLOCK, ImitatorNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_NUMBER_CODE_BLOCK = register("teleporter_number_code_block",
-			PuzzleCodeModBlocks.TELEPORTER_NUMBER_CODE_BLOCK, TeleporterNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FILLER_NUMBER_CODE_BLOCK = register("filler_number_code_block",
-			PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK, FillerNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("hp_of_entity_to_number_code_block",
-			PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, HPOfEntityToNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("max_hp_of_entity_to_number_code_block",
-			PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, MaxHPOfEntityToNumberCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LOGIC_CODE_BLOCK = register("logic_code_block", PuzzleCodeModBlocks.LOGIC_CODE_BLOCK,
-			LogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_LOGIC_CODE_BLOCK = register("survival_logic_code_block",
-			PuzzleCodeModBlocks.SURVIVAL_LOGIC_CODE_BLOCK, SurvivalLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHAIN_LOGIC_CODE_BLOCK = register("chain_logic_code_block",
-			PuzzleCodeModBlocks.CHAIN_LOGIC_CODE_BLOCK, ChainLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TRANSFER_LOGIC_CODE_BLOCK = register("transfer_logic_code_block",
-			PuzzleCodeModBlocks.TRANSFER_LOGIC_CODE_BLOCK, TransferLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_LOGIC_CODE_BLOCK = register("left_transfer_logic_code_block",
-			PuzzleCodeModBlocks.LEFT_TRANSFER_LOGIC_CODE_BLOCK, LeftTransferLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_LOGIC_CODE_BLOCK = register("nbt_to_property_logic_code_block",
-			PuzzleCodeModBlocks.NBT_TO_PROPERTY_LOGIC_CODE_BLOCK, NBTToPropertyLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_LOGIC_CODE_BLOCK = register("property_to_nbt_logic_code_block",
-			PuzzleCodeModBlocks.PROPERTY_TO_NBT_LOGIC_CODE_BLOCK, PropertyToNBTLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IMITATOR_LOGIC_CODE_BLOCK = register("imitator_logic_code_block",
-			PuzzleCodeModBlocks.IMITATOR_LOGIC_CODE_BLOCK, ImitatorLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_LOGIC_CODE_BLOCK = register("teleporter_logic_code_block",
-			PuzzleCodeModBlocks.TELEPORTER_LOGIC_CODE_BLOCK, TeleporterLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FILLER_LOGIC_CODE_BLOCK = register("filler_logic_code_block",
-			PuzzleCodeModBlocks.FILLER_LOGIC_CODE_BLOCK, FillerLogicCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TEXT_CODE_BLOCK = register("text_code_block", PuzzleCodeModBlocks.TEXT_CODE_BLOCK,
-			TextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_TEXT_CODE_BLOCK = register("survival_text_code_block",
-			PuzzleCodeModBlocks.SURVIVAL_TEXT_CODE_BLOCK, SurvivalTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHAIN_TEXT_CODE_BLOCK = register("chain_text_code_block",
-			PuzzleCodeModBlocks.CHAIN_TEXT_CODE_BLOCK, ChainTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> MESSAGER_BLOCK = register("messager_block", PuzzleCodeModBlocks.MESSAGER_BLOCK,
-			MessagerBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TITLE_TEXT_CODE_BLOCK = register("title_text_code_block",
-			PuzzleCodeModBlocks.TITLE_TEXT_CODE_BLOCK, TitleTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> COMMAND_CODE_BLOCK = register("command_code_block", PuzzleCodeModBlocks.COMMAND_CODE_BLOCK,
-			CommandCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TRANSFER_TEXT_CODE_BLOCK = register("transfer_text_code_block",
-			PuzzleCodeModBlocks.TRANSFER_TEXT_CODE_BLOCK, TransferTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_TEXT_CODE_BLOCK = register("left_transfer_text_code_block",
-			PuzzleCodeModBlocks.LEFT_TRANSFER_TEXT_CODE_BLOCK, LeftTransferTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_TEXT_CODE_BLOCK = register("right_transfer_text_code_block",
-			PuzzleCodeModBlocks.RIGHT_TRANSFER_TEXT_CODE_BLOCK, RightTransferTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = register("nbt_to_property_text_code_block",
-			PuzzleCodeModBlocks.NBT_TO_PROPERTY_TEXT_CODE_BLOCK, NBTToPropertyTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = register("property_to_nbt_text_code_block",
-			PuzzleCodeModBlocks.PROPERTY_TO_NBT_TEXT_CODE_BLOCK, PropertyToNBTTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TRANSFER_TEXT_CODE_BLOCK = register("property_transfer_text_code_block",
-			PuzzleCodeModBlocks.PROPERTY_TRANSFER_TEXT_CODE_BLOCK, PropertyTransferTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IMITATOR_TEXT_CODE_BLOCK = register("imitator_text_code_block",
-			PuzzleCodeModBlocks.IMITATOR_TEXT_CODE_BLOCK, ImitatorTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_TEXT_CODE_BLOCK = register("teleporter_text_code_block",
-			PuzzleCodeModBlocks.TELEPORTER_TEXT_CODE_BLOCK, TeleporterTextCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> ITEM_CODE_BLOCK = register("item_code_block", PuzzleCodeModBlocks.ITEM_CODE_BLOCK,
-			ItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_ITEM_CODE_BLOCK = register("survival_item_code_block",
-			PuzzleCodeModBlocks.SURVIVAL_ITEM_CODE_BLOCK, SurvivalItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> CHAIN_ITEM_CODE_BLOCK = register("chain_item_code_block",
-			PuzzleCodeModBlocks.CHAIN_ITEM_CODE_BLOCK, ChainItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TRANSFER_ITEM_CODE_BLOCK = register("transfer_item_code_block",
-			PuzzleCodeModBlocks.TRANSFER_ITEM_CODE_BLOCK, TransferItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_ITEM_CODE_BLOCK = register("left_transfer_item_code_block",
-			PuzzleCodeModBlocks.LEFT_TRANSFER_ITEM_CODE_BLOCK, LeftTransferItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_ITEM_CODE_BLOCK = register("right_transfer_item_code_block",
-			PuzzleCodeModBlocks.RIGHT_TRANSFER_ITEM_CODE_BLOCK, RightTransferItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> IMITATOR_ITEM_CODE_BLOCK = register("imitator_item_code_block",
-			PuzzleCodeModBlocks.IMITATOR_ITEM_CODE_BLOCK, ImitatorItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_ITEM_CODE_BLOCK = register("teleporter_item_code_block",
-			PuzzleCodeModBlocks.TELEPORTER_ITEM_CODE_BLOCK, TeleporterItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> FILLER_ITEM_CODE_BLOCK = register("filler_item_code_block",
-			PuzzleCodeModBlocks.FILLER_ITEM_CODE_BLOCK, FillerItemCodeBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> PUZZLE_CRAFTER = register("puzzle_crafter", PuzzleCodeModBlocks.PUZZLE_CRAFTER,
-			PuzzleCrafterBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REMOTE_MOVER_BLOCK = register("remote_mover_block", PuzzleCodeModBlocks.REMOTE_MOVER_BLOCK,
-			RemoteMoverBlockBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WALKING_DETECTOR = register("walking_detector", PuzzleCodeModBlocks.WALKING_DETECTOR,
-			WalkingDetectorBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SWITCHER_BLOCK_BLUE = register("switcher_block_blue",
-			PuzzleCodeModBlocks.SWITCHER_BLOCK_BLUE, SwitcherBlockBlueBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_BLOCK_OFF = register("yellow_switching_block_off",
-			PuzzleCodeModBlocks.YELLOW_SWITCHING_BLOCK_OFF, YellowSwitchingBlockOffBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_BLOCK_OFF = register("reverse_yellow_switching_block_off",
-			PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK_OFF, ReverseYellowSwitchingBlockOffBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK_OFF = register("walking_switching_block_off",
-			PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, WalkingSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_BLOCK = register("fire_killer_block", PuzzleCodeModBlocks.FIRE_KILLER_BLOCK, FireKillerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_STAIRS = register("fire_killer_stairs", PuzzleCodeModBlocks.FIRE_KILLER_STAIRS, FireKillerStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FIRE_KILLER_SLAB = register("fire_killer_slab", PuzzleCodeModBlocks.FIRE_KILLER_SLAB, FireKillerSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_BLOCK = register("in_fire_killer_block", PuzzleCodeModBlocks.IN_FIRE_KILLER_BLOCK, InFireKillerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_STAIRS = register("in_fire_killer_stairs", PuzzleCodeModBlocks.IN_FIRE_KILLER_STAIRS, InFireKillerStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_FIRE_KILLER_SLAB = register("in_fire_killer_slab", PuzzleCodeModBlocks.IN_FIRE_KILLER_SLAB, InFireKillerSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INSTANT_HEALTH_BLOCK = register("instant_health_block", PuzzleCodeModBlocks.INSTANT_HEALTH_BLOCK, InstantHealthBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INSTANT_HEALTH_STAIRS = register("instant_health_stairs", PuzzleCodeModBlocks.INSTANT_HEALTH_STAIRS, InstantHealthStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> INSTANT_HEALTH_SLAB = register("instant_health_slab", PuzzleCodeModBlocks.INSTANT_HEALTH_SLAB, InstantHealthSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INSTANT_HEALTH_BLOCK = register("in_instant_health_block", PuzzleCodeModBlocks.IN_INSTANT_HEALTH_BLOCK, InInstantHealthBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INSTANT_HEALTH_STAIRS = register("in_instant_health_stairs", PuzzleCodeModBlocks.IN_INSTANT_HEALTH_STAIRS, InInstantHealthStairsBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IN_INSTANT_HEALTH_SLAB = register("in_instant_health_slab", PuzzleCodeModBlocks.IN_INSTANT_HEALTH_SLAB, InInstantHealthSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_SWITCHING_BLOCK = register("red_switching_block", PuzzleCodeModBlocks.RED_SWITCHING_BLOCK, RedSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_SWITCHING_SLAB = register("red_switching_slab", PuzzleCodeModBlocks.RED_SWITCHING_SLAB, RedSwitchingSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_SWITCHING_SLAB_OFF = register("red_switching_slab_off", PuzzleCodeModBlocks.RED_SWITCHING_SLAB_OFF, RedSwitchingSlabOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_KILL_SWITCHING_BLOCK = register("red_kill_switching_block", PuzzleCodeModBlocks.RED_KILL_SWITCHING_BLOCK, RedKillSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLUE_SWITCHING_BLOCK = register("blue_switching_block", PuzzleCodeModBlocks.BLUE_SWITCHING_BLOCK, BlueSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLUE_SWITCING_SLAB = register("blue_switcing_slab", PuzzleCodeModBlocks.BLUE_SWITCING_SLAB, BlueSwitcingSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLUE_SWITCHING_SLAB_OFF = register("blue_switching_slab_off", PuzzleCodeModBlocks.BLUE_SWITCHING_SLAB_OFF, BlueSwitchingSlabOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLUE_KILL_SWITCHING_BLOCK = register("blue_kill_switching_block", PuzzleCodeModBlocks.BLUE_KILL_SWITCHING_BLOCK, BlueKillSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SWITCHING_BLOCK_RED = register("switching_block_red", PuzzleCodeModBlocks.SWITCHING_BLOCK_RED, SwitchingBlockRedBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_SWITCHING_BLOCK = register("chain_switching_block", PuzzleCodeModBlocks.CHAIN_SWITCHING_BLOCK, ChainSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_CHAIN_SWITCHING_BLOCK = register("reverse_chain_switching_block", PuzzleCodeModBlocks.REVERSE_CHAIN_SWITCHING_BLOCK, ReverseChainSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_SWITCHING_BLOCK = register("imitator_switching_block", PuzzleCodeModBlocks.IMITATOR_SWITCHING_BLOCK, ImitatorSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_IMITATOR_SWITCHING_BLOCK = register("reverse_imitator_switching_block", PuzzleCodeModBlocks.REVERSE_IMITATOR_SWITCHING_BLOCK, ReverseImitatorSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_BLOCK = register("yellow_switching_block", PuzzleCodeModBlocks.YELLOW_SWITCHING_BLOCK, YellowSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_SLAB = register("yellow_switching_slab", PuzzleCodeModBlocks.YELLOW_SWITCHING_SLAB, YellowSwitchingSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_SLAB_OFF = register("yellow_switching_slab_off", PuzzleCodeModBlocks.YELLOW_SWITCHING_SLAB_OFF, YellowSwitchingSlabOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_KILL_SWITCHING_BLOCK = register("yellow_kill_switching_block", PuzzleCodeModBlocks.YELLOW_KILL_SWITCHING_BLOCK, YellowKillSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_BLOCK = register("reverse_yellow_switching_block", PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK, ReverseYellowSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_SLAB = register("reverse_yellow_switching_slab", PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_SLAB, ReverseYellowSwitchingSlabBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_SLAB_OFF = register("reverse_yellow_switching_slab_off", PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_SLAB_OFF, ReverseYellowSwitchingSlabOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_KILL_SWITCHING_BLOCK = register("reverse_yellow_kill_switching_block", PuzzleCodeModBlocks.REVERSE_YELLOW_KILL_SWITCHING_BLOCK,
+			ReverseYellowKillSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NEAR_ENTITY_YELLOW_SWITCHING_BLOCK = register("near_entity_yellow_switching_block", PuzzleCodeModBlocks.NEAR_ENTITY_YELLOW_SWITCHING_BLOCK, NearEntityYellowSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_NEAR_ENTITY_YELLOW_SWITCHING_BLOCK = register("reverse_near_entity_yellow_switching_block", PuzzleCodeModBlocks.REVERSE_NEAR_ENTITY_YELLOW_SWITCHING_BLOCK,
+			ReverseNearEntityYellowSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TIMED_SWITCHING_BLOCK = register("timed_switching_block", PuzzleCodeModBlocks.TIMED_SWITCHING_BLOCK, TimedSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK = register("walking_switching_block", PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK, WalkingSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CLICKING_SWITCHING_BLOCK = register("clicking_switching_block", PuzzleCodeModBlocks.CLICKING_SWITCHING_BLOCK, ClickingSwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NEAR_ENTITY_SWITCHING_BLOCK = register("near_entity_switching_block", PuzzleCodeModBlocks.NEAR_ENTITY_SWITCHING_BLOCK, NearEntitySwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_NEAR_ENTITY_SWITCHING_BLOCK = register("reverse_near_entity_switching_block", PuzzleCodeModBlocks.REVERSE_NEAR_ENTITY_SWITCHING_BLOCK,
+			ReverseNearEntitySwitchingBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ENTITY_DETECTOR = register("entity_detector", PuzzleCodeModBlocks.ENTITY_DETECTOR, EntityDetectorBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_BROKEN_GLOBAL_BLOCK = register("a_block_is_broken_global_block", PuzzleCodeModBlocks.A_BLOCK_IS_BROKEN_GLOBAL_BLOCK, ABlockIsBrokenGlobalBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_PLACED_GLOBAL_BLOCK = register("a_block_is_placed_global_block", PuzzleCodeModBlocks.A_BLOCK_IS_PLACED_GLOBAL_BLOCK, ABlockIsPlacedGlobalBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> A_BLOCK_IS_RIGHT_CLICKED_GLOBAL_BLOCK = register("a_block_is_right_clicked_global_block", PuzzleCodeModBlocks.A_BLOCK_IS_RIGHT_CLICKED_GLOBAL_BLOCK,
+			ABlockIsRightClickedGlobalBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NUMBER_CODE_BLOCK = register("number_code_block", PuzzleCodeModBlocks.NUMBER_CODE_BLOCK, NumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_NUMBER_CODE_BLOCK = register("survival_number_code_block", PuzzleCodeModBlocks.SURVIVAL_NUMBER_CODE_BLOCK, SurvivalNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_NUMBER_CODE_BLOCK = register("chain_number_code_block", PuzzleCodeModBlocks.CHAIN_NUMBER_CODE_BLOCK, ChainNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PI_NUMBER_CODE_BLOCK = register("pi_number_code_block", PuzzleCodeModBlocks.PI_NUMBER_CODE_BLOCK, PiNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> E_NUMBER_CODE_BLOCK = register("e_number_code_block", PuzzleCodeModBlocks.E_NUMBER_CODE_BLOCK, ENumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RANDOMIZER_INTEGER_NUMBER_CODE_BLOCK = register("randomizer_integer_number_code_block", PuzzleCodeModBlocks.RANDOMIZER_INTEGER_NUMBER_CODE_BLOCK,
+			RandomizerIntegerNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RANDOMIZER_NUMBER_CODE_BLOCK = register("randomizer_number_code_block", PuzzleCodeModBlocks.RANDOMIZER_NUMBER_CODE_BLOCK, RandomizerNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ADDITION_NUMBER_CODE_BLOCK = register("addition_number_code_block", PuzzleCodeModBlocks.ADDITION_NUMBER_CODE_BLOCK, AdditionNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SUBSTRACTION_NUMBER_CODE_BLOCK = register("substraction_number_code_block", PuzzleCodeModBlocks.SUBSTRACTION_NUMBER_CODE_BLOCK, SubstractionNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DIVIZION_NUMBER_CODE_BLOCK = register("divizion_number_code_block", PuzzleCodeModBlocks.DIVIZION_NUMBER_CODE_BLOCK, DivizionNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MULTIPLICATION_NUMBER_CODE_BLOCK = register("multiplication_number_code_block", PuzzleCodeModBlocks.MULTIPLICATION_NUMBER_CODE_BLOCK, MultiplicationNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> POWER_NUMBER_CODE_BLOCK = register("power_number_code_block", PuzzleCodeModBlocks.POWER_NUMBER_CODE_BLOCK, PowerNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MODULO_NUMBER_CODE_BLOCK = register("modulo_number_code_block", PuzzleCodeModBlocks.MODULO_NUMBER_CODE_BLOCK, ModuloNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RADICAL_NUMBER_CODE_BLOCK = register("radical_number_code_block", PuzzleCodeModBlocks.RADICAL_NUMBER_CODE_BLOCK, RadicalNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LOGARITHM_NUMBER_CODE_BLOCK = register("logarithm_number_code_block", PuzzleCodeModBlocks.LOGARITHM_NUMBER_CODE_BLOCK, LogarithmNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> UNEQUAL_NUMBER_CODE_BLOCK = register("unequal_number_code_block", PuzzleCodeModBlocks.UNEQUAL_NUMBER_CODE_BLOCK, UnequalNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DAY_NUMBER_CODE_BLOCK = register("day_number_code_block", PuzzleCodeModBlocks.DAY_NUMBER_CODE_BLOCK, DayNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MONTH_NUMBER_CODE_BLOCK = register("month_number_code_block", PuzzleCodeModBlocks.MONTH_NUMBER_CODE_BLOCK, MonthNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YEAR_NUMBER_CODE_BLOCK = register("year_number_code_block", PuzzleCodeModBlocks.YEAR_NUMBER_CODE_BLOCK, YearNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("hp_of_entity_to_number_code_block", PuzzleCodeModBlocks.HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK, HPOfEntityToNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK = register("max_hp_of_entity_to_number_code_block", PuzzleCodeModBlocks.MAX_HP_OF_ENTITY_TO_NUMBER_CODE_BLOCK,
+			MaxHPOfEntityToNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_NUMBER_CODE_BLOCK = register("transfer_number_code_block", PuzzleCodeModBlocks.TRANSFER_NUMBER_CODE_BLOCK, TransferNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_NUMBER_CODE_BLOCK = register("left_transfer_number_code_block", PuzzleCodeModBlocks.LEFT_TRANSFER_NUMBER_CODE_BLOCK, LeftTransferNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_NUMBER_CODE_BLOCK = register("right_transfer_number_code_block", PuzzleCodeModBlocks.RIGHT_TRANSFER_NUMBER_CODE_BLOCK, RightTransferNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_NUMBER_CODE_BLOCK = register("property_to_nbt_number_code_block", PuzzleCodeModBlocks.PROPERTY_TO_NBT_NUMBER_CODE_BLOCK, PropertyToNBTNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_NUMBER_CLODE_BLOCK = register("nbt_to_property_number_clode_block", PuzzleCodeModBlocks.NBT_TO_PROPERTY_NUMBER_CLODE_BLOCK, NBTToPropertyNumberClodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TRANSFER_NUMBER_CODE_BLOCK = register("property_transfer_number_code_block", PuzzleCodeModBlocks.PROPERTY_TRANSFER_NUMBER_CODE_BLOCK,
+			PropertyTransferNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_NUMBER_CODE_BLOCK = register("imitator_number_code_block", PuzzleCodeModBlocks.IMITATOR_NUMBER_CODE_BLOCK, ImitatorNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_NUMBER_CODE_BLOCK = register("teleporter_number_code_block", PuzzleCodeModBlocks.TELEPORTER_NUMBER_CODE_BLOCK, TeleporterNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_NUMBER_CODE_BLOCK = register("filler_number_code_block", PuzzleCodeModBlocks.FILLER_NUMBER_CODE_BLOCK, FillerNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_NBT_TO_NUMBER_CODE_BLOCK = register("item_nbt_to_number_code_block", PuzzleCodeModBlocks.ITEM_NBT_TO_NUMBER_CODE_BLOCK, ItemNBTToNumberCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LOGIC_CODE_BLOCK = register("logic_code_block", PuzzleCodeModBlocks.LOGIC_CODE_BLOCK, LogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_LOGIC_CODE_BLOCK = register("survival_logic_code_block", PuzzleCodeModBlocks.SURVIVAL_LOGIC_CODE_BLOCK, SurvivalLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LOGIC_CLICKING_SWITCHING_CODE_BLOCK = register("logic_clicking_switching_code_block", PuzzleCodeModBlocks.LOGIC_CLICKING_SWITCHING_CODE_BLOCK,
+			LogicClickingSwitchingCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_LOGIC_CODE_BLOCK = register("chain_logic_code_block", PuzzleCodeModBlocks.CHAIN_LOGIC_CODE_BLOCK, ChainLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_LOGIC_CODE_BLOCK = register("transfer_logic_code_block", PuzzleCodeModBlocks.TRANSFER_LOGIC_CODE_BLOCK, TransferLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_LOGIC_CODE_BLOCK = register("left_transfer_logic_code_block", PuzzleCodeModBlocks.LEFT_TRANSFER_LOGIC_CODE_BLOCK, LeftTransferLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_LOGIC_CODE_BLOCK = register("nbt_to_property_logic_code_block", PuzzleCodeModBlocks.NBT_TO_PROPERTY_LOGIC_CODE_BLOCK, NBTToPropertyLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_LOGIC_CODE_BLOCK = register("property_to_nbt_logic_code_block", PuzzleCodeModBlocks.PROPERTY_TO_NBT_LOGIC_CODE_BLOCK, PropertyToNBTLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_LOGIC_CODE_BLOCK = register("imitator_logic_code_block", PuzzleCodeModBlocks.IMITATOR_LOGIC_CODE_BLOCK, ImitatorLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_LOGIC_CODE_BLOCK = register("teleporter_logic_code_block", PuzzleCodeModBlocks.TELEPORTER_LOGIC_CODE_BLOCK, TeleporterLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_LOGIC_CODE_BLOCK = register("filler_logic_code_block", PuzzleCodeModBlocks.FILLER_LOGIC_CODE_BLOCK, FillerLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_NBT_TO_LOGIC_CODE_BLOCK = register("item_nbt_to_logic_code_block", PuzzleCodeModBlocks.ITEM_NBT_TO_LOGIC_CODE_BLOCK, ItemNBTToLogicCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TEXT_CODE_BLOCK = register("text_code_block", PuzzleCodeModBlocks.TEXT_CODE_BLOCK, TextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_TEXT_CODE_BLOCK = register("survival_text_code_block", PuzzleCodeModBlocks.SURVIVAL_TEXT_CODE_BLOCK, SurvivalTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_TEXT_CODE_BLOCK = register("chain_text_code_block", PuzzleCodeModBlocks.CHAIN_TEXT_CODE_BLOCK, ChainTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> MESSAGER_BLOCK = register("messager_block", PuzzleCodeModBlocks.MESSAGER_BLOCK, MessagerBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TITLE_TEXT_CODE_BLOCK = register("title_text_code_block", PuzzleCodeModBlocks.TITLE_TEXT_CODE_BLOCK, TitleTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> COMMAND_CODE_BLOCK = register("command_code_block", PuzzleCodeModBlocks.COMMAND_CODE_BLOCK, CommandCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_TEXT_CODE_BLOCK = register("transfer_text_code_block", PuzzleCodeModBlocks.TRANSFER_TEXT_CODE_BLOCK, TransferTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_TEXT_CODE_BLOCK = register("left_transfer_text_code_block", PuzzleCodeModBlocks.LEFT_TRANSFER_TEXT_CODE_BLOCK, LeftTransferTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_TEXT_CODE_BLOCK = register("right_transfer_text_code_block", PuzzleCodeModBlocks.RIGHT_TRANSFER_TEXT_CODE_BLOCK, RightTransferTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NBT_TO_PROPERTY_TEXT_CODE_BLOCK = register("nbt_to_property_text_code_block", PuzzleCodeModBlocks.NBT_TO_PROPERTY_TEXT_CODE_BLOCK, NBTToPropertyTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TO_NBT_TEXT_CODE_BLOCK = register("property_to_nbt_text_code_block", PuzzleCodeModBlocks.PROPERTY_TO_NBT_TEXT_CODE_BLOCK, PropertyToNBTTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PROPERTY_TRANSFER_TEXT_CODE_BLOCK = register("property_transfer_text_code_block", PuzzleCodeModBlocks.PROPERTY_TRANSFER_TEXT_CODE_BLOCK, PropertyTransferTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_TEXT_CODE_BLOCK = register("imitator_text_code_block", PuzzleCodeModBlocks.IMITATOR_TEXT_CODE_BLOCK, ImitatorTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_TEXT_CODE_BLOCK = register("teleporter_text_code_block", PuzzleCodeModBlocks.TELEPORTER_TEXT_CODE_BLOCK, TeleporterTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_TEXT_CODE_BLOCK = register("filler_text_code_block", PuzzleCodeModBlocks.FILLER_TEXT_CODE_BLOCK, FillerTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_NBT_TO_TEXT_CODE_BLOCK = register("item_nbt_to_text_code_block", PuzzleCodeModBlocks.ITEM_NBT_TO_TEXT_CODE_BLOCK, ItemNBTToTextCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_CODE_BLOCK = register("item_code_block", PuzzleCodeModBlocks.ITEM_CODE_BLOCK, ItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_ITEM_CODE_BLOCK = register("survival_item_code_block", PuzzleCodeModBlocks.SURVIVAL_ITEM_CODE_BLOCK, SurvivalItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_ITEM_CODE_BLOCK = register("chain_item_code_block", PuzzleCodeModBlocks.CHAIN_ITEM_CODE_BLOCK, ChainItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RANDOM_ITEM_FROM_TAG_CODE_BLOCK = register("random_item_from_tag_code_block", PuzzleCodeModBlocks.RANDOM_ITEM_FROM_TAG_CODE_BLOCK, RandomItemFromTagCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_ITEM_CODE_BLOCK = register("transfer_item_code_block", PuzzleCodeModBlocks.TRANSFER_ITEM_CODE_BLOCK, TransferItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_ITEM_CODE_BLOCK = register("left_transfer_item_code_block", PuzzleCodeModBlocks.LEFT_TRANSFER_ITEM_CODE_BLOCK, LeftTransferItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_ITEM_CODE_BLOCK = register("right_transfer_item_code_block", PuzzleCodeModBlocks.RIGHT_TRANSFER_ITEM_CODE_BLOCK, RightTransferItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_ITEM_CODE_BLOCK = register("imitator_item_code_block", PuzzleCodeModBlocks.IMITATOR_ITEM_CODE_BLOCK, ImitatorItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_ITEM_CODE_BLOCK = register("teleporter_item_code_block", PuzzleCodeModBlocks.TELEPORTER_ITEM_CODE_BLOCK, TeleporterItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_ITEM_CODE_BLOCK = register("filler_item_code_block", PuzzleCodeModBlocks.FILLER_ITEM_CODE_BLOCK, FillerItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NAME_OF_ITEM_CODE_BLOCK = register("name_of_item_code_block", PuzzleCodeModBlocks.NAME_OF_ITEM_CODE_BLOCK, NameOfItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ITEM_INVENTORY_TO_ITEM_CODE_BLOCK = register("item_inventory_to_item_code_block", PuzzleCodeModBlocks.ITEM_INVENTORY_TO_ITEM_CODE_BLOCK, ItemInventoryToItemCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DIRECTION_CODE_BLOCK = register("direction_code_block", PuzzleCodeModBlocks.DIRECTION_CODE_BLOCK, DirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_DIRECTION_CODE_BLOCK = register("survival_direction_code_block", PuzzleCodeModBlocks.SURVIVAL_DIRECTION_CODE_BLOCK, SurvivalDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_DIRECTION_CODE_BLOCK = register("chain_direction_code_block", PuzzleCodeModBlocks.CHAIN_DIRECTION_CODE_BLOCK, ChainDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RANDOMIZER_DIRECTION_CODE_BLOCK = register("randomizer_direction_code_block", PuzzleCodeModBlocks.RANDOMIZER_DIRECTION_CODE_BLOCK, RandomizerDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_DIRECTION_CODE_BLOCK = register("imitator_direction_code_block", PuzzleCodeModBlocks.IMITATOR_DIRECTION_CODE_BLOCK, ImitatorDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TELEPORTER_DIRECTION_CODE_BLOCK = register("teleporter_direction_code_block", PuzzleCodeModBlocks.TELEPORTER_DIRECTION_CODE_BLOCK, TeleporterDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> FILLER_DIRECTION_CODE_BLOCK = register("filler_direction_code_block", PuzzleCodeModBlocks.FILLER_DIRECTION_CODE_BLOCK, FillerDirectionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> POSITION_CODE_BLOCK = register("position_code_block", PuzzleCodeModBlocks.POSITION_CODE_BLOCK, PositionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_POSITION_CODE_BLOCK = register("survival_position_code_block", PuzzleCodeModBlocks.SURVIVAL_POSITION_CODE_BLOCK, SurvivalPositionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_POSITION_CODE_BLOCK = register("chain_position_code_block", PuzzleCodeModBlocks.CHAIN_POSITION_CODE_BLOCK, ChainPositionCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> AREA_CODE_BLOCK = register("area_code_block", PuzzleCodeModBlocks.AREA_CODE_BLOCK, AreaCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_AREA_CODE_BLOCK = register("survival_area_code_block", PuzzleCodeModBlocks.SURVIVAL_AREA_CODE_BLOCK, SurvivalAreaCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_AREA_CODE_BLOCK = register("chain_area_code_block", PuzzleCodeModBlocks.CHAIN_AREA_CODE_BLOCK, ChainAreaCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_AREA_CODE_BLOCK = register("transfer_area_code_block", PuzzleCodeModBlocks.TRANSFER_AREA_CODE_BLOCK, TransferAreaCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NEUTRAL_CODE_BLOCK = register("neutral_code_block", PuzzleCodeModBlocks.NEUTRAL_CODE_BLOCK, NeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SURVIVAL_NEUTRAL_CODE_BLOCK = register("survival_neutral_code_block", PuzzleCodeModBlocks.SURVIVAL_NEUTRAL_CODE_BLOCK, SurvivalNeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_NEUTRAL_CODE_BLOCK = register("chain_neutral_code_block", PuzzleCodeModBlocks.CHAIN_NEUTRAL_CODE_BLOCK, ChainNeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TRANSFER_NEUTRAL_CODE_BLOCK = register("transfer_neutral_code_block", PuzzleCodeModBlocks.TRANSFER_NEUTRAL_CODE_BLOCK, TransferNeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LEFT_TRANSFER_NEUTRAL_CODE_BLOCK = register("left_transfer_neutral_code_block", PuzzleCodeModBlocks.LEFT_TRANSFER_NEUTRAL_CODE_BLOCK, LeftTransferNeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RIGHT_TRANSFER_NEUTRAL_CODE_BLOCK = register("right_transfer_neutral_code_block", PuzzleCodeModBlocks.RIGHT_TRANSFER_NEUTRAL_CODE_BLOCK, RightTransferNeutralCodeBlockBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SWITCHER_BLOCK_BLUE = register("switcher_block_blue", PuzzleCodeModBlocks.SWITCHER_BLOCK_BLUE, SwitcherBlockBlueBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLUE_SWITCHING_BLOCK_OFF = register("blue_switching_block_off", PuzzleCodeModBlocks.BLUE_SWITCHING_BLOCK_OFF, BlueSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> RED_SWITCHING_BLOCK_OFF = register("red_switching_block_off", PuzzleCodeModBlocks.RED_SWITCHING_BLOCK_OFF, RedSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_SWITCHING_BLOCK_OFF = register("yellow_switching_block_off", PuzzleCodeModBlocks.YELLOW_SWITCHING_BLOCK_OFF, YellowSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_SWITCHING_BLOCK_OFF = register("reverse_yellow_switching_block_off", PuzzleCodeModBlocks.REVERSE_YELLOW_SWITCHING_BLOCK_OFF, ReverseYellowSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> WALKING_SWITCHING_BLOCK_OFF = register("walking_switching_block_off", PuzzleCodeModBlocks.WALKING_SWITCHING_BLOCK_OFF, WalkingSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CLICKING_SWITCHING_BLOCK_OFF = register("clicking_switching_block_off", PuzzleCodeModBlocks.CLICKING_SWITCHING_BLOCK_OFF, ClickingSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NEAR_ENTITY_SWITCHING_BLOCK_OFF = register("near_entity_switching_block_off", PuzzleCodeModBlocks.NEAR_ENTITY_SWITCHING_BLOCK_OFF, NearEntitySwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_NEAR_ENTITY_SWITCHING_BLOCK_OFF = register("reverse_near_entity_switching_block_off", PuzzleCodeModBlocks.REVERSE_NEAR_ENTITY_SWITCHING_BLOCK_OFF,
+			ReverseNearEntitySwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> NEAR_ENTITY_YELLOW_SWITCHING_BLOCK_OFF = register("near_entity_yellow_switching_block_off", PuzzleCodeModBlocks.NEAR_ENTITY_YELLOW_SWITCHING_BLOCK_OFF,
+			NearEntityYellowSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_NEAR_ENTITY_YELLOW_SWITCHING_BLOCK_OFF = register("reverse_near_entity_yellow_switching_block_off", PuzzleCodeModBlocks.REVERSE_NEAR_ENTITY_YELLOW_SWITCHING_BLOCK_OFF,
+			ReverseNearEntityYellowSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> CHAIN_SWITCHING_BLOCK_OFF = register("chain_switching_block_off", PuzzleCodeModBlocks.CHAIN_SWITCHING_BLOCK_OFF, ChainSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_CHAIN_SWITCHING_BLOCK_OFF = register("reverse_chain_switching_block_off", PuzzleCodeModBlocks.REVERSE_CHAIN_SWITCHING_BLOCK_OFF, ReverseChainSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> IMITATOR_SWITCHING_BLOCK_OFF = register("imitator_switching_block_off", PuzzleCodeModBlocks.IMITATOR_SWITCHING_BLOCK_OFF, ImitatorSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> LOGIC_CLICKING_SWITCHING_CODE_BLOCK_OFF = register("logic_clicking_switching_code_block_off", PuzzleCodeModBlocks.LOGIC_CLICKING_SWITCHING_CODE_BLOCK_OFF,
+			LogicClickingSwitchingCodeBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> YELLOW_KILL_SWITCHING_BLOCK_OFF = register("yellow_kill_switching_block_off", PuzzleCodeModBlocks.YELLOW_KILL_SWITCHING_BLOCK_OFF, YellowKillSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_YELLOW_KILL_SWITCHING_BLOCK_OFF = register("reverse_yellow_kill_switching_block_off", PuzzleCodeModBlocks.REVERSE_YELLOW_KILL_SWITCHING_BLOCK_OFF,
+			ReverseYellowKillSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> REVERSE_IMITATOR_SWITCHING_BLOCK_OFF = register("reverse_imitator_switching_block_off", PuzzleCodeModBlocks.REVERSE_IMITATOR_SWITCHING_BLOCK_OFF,
+			ReverseImitatorSwitchingBlockOffBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> TIMED_LOGIC_CODE_BLOCK = register("timed_logic_code_block", PuzzleCodeModBlocks.TIMED_LOGIC_CODE_BLOCK, TimedLogicCodeBlockBlockEntity::new);
 
-	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block,
-			BlockEntityType.BlockEntitySupplier<?> supplier) {
+	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
 	}
 }

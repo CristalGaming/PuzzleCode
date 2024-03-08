@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:CheckpointBlock"
+      },
+      {
+        "value": "CUSTOM:CheckpointSlab"
+      },
+      {
+        "value": "CUSTOM:CheckpointStairs"
+      },
+      {
+        "value": "CUSTOM:InCheckpointBlock"
+      },
+      {
+        "value": "CUSTOM:InCheckpointSlab"
+      },
+      {
+        "value": "CUSTOM:InCheckpointStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "checkpoint_blocks",
+    "namespace": "mod"
+  }
+}

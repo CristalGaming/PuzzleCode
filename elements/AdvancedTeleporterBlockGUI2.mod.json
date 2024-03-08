@@ -1,9 +1,9 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 200,
+    "width": 156,
     "height": 144,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -13,204 +13,202 @@
       {
         "type": "label",
         "data": {
-          "text": "React when is walked?",
+          "name": "label_react_when_is_walked",
+          "text": {
+            "fixedValue": "React when is walked?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "React when is walked?",
-          "x": 119,
+          "x": 159,
           "y": 53
         }
       },
       {
-        "type": "button",
-        "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetWalkingReactTrue"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "True",
-          "x": 119,
-          "y": 67
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetWalkingReactFalse"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "False",
-          "x": 173,
-          "y": 67
-        }
-      },
-      {
         "type": "label",
         "data": {
-          "text": "<BNBT:logic:walkingReact>",
+          "name": "label_react_when_is_clicked",
+          "text": {
+            "fixedValue": "React when is clicked?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:logic:walkingReact>",
-          "x": 227,
-          "y": 71
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "React when is clicked?",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "React when is clicked?",
-          "x": 119,
+          "x": 159,
           "y": 89
         }
       },
       {
-        "type": "button",
-        "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetClickingReactTrue"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "True",
-          "x": 119,
-          "y": 103
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetClickingReactFalse"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "False",
-          "x": 173,
-          "y": 103
-        }
-      },
-      {
         "type": "label",
         "data": {
-          "text": "<BNBT:logic:clickingReact>",
+          "name": "label_react_when_it_gets_redstone",
+          "text": {
+            "fixedValue": "React when it gets redstone?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<BNBT:logic:clickingReact>",
-          "x": 227,
-          "y": 107
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "React when it gets redstone?",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "React when it gets redstone?",
-          "x": 119,
+          "x": 141,
           "y": 125
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetRedstoneReactTrue"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "True",
-          "x": 119,
-          "y": 139
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetRedstoneReactFalse"
-          },
-          "width": 49,
-          "height": 20,
-          "name": "False",
-          "x": 173,
-          "y": 139
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:logic:redstoneReact>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:logic:redstoneReact>",
-          "x": 227,
-          "y": 143
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_3",
           "text": "3",
+          "isUndecorated": false,
           "onClick": {
             "name": "EntityTeleporterBlockPage3"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "3",
-          "x": 155,
+          "x": 227,
           "y": 166
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "[2]",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "[2]",
-          "x": 137,
-          "y": 170
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_1",
           "text": "1",
+          "isUndecorated": false,
           "onClick": {
             "name": "EntityTeleporterBlockPage1"
           },
-          "width": 13,
+          "width": 18,
           "height": 20,
-          "name": "1",
-          "x": 119,
+          "x": 182,
           "y": 166
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "WalkingReactDisplayOn"
+          },
+          "x": 222,
+          "y": 67
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "WalkingReactDisplayOff"
+          },
+          "x": 222,
+          "y": 67
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ClickingReactDisplayOn"
+          },
+          "x": 222,
+          "y": 103
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ClickingReactDisplayOff"
+          },
+          "x": 222,
+          "y": 103
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "RedstoneReactDisplayOn"
+          },
+          "x": 218,
+          "y": 139
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "RedstoneReactDisplayOff"
+          },
+          "x": 218,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EntityTeleporterBlockPage2"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 204,
+          "y": 166
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchRedstoneReact"
+          },
+          "x": 191,
+          "y": 139
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button1",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchClickingReact"
+          },
+          "x": 191,
+          "y": 103
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button2",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchWalkingReact"
+          },
+          "x": 191,
+          "y": 67
         }
       }
     ],

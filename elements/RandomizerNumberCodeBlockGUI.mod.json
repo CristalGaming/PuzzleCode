@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 147,
+    "height": 132,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,116 +14,196 @@
         "type": "textfield",
         "data": {
           "placeholder": "min. value",
-          "width": 162,
-          "height": 20,
           "name": "minValueField",
+          "width": 113,
+          "height": 20,
           "x": 132,
-          "y": 53
+          "y": 62
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Min: <BNBT:number:minValue>",
+          "name": "label_min_bnbtnumberminvalue",
+          "text": {
+            "fixedValue": "Min:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Min: <BNBT:number:minValue>",
           "x": 132,
           "y": 98
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyMinValue"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 76
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "max Value",
-          "width": 162,
-          "height": 20,
           "name": "maxValueField",
+          "width": 113,
+          "height": 20,
           "x": 132,
           "y": 112
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
+          "name": "label_max_bnbtnumbermaxvalue",
+          "text": {
+            "fixedValue": "Max:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 148
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_current_value_bnbtnumbernumb",
+          "text": {
+            "fixedValue": "Current Value:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_min_value",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnMinValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_max_value",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnMaxValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 148
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_here",
+          "text": {
+            "fixedValue": "\"placeholder\"",
+            "name": "ReturnNumberCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 209,
+          "y": 166
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
           "onClick": {
-            "name": "ApplyMaxValue"
+            "name": "ApplyMinValue"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 134
+          "x": 272,
+          "y": 62
         }
       },
       {
-        "type": "label",
+        "type": "imagebutton",
         "data": {
-          "text": "Max: <BNBT:number:maxValue>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Max: <BNBT:number:maxValue>",
-          "x": 132,
-          "y": 157
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Current Value: <BNBT:number:numberCodeBlock>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Current Value: <BNBT:number:numberCodeBlock>",
-          "x": 132,
-          "y": 175
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditMinValue"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 76
+          "x": 249,
+          "y": 62
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
+          "name": "label_nbt_minvalue",
+          "text": {
+            "fixedValue": "NBT: minValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditMaxValue"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
+          "x": 249,
+          "y": 112
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyMaxValue"
+          },
+          "x": 272,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_maxvalue",
+          "text": {
+            "fixedValue": "NBT: maxValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
           "y": 134
         }
       }

@@ -1,0 +1,100 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:JumpBoostEffectItem"
+      },
+      {
+        "value": "CUSTOM:SlownessEffectItem"
+      },
+      {
+        "value": "CUSTOM:LevitationEffectItem"
+      },
+      {
+        "value": "CUSTOM:RegenerationEffectItem"
+      },
+      {
+        "value": "CUSTOM:ResistanceEffectItem"
+      },
+      {
+        "value": "CUSTOM:SlowFallingEffectItem"
+      },
+      {
+        "value": "CUSTOM:DolphinsGraceEffectItem"
+      },
+      {
+        "value": "CUSTOM:FireResistanceEffectItem"
+      },
+      {
+        "value": "CUSTOM:WaterBreathingEffectItem"
+      },
+      {
+        "value": "CUSTOM:NightVisionEffectItem"
+      },
+      {
+        "value": "CUSTOM:YellowSwicherEffectItem"
+      },
+      {
+        "value": "CUSTOM:LuckEffectItem"
+      },
+      {
+        "value": "CUSTOM:SpeedEffectItem"
+      },
+      {
+        "value": "CUSTOM:HasteEffectItem"
+      },
+      {
+        "value": "CUSTOM:GlowingEffectItem"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectItem"
+      },
+      {
+        "value": "CUSTOM:StrengthEffectItem"
+      },
+      {
+        "value": "CUSTOM:ConduitPowerEffectItem"
+      },
+      {
+        "value": "CUSTOM:BlindnessEffectItem"
+      },
+      {
+        "value": "CUSTOM:DarknessEffectItem"
+      },
+      {
+        "value": "CUSTOM:HungerEffectItem"
+      },
+      {
+        "value": "CUSTOM:MiningFatigueEffectItem"
+      },
+      {
+        "value": "CUSTOM:WeaknessEffectItem"
+      },
+      {
+        "value": "CUSTOM:WitherEffectItem"
+      },
+      {
+        "value": "CUSTOM:UnluckEffectItem"
+      },
+      {
+        "value": "CUSTOM:PoisonEffectItem"
+      },
+      {
+        "value": "CUSTOM:NauseaEffectItem"
+      },
+      {
+        "value": "CUSTOM:SaturationEffectItem"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_items",
+    "namespace": "mod"
+  }
+}

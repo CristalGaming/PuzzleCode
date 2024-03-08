@@ -12,11 +12,12 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.TeleporterItemCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.procedures.TeleporterItemCodeBlockPage2Procedure;
 import net.mcreator.puzzle_code.procedures.TeleporterItemCodeBlockPage1Procedure;
-import net.mcreator.puzzle_code.procedures.EditSetSlotIDProcedure;
-import net.mcreator.puzzle_code.procedures.EditGetSlotIDProcedure;
-import net.mcreator.puzzle_code.procedures.ApplySetSlotIDProcedure;
-import net.mcreator.puzzle_code.procedures.ApplyGetSlotIDProcedure;
+import net.mcreator.puzzle_code.procedures.EditSetNBTProcedure;
+import net.mcreator.puzzle_code.procedures.EditGetNBTProcedure;
+import net.mcreator.puzzle_code.procedures.ApplySetNBTProcedure;
+import net.mcreator.puzzle_code.procedures.ApplyGetNBTProcedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -61,36 +62,39 @@ public class TeleporterItemCodeBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = TeleporterItemCodeBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyGetSlotIDProcedure.execute(world, x, y, z, guistate);
+			TeleporterItemCodeBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			ApplySetSlotIDProcedure.execute(world, x, y, z, guistate);
+			TeleporterItemCodeBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			TeleporterItemCodeBlockPage1Procedure.execute(world, x, y, z, entity);
+			ApplyGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
-			EditGetSlotIDProcedure.execute(world, x, y, z, guistate);
+			EditGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 4) {
 
-			EditSetSlotIDProcedure.execute(world, x, y, z, guistate);
+			ApplySetNBTProcedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 5) {
+
+			EditSetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(TeleporterItemCodeBlockGUI2ButtonMessage.class, TeleporterItemCodeBlockGUI2ButtonMessage::buffer,
-				TeleporterItemCodeBlockGUI2ButtonMessage::new, TeleporterItemCodeBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(TeleporterItemCodeBlockGUI2ButtonMessage.class, TeleporterItemCodeBlockGUI2ButtonMessage::buffer, TeleporterItemCodeBlockGUI2ButtonMessage::new, TeleporterItemCodeBlockGUI2ButtonMessage::handler);
 	}
 }

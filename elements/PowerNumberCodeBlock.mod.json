@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "power_number_code_block",
     "textureTop": "power_number_code_block_top",
-    "textureLeft": "empty_number_code_block",
+    "textureLeft": "power_number_code_block",
     "textureFront": "power_number_code_block",
     "textureRight": "power_number_code_block",
     "textureBack": "power_number_code_block",
@@ -34,13 +34,15 @@
       }
     ],
     "name": "Power Number Code Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:PuzzleCodeTab"
+      "value": "CUSTOM:CodeBlocksTab"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
@@ -99,13 +101,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "UnswitchableTermsNumberCodeBlockGUI",
     "openGUIOnRightClick": false,
@@ -129,11 +125,20 @@
     "onTickUpdate": {
       "name": "PowerNumberCodeBlocUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

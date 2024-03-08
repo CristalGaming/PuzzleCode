@@ -1,25 +1,27 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.CheckpointBlockGUI1Menu;
+import net.mcreator.puzzle_code.procedures.WalkingReactDisplayOnProcedure;
+import net.mcreator.puzzle_code.procedures.WalkingReactDisplayOffProcedure;
+import net.mcreator.puzzle_code.procedures.RedstoneReactDisplayOnProcedure;
+import net.mcreator.puzzle_code.procedures.RedstoneReactDisplayOffProcedure;
+import net.mcreator.puzzle_code.procedures.ClickingReactDisplayOnProcedure;
+import net.mcreator.puzzle_code.procedures.ClickingReactDisplayOffProcedure;
 import net.mcreator.puzzle_code.network.CheckpointBlockGUI1ButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CheckpointBlockGUI1Screen extends AbstractContainerScreen<CheckpointBlockGUI1Menu> {
@@ -27,6 +29,11 @@ public class CheckpointBlockGUI1Screen extends AbstractContainerScreen<Checkpoin
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_2;
+	Button button_1;
+	ImageButton imagebutton_settings_button;
+	ImageButton imagebutton_settings_button1;
+	ImageButton imagebutton_settings_button2;
 
 	public CheckpointBlockGUI1Screen(CheckpointBlockGUI1Menu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -35,26 +42,43 @@ public class CheckpointBlockGUI1Screen extends AbstractContainerScreen<Checkpoin
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 200;
-		this.imageHeight = 144;
+		this.imageWidth = 150;
+		this.imageHeight = 146;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/checkpoint_block_gui_1.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		if (WalkingReactDisplayOnProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_true.png"), this.leftPos + 79, this.topPos + 20, 0, 0, 48, 20, 48, 20);
+		}
+		if (WalkingReactDisplayOffProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_false.png"), this.leftPos + 79, this.topPos + 20, 0, 0, 48, 20, 48, 20);
+		}
+		if (ClickingReactDisplayOnProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_true.png"), this.leftPos + 79, this.topPos + 56, 0, 0, 48, 20, 48, 20);
+		}
+		if (ClickingReactDisplayOffProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_false.png"), this.leftPos + 79, this.topPos + 56, 0, 0, 48, 20, 48, 20);
+		}
+		if (RedstoneReactDisplayOnProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_true.png"), this.leftPos + 79, this.topPos + 92, 0, 0, 48, 20, 48, 20);
+		}
+		if (RedstoneReactDisplayOffProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_false.png"), this.leftPos + 79, this.topPos + 92, 0, 0, 48, 20, 48, 20);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -73,88 +97,59 @@ public class CheckpointBlockGUI1Screen extends AbstractContainerScreen<Checkpoin
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "React when is walked?", 5, 5, -12829636);
-		this.font.draw(poseStack, "" + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "walkingReact")) + "", 113, 23, -12829636);
-		this.font.draw(poseStack, "React when is clicked?", 5, 41, -12829636);
-		this.font.draw(poseStack, "" + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "clickingReact")) + "", 113, 59, -12829636);
-		this.font.draw(poseStack, "React when it gets redstone?", 5, 77, -12829636);
-		this.font.draw(poseStack, "" + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstoneReact")) + "", 113, 95, -12829636);
-		this.font.draw(poseStack, "[1]", 5, 122, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.checkpoint_block_gui_1.label_react_when_is_walked"), 16, 6, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.checkpoint_block_gui_1.label_react_when_is_clicked"), 16, 42, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.checkpoint_block_gui_1.label_react_when_get_redstone"), 11, 78, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 19, 49, 20, new TextComponent("True"), e -> {
+		button_2 = Button.builder(Component.translatable("gui.puzzle_code.checkpoint_block_gui_1.button_2"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(0, x, y, z));
 				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 59, this.topPos + 19, 49, 20, new TextComponent("False"), e -> {
+		}).bounds(this.leftPos + 79, this.topPos + 119, 18, 20).build();
+		guistate.put("button:button_2", button_2);
+		this.addRenderableWidget(button_2);
+		button_1 = Button.builder(Component.translatable("gui.puzzle_code.checkpoint_block_gui_1.button_1"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(1, x, y, z));
 				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 55, 49, 20, new TextComponent("True"), e -> {
+		}).bounds(this.leftPos + 52, this.topPos + 119, 18, 20).build();
+		guistate.put("button:button_1", button_1);
+		this.addRenderableWidget(button_1);
+		imagebutton_settings_button = new ImageButton(this.leftPos + 47, this.topPos + 20, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(2, x, y, z));
 				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 59, this.topPos + 55, 49, 20, new TextComponent("False"), e -> {
+		});
+		guistate.put("button:imagebutton_settings_button", imagebutton_settings_button);
+		this.addRenderableWidget(imagebutton_settings_button);
+		imagebutton_settings_button1 = new ImageButton(this.leftPos + 47, this.topPos + 56, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button1.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(3, x, y, z));
 				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 91, 49, 20, new TextComponent("True"), e -> {
+		});
+		guistate.put("button:imagebutton_settings_button1", imagebutton_settings_button1);
+		this.addRenderableWidget(imagebutton_settings_button1);
+		imagebutton_settings_button2 = new ImageButton(this.leftPos + 47, this.topPos + 92, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button2.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(4, x, y, z));
 				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 59, this.topPos + 91, 49, 20, new TextComponent("False"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(5, x, y, z));
-				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 5, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 23, this.topPos + 118, 14, 20, new TextComponent("2"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CheckpointBlockGUI1ButtonMessage(6, x, y, z));
-				CheckpointBlockGUI1ButtonMessage.handleButtonAction(entity, 6, x, y, z);
-			}
-		}));
+		});
+		guistate.put("button:imagebutton_settings_button2", imagebutton_settings_button2);
+		this.addRenderableWidget(imagebutton_settings_button2);
 	}
 }

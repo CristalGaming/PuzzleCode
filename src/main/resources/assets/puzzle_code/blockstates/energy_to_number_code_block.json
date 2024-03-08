@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "puzzle_code:block/energy_to_number_code_block"
+    },
+    "facing=east": {
+      "model": "puzzle_code:block/energy_to_number_code_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "puzzle_code:block/energy_to_number_code_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "puzzle_code:block/energy_to_number_code_block",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "puzzle_code:block/energy_to_number_code_block",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "puzzle_code:block/energy_to_number_code_block",
+      "x": 90
+    }
+  }
+}

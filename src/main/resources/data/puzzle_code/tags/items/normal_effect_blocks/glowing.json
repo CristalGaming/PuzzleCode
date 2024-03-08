@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:glowing_effect_block",
+    "puzzle_code:glowing_effect_slab",
+    "puzzle_code:glowing_effect_stairs"
+  ]
+}

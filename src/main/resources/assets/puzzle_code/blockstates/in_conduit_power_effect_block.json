@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/in_conduit_power_effect_block"
+    }
+  }
+}

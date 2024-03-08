@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 71,
+    "height": 57,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,53 +13,84 @@
       {
         "type": "label",
         "data": {
-          "text": "Power Needed: <BNBT:number:minPower>",
+          "name": "label_power_needed_bnbtintegerminp",
+          "text": {
+            "fixedValue": "Power Needed:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Power Needed: <BNBT:number:minPower>",
           "x": 132,
-          "y": 135
+          "y": 122
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "minPowerField",
+          "width": 113,
+          "height": 20,
           "x": 132,
-          "y": 90
+          "y": 99
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
+          "name": "label_nbt_minpower",
+          "text": {
+            "fixedValue": "NBT: minPower"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 135
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_min_power",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnMinPower"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 204,
+          "y": 122
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
           "onClick": {
             "name": "ApplyMinPower"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 113
+          "x": 272,
+          "y": 99
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditMinPower"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 113
+          "x": 249,
+          "y": 99
         }
       }
     ],

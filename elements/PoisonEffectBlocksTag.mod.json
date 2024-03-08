@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:PoisonEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InPoisonEffectBlock"
+      },
+      {
+        "value": "CUSTOM:PoisonEffectSlab"
+      },
+      {
+        "value": "CUSTOM:PoisonEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InPoisonEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InPoisonEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/poison",
+    "namespace": "mod"
+  }
+}

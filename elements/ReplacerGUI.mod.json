@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -16,10 +16,14 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 132,
           "y": 62
         }
@@ -30,10 +34,14 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": false
+          },
           "id": 1,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
           "x": 132,
           "y": 98
         }
@@ -41,12 +49,14 @@
       {
         "type": "label",
         "data": {
-          "text": "redstone off",
+          "name": "label_redstone_off",
+          "text": {
+            "fixedValue": "redstone off"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "redstone off",
           "x": 150,
           "y": 62
         }
@@ -54,12 +64,14 @@
       {
         "type": "label",
         "data": {
-          "text": "redstone on",
+          "name": "label_redstone_on",
+          "text": {
+            "fixedValue": "redstone on"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "redstone on",
           "x": 150,
           "y": 98
         }
@@ -67,12 +79,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Replacer",
+          "name": "label_replacer",
+          "text": {
+            "fixedValue": "Replacer"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Replacer",
           "x": 132,
           "y": 44
         }

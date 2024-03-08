@@ -1,8 +1,9 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/in_haste_effect_stairs",
-    "top": "puzzle_code:blocks/in_haste_effect_stairs",
-    "side": "puzzle_code:blocks/in_haste_effect_stairs"
-  }
+    "bottom": "puzzle_code:block/in_haste_effect_stairs",
+    "top": "puzzle_code:block/in_haste_effect_stairs",
+    "side": "puzzle_code:block/in_haste_effect_stairs"
+  },
+  "render_type": "translucent"
 }

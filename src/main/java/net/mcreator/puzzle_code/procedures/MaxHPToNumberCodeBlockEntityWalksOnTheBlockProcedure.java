@@ -13,11 +13,11 @@ public class MaxHPToNumberCodeBlockEntityWalksOnTheBlockProcedure {
 		if (entity == null)
 			return;
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("numberCodeBlock", (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1));
+				_blockEntity.getPersistentData().putDouble("numberCodeBlock", (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

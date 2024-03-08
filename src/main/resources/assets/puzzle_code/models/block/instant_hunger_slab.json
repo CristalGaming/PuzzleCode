@@ -1,8 +1,9 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "puzzle_code:blocks/instant_hunger_block",
-    "top": "puzzle_code:blocks/instant_hunger_block",
-    "side": "puzzle_code:blocks/instant_hunger_slab"
-  }
+    "bottom": "puzzle_code:block/instant_hunger_block",
+    "top": "puzzle_code:block/instant_hunger_block",
+    "side": "puzzle_code:block/instant_hunger_slab"
+  },
+  "render_type": "solid"
 }

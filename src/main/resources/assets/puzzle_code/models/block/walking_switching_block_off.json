@@ -1,7 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "puzzle_code:blocks/walking_switching_block_off",
-    "particle": "puzzle_code:blocks/walking_switching_block_off"
-  }
+    "all": "puzzle_code:block/walking_switching_block_off",
+    "particle": "puzzle_code:block/walking_switching_block_off"
+  },
+  "render_type": "translucent"
 }

@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:YellowSwitcherEffectBlock"
+      },
+      {
+        "value": "CUSTOM:YellowSwitcherEffectSlab"
+      },
+      {
+        "value": "CUSTOM:YellowSwitcherEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/yellow_switcher",
+    "namespace": "mod"
+  }
+}

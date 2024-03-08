@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:nausea_effect_block",
+    "puzzle_code:nausea_effect_slab",
+    "puzzle_code:nausea_effect_stairs"
+  ]
+}

@@ -16,9 +16,9 @@ public class EditGetNBTProcedure {
 				public String getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);
 					if (blockEntity != null)
-						return blockEntity.getTileData().getString(tag);
+						return blockEntity.getPersistentData().getString(tag);
 					return "";
 				}
-			}.getValue(world, new BlockPos(x, y, z), "getNBT")));
+			}.getValue(world, BlockPos.containing(x, y, z), "getNBT")));
 	}
 }

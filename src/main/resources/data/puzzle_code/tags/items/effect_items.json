@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:jump_boost_effect_item",
+    "puzzle_code:slowness_effect_item",
+    "puzzle_code:levitation_effect_item",
+    "puzzle_code:regeneration_effect_item",
+    "puzzle_code:resistance_effect_item",
+    "puzzle_code:slow_falling_effect_item",
+    "puzzle_code:dolphins_grace_effect_item",
+    "puzzle_code:fire_resistance_effect_item",
+    "puzzle_code:water_breathing_effect_item",
+    "puzzle_code:night_vision_effect_item",
+    "puzzle_code:yellow_swicher_effect_item",
+    "puzzle_code:luck_effect_item",
+    "puzzle_code:speed_effect_item",
+    "puzzle_code:haste_effect_item",
+    "puzzle_code:glowing_effect_item",
+    "puzzle_code:invisibility_effect_item",
+    "puzzle_code:strength_effect_item",
+    "puzzle_code:conduit_power_effect_item",
+    "puzzle_code:blindness_effect_item",
+    "puzzle_code:darkness_effect_item",
+    "puzzle_code:hunger_effect_item",
+    "puzzle_code:mining_fatigue_effect_item",
+    "puzzle_code:weakness_effect_item",
+    "puzzle_code:wither_effect_item",
+    "puzzle_code:unluck_effect_item",
+    "puzzle_code:poison_effect_item",
+    "puzzle_code:nausea_effect_item",
+    "puzzle_code:saturation_effect_item"
+  ]
+}

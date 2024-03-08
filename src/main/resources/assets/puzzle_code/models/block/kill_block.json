@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/kill_block",
-    "up": "puzzle_code:blocks/kill_block",
-    "north": "puzzle_code:blocks/kill_block",
-    "east": "puzzle_code:blocks/kill_block",
-    "south": "puzzle_code:blocks/kill_block",
-    "west": "puzzle_code:blocks/kill_block",
-    "particle": "puzzle_code:blocks/kill_block"
-  }
+    "down": "puzzle_code:block/kill_block",
+    "up": "puzzle_code:block/kill_block",
+    "north": "puzzle_code:block/kill_block",
+    "east": "puzzle_code:block/kill_block",
+    "south": "puzzle_code:block/kill_block",
+    "west": "puzzle_code:block/kill_block",
+    "particle": "puzzle_code:block/kill_block"
+  },
+  "render_type": "solid"
 }

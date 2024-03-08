@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:InNauseaEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InNauseaEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InNauseaEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "in_effect_blocks/nausea",
+    "namespace": "mod"
+  }
+}

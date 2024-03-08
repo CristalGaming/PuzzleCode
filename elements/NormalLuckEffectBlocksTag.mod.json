@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:LuckEffectBlock"
+      },
+      {
+        "value": "CUSTOM:LuckEffectSlab"
+      },
+      {
+        "value": "CUSTOM:LuckEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/luck",
+    "namespace": "mod"
+  }
+}

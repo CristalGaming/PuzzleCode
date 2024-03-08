@@ -1,0 +1,256 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 174,
+    "height": 150,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_x_pozition_bnbtintegerxpos",
+          "text": {
+            "fixedValue": "X pozition:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 133,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_y_position_bnbtintegerypos",
+          "text": {
+            "fixedValue": "Y Position:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 133,
+          "y": 109
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_z_position_bnbtintegerzpos",
+          "text": {
+            "fixedValue": "Z Position:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 133,
+          "y": 145
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "xPosField",
+          "width": 112,
+          "height": 20,
+          "x": 133,
+          "y": 51
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "yPosField",
+          "width": 112,
+          "height": 20,
+          "x": 133,
+          "y": 87
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "zPosField",
+          "width": 112,
+          "height": 20,
+          "x": 133,
+          "y": 123
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ImitatorSwitchingBlockGUIPage2"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 218,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ImitatorSwitchingBlockGUIPage1"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 191,
+          "y": 168
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnx_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnxPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 196,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returny_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnyPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 196,
+          "y": 109
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnz_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnzPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 196,
+          "y": 145
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditxPos"
+          },
+          "x": 250,
+          "y": 51
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "x": 250,
+          "y": 87
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button2",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditzPos"
+          },
+          "x": 250,
+          "y": 123
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyxPos"
+          },
+          "x": 272,
+          "y": 51
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyyPos"
+          },
+          "x": 272,
+          "y": 87
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button2",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyzPos"
+          },
+          "x": 272,
+          "y": 123
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 12,
+      "oy": 10,
+      "snapOnGrid": true
+    }
+  }
+}

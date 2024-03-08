@@ -60,32 +60,31 @@ public class NBTVerifierGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = NBTVerifierGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyNBTVerifierVarProcedure.execute(entity, guistate);
+			ApplyNBTVerifierVariableTypeNumberVarProcedure.execute(entity);
 		}
 		if (buttonID == 1) {
 
-			ApplyNBTVerifierVariableTypeNumberVarProcedure.execute(entity);
+			ApplyNBTVerifierVariableTypeLogicVarProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			ApplyNBTVerifierVariableTypeLogicVarProcedure.execute(entity);
+			ApplyNBTVerifierVariableTypeTextVarProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			ApplyNBTVerifierVariableTypeTextVarProcedure.execute(entity);
+			ApplyNBTVerifierVarProcedure.execute(entity, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(NBTVerifierGUIButtonMessage.class, NBTVerifierGUIButtonMessage::buffer, NBTVerifierGUIButtonMessage::new,
-				NBTVerifierGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(NBTVerifierGUIButtonMessage.class, NBTVerifierGUIButtonMessage::buffer, NBTVerifierGUIButtonMessage::new, NBTVerifierGUIButtonMessage::handler);
 	}
 }

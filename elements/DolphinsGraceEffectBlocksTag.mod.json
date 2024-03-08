@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:DolphinsGraceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InDolphinsGraceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:DolphinsGraceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:DolphinsGraceEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InDolphinsGraceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InDolphinsGraceEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/dolphins_grace",
+    "namespace": "mod"
+  }
+}

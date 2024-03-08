@@ -1,26 +1,22 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.ImageButton;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.ImitatorTextCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.ReturnPositionProcedure;
+import net.mcreator.puzzle_code.procedures.RetrunTextCodeBlockProcedure;
 import net.mcreator.puzzle_code.network.ImitatorTextCodeBlockGUIButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class ImitatorTextCodeBlockGUIScreen extends AbstractContainerScreen<ImitatorTextCodeBlockGUIMenu> {
@@ -28,9 +24,7 @@ public class ImitatorTextCodeBlockGUIScreen extends AbstractContainerScreen<Imit
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	EditBox xPosField;
-	EditBox yPosField;
-	EditBox zPosField;
+	ImageButton imagebutton_settings_button;
 
 	public ImitatorTextCodeBlockGUIScreen(ImitatorTextCodeBlockGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -40,28 +34,24 @@ public class ImitatorTextCodeBlockGUIScreen extends AbstractContainerScreen<Imit
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 147;
+		this.imageHeight = 80;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/imitator_text_code_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		xPosField.render(ms, mouseX, mouseY, partialTicks);
-		yPosField.render(ms, mouseX, mouseY, partialTicks);
-		zPosField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -71,116 +61,42 @@ public class ImitatorTextCodeBlockGUIScreen extends AbstractContainerScreen<Imit
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		if (xPosField.isFocused())
-			return xPosField.keyPressed(key, b, c);
-		if (yPosField.isFocused())
-			return yPosField.keyPressed(key, b, c);
-		if (zPosField.isFocused())
-			return zPosField.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void containerTick() {
 		super.containerTick();
-		xPosField.tick();
-		yPosField.tick();
-		zPosField.tick();
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "X Position: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 29, -12829636);
-		this.font.draw(poseStack, "Y Position: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 65, -12829636);
-		this.font.draw(poseStack, "Z Position: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 101, -12829636);
-		this.font.draw(poseStack, "Text: " + (new Object() {
-			public String getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getString(tag);
-				return "";
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "textCodeBlock")) + "", 6, 123, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.imitator_text_code_block_gui.label_text_bnbttexttextcodeblock"), 6, 50, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				RetrunTextCodeBlockProcedure.execute(world, x, y, z), 38, 50, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.imitator_text_code_block_gui.label_nbt_textcodeblock"), 6, 63, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.imitator_text_code_block_gui.label_position"), 69, 9, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnPositionProcedure.execute(world, x, y, z), 6, 27, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		xPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 162, 20, new TextComponent(""));
-		guistate.put("text:xPosField", xPosField);
-		xPosField.setMaxLength(32767);
-		this.addWidget(this.xPosField);
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 6, 45, 20, new TextComponent("Apply"), e -> {
+		imagebutton_settings_button = new ImageButton(this.leftPos + 6, this.topPos + 5, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(0, x, y, z));
 				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		yPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 42, 162, 20, new TextComponent(""));
-		guistate.put("text:yPosField", yPosField);
-		yPosField.setMaxLength(32767);
-		this.addWidget(this.yPosField);
-		zPosField = new EditBox(this.font, this.leftPos + 6, this.topPos + 78, 162, 20, new TextComponent(""));
-		guistate.put("text:zPosField", zPosField);
-		zPosField.setMaxLength(32767);
-		this.addWidget(this.zPosField);
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 42, 45, 20, new TextComponent("Apply"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(1, x, y, z));
-				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 173, this.topPos + 78, 45, 20, new TextComponent("Apply"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(2, x, y, z));
-				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 6, 45, 20, new TextComponent("Edit"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(3, x, y, z));
-				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 42, 45, 20, new TextComponent("Edit"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(4, x, y, z));
-				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
-			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + -42, this.topPos + 78, 45, 20, new TextComponent("Edit"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new ImitatorTextCodeBlockGUIButtonMessage(5, x, y, z));
-				ImitatorTextCodeBlockGUIButtonMessage.handleButtonAction(entity, 5, x, y, z);
-			}
-		}));
+		});
+		guistate.put("button:imagebutton_settings_button", imagebutton_settings_button);
+		this.addRenderableWidget(imagebutton_settings_button);
 	}
 }

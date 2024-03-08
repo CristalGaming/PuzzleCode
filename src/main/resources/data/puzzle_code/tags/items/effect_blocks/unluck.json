@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:unluck_effect_block",
+    "puzzle_code:unluck_effect_slab",
+    "puzzle_code:unluck_effect_stairs",
+    "puzzle_code:in_unluck_effect_block",
+    "puzzle_code:in_unluck_effect_slab",
+    "puzzle_code:in_unluck_effect_stairs"
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "parent": "block/slab_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/instant_saturation_block",
-    "top": "puzzle_code:blocks/instant_saturation_block",
-    "side": "puzzle_code:blocks/instant_saturation_slab"
-  }
+    "bottom": "puzzle_code:block/instant_saturation_block",
+    "top": "puzzle_code:block/instant_saturation_block",
+    "side": "puzzle_code:block/instant_saturation_slab"
+  },
+  "render_type": "solid"
 }

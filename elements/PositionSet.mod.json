@@ -1,12 +1,14 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "position_set",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Position Set",
-    "rarity": "UNCOMMON",
+    "rarity": "RARE",
     "creativeTab": {
       "value": "CUSTOM:PuzzleCodeTab"
     },
@@ -24,8 +26,12 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 0,
     "inventoryStackSize": 64,
@@ -34,6 +40,11 @@
     },
     "onItemInUseTick": {
       "name": "PositionSetItemInHandTick"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "projectile": {
+      "value": "Arrow"
     },
     "isFood": false,
     "nutritionalValue": 0,

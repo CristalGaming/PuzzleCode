@@ -13,13 +13,13 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI2Menu;
 import net.mcreator.puzzle_code.procedures.FillerItemCodeBlockGUIPage3Procedure;
+import net.mcreator.puzzle_code.procedures.FillerItemCodeBlockGUIPage2Procedure;
 import net.mcreator.puzzle_code.procedures.FillerItemCodeBlockGUIPage1Procedure;
 import net.mcreator.puzzle_code.procedures.EditzPos2Procedure;
 import net.mcreator.puzzle_code.procedures.EdityPos2Procedure;
 import net.mcreator.puzzle_code.procedures.EditxPos2Procedure;
 import net.mcreator.puzzle_code.procedures.ApplyzPos2Procedure;
 import net.mcreator.puzzle_code.procedures.ApplyyPos2Procedure;
-import net.mcreator.puzzle_code.procedures.ApplyxPos2Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -64,48 +64,51 @@ public class FillerItemCodeBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = FillerItemCodeBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyxPos2Procedure.execute(world, x, y, z, guistate);
+			FillerItemCodeBlockGUIPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			ApplyyPos2Procedure.execute(world, x, y, z, guistate);
+			FillerItemCodeBlockGUIPage3Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			ApplyzPos2Procedure.execute(world, x, y, z, guistate);
+			FillerItemCodeBlockGUIPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			FillerItemCodeBlockGUIPage1Procedure.execute(world, x, y, z, entity);
+			ApplyzPos2Procedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 4) {
 
-			EditxPos2Procedure.execute(world, x, y, z, guistate);
+			ApplyyPos2Procedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 5) {
 
-			EdityPos2Procedure.execute(world, x, y, z, guistate);
+			ApplyzPos2Procedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 6) {
 
-			EditzPos2Procedure.execute(world, x, y, z, guistate);
+			EditxPos2Procedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 7) {
 
-			FillerItemCodeBlockGUIPage3Procedure.execute(world, x, y, z, entity);
+			EdityPos2Procedure.execute(world, x, y, z, guistate);
+		}
+		if (buttonID == 8) {
+
+			EditzPos2Procedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(FillerItemCodeBlockGUI2ButtonMessage.class, FillerItemCodeBlockGUI2ButtonMessage::buffer,
-				FillerItemCodeBlockGUI2ButtonMessage::new, FillerItemCodeBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(FillerItemCodeBlockGUI2ButtonMessage.class, FillerItemCodeBlockGUI2ButtonMessage::buffer, FillerItemCodeBlockGUI2ButtonMessage::new, FillerItemCodeBlockGUI2ButtonMessage::handler);
 	}
 }

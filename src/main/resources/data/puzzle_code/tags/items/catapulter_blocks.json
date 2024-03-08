@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:catapulter_block",
+    "puzzle_code:catapulter_slab",
+    "puzzle_code:catapulter_stairs",
+    "puzzle_code:in_catapulter_block",
+    "puzzle_code:in_catapulter_slab",
+    "puzzle_code:in_catapulter_stairs"
+  ]
+}

@@ -1,7 +1,7 @@
 package net.mcreator.puzzle_code.procedures;
 
 import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -15,41 +15,41 @@ import net.mcreator.puzzle_code.network.PuzzleCodeModVariables;
 public class ABlockIsBrokenGlobalBlockUpdateTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		{
-			BlockEntity _ent = world.getBlockEntity(new BlockPos(x, y, z));
+			BlockEntity _ent = world.getBlockEntity(BlockPos.containing(x, y, z));
 			if (_ent != null) {
 				final int _slotid = 0;
 				final ItemStack _setstack = (new ItemStack(PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenBlockstate.getBlock()));
 				_setstack.setCount(1);
-				_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					if (capability instanceof IItemHandlerModifiable)
 						((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
 				});
 			}
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("xPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenX_Pos);
+				_blockEntity.getPersistentData().putDouble("xPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenX_Pos);
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("yPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenY_Pos);
+				_blockEntity.getPersistentData().putDouble("yPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenY_Pos);
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("zPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenZ_Pos);
+				_blockEntity.getPersistentData().putDouble("zPos", PuzzleCodeModVariables.MapVariables.get(world).ABlockIsBrokenZ_Pos);
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

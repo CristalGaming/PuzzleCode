@@ -1,7 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "puzzle_code:blocks/year_number_code_block",
-    "particle": "puzzle_code:blocks/year_number_code_block"
-  }
+    "all": "puzzle_code:block/year_number_code_block",
+    "particle": "puzzle_code:block/year_number_code_block"
+  },
+  "render_type": "solid"
 }

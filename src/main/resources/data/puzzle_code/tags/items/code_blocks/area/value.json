@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:area_code_block",
+    "puzzle_code:chain_area_code_block",
+    "puzzle_code:survival_area_code_block"
+  ]
+}

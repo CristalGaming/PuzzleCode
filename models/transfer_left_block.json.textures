@@ -1,0 +1,67 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "transfer_number_code_block",
+        "1": "empty_number_code_block",
+        "2": "empty_number_code_block",
+        "3": "right_transfer_number_code_block"
+      },
+      "name": "default"
+    },
+    "left_transfer_logic_code_block": {
+      "map": {
+        "0": "transfer_logic_code_block",
+        "1": "empty_logic_code_block",
+        "2": "empty_logic_code_block",
+        "3": "left_transfer_logic_code_block"
+      },
+      "name": "left_transfer_logic_code_block"
+    },
+    "left_transfer_text_code_block": {
+      "map": {
+        "0": "transfer_text_code_block",
+        "1": "empty_text_code_block",
+        "2": "empty_text_code_block",
+        "3": "left_transfer_text_code_block"
+      },
+      "name": "left_transfer_text_code_block"
+    },
+    "left_transfer_item_code_block": {
+      "map": {
+        "0": "transfer_item_code_block",
+        "1": "empty_item_code_block",
+        "2": "empty_item_code_block",
+        "3": "left_transfer_item_code_block"
+      },
+      "name": "left_transfer_item_code_block"
+    },
+    "left_transfer_position_code_block": {
+      "map": {
+        "0": "transfer_position_code_block",
+        "1": "empty_position_code_block",
+        "2": "empty_position_code_block",
+        "3": "left_transfer_position_code_block"
+      },
+      "name": "left_transfer_position_code_block"
+    },
+    "left_transfer_neutral_code_block": {
+      "map": {
+        "0": "transfer_neutral_code_block",
+        "1": "empty_neutral_code_block",
+        "2": "empty_neutral_code_block",
+        "3": "left_transfer_neutral_code_block"
+      },
+      "name": "left_transfer_neutral_code_block"
+    },
+    "left_transfer_area_code_block": {
+      "map": {
+        "0": "transfer_area_code_block",
+        "1": "empty_area_code_block",
+        "2": "empty_area_code_block",
+        "3": "left_transfer_area_code_block"
+      },
+      "name": "left_transfer_area_code_block"
+    }
+  }
+}

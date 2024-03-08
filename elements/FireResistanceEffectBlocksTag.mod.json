@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:FireResistanceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InFireResistanceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:FireResistanceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:FireResistanceEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InFireResistanceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InFireResistanceEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/fire_resistance",
+    "namespace": "mod"
+  }
+}

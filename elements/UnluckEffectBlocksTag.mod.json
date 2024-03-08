@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:UnluckEffectBlock"
+      },
+      {
+        "value": "CUSTOM:UnluckEffectSlab"
+      },
+      {
+        "value": "CUSTOM:UnluckEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InUnluckEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InUnluckEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InUnluckEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/unluck",
+    "namespace": "mod"
+  }
+}

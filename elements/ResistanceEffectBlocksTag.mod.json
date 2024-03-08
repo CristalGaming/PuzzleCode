@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:ResistanceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InResistanceEffectBlock"
+      },
+      {
+        "value": "CUSTOM:ResistanceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:ResistanceEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InResistanceEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InResistanceEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/resistance",
+    "namespace": "mod"
+  }
+}

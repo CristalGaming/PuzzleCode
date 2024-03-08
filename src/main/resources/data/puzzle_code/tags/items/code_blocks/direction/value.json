@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:direction_code_block",
+    "puzzle_code:survival_direction_code_block",
+    "puzzle_code:chain_direction_code_block"
+  ]
+}

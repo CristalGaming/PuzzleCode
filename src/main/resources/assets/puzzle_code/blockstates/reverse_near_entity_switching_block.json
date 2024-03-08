@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/reverse_near_entity_switching_block"
+    }
+  }
+}

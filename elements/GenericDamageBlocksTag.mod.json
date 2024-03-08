@@ -1,0 +1,61 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:DamageBlock"
+      },
+      {
+        "value": "CUSTOM:KillBlock"
+      },
+      {
+        "value": "CUSTOM:InKillBlock"
+      },
+      {
+        "value": "CUSTOM:KillSlab"
+      },
+      {
+        "value": "CUSTOM:KillStairs"
+      },
+      {
+        "value": "CUSTOM:InKillSlab"
+      },
+      {
+        "value": "CUSTOM:InKillStairs"
+      },
+      {
+        "value": "CUSTOM:BlueKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:BlueKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:RedKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:RedKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:YellowKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:YellowKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:ReverseYellowKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:ReverseYellowKillSwitchingBlockOff"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "generic_damage_blocks",
+    "namespace": "mod"
+  }
+}

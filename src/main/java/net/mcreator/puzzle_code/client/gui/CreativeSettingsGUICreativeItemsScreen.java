@@ -1,15 +1,13 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.CreativeSettingsGUICreativeItemsMenu;
 import net.mcreator.puzzle_code.network.CreativeSettingsGUICreativeItemsButtonMessage;
@@ -17,7 +15,6 @@ import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CreativeSettingsGUICreativeItemsScreen extends AbstractContainerScreen<CreativeSettingsGUICreativeItemsMenu> {
@@ -25,6 +22,13 @@ public class CreativeSettingsGUICreativeItemsScreen extends AbstractContainerScr
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_command_block;
+	Button button_barrier;
+	Button button_command_block_minecart;
+	Button button_back;
+	Button button_debug_stick;
+	Button button_structure_void;
+	Button button_structure_block;
 
 	public CreativeSettingsGUICreativeItemsScreen(CreativeSettingsGUICreativeItemsMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -40,19 +44,18 @@ public class CreativeSettingsGUICreativeItemsScreen extends AbstractContainerScr
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/creative_settings_gui_creative_items.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -71,62 +74,74 @@ public class CreativeSettingsGUICreativeItemsScreen extends AbstractContainerScr
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Creative Blocks", 6, 7, -12829636);
-		this.font.draw(poseStack, "More Comming Soon", 6, 147, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.label_creative_blocks"), 6, 7, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.label_more_comming_soon"), 6, 147, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 21, 99, 20, new TextComponent("Command Block"), e -> {
+		button_command_block = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_command_block"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(0, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 105, this.topPos + 21, 63, 20, new TextComponent("Barrier"), e -> {
+		}).bounds(this.leftPos + 6, this.topPos + 21, 99, 20).build();
+		guistate.put("button:button_command_block", button_command_block);
+		this.addRenderableWidget(button_command_block);
+		button_barrier = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_barrier"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(1, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 43, 162, 20, new TextComponent("Command Block Minecart"), e -> {
+		}).bounds(this.leftPos + 105, this.topPos + 21, 63, 20).build();
+		guistate.put("button:button_barrier", button_barrier);
+		this.addRenderableWidget(button_barrier);
+		button_command_block_minecart = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_command_block_minecart"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(2, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 123, this.topPos + 138, 46, 20, new TextComponent("Back"), e -> {
+		}).bounds(this.leftPos + 6, this.topPos + 43, 162, 20).build();
+		guistate.put("button:button_command_block_minecart", button_command_block_minecart);
+		this.addRenderableWidget(button_command_block_minecart);
+		button_back = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_back"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(3, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 66, 81, 20, new TextComponent("Debug Stick"), e -> {
+		}).bounds(this.leftPos + 123, this.topPos + 138, 46, 20).build();
+		guistate.put("button:button_back", button_back);
+		this.addRenderableWidget(button_back);
+		button_debug_stick = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_debug_stick"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(4, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 87, this.topPos + 66, 81, 20, new TextComponent("Structure Void"), e -> {
+		}).bounds(this.leftPos + 6, this.topPos + 66, 81, 20).build();
+		guistate.put("button:button_debug_stick", button_debug_stick);
+		this.addRenderableWidget(button_debug_stick);
+		button_structure_void = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_structure_void"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(5, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 88, 103, 20, new TextComponent("Structure Block"), e -> {
+		}).bounds(this.leftPos + 87, this.topPos + 66, 81, 20).build();
+		guistate.put("button:button_structure_void", button_structure_void);
+		this.addRenderableWidget(button_structure_void);
+		button_structure_block = Button.builder(Component.translatable("gui.puzzle_code.creative_settings_gui_creative_items.button_structure_block"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new CreativeSettingsGUICreativeItemsButtonMessage(6, x, y, z));
 				CreativeSettingsGUICreativeItemsButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
-		}));
+		}).bounds(this.leftPos + 6, this.topPos + 88, 103, 20).build();
+		guistate.put("button:button_structure_block", button_structure_block);
+		this.addRenderableWidget(button_structure_block);
 	}
 }

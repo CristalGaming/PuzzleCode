@@ -12,13 +12,13 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI2Menu;
-import net.mcreator.puzzle_code.procedures.SetParticlesTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetParticlesFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetAmbientTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetAmbientFalseProcedure;
-import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage5Procedure;
-import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage4Procedure;
 import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage3Procedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2SettingsProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2Procedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2DisplayPositionButtonProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2Button3Procedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2Button2Procedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2Button1Procedure;
 import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage1Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
@@ -64,48 +64,47 @@ public class EffectBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = EffectBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			EffectBlockGUIPage1Procedure.execute(world, x, y, z, entity);
+			EffectBlockGUIPage2Button1Procedure.execute(world, x, y, z);
 		}
 		if (buttonID == 1) {
 
-			SetAmbientTrueProcedure.execute(world, x, y, z);
+			EffectBlockGUIPage2Button2Procedure.execute(world, x, y, z);
 		}
 		if (buttonID == 2) {
 
-			SetAmbientFalseProcedure.execute(world, x, y, z);
+			EffectBlockGUIPage2Button3Procedure.execute(world, x, y, z);
 		}
 		if (buttonID == 3) {
 
-			SetParticlesTrueProcedure.execute(world, x, y, z);
+			EffectBlockGUIPage2SettingsProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 4) {
 
-			SetParticlesFalseProcedure.execute(world, x, y, z);
+			EffectBlockGUIPage2DisplayPositionButtonProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 5) {
 
-			EffectBlockGUIPage3Procedure.execute(world, x, y, z, entity);
+			EffectBlockGUIPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 6) {
 
-			EffectBlockGUIPage4Procedure.execute(world, x, y, z, entity);
+			EffectBlockGUIPage3Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 7) {
 
-			EffectBlockGUIPage5Procedure.execute(world, x, y, z, entity);
+			EffectBlockGUIPage2Procedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(EffectBlockGUI2ButtonMessage.class, EffectBlockGUI2ButtonMessage::buffer, EffectBlockGUI2ButtonMessage::new,
-				EffectBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(EffectBlockGUI2ButtonMessage.class, EffectBlockGUI2ButtonMessage::buffer, EffectBlockGUI2ButtonMessage::new, EffectBlockGUI2ButtonMessage::handler);
 	}
 }

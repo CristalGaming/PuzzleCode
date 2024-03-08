@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:ItemCodeBlock"
+      },
+      {
+        "value": "CUSTOM:SurvivalItemCodeBlock"
+      },
+      {
+        "value": "CUSTOM:ChainItemCodeBlock"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "code_blocks/item/value",
+    "namespace": "mod"
+  }
+}

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/clicking_switching_block_off",
-    "up": "puzzle_code:blocks/clicking_switching_block_off",
-    "north": "puzzle_code:blocks/clicking_switching_block_off",
-    "east": "puzzle_code:blocks/clicking_switching_block_off",
-    "south": "puzzle_code:blocks/clicking_switching_block_off",
-    "west": "puzzle_code:blocks/clicking_switching_block_off",
-    "particle": "puzzle_code:blocks/clicking_switching_block_off"
-  }
+    "down": "puzzle_code:block/clicking_switching_block_off",
+    "up": "puzzle_code:block/clicking_switching_block_off",
+    "north": "puzzle_code:block/clicking_switching_block_off",
+    "east": "puzzle_code:block/clicking_switching_block_off",
+    "south": "puzzle_code:block/clicking_switching_block_off",
+    "west": "puzzle_code:block/clicking_switching_block_off",
+    "particle": "puzzle_code:block/clicking_switching_block_off"
+  },
+  "render_type": "cutout"
 }

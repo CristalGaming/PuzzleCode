@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 229,
-    "height": 134,
+    "width": 150,
+    "height": 146,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,174 +13,179 @@
       {
         "type": "label",
         "data": {
-          "text": "React when entity is near the range?",
+          "name": "label_react_when_entity_is_near",
+          "text": {
+            "fixedValue": "React when entity is near?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "React when entity is near the range?",
-          "x": 105,
-          "y": 58
+          "x": 146,
+          "y": 53
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetNearReactTrue"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "True",
-          "x": 105,
-          "y": 71
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetNearReactFalse"
-          },
-          "width": 76,
-          "height": 20,
-          "name": "False",
-          "x": 186,
-          "y": 71
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:logic:nearReact>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:logic:nearReact>",
-          "x": 267,
-          "y": 76
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_1",
           "text": "1",
+          "isUndecorated": false,
           "onClick": {
             "name": "CheckpointBlockPage1"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "1",
-          "x": 105,
-          "y": 161
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "[2]",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "[2]",
-          "x": 123,
+          "x": 191,
           "y": 166
         }
       },
       {
-        "type": "textfield",
+        "type": "label",
         "data": {
-          "placeholder": "",
-          "width": 108,
-          "height": 20,
-          "name": "rangeField",
-          "x": 105,
-          "y": 94
+          "name": "label_range",
+          "text": {
+            "fixedValue": "Range"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 200,
+          "y": 89
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Range: <BNBT:integer:range>",
+          "name": "label_is_disabled",
+          "text": {
+            "fixedValue": "Is Disabled?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Range: <BNBT:integer:range>",
-          "x": 105,
-          "y": 121
+          "x": 182,
+          "y": 125
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyRange"
+          "name": "label_bnbtnumberrange",
+          "text": {
+            "fixedValue": "<BNBT:number:range>",
+            "name": "ReturnRange"
           },
-          "width": 50,
-          "height": 20,
-          "name": "Apply",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
           "x": 218,
-          "y": 94
+          "y": 107
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Edit",
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
           "onClick": {
-            "name": "EditRange"
+            "name": "CheckpointBlockPage2"
           },
-          "width": 50,
+          "width": 18,
           "height": 20,
-          "name": "Edit",
-          "x": 272,
-          "y": 94
+          "x": 218,
+          "y": 166
         }
       },
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "text": "Is Disabled?",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOn"
           },
-          "name": "Is Disabled?",
-          "x": 164,
+          "x": 218,
           "y": 139
         }
       },
       {
-        "type": "button",
+        "type": "image",
         "data": {
-          "text": "Switch",
-          "onClick": {
-            "name": "SwitchIsDisabled"
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOff"
           },
-          "width": 56,
-          "height": 20,
-          "name": "Switch",
-          "x": 105,
-          "y": 134
+          "x": 218,
+          "y": 139
         }
       },
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "text": "<BNBT:logic:isDisabled>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "NearReactDisplayOn"
           },
-          "name": "<BNBT:logic:isDisabled>",
-          "x": 231,
+          "x": 218,
+          "y": 67
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "NearReactDisplayOff"
+          },
+          "x": 218,
+          "y": 67
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_settings_button",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "OpenIsDisabledGUIPage"
+          },
+          "x": 186,
           "y": 139
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_settings_button1",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "OpenRangeGUIPage"
+          },
+          "x": 186,
+          "y": 103
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_settings_button2",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "OpenNearReactGUIPage"
+          },
+          "x": 186,
+          "y": 67
         }
       }
     ],

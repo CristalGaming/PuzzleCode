@@ -1,67 +1,64 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 176,
-    "height": 47,
+    "width": 115,
+    "height": 51,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "text": "Logic: <BNBT:logic:logicCodeBlock>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "LogicCodeBlockDisplayOff"
           },
-          "name": "Logic: <BNBT:logic:logicCodeBlock>",
-          "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetLogicCodeBlockToTrue"
-          },
-          "width": 41,
-          "height": 20,
-          "name": "True",
           "x": 213,
           "y": 103
         }
       },
       {
-        "type": "button",
+        "type": "image",
         "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetLogicCodeBlockToFalse"
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "LogicCodeBlockDisplayOn"
           },
-          "width": 40,
-          "height": 20,
-          "name": "False",
-          "x": 254,
+          "x": 213,
           "y": 103
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Switch",
+          "name": "label_nbt_logiccodeblock",
+          "text": {
+            "fixedValue": "NBT: logicCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 164,
+          "y": 130
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
           "onClick": {
             "name": "SwitchLogicCodeBlock"
           },
-          "width": 81,
-          "height": 20,
-          "name": "Switch",
-          "x": 132,
+          "x": 164,
           "y": 103
         }
       }

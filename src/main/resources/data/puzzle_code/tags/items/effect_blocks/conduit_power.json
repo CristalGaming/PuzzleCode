@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:conduit_power_effect_block",
+    "puzzle_code:conduit_power_effect_slab",
+    "puzzle_code:conduit_power_effect_stairs",
+    "puzzle_code:in_conduit_power_effect_block",
+    "puzzle_code:in_conduit_power_effect_slab",
+    "puzzle_code:in_conduit_power_effect_stairs"
+  ]
+}

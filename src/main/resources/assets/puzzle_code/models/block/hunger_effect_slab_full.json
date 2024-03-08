@@ -1,8 +1,9 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/hunger_effect_block",
-    "top": "puzzle_code:blocks/hunger_effect_block",
-    "side": "puzzle_code:blocks/hunger_effect_slab"
-  }
+    "bottom": "puzzle_code:block/hunger_effect_block",
+    "top": "puzzle_code:block/hunger_effect_block",
+    "side": "puzzle_code:block/hunger_effect_slab"
+  },
+  "render_type": "solid"
 }

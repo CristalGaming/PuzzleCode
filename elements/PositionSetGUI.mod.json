@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 84,
+    "height": 88,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,82 +13,154 @@
       {
         "type": "button",
         "data": {
+          "name": "button_copy",
           "text": "Copy",
+          "isUndecorated": false,
           "onClick": {
             "name": "PositionSetCopyPos"
           },
           "width": 63,
           "height": 20,
-          "name": "Copy",
           "x": 132,
-          "y": 85
+          "y": 80
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_paste",
           "text": "Paste",
+          "isUndecorated": false,
           "onClick": {
             "name": "PositionSetPastePos"
           },
           "width": 45,
           "height": 20,
-          "name": "Paste",
           "x": 200,
-          "y": 85
+          "y": 80
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "X: <VAR:positionSetXPos2>",
+          "name": "label_x_varpositionsetxpos2",
+          "text": {
+            "fixedValue": "X position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "X: <VAR:positionSetXPos2>",
           "x": 132,
-          "y": 116
+          "y": 121
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Y: <VAR:positionSetYPos2>",
+          "name": "label_y_varpositionsetypos2",
+          "text": {
+            "fixedValue": "Y position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Y: <VAR:positionSetYPos2>",
           "x": 132,
-          "y": 130
+          "y": 134
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Z: <VAR:positionSetZPos2>",
+          "name": "label_z_varpositionsetzpos2",
+          "text": {
+            "fixedValue": "Z position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Z: <VAR:positionSetZPos2>",
           "x": 132,
-          "y": 143
+          "y": 148
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_paste2",
           "text": "Paste2",
+          "isUndecorated": false,
           "onClick": {
             "name": "PositionSetPastePos2"
           },
           "width": 45,
           "height": 20,
-          "name": "Paste2",
           "x": 249,
-          "y": 85
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnx_pos",
+          "text": {
+            "fixedValue": "\"placeholder\"",
+            "name": "VarReturnPositionSetXPos2"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returny_pos",
+          "text": {
+            "fixedValue": "\"placeholder\"",
+            "name": "VarReturnPositionSetYPos2"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnz_pos",
+          "text": {
+            "fixedValue": "\"placeholder\"",
+            "name": "VarReturnPositionSetZPos2"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 148
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_block_position",
+          "text": {
+            "fixedValue": "Saved Position:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 107
         }
       }
     ],

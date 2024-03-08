@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:InvisibilityEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InvisibilityEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InInvisibilityEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InInvisibilityEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InInvisibilityEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/invisibility",
+    "namespace": "mod"
+  }
+}

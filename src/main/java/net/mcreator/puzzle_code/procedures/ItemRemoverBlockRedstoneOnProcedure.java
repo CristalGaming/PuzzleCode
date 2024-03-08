@@ -1,7 +1,7 @@
 package net.mcreator.puzzle_code.procedures;
 
 import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -26,11 +26,10 @@ public class ItemRemoverBlockRedstoneOnProcedure {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)).getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-						.ifPresent(capability -> {
-							if (capability instanceof IItemHandlerModifiable _modHandler)
-								_modHandler.setStackInSlot(_slotid, _setstack);
-						});
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)).getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable _modHandler)
+						_modHandler.setStackInSlot(_slotid, _setstack);
+				});
 			}
 			slot = slot + 1;
 		}

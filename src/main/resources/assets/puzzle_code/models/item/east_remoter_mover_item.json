@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "puzzle_code:items/east_remoter_mover_item"
-  }
-}

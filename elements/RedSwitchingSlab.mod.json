@@ -1,11 +1,11 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "red_swiching_block",
-    "textureTop": "red_swiching_block",
+    "texture": "red_switching_block",
+    "textureTop": "red_switching_block",
     "textureLeft": "",
-    "textureFront": "red_swiching_slab",
+    "textureFront": "red_switching_slab",
     "textureRight": "",
     "textureBack": "",
     "renderType": 11,
@@ -34,8 +34,10 @@
         "subtract": false
       }
     ],
-    "name": "Red Swiching Slab",
-    "specialInfo": [],
+    "name": "Red Switching Slab",
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -100,17 +102,11 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
-    "hasInventory": false,
+    "isBonemealable": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -127,11 +123,20 @@
     "onTickUpdate": {
       "name": "RedSwichingSlabUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

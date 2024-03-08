@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:DarknessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:DarknessEffectSlab"
+      },
+      {
+        "value": "CUSTOM:DarknessEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/darkness",
+    "namespace": "mod"
+  }
+}

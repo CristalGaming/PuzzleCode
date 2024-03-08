@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:InNightVisionEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InNightVisionEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InNightVisionEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "in_effect_blocks/night_vision",
+    "namespace": "mod"
+  }
+}

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/path_moving_block",
-    "up": "puzzle_code:blocks/path_moving_block",
-    "north": "puzzle_code:blocks/path_moving_block_front",
-    "east": "puzzle_code:blocks/path_moving_block",
-    "south": "puzzle_code:blocks/path_moving_block",
-    "west": "puzzle_code:blocks/path_moving_block",
-    "particle": "puzzle_code:blocks/path_moving_block"
-  }
+    "down": "puzzle_code:block/path_moving_block",
+    "up": "puzzle_code:block/path_moving_block",
+    "north": "puzzle_code:block/path_moving_block_front",
+    "east": "puzzle_code:block/path_moving_block",
+    "south": "puzzle_code:block/path_moving_block",
+    "west": "puzzle_code:block/path_moving_block",
+    "particle": "puzzle_code:block/path_moving_block"
+  },
+  "render_type": "solid"
 }

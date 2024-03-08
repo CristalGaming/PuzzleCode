@@ -1,8 +1,9 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/instant_saturation_stairs",
-    "top": "puzzle_code:blocks/instant_saturation_stairs",
-    "side": "puzzle_code:blocks/instant_saturation_stairs"
-  }
+    "bottom": "puzzle_code:block/instant_saturation_stairs",
+    "top": "puzzle_code:block/instant_saturation_stairs",
+    "side": "puzzle_code:block/instant_saturation_stairs"
+  },
+  "render_type": "solid"
 }

@@ -30,6 +30,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Direction;
 import net.minecraft.client.Minecraft;
 
@@ -41,10 +42,8 @@ import java.util.function.Supplier;
 public class PuzzleCodeModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new,
-				SavedDataSyncMessage::handler);
-		PuzzleCodeMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new,
-				PlayerVariablesSyncMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
 	}
 
 	@SubscribeEvent
@@ -56,32 +55,27 @@ public class PuzzleCodeModVariables {
 	public static class EventBusVariableHandlers {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void clonePlayer(PlayerEvent.Clone event) {
 			event.getOriginal().revive();
-			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
-			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
+			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			if (!event.isWasDeath()) {
 				clone.IsSwitchedYellow = original.IsSwitchedYellow;
 				clone.YellowSwitcherEffectPower = original.YellowSwitcherEffectPower;
@@ -102,25 +96,22 @@ public class PuzzleCodeModVariables {
 
 		@SubscribeEvent
 		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getPlayer().level.isClientSide()) {
-				SavedData mapdata = MapVariables.get(event.getPlayer().level);
-				SavedData worlddata = WorldVariables.get(event.getPlayer().level);
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData mapdata = MapVariables.get(event.getEntity().level());
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
 				if (mapdata != null)
-					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(0, mapdata));
+					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(0, mapdata));
 				if (worlddata != null)
-					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(1, worlddata));
+					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
 			}
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getPlayer().level.isClientSide()) {
-				SavedData worlddata = WorldVariables.get(event.getPlayer().level);
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
 				if (worlddata != null)
-					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(1, worlddata));
+					PuzzleCodeMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
 			}
 		}
 	}
@@ -172,6 +163,14 @@ public class PuzzleCodeModVariables {
 		public double ABlockIsPlacedY_Pos = 0;
 		public double ABlockIsPlacedZ_Pos = 0.0;
 		public double TimedSwitchingTime = 0.0;
+		public double ABlockIsRightClickedX_Pos = 0.0;
+		public double ABlockIsRightClickedY_Pos = 0.0;
+		public double ABlockIsRightClickedZ_Pos = 0.0;
+		public BlockState ABlockIsRightClickedBlockstate = Blocks.AIR.defaultBlockState();
+		public double ABlockIsLeftClickedX_Pos = 0.0;
+		public double ABlockIsLeftClickedY_Pos = 0;
+		public double ABlockIsLeftClickedZ_Pos = 0;
+		public BlockState ABlockIsLeftClickedBlockstate = Blocks.AIR.defaultBlockState();
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -182,15 +181,23 @@ public class PuzzleCodeModVariables {
 		public void read(CompoundTag nbt) {
 			IsSwitchedBlue = nbt.getBoolean("IsSwitchedBlue");
 			IsTimedSwitched = nbt.getBoolean("IsTimedSwitched");
-			ABlockIsBrokenBlockstate = NbtUtils.readBlockState(nbt.getCompound("ABlockIsBrokenBlockstate"));
+			ABlockIsBrokenBlockstate = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), nbt.getCompound("ABlockIsBrokenBlockstate"));
 			ABlockIsBrokenX_Pos = nbt.getDouble("ABlockIsBrokenX_Pos");
 			ABlockIsBrokenY_Pos = nbt.getDouble("ABlockIsBrokenY_Pos");
 			ABlockIsBrokenZ_Pos = nbt.getDouble("ABlockIsBrokenZ_Pos");
-			ABlockIsPlacedBlockstate = NbtUtils.readBlockState(nbt.getCompound("ABlockIsPlacedBlockstate"));
+			ABlockIsPlacedBlockstate = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), nbt.getCompound("ABlockIsPlacedBlockstate"));
 			ABlockIsPlacedX_Pos = nbt.getDouble("ABlockIsPlacedX_Pos");
 			ABlockIsPlacedY_Pos = nbt.getDouble("ABlockIsPlacedY_Pos");
 			ABlockIsPlacedZ_Pos = nbt.getDouble("ABlockIsPlacedZ_Pos");
 			TimedSwitchingTime = nbt.getDouble("TimedSwitchingTime");
+			ABlockIsRightClickedX_Pos = nbt.getDouble("ABlockIsRightClickedX_Pos");
+			ABlockIsRightClickedY_Pos = nbt.getDouble("ABlockIsRightClickedY_Pos");
+			ABlockIsRightClickedZ_Pos = nbt.getDouble("ABlockIsRightClickedZ_Pos");
+			ABlockIsRightClickedBlockstate = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), nbt.getCompound("ABlockIsRightClickedBlockstate"));
+			ABlockIsLeftClickedX_Pos = nbt.getDouble("ABlockIsLeftClickedX_Pos");
+			ABlockIsLeftClickedY_Pos = nbt.getDouble("ABlockIsLeftClickedY_Pos");
+			ABlockIsLeftClickedZ_Pos = nbt.getDouble("ABlockIsLeftClickedZ_Pos");
+			ABlockIsLeftClickedBlockstate = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), nbt.getCompound("ABlockIsLeftClickedBlockstate"));
 		}
 
 		@Override
@@ -206,6 +213,14 @@ public class PuzzleCodeModVariables {
 			nbt.putDouble("ABlockIsPlacedY_Pos", ABlockIsPlacedY_Pos);
 			nbt.putDouble("ABlockIsPlacedZ_Pos", ABlockIsPlacedZ_Pos);
 			nbt.putDouble("TimedSwitchingTime", TimedSwitchingTime);
+			nbt.putDouble("ABlockIsRightClickedX_Pos", ABlockIsRightClickedX_Pos);
+			nbt.putDouble("ABlockIsRightClickedY_Pos", ABlockIsRightClickedY_Pos);
+			nbt.putDouble("ABlockIsRightClickedZ_Pos", ABlockIsRightClickedZ_Pos);
+			nbt.put("ABlockIsRightClickedBlockstate", NbtUtils.writeBlockState(ABlockIsRightClickedBlockstate));
+			nbt.putDouble("ABlockIsLeftClickedX_Pos", ABlockIsLeftClickedX_Pos);
+			nbt.putDouble("ABlockIsLeftClickedY_Pos", ABlockIsLeftClickedY_Pos);
+			nbt.putDouble("ABlockIsLeftClickedZ_Pos", ABlockIsLeftClickedZ_Pos);
+			nbt.put("ABlockIsLeftClickedBlockstate", NbtUtils.writeBlockState(ABlockIsLeftClickedBlockstate));
 			return nbt;
 		}
 
@@ -219,8 +234,7 @@ public class PuzzleCodeModVariables {
 
 		public static MapVariables get(LevelAccessor world) {
 			if (world instanceof ServerLevelAccessor serverLevelAcc) {
-				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e),
-						MapVariables::new, DATA_NAME);
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -228,16 +242,19 @@ public class PuzzleCodeModVariables {
 	}
 
 	public static class SavedDataSyncMessage {
-		public int type;
-		public SavedData data;
+		private final int type;
+		private SavedData data;
 
 		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
 			this.type = buffer.readInt();
-			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
-			if (this.data instanceof MapVariables _mapvars)
-				_mapvars.read(buffer.readNbt());
-			else if (this.data instanceof WorldVariables _worldvars)
-				_worldvars.read(buffer.readNbt());
+			CompoundTag nbt = buffer.readNbt();
+			if (nbt != null) {
+				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+				if (this.data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (this.data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
 		}
 
 		public SavedDataSyncMessage(int type, SavedData data) {
@@ -247,13 +264,14 @@ public class PuzzleCodeModVariables {
 
 		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
 			buffer.writeInt(message.type);
-			buffer.writeNbt(message.data.save(new CompoundTag()));
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag()));
 		}
 
 		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
-				if (!context.getDirection().getReceptionSide().isServer()) {
+				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
 					if (message.type == 0)
 						MapVariables.clientSide = (MapVariables) message.data;
 					else
@@ -354,7 +372,7 @@ public class PuzzleCodeModVariables {
 	}
 
 	public static class PlayerVariablesSyncMessage {
-		public PlayerVariables data;
+		private final PlayerVariables data;
 
 		public PlayerVariablesSyncMessage(FriendlyByteBuf buffer) {
 			this.data = new PlayerVariables();
@@ -373,8 +391,7 @@ public class PuzzleCodeModVariables {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.IsSwitchedYellow = message.data.IsSwitchedYellow;
 					variables.YellowSwitcherEffectPower = message.data.YellowSwitcherEffectPower;
 					variables.positionSetXPos = message.data.positionSetXPos;

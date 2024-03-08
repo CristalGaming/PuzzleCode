@@ -1,8 +1,9 @@
 {
   "parent": "block/slab_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/red_swiching_block",
-    "top": "puzzle_code:blocks/red_swiching_block",
-    "side": "puzzle_code:blocks/red_swiching_slab"
-  }
+    "bottom": "puzzle_code:block/red_switching_block",
+    "top": "puzzle_code:block/red_switching_block",
+    "side": "puzzle_code:block/red_switching_slab"
+  },
+  "render_type": "solid"
 }

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "poison_effect_block",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Poison Effect Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -99,15 +101,9 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
-    "guiBoundTo": "InEffectBlockGUI1",
+    "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
     "inventorySize": 0,
     "inventoryStackSize": 64,
@@ -141,14 +137,8 @@
     "onRedstoneOff": {
       "name": "EffectBlockRedstoneOff"
     },
-    "spawnWorldTypes": [
-      "CUSTOM:BlockyWorld"
-    ],
-    "restrictionBiomes": [
-      {
-        "value": "CUSTOM:DeathPlace"
-      }
-    ],
+    "generateFeature": false,
+    "restrictionBiomes": [],
     "blocksToReplace": [
       {
         "value": "CUSTOM:NauseaEffectBlock"

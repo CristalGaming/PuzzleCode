@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 135,
+    "height": 119,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,36 +14,24 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 112,
-          "height": 20,
           "name": "NBTVerifyField",
-          "x": 132,
-          "y": 62
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyNBTVerifierVar"
-          },
-          "width": 51,
+          "width": 135,
           "height": 20,
-          "name": "Apply",
-          "x": 245,
-          "y": 62
+          "x": 132,
+          "y": 67
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "NBT name:<VAR:NBTVerifierNBT>",
+          "name": "label_nbt_namevarnbtverifiernbt",
+          "text": {
+            "fixedValue": "NBT name:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "NBT name:<VAR:NBTVerifierNBT>",
           "x": 132,
           "y": 89
         }
@@ -51,82 +39,122 @@
       {
         "type": "label",
         "data": {
-          "text": "NBT Current Value:",
+          "name": "label_nbt_current_value",
+          "text": {
+            "fixedValue": "NBT Current Value:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "NBT Current Value:",
           "x": 132,
-          "y": 157
+          "y": 148
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:NBTVerifierCurrentValue>",
+          "name": "label_varnbtverifiercurrentvalue",
+          "text": {
+            "fixedValue": "<VAR:NBTVerifierCurrentValue>",
+            "name": "VarReturnNBTVerifierCurrentValue"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:NBTVerifierCurrentValue>",
           "x": 132,
-          "y": 170
+          "y": 161
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_number",
           "text": "Number",
+          "isUndecorated": false,
           "onClick": {
             "name": "ApplyNBTVerifierVariableTypeNumberVar"
           },
           "width": 50,
           "height": 20,
-          "name": "Number",
           "x": 132,
-          "y": 103
+          "y": 107
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_logic",
           "text": "Logic",
+          "isUndecorated": false,
           "onClick": {
             "name": "ApplyNBTVerifierVariableTypeLogicVar"
           },
-          "width": 50,
+          "width": 54,
           "height": 20,
-          "name": "Logic",
           "x": 186,
-          "y": 103
+          "y": 107
         }
       },
       {
         "type": "button",
         "data": {
+          "name": "button_text",
           "text": "Text",
+          "isUndecorated": false,
           "onClick": {
             "name": "ApplyNBTVerifierVariableTypeTextVar"
           },
           "width": 50,
           "height": 20,
-          "name": "Text",
-          "x": 240,
-          "y": 103
+          "x": 245,
+          "y": 107
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:NBTVerifierVariableType>",
+          "name": "label_varnbtverifiervariabletype",
+          "text": {
+            "fixedValue": "<VAR:NBTVerifierVariableType>",
+            "name": "VarReturnNBTVerifierVariableType"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:NBTVerifierVariableType>",
           "x": 132,
           "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_var_return_nbt_verifier_nbt",
+          "text": {
+            "fixedValue": "",
+            "name": "VarReturnNBTVerifierNBT"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyNBTVerifierVar"
+          },
+          "x": 272,
+          "y": 67
         }
       }
     ],

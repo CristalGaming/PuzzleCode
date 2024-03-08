@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:PositionCodeBlock"
+      },
+      {
+        "value": "CUSTOM:ChainPositionCodeBlock"
+      },
+      {
+        "value": "CUSTOM:SurvivalPositionCodeBlock"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "code_blocks/position/value",
+    "namespace": "mod"
+  }
+}

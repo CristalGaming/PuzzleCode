@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/night_vision_effect_item"
+    "layer0": "puzzle_code:item/night_vision_effect_item"
   }
 }

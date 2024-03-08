@@ -11,7 +11,7 @@ public class HealthAndEffectCleanProcedure {
 			return;
 		if (entity instanceof LivingEntity _entity)
 			_entity.removeAllEffects();
-		if (entity instanceof LivingEntity _entity)
-			_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 10, 100, (false), (false)));
+		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+			_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 10, 100, false, false));
 	}
 }

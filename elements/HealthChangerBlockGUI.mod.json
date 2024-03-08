@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 140,
+    "height": 84,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Health: <BNBT:number:healthLevel> HP",
+          "name": "label_health_bnbtnumberhealthlevel",
+          "text": {
+            "fixedValue": "Health HP:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Health: <BNBT:number:healthLevel> HP",
           "x": 132,
           "y": 107
         }
@@ -26,39 +28,17 @@
       {
         "type": "label",
         "data": {
-          "text": "Range: <BNBT:number:range>",
+          "name": "label_bnbtnumberrange",
+          "text": {
+            "fixedValue": "<BNBT:number:range>",
+            "name": "ReturnRange"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Range: <BNBT:number:range>",
-          "x": 132,
-          "y": 170
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyRange"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 143
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "Range",
-          "width": 162,
-          "height": 20,
-          "name": "rangeField",
-          "x": 132,
-          "y": 121
+          "x": 159,
+          "y": 139
         }
       },
       {
@@ -66,7 +46,6 @@
         "data": {
           "image": "puzzle_code_logo.png",
           "use1Xscale": false,
-          "name": "puzzle_code_logo.png",
           "x": 276,
           "y": 71
         }
@@ -75,39 +54,68 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "healthLevelField",
+          "width": 135,
+          "height": 20,
           "x": 132,
-          "y": 58
+          "y": 85
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
+          "name": "label_range",
+          "text": {
+            "fixedValue": "Range"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_health_level",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnHealthLevel"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 191,
+          "y": 107
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
           "onClick": {
             "name": "ApplyHealthLevel"
           },
-          "width": 162,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 80
+          "x": 272,
+          "y": 85
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_settings_button",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
           "onClick": {
-            "name": "EditRange"
+            "name": "HealthChangerBlockGUIPageRange"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 143
+          "x": 132,
+          "y": 134
         }
       }
     ],

@@ -1,0 +1,100 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:KillBlock"
+      },
+      {
+        "value": "CUSTOM:InKillBlock"
+      },
+      {
+        "value": "CUSTOM:KillSlab"
+      },
+      {
+        "value": "CUSTOM:KillStairs"
+      },
+      {
+        "value": "CUSTOM:FireKillerBlock"
+      },
+      {
+        "value": "CUSTOM:BlueKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:BlueKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:RedKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:RedKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:InKillSlab"
+      },
+      {
+        "value": "CUSTOM:InKillStairs"
+      },
+      {
+        "value": "CUSTOM:FireKillerSlab"
+      },
+      {
+        "value": "CUSTOM:FireKillerStairs"
+      },
+      {
+        "value": "CUSTOM:InFireKillerBlock"
+      },
+      {
+        "value": "CUSTOM:InFireKillerSlab"
+      },
+      {
+        "value": "CUSTOM:InFireKillerStairs"
+      },
+      {
+        "value": "CUSTOM:YellowKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:YellowKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:ReverseYellowKillSwitchingBlock"
+      },
+      {
+        "value": "CUSTOM:ReverseYellowKillSwitchingBlockOff"
+      },
+      {
+        "value": "CUSTOM:HealthChangerBlock"
+      },
+      {
+        "value": "CUSTOM:HealthRegenerationBlock"
+      },
+      {
+        "value": "CUSTOM:InstantHealthBlock"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthBlock"
+      },
+      {
+        "value": "CUSTOM:InstantHealthSlab"
+      },
+      {
+        "value": "CUSTOM:InstantHealthStairs"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthSlab"
+      },
+      {
+        "value": "CUSTOM:InInstantHealthStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "hp_changer_blocks",
+    "namespace": "mod"
+  }
+}

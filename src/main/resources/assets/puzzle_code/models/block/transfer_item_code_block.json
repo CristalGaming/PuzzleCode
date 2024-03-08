@@ -1,12 +1,11 @@
 {
-  "parent": "block/cube",
+  "parent": "puzzle_code:custom/transfer_block",
   "textures": {
-    "down": "puzzle_code:blocks/transfer_item_code_block_2",
-    "up": "puzzle_code:blocks/transfer_item_code_block",
-    "north": "puzzle_code:blocks/empty_item_code_block",
-    "east": "puzzle_code:blocks/transfer_item_code_bloc_right",
-    "south": "puzzle_code:blocks/empty_item_code_block",
-    "west": "puzzle_code:blocks/transfer_item_code_block_left",
-    "particle": "puzzle_code:blocks/transfer_item_code_block_2"
-  }
+    "all": "puzzle_code:block/transfer_item_code_block",
+    "particle": "puzzle_code:block/transfer_item_code_block",
+    "0": "puzzle_code:block/transfer_item_code_block",
+    "1": "puzzle_code:block/empty_item_code_block",
+    "2": "puzzle_code:block/empty_item_code_block"
+  },
+  "render_type": "solid"
 }

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -16,10 +16,14 @@
           "inputLimit": {
             "value": ""
           },
+          "disablePlacement": {
+            "fixedValue": true
+          },
           "id": 0,
-          "disableStackInteraction": true,
+          "disablePickup": {
+            "fixedValue": true
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
           "x": 132,
           "y": 44
         }
@@ -27,40 +31,94 @@
       {
         "type": "label",
         "data": {
-          "text": "X: <BNBT:number:xPos>",
+          "name": "label_x_bnbtnumberxpos",
+          "text": {
+            "fixedValue": "X position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "X: <BNBT:number:xPos>",
           "x": 132,
-          "y": 62
+          "y": 80
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Y: <BNBT:number:yPos>",
+          "name": "label_y_bnbtnumberypos",
+          "text": {
+            "fixedValue": "Y position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Y: <BNBT:number:yPos>",
           "x": 132,
-          "y": 76
+          "y": 94
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Z: <BNBT:number:zPos>",
+          "name": "label_z_bnbtnumberzpos",
+          "text": {
+            "fixedValue": "Z position:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Z: <BNBT:number:zPos>",
           "x": 132,
-          "y": 89
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnx_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnxPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returny_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnyPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnz_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnzPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 107
         }
       }
     ],

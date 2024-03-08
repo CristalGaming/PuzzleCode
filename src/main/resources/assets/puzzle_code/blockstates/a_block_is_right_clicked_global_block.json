@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/a_block_is_right_clicked_global_block"
+    }
+  }
+}

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/night_time_block",
-    "up": "puzzle_code:blocks/night_time_block",
-    "north": "puzzle_code:blocks/night_time_block",
-    "east": "puzzle_code:blocks/night_time_block",
-    "south": "puzzle_code:blocks/night_time_block",
-    "west": "puzzle_code:blocks/night_time_block",
-    "particle": "puzzle_code:blocks/night_time_block"
-  }
+    "down": "puzzle_code:block/night_time_block",
+    "up": "puzzle_code:block/night_time_block",
+    "north": "puzzle_code:block/night_time_block",
+    "east": "puzzle_code:block/night_time_block",
+    "south": "puzzle_code:block/night_time_block",
+    "west": "puzzle_code:block/night_time_block",
+    "particle": "puzzle_code:block/night_time_block"
+  },
+  "render_type": "solid"
 }

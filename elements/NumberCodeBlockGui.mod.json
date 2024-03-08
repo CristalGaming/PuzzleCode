@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 71,
+    "height": 61,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,53 +13,84 @@
       {
         "type": "label",
         "data": {
-          "text": "Number: <BNBT:number:numberCodeBlock>",
+          "name": "label_number_bnbtnumbernumbercodeb",
+          "text": {
+            "fixedValue": "Number:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Number: <BNBT:number:numberCodeBlock>",
           "x": 132,
-          "y": 139
+          "y": 121
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "numberCodeBlockField",
-          "x": 132,
-          "y": 94
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyNumberCodeBlock"
-          },
-          "width": 76,
+          "width": 113,
           "height": 20,
-          "name": "Apply",
           "x": 132,
-          "y": 116
+          "y": 98
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
+          "name": "label_nbt_numbercodeblock",
+          "text": {
+            "fixedValue": "NBT: numberCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_number_code_block",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnNumberCodeBlock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 173,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditNumberCodeBlock"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 116
+          "x": 249,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyNumberCodeBlock"
+          },
+          "x": 272,
+          "y": 98
         }
       }
     ],

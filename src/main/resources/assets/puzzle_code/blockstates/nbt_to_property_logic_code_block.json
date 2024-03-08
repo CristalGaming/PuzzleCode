@@ -14,6 +14,14 @@
     "facing=west": {
       "model": "puzzle_code:block/nbt_to_property_logic_code_block",
       "y": 270
+    },
+    "facing=up": {
+      "model": "puzzle_code:block/nbt_to_property_logic_code_block",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "puzzle_code:block/nbt_to_property_logic_code_block",
+      "x": 90
     }
   }
 }

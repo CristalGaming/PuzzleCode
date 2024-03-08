@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "jump_boost_effect_block",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Jump Boost Effect Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
@@ -99,13 +101,7 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "EffectBlockGUI1",
     "openGUIOnRightClick": false,
@@ -141,14 +137,8 @@
     "onRedstoneOff": {
       "name": "EffectBlockRedstoneOff"
     },
-    "spawnWorldTypes": [
-      "CUSTOM:BlockyWorld"
-    ],
-    "restrictionBiomes": [
-      {
-        "value": "CUSTOM:BlockyZone"
-      }
-    ],
+    "generateFeature": false,
+    "restrictionBiomes": [],
     "blocksToReplace": [
       {
         "value": "CUSTOM:NormalBlock"

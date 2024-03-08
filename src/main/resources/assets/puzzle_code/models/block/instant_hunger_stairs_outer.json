@@ -1,8 +1,9 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/instant_hunger_slab",
-    "top": "puzzle_code:blocks/instant_hunger_slab",
-    "side": "puzzle_code:blocks/instant_hunger_slab"
-  }
+    "bottom": "puzzle_code:block/instant_hunger_slab",
+    "top": "puzzle_code:block/instant_hunger_slab",
+    "side": "puzzle_code:block/instant_hunger_slab"
+  },
+  "render_type": "solid"
 }

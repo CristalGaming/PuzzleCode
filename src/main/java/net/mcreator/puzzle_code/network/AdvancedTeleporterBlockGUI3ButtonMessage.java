@@ -12,9 +12,9 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.AdvancedTeleporterBlockGUI3Menu;
+import net.mcreator.puzzle_code.procedures.SwitchNearReactProcedure;
 import net.mcreator.puzzle_code.procedures.SwitchIsDisabledProcedure;
-import net.mcreator.puzzle_code.procedures.SetNearReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetNearReactFalseProcedure;
+import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage3Procedure;
 import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage2Procedure;
 import net.mcreator.puzzle_code.procedures.EntityTeleporterBlockPage1Procedure;
 import net.mcreator.puzzle_code.procedures.EditRangeProcedure;
@@ -63,22 +63,22 @@ public class AdvancedTeleporterBlockGUI3ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = AdvancedTeleporterBlockGUI3Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			SetNearReactTrueProcedure.execute(world, x, y, z);
+			EntityTeleporterBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			SetNearReactFalseProcedure.execute(world, x, y, z);
+			EntityTeleporterBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			EntityTeleporterBlockPage2Procedure.execute(world, x, y, z, entity);
+			EntityTeleporterBlockPage3Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
@@ -90,17 +90,16 @@ public class AdvancedTeleporterBlockGUI3ButtonMessage {
 		}
 		if (buttonID == 5) {
 
-			SwitchIsDisabledProcedure.execute(world, x, y, z);
+			SwitchNearReactProcedure.execute(world, x, y, z);
 		}
 		if (buttonID == 6) {
 
-			EntityTeleporterBlockPage1Procedure.execute(world, x, y, z, entity);
+			SwitchIsDisabledProcedure.execute(world, x, y, z);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(AdvancedTeleporterBlockGUI3ButtonMessage.class, AdvancedTeleporterBlockGUI3ButtonMessage::buffer,
-				AdvancedTeleporterBlockGUI3ButtonMessage::new, AdvancedTeleporterBlockGUI3ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(AdvancedTeleporterBlockGUI3ButtonMessage.class, AdvancedTeleporterBlockGUI3ButtonMessage::buffer, AdvancedTeleporterBlockGUI3ButtonMessage::new, AdvancedTeleporterBlockGUI3ButtonMessage::handler);
 	}
 }

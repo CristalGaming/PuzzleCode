@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "puzzle_code:blocks/walking_detector",
-    "particle": "puzzle_code:blocks/walking_detector"
-  }
-}

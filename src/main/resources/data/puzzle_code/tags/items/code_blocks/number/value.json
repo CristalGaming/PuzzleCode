@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:number_code_block",
+    "puzzle_code:survival_number_code_block",
+    "puzzle_code:pi_number_code_block",
+    "puzzle_code:chain_number_code_block",
+    "puzzle_code:e_number_code_block",
+    "puzzle_code:day_number_code_block",
+    "puzzle_code:month_number_code_block",
+    "puzzle_code:year_number_code_block"
+  ]
+}

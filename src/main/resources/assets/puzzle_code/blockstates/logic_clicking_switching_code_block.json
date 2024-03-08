@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "puzzle_code:block/logic_clicking_switching_code_block"
+    }
+  }
+}

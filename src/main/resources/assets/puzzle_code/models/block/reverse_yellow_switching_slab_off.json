@@ -1,8 +1,9 @@
 {
   "parent": "block/slab",
   "textures": {
-    "bottom": "puzzle_code:blocks/yellow_swiching_block_off",
-    "top": "puzzle_code:blocks/yellow_swiching_block_off",
-    "side": "puzzle_code:blocks/yellow_swiching_slab_off"
-  }
+    "bottom": "puzzle_code:block/yellow_switching_block_off",
+    "top": "puzzle_code:block/yellow_switching_block_off",
+    "side": "puzzle_code:block/yellow_switching_slab_off"
+  },
+  "render_type": "translucent"
 }

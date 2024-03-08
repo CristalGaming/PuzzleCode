@@ -27,7 +27,7 @@ public class YellowSwitcherEffectMobEffect extends MobEffect {
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		YellowSwicherPotionPotionExpiresProcedure.execute(entity);
+		YellowSwicherPotionPotionExpiresProcedure.execute(entity.level(), entity);
 	}
 
 	@Override

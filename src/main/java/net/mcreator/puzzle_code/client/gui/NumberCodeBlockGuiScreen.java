@@ -1,26 +1,22 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.NumberCodeBlockGuiMenu;
+import net.mcreator.puzzle_code.procedures.ReturnNumberCodeBlockProcedure;
 import net.mcreator.puzzle_code.network.NumberCodeBlockGuiButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class NumberCodeBlockGuiScreen extends AbstractContainerScreen<NumberCodeBlockGuiMenu> {
@@ -29,6 +25,8 @@ public class NumberCodeBlockGuiScreen extends AbstractContainerScreen<NumberCode
 	private final int x, y, z;
 	private final Player entity;
 	EditBox numberCodeBlockField;
+	ImageButton imagebutton_edit_button;
+	ImageButton imagebutton_enter_button;
 
 	public NumberCodeBlockGuiScreen(NumberCodeBlockGuiMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -38,26 +36,25 @@ public class NumberCodeBlockGuiScreen extends AbstractContainerScreen<NumberCode
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 71;
+		this.imageHeight = 61;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/number_code_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		numberCodeBlockField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		numberCodeBlockField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -79,42 +76,41 @@ public class NumberCodeBlockGuiScreen extends AbstractContainerScreen<NumberCode
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Number: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "numberCodeBlock")) + "", 6, 54, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.number_code_block_gui.label_number_bnbtnumbernumbercodeb"), 6, 31, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.number_code_block_gui.label_nbt_numbercodeblock"), 6, 44, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnNumberCodeBlockProcedure.execute(world, x, y, z), 47, 31, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		numberCodeBlockField = new EditBox(this.font, this.leftPos + 6, this.topPos + 9, 162, 20, new TextComponent(""));
-		guistate.put("text:numberCodeBlockField", numberCodeBlockField);
+		numberCodeBlockField = new EditBox(this.font, this.leftPos + 7, this.topPos + 9, 111, 18, Component.translatable("gui.puzzle_code.number_code_block_gui.numberCodeBlockField"));
 		numberCodeBlockField.setMaxLength(32767);
+		guistate.put("text:numberCodeBlockField", numberCodeBlockField);
 		this.addWidget(this.numberCodeBlockField);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 31, 76, 20, new TextComponent("Apply"), e -> {
+		imagebutton_edit_button = new ImageButton(this.leftPos + 123, this.topPos + 8, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_edit_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NumberCodeBlockGuiButtonMessage(0, x, y, z));
 				NumberCodeBlockGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 31, 77, 20, new TextComponent("Edit"), e -> {
+		});
+		guistate.put("button:imagebutton_edit_button", imagebutton_edit_button);
+		this.addRenderableWidget(imagebutton_edit_button);
+		imagebutton_enter_button = new ImageButton(this.leftPos + 146, this.topPos + 8, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NumberCodeBlockGuiButtonMessage(1, x, y, z));
 				NumberCodeBlockGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:imagebutton_enter_button", imagebutton_enter_button);
+		this.addRenderableWidget(imagebutton_enter_button);
 	}
 }

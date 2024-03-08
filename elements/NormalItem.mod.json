@@ -1,12 +1,14 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "normal_item",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Normal Item",
-    "rarity": "UNCOMMON",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:PuzzleCodeTab"
     },
@@ -24,11 +26,20 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

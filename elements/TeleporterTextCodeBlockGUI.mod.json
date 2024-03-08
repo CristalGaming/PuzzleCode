@@ -1,196 +1,87 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 146,
+    "height": 80,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
       {
-        "type": "label",
-        "data": {
-          "text": "X Position: <BNBT:number:xPos>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "X Position: <BNBT:number:xPos>",
-          "x": 132,
-          "y": 76
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Y Position: <BNBT:number:yPos>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Y Position: <BNBT:number:yPos>",
-          "x": 132,
-          "y": 112
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Z Position: <BNBT:number:zPos>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Z Position: <BNBT:number:zPos>",
-          "x": 132,
-          "y": 148
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "xPosField",
-          "x": 132,
-          "y": 53
-        }
-      },
-      {
         "type": "button",
         "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyxPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 53
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "yPosField",
-          "x": 132,
-          "y": 89
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "zPosField",
-          "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyyPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 89
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyzPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_2",
           "text": "2",
+          "isUndecorated": false,
           "onClick": {
             "name": "TeleporterTextCodeBlockGUIPage2"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "2",
-          "x": 150,
-          "y": 166
+          "x": 218,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TeleporterTextCodeBlockGUIPage1"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 191,
+          "y": 134
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_settings_button",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
+          "onClick": {
+            "name": "OpenPositionGUI"
+          },
+          "x": 132,
+          "y": 85
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "[1]",
+          "name": "label_position",
+          "text": {
+            "fixedValue": "Position"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "[1]",
-          "x": 132,
-          "y": 170
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditxPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
-          "y": 53
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EdityPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
+          "x": 195,
           "y": 89
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditzPos"
+          "name": "label_proc_return_position",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnPosition"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
-          "y": 125
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 112
         }
       }
     ],

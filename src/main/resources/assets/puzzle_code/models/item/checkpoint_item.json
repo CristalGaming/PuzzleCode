@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/checkpoint_item"
+    "layer0": "puzzle_code:item/checkpoint_item"
   }
 }

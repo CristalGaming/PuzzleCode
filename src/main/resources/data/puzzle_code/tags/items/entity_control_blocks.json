@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#puzzle_code:effect_blocks",
+    "#puzzle_code:catapulter_blocks",
+    "#puzzle_code:checkpoint_blocks",
+    "puzzle_code:block_entity_placer_block",
+    "#puzzle_code:hp_changer_blocks"
+  ]
+}

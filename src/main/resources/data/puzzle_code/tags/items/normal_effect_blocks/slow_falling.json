@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:slow_falling_effect_block",
+    "puzzle_code:slow_falling_effect_slab",
+    "puzzle_code:slow_falling_effect_stairs"
+  ]
+}

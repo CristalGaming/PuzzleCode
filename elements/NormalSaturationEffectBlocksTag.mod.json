@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:SaturationEffectBlock"
+      },
+      {
+        "value": "CUSTOM:SaturationEffectSlab"
+      },
+      {
+        "value": "CUSTOM:SaturationEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/saturation",
+    "namespace": "mod"
+  }
+}

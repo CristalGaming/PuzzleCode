@@ -12,7 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.FillerCodeBlockGUI3Menu;
-import net.mcreator.puzzle_code.procedures.FillerCodeBlockGUiPage2Procedure;
+import net.mcreator.puzzle_code.procedures.FillerCodeBlockGUIPage3Procedure;
 import net.mcreator.puzzle_code.procedures.FillerCodeBlockGUIPage1Procedure;
 import net.mcreator.puzzle_code.procedures.EditSetNBTProcedure;
 import net.mcreator.puzzle_code.procedures.EditGetNBTProcedure;
@@ -62,40 +62,39 @@ public class FillerCodeBlockGUI3ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = FillerCodeBlockGUI3Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ApplyGetNBTProcedure.execute(world, x, y, z, guistate);
+			FillerCodeBlockGUIPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			ApplySetNBTProcedure.execute(world, x, y, z, guistate);
+			FillerCodeBlockGUIPage3Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			EditGetNBTProcedure.execute(world, x, y, z, guistate);
+			ApplyGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
-			EditSetNBTProcedure.execute(world, x, y, z, guistate);
+			ApplySetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 4) {
 
-			FillerCodeBlockGUIPage1Procedure.execute(world, x, y, z, entity);
+			EditGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 5) {
 
-			FillerCodeBlockGUiPage2Procedure.execute(world, x, y, z, entity);
+			EditSetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(FillerCodeBlockGUI3ButtonMessage.class, FillerCodeBlockGUI3ButtonMessage::buffer,
-				FillerCodeBlockGUI3ButtonMessage::new, FillerCodeBlockGUI3ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(FillerCodeBlockGUI3ButtonMessage.class, FillerCodeBlockGUI3ButtonMessage::buffer, FillerCodeBlockGUI3ButtonMessage::new, FillerCodeBlockGUI3ButtonMessage::handler);
 	}
 }

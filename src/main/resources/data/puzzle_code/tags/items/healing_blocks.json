@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:health_regeneration_block",
+    "puzzle_code:instant_health_block",
+    "puzzle_code:in_instant_health_block",
+    "puzzle_code:instant_health_slab",
+    "puzzle_code:instant_health_stairs",
+    "puzzle_code:in_instant_health_slab",
+    "puzzle_code:in_instant_health_stairs"
+  ]
+}

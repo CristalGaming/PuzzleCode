@@ -1,0 +1,40 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:NumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:SurvivalNumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:PiNumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:ChainNumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:ENumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:DayNumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:MonthNumberCodeBlock"
+      },
+      {
+        "value": "CUSTOM:YearNumberCodeBlock"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "code_blocks/number/value",
+    "namespace": "mod"
+  }
+}

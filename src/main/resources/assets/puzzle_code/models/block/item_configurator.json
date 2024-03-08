@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:block/item_configurator_bottom",
+    "up": "puzzle_code:block/item_configurator_top",
+    "north": "puzzle_code:block/item_configurator_side",
+    "east": "puzzle_code:block/item_configurator_side",
+    "south": "puzzle_code:block/item_configurator_side",
+    "west": "puzzle_code:block/item_configurator_side",
+    "particle": "puzzle_code:block/item_configurator_bottom"
+  },
+  "render_type": "solid"
+}

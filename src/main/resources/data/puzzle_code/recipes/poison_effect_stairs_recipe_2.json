@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "puzzle_code:poison_effect_block"
-  },
-  "result": "puzzle_code:poison_effect_stairs"
-}

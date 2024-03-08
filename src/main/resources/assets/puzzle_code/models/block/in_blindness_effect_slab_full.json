@@ -1,8 +1,9 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/in_blindness_effect_block",
-    "top": "puzzle_code:blocks/in_blindness_effect_block",
-    "side": "puzzle_code:blocks/in_blindness_effect_slab"
-  }
+    "bottom": "puzzle_code:block/in_blindness_effect_block",
+    "top": "puzzle_code:block/in_blindness_effect_block",
+    "side": "puzzle_code:block/in_blindness_effect_slab"
+  },
+  "render_type": "translucent"
 }

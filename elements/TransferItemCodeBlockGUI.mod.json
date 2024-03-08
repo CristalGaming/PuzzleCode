@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 128,
+    "height": 115,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,22 +14,24 @@
         "type": "textfield",
         "data": {
           "placeholder": "From slot",
-          "width": 162,
-          "height": 20,
           "name": "getSlotID",
+          "width": 113,
+          "height": 20,
           "x": 132,
-          "y": 62
+          "y": 71
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "From Slot: <BNBT:integer:getSlotNumber>",
+          "name": "label_from_slot_bnbtintegergetslot",
+          "text": {
+            "fixedValue": "From Slot:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "From Slot: <BNBT:integer:getSlotNumber>",
           "x": 132,
           "y": 107
         }
@@ -38,9 +40,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "To Slot",
-          "width": 162,
-          "height": 20,
           "name": "setSlotID",
+          "width": 113,
+          "height": 20,
           "x": 132,
           "y": 121
         }
@@ -48,69 +50,129 @@
       {
         "type": "label",
         "data": {
-          "text": "To Slot: <BNBT:integer:setSlotNumber>",
+          "name": "label_to_slot_bnbtintegersetslotnu",
+          "text": {
+            "fixedValue": "To Slot:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "To Slot: <BNBT:integer:setSlotNumber>",
           "x": 132,
-          "y": 166
+          "y": 157
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
+          "name": "label_proc_return_set_slot_id",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSetSlotID"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 182,
+          "y": 157
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_get_slot_id",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnGetSlotID"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 191,
+          "y": 107
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
           "onClick": {
             "name": "ApplyGetSlotID"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 85
+          "x": 272,
+          "y": 71
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplySetSlotID"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
-          "x": 132,
-          "y": 143
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button.png",
           "onClick": {
             "name": "EditGetSlotID"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 85
+          "x": 249,
+          "y": 71
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
+          "name": "label_nbt_getslotid",
+          "text": {
+            "fixedValue": "NBT: getSlotID"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplySetSlotID"
+          },
+          "x": 272,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditSetSlotID"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
+          "x": 249,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_setslotid",
+          "text": {
+            "fixedValue": "NBT: setSlotID"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
           "y": 143
         }
       }

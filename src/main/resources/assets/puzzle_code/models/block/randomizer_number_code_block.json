@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/randomizer_number_code_block",
-    "up": "puzzle_code:blocks/randomizer_number_code_block",
-    "north": "puzzle_code:blocks/randomizer_number_code_block",
-    "east": "puzzle_code:blocks/randomizer_number_code_block",
-    "south": "puzzle_code:blocks/randomizer_number_code_block",
-    "west": "puzzle_code:blocks/randomizer_number_code_block",
-    "particle": "puzzle_code:blocks/randomizer_number_code_block"
-  }
+    "down": "puzzle_code:block/randomizer_number_code_block",
+    "up": "puzzle_code:block/randomizer_number_code_block",
+    "north": "puzzle_code:block/randomizer_number_code_block",
+    "east": "puzzle_code:block/randomizer_number_code_block",
+    "south": "puzzle_code:block/randomizer_number_code_block",
+    "west": "puzzle_code:block/randomizer_number_code_block",
+    "particle": "puzzle_code:block/randomizer_number_code_block"
+  },
+  "render_type": "solid"
 }

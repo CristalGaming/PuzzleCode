@@ -1,0 +1,284 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 133,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "positionField",
+          "width": 113,
+          "height": 20,
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyPositionValueArea"
+          },
+          "x": 272,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditPositionValueArea"
+          },
+          "x": 249,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x",
+          "text": "X",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PositionGUIButtonX"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 132,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_y",
+          "text": "Y",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PositionGUIButtonY"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 155,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_z",
+          "text": "Z",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PositionGUIButtonZ"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 177,
+          "y": 139
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_current_position",
+          "text": {
+            "fixedValue": "Current Axis",
+            "name": "ReturnCurrentSelectedAxis"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 272,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt",
+          "text": {
+            "fixedValue": "NBT:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 85
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_back",
+          "text": "Back",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AreaGUIBack"
+          },
+          "width": 162,
+          "height": 20,
+          "x": 132,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_currentselectedaxis",
+          "text": {
+            "fixedValue": "NBT: currentSelectedAxis:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_current_nbt",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCurrentNBTArea"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_current_axis_value",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCurrentAxisValueArea"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_currentposition",
+          "text": {
+            "fixedValue": "NBT: currentCoordinate:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 125
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_swap_button",
+          "image": "swap_button.png",
+          "hoveredImage": "swap_button_highlight.png",
+          "onClick": {
+            "name": "AreaGUIButtonSwap"
+          },
+          "x": 272,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AreaGUIButton1"
+          },
+          "width": 31,
+          "height": 20,
+          "x": 200,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "AreaGUIButton2"
+          },
+          "width": 31,
+          "height": 20,
+          "x": 236,
+          "y": 139
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_current_coordinate",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCurrentCoordinate"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 258,
+          "y": 125
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_flips_the_current_selected_axis",
+          "text": {
+            "fixedValue": "Flips the Current Selected Axis Values"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 272,
+          "y": 139
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

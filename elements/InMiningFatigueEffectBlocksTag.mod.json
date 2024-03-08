@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:InMiningFatigueEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InMiningFatigueEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InMiningFatigueEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "in_effect_blocks/mining_fatigue",
+    "namespace": "mod"
+  }
+}

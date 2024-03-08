@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:ConduitPowerEffectBlock"
+      },
+      {
+        "value": "CUSTOM:ConduitPowerEffectSlab"
+      },
+      {
+        "value": "CUSTOM:ConduitPowerEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/conduit_power",
+    "namespace": "mod"
+  }
+}

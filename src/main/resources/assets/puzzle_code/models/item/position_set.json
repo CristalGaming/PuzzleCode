@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/position_set"
+    "layer0": "puzzle_code:item/position_set"
   }
 }

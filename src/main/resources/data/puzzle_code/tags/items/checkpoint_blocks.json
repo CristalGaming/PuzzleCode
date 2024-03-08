@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:checkpoint_block",
+    "puzzle_code:checkpoint_slab",
+    "puzzle_code:checkpoint_stairs",
+    "puzzle_code:in_checkpoint_block",
+    "puzzle_code:in_checkpoint_slab",
+    "puzzle_code:in_checkpoint_stairs"
+  ]
+}

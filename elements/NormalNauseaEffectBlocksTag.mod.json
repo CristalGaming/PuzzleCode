@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:NauseaEffectBlock"
+      },
+      {
+        "value": "CUSTOM:NauseaEffectSlab"
+      },
+      {
+        "value": "CUSTOM:NauseaEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/nausea",
+    "namespace": "mod"
+  }
+}

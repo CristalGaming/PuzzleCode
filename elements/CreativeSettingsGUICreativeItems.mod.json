@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Creative Blocks",
+          "name": "label_creative_blocks",
+          "text": {
+            "fixedValue": "Creative Blocks"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Creative Blocks",
           "x": 132,
           "y": 44
         }
@@ -26,13 +28,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_command_block",
           "text": "Command Block",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveCommandBlockCreativeSettings"
           },
           "width": 99,
           "height": 20,
-          "name": "Command Block",
           "x": 132,
           "y": 58
         }
@@ -40,13 +43,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_barrier",
           "text": "Barrier",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveBarrierCreativeSettings"
           },
           "width": 63,
           "height": 20,
-          "name": "Barrier",
           "x": 231,
           "y": 58
         }
@@ -54,13 +58,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_command_block_minecart",
           "text": "Command Block Minecart",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveCommandBlockMinecartCreativeSettings"
           },
           "width": 162,
           "height": 20,
-          "name": "Command Block Minecart",
           "x": 132,
           "y": 80
         }
@@ -68,13 +73,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_back",
           "text": "Back",
+          "isUndecorated": false,
           "onClick": {
             "name": "CreativeSettingsGUIRightClick"
           },
           "width": 46,
           "height": 20,
-          "name": "Back",
           "x": 249,
           "y": 175
         }
@@ -82,13 +88,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_debug_stick",
           "text": "Debug Stick",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveDebugStickCreativeSettings"
           },
           "width": 81,
           "height": 20,
-          "name": "Debug Stick",
           "x": 132,
           "y": 103
         }
@@ -96,12 +103,14 @@
       {
         "type": "label",
         "data": {
-          "text": "More Comming Soon",
+          "name": "label_more_comming_soon",
+          "text": {
+            "fixedValue": "More Comming Soon"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "More Comming Soon",
           "x": 132,
           "y": 184
         }
@@ -109,13 +118,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_structure_void",
           "text": "Structure Void",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveStructureVoidCreativeSettings"
           },
           "width": 81,
           "height": 20,
-          "name": "Structure Void",
           "x": 213,
           "y": 103
         }
@@ -123,13 +133,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_structure_block",
           "text": "Structure Block",
+          "isUndecorated": false,
           "onClick": {
             "name": "GiveStructureBlockCreativeSettings"
           },
           "width": 103,
           "height": 20,
-          "name": "Structure Block",
           "x": 132,
           "y": 125
         }

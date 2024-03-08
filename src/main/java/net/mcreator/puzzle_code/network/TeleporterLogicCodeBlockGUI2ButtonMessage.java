@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.TeleporterLogicCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.procedures.TeleporterLogicCodeBlockGUIPage2Procedure;
 import net.mcreator.puzzle_code.procedures.TeleporterLogicCodeBlockGUIPage1Procedure;
 import net.mcreator.puzzle_code.procedures.EditSetNBTProcedure;
 import net.mcreator.puzzle_code.procedures.EditGetNBTProcedure;
@@ -61,7 +62,7 @@ public class TeleporterLogicCodeBlockGUI2ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = TeleporterLogicCodeBlockGUI2Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -72,25 +73,28 @@ public class TeleporterLogicCodeBlockGUI2ButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			ApplyGetNBTProcedure.execute(world, x, y, z, guistate);
+			TeleporterLogicCodeBlockGUIPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			ApplySetNBTProcedure.execute(world, x, y, z, guistate);
+			EditGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
-			EditGetNBTProcedure.execute(world, x, y, z, guistate);
+			ApplyGetNBTProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 4) {
 
 			EditSetNBTProcedure.execute(world, x, y, z, guistate);
 		}
+		if (buttonID == 5) {
+
+			ApplySetNBTProcedure.execute(world, x, y, z, guistate);
+		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(TeleporterLogicCodeBlockGUI2ButtonMessage.class, TeleporterLogicCodeBlockGUI2ButtonMessage::buffer,
-				TeleporterLogicCodeBlockGUI2ButtonMessage::new, TeleporterLogicCodeBlockGUI2ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(TeleporterLogicCodeBlockGUI2ButtonMessage.class, TeleporterLogicCodeBlockGUI2ButtonMessage::buffer, TeleporterLogicCodeBlockGUI2ButtonMessage::new, TeleporterLogicCodeBlockGUI2ButtonMessage::handler);
 	}
 }

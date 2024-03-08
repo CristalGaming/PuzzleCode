@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:strength_effect_block",
+    "puzzle_code:strength_effect_slab",
+    "puzzle_code:strength_effect_stairs",
+    "puzzle_code:in_strength_effect_block",
+    "puzzle_code:in_strength_effect_slab",
+    "puzzle_code:in_strength_effect_stairs"
+  ]
+}

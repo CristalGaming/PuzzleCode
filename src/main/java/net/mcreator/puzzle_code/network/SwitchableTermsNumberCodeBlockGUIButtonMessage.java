@@ -60,7 +60,7 @@ public class SwitchableTermsNumberCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = SwitchableTermsNumberCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -85,7 +85,7 @@ public class SwitchableTermsNumberCodeBlockGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(SwitchableTermsNumberCodeBlockGUIButtonMessage.class, SwitchableTermsNumberCodeBlockGUIButtonMessage::buffer,
-				SwitchableTermsNumberCodeBlockGUIButtonMessage::new, SwitchableTermsNumberCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(SwitchableTermsNumberCodeBlockGUIButtonMessage.class, SwitchableTermsNumberCodeBlockGUIButtonMessage::buffer, SwitchableTermsNumberCodeBlockGUIButtonMessage::new,
+				SwitchableTermsNumberCodeBlockGUIButtonMessage::handler);
 	}
 }

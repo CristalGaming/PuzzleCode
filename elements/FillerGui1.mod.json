@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -14,24 +14,10 @@
         "type": "textfield",
         "data": {
           "placeholder": "X position",
-          "width": 162,
-          "height": 20,
           "name": "xPosField",
-          "x": 132,
-          "y": 53
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyxPos"
-          },
-          "width": 40,
+          "width": 113,
           "height": 20,
-          "name": "Apply",
-          "x": 299,
+          "x": 132,
           "y": 53
         }
       },
@@ -39,9 +25,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "y position",
-          "width": 162,
-          "height": 20,
           "name": "yPosField",
+          "width": 113,
+          "height": 20,
           "x": 132,
           "y": 89
         }
@@ -50,50 +36,24 @@
         "type": "textfield",
         "data": {
           "placeholder": "z position",
-          "width": 162,
-          "height": 20,
           "name": "zPosField",
+          "width": 113,
+          "height": 20,
           "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyyPos"
-          },
-          "width": 40,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 89
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyzPos"
-          },
-          "width": 40,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
           "y": 125
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "X1 <BNBT:integer:xPos>",
+          "name": "label_x1_bnbtintegerxpos",
+          "text": {
+            "fixedValue": "X1:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "X1 <BNBT:integer:xPos>",
           "x": 132,
           "y": 76
         }
@@ -101,12 +61,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Y1 <BNBT:integer:yPos>",
+          "name": "label_y1_bnbtintegerypos",
+          "text": {
+            "fixedValue": "Y1:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Y1 <BNBT:integer:yPos>",
           "x": 132,
           "y": 112
         }
@@ -114,12 +76,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Z1: <BNBT:integer:zPos>",
+          "name": "label_z1_bnbtintegerzpos",
+          "text": {
+            "fixedValue": "Z1:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Z1: <BNBT:integer:zPos>",
           "x": 132,
           "y": 148
         }
@@ -127,69 +91,156 @@
       {
         "type": "button",
         "data": {
+          "name": "button_2",
           "text": "2",
+          "isUndecorated": false,
           "onClick": {
             "name": "FillerGUIPage2"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "2",
-          "x": 150,
-          "y": 166
+          "x": 218,
+          "y": 170
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "[1]",
+          "name": "label_proc_returnx_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnxPos"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "[1]",
-          "x": 132,
+          "x": 155,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returny_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnyPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 155,
+          "y": 112
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_returnz_pos",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnzPos"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 155,
+          "y": 148
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "FillerGUIPage1"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 191,
           "y": 170
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
           "onClick": {
-            "name": "EditxPos"
+            "name": "ApplyxPos"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
+          "x": 272,
           "y": 53
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
-            "name": "EdityPos"
+            "name": "EditxPos"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
+          "x": 249,
+          "y": 53
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyyPos"
+          },
+          "x": 272,
           "y": 89
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EdityPos"
+          },
+          "x": 249,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button2",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button.png",
           "onClick": {
             "name": "EditzPos"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
+          "x": 249,
+          "y": 125
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button2",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyzPos"
+          },
+          "x": 272,
           "y": 125
         }
       }

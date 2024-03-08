@@ -58,7 +58,7 @@ public class YellowSwicherBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = YellowSwicherBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -75,7 +75,6 @@ public class YellowSwicherBlockGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(YellowSwicherBlockGUIButtonMessage.class, YellowSwicherBlockGUIButtonMessage::buffer,
-				YellowSwicherBlockGUIButtonMessage::new, YellowSwicherBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(YellowSwicherBlockGUIButtonMessage.class, YellowSwicherBlockGUIButtonMessage::buffer, YellowSwicherBlockGUIButtonMessage::new, YellowSwicherBlockGUIButtonMessage::handler);
 	}
 }

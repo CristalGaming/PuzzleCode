@@ -15,53 +15,52 @@ public class DolphinsGraceBlockEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)
-				&& world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU)
+		if (((entity instanceof Player _plr ? _plr.getAbilities().instabuild : false) && world.getLevelData().getGameRules().getBoolean(PuzzleCodeModGameRules.BLOCKSAFFECTSYOU)
 				|| !(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) && new Object() {
 					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
+							return blockEntity.getPersistentData().getBoolean(tag);
 						return false;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "walkingReact") && !(new Object() {
+				}.getValue(world, BlockPos.containing(x, y, z), "walkingReact") && !(new Object() {
 					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
+							return blockEntity.getPersistentData().getBoolean(tag);
 						return false;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "isDisabled"))) {
-			if (entity instanceof LivingEntity _entity)
+				}.getValue(world, BlockPos.containing(x, y, z), "isDisabled"))) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getDouble(tag);
+							return blockEntity.getPersistentData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "durationEffect")), (int) (new Object() {
+				}.getValue(world, BlockPos.containing(x, y, z), "durationEffect")), (int) (new Object() {
 					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getDouble(tag);
+							return blockEntity.getPersistentData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "powerEffect")), (new Object() {
+				}.getValue(world, BlockPos.containing(x, y, z), "powerEffect")), (new Object() {
 					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
+							return blockEntity.getPersistentData().getBoolean(tag);
 						return false;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "ambient")), (new Object() {
+				}.getValue(world, BlockPos.containing(x, y, z), "ambient")), (new Object() {
 					public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						if (blockEntity != null)
-							return blockEntity.getTileData().getBoolean(tag);
+							return blockEntity.getPersistentData().getBoolean(tag);
 						return false;
 					}
-				}.getValue(world, new BlockPos(x, y, z), "particles"))));
+				}.getValue(world, BlockPos.containing(x, y, z), "particles"))));
 		}
 	}
 }

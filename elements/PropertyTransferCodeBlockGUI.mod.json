@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 174,
-    "height": 128,
+    "height": 110,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,36 +14,24 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "getPropertyField",
-          "x": 132,
-          "y": 62
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyGetProperty"
-          },
-          "width": 77,
+          "width": 113,
           "height": 20,
-          "name": "Apply",
           "x": 132,
-          "y": 85
+          "y": 71
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "From property: <BNBT:text:getProperty>",
+          "name": "label_from_property_bnbttextgetpro",
+          "text": {
+            "fixedValue": "From property:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "From property: <BNBT:text:getProperty>",
           "x": 132,
           "y": 107
         }
@@ -53,7 +41,6 @@
         "data": {
           "image": "puzzle_jump_logo.png",
           "use1Xscale": false,
-          "name": "puzzle_jump_logo.png",
           "x": 276,
           "y": 71
         }
@@ -62,65 +49,139 @@
         "type": "textfield",
         "data": {
           "placeholder": "",
-          "width": 162,
-          "height": 20,
           "name": "setPropertyField",
+          "width": 113,
+          "height": 20,
           "x": 132,
           "y": 121
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplySetProperty"
+          "name": "label_to_property_bnbttextsetprope",
+          "text": {
+            "fixedValue": "To Property:"
           },
-          "width": 77,
-          "height": 20,
-          "name": "Apply",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
           "x": 132,
-          "y": 143
+          "y": 157
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "To Property: <BNBT:text:setProperty>",
+          "name": "label_proc_return_get_property",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnGetProperty"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "To Property: <BNBT:text:setProperty>",
-          "x": 132,
-          "y": 166
+          "x": 213,
+          "y": 107
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditGetProperty"
+          "name": "label_proc_return_set_property",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSetProperty"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
-          "y": 85
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 200,
+          "y": 157
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplySetProperty"
+          },
+          "x": 272,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
           "onClick": {
             "name": "EditSetProperty"
           },
-          "width": 76,
-          "height": 20,
-          "name": "Edit",
-          "x": 218,
+          "x": 249,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button1",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditGetProperty"
+          },
+          "x": 249,
+          "y": 71
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button1",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyGetProperty"
+          },
+          "x": 272,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_getproperty",
+          "text": {
+            "fixedValue": "NBT: getProperty"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_setproperty",
+          "text": {
+            "fixedValue": "NBT: setProperty"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
           "y": 143
         }
       }

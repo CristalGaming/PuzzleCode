@@ -16,11 +16,11 @@ public class ApplyyPosProcedure {
 		if (guistate == null)
 			return;
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("yPos", new Object() {
+				_blockEntity.getPersistentData().putDouble("yPos", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());

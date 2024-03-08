@@ -1,26 +1,23 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.NBTToPropertyCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.ReturnSetPropertyProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnGetNBTProcedure;
 import net.mcreator.puzzle_code.network.NBTToPropertyCodeBlockGUIButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class NBTToPropertyCodeBlockGUIScreen extends AbstractContainerScreen<NBTToPropertyCodeBlockGUIMenu> {
@@ -30,6 +27,10 @@ public class NBTToPropertyCodeBlockGUIScreen extends AbstractContainerScreen<NBT
 	private final Player entity;
 	EditBox getNBTField;
 	EditBox setPropertyField;
+	ImageButton imagebutton_enter_button;
+	ImageButton imagebutton_edit_button;
+	ImageButton imagebutton_edit_button1;
+	ImageButton imagebutton_enter_button1;
 
 	public NBTToPropertyCodeBlockGUIScreen(NBTToPropertyCodeBlockGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -39,30 +40,28 @@ public class NBTToPropertyCodeBlockGUIScreen extends AbstractContainerScreen<NBT
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 174;
-		this.imageHeight = 128;
+		this.imageHeight = 110;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/nbt_to_property_code_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		getNBTField.render(ms, mouseX, mouseY, partialTicks);
-		setPropertyField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		getNBTField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		setPropertyField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
-		this.blit(ms, this.leftPos + 149, this.topPos + 15, 0, 0, -1, -1, -1, -1);
+		guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"), this.leftPos + 149, this.topPos + 6, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();
 	}
@@ -88,66 +87,66 @@ public class NBTToPropertyCodeBlockGUIScreen extends AbstractContainerScreen<NBT
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "From NBT: " + (new Object() {
-			public String getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getString(tag);
-				return "";
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "getNBT")) + "", 5, 51, -12829636);
-		this.font.draw(poseStack, "To Property: " + (new Object() {
-			public String getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getString(tag);
-				return "";
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "setProperty")) + "", 5, 110, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.label_from_nbt_bnbttextgetnbt"), 5, 42, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.label_to_property_bnbttextsetprope"), 5, 92, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnGetNBTProcedure.execute(world, x, y, z), 59, 42, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnSetPropertyProcedure.execute(world, x, y, z), 73, 92, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.label_nbt_getnbt"), 5, 29, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.label_nbt_setproperty"), 5, 78, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		getNBTField = new EditBox(this.font, this.leftPos + 5, this.topPos + 6, 162, 20, new TextComponent(""));
-		guistate.put("text:getNBTField", getNBTField);
+		getNBTField = new EditBox(this.font, this.leftPos + 6, this.topPos + 7, 111, 18, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.getNBTField"));
 		getNBTField.setMaxLength(32767);
+		guistate.put("text:getNBTField", getNBTField);
 		this.addWidget(this.getNBTField);
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 29, 77, 20, new TextComponent("Apply"), e -> {
+		setPropertyField = new EditBox(this.font, this.leftPos + 6, this.topPos + 57, 111, 18, Component.translatable("gui.puzzle_code.nbt_to_property_code_block_gui.setPropertyField"));
+		setPropertyField.setMaxLength(32767);
+		guistate.put("text:setPropertyField", setPropertyField);
+		this.addWidget(this.setPropertyField);
+		imagebutton_enter_button = new ImageButton(this.leftPos + 145, this.topPos + 6, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTToPropertyCodeBlockGUIButtonMessage(0, x, y, z));
 				NBTToPropertyCodeBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		setPropertyField = new EditBox(this.font, this.leftPos + 5, this.topPos + 65, 162, 20, new TextComponent(""));
-		guistate.put("text:setPropertyField", setPropertyField);
-		setPropertyField.setMaxLength(32767);
-		this.addWidget(this.setPropertyField);
-		this.addRenderableWidget(new Button(this.leftPos + 5, this.topPos + 87, 77, 20, new TextComponent("Apply"), e -> {
+		});
+		guistate.put("button:imagebutton_enter_button", imagebutton_enter_button);
+		this.addRenderableWidget(imagebutton_enter_button);
+		imagebutton_edit_button = new ImageButton(this.leftPos + 122, this.topPos + 6, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_edit_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTToPropertyCodeBlockGUIButtonMessage(1, x, y, z));
 				NBTToPropertyCodeBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 91, this.topPos + 29, 76, 20, new TextComponent("Edit"), e -> {
+		});
+		guistate.put("button:imagebutton_edit_button", imagebutton_edit_button);
+		this.addRenderableWidget(imagebutton_edit_button);
+		imagebutton_edit_button1 = new ImageButton(this.leftPos + 122, this.topPos + 56, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_edit_button1.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTToPropertyCodeBlockGUIButtonMessage(2, x, y, z));
 				NBTToPropertyCodeBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 91, this.topPos + 87, 76, 20, new TextComponent("Edit"), e -> {
+		});
+		guistate.put("button:imagebutton_edit_button1", imagebutton_edit_button1);
+		this.addRenderableWidget(imagebutton_edit_button1);
+		imagebutton_enter_button1 = new ImageButton(this.leftPos + 145, this.topPos + 56, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button1.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new NBTToPropertyCodeBlockGUIButtonMessage(3, x, y, z));
 				NBTToPropertyCodeBlockGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:imagebutton_enter_button1", imagebutton_enter_button1);
+		this.addRenderableWidget(imagebutton_enter_button1);
 	}
 }

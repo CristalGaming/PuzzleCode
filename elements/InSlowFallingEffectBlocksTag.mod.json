@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:InSlowFallingEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InSlowFallingEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InSlowFallingEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "in_effect_blocks/slow_falling",
+    "namespace": "mod"
+  }
+}

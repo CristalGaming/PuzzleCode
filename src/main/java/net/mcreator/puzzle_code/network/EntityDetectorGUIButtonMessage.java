@@ -58,7 +58,7 @@ public class EntityDetectorGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = EntityDetectorGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -75,7 +75,6 @@ public class EntityDetectorGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(EntityDetectorGUIButtonMessage.class, EntityDetectorGUIButtonMessage::buffer,
-				EntityDetectorGUIButtonMessage::new, EntityDetectorGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(EntityDetectorGUIButtonMessage.class, EntityDetectorGUIButtonMessage::buffer, EntityDetectorGUIButtonMessage::new, EntityDetectorGUIButtonMessage::handler);
 	}
 }

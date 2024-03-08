@@ -1,26 +1,23 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.ReturnRangeProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnHealthLevelProcedure;
 import net.mcreator.puzzle_code.network.HealthChangerBlockGUIButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class HealthChangerBlockGUIScreen extends AbstractContainerScreen<HealthChangerBlockGUIMenu> {
@@ -28,8 +25,9 @@ public class HealthChangerBlockGUIScreen extends AbstractContainerScreen<HealthC
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	EditBox rangeField;
 	EditBox healthLevelField;
+	ImageButton imagebutton_enter_button;
+	ImageButton imagebutton_settings_button;
 
 	public HealthChangerBlockGUIScreen(HealthChangerBlockGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -39,30 +37,27 @@ public class HealthChangerBlockGUIScreen extends AbstractContainerScreen<HealthC
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 140;
+		this.imageHeight = 84;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/health_changer_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		rangeField.render(ms, mouseX, mouseY, partialTicks);
-		healthLevelField.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		healthLevelField.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_code_logo.png"));
-		this.blit(ms, this.leftPos + 150, this.topPos + 21, 0, 0, -1, -1, -1, -1);
+		guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/puzzle_code_logo.png"), this.leftPos + 150, this.topPos + -7, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();
 	}
@@ -73,8 +68,6 @@ public class HealthChangerBlockGUIScreen extends AbstractContainerScreen<HealthC
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		if (rangeField.isFocused())
-			return rangeField.keyPressed(key, b, c);
 		if (healthLevelField.isFocused())
 			return healthLevelField.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
@@ -83,87 +76,48 @@ public class HealthChangerBlockGUIScreen extends AbstractContainerScreen<HealthC
 	@Override
 	public void containerTick() {
 		super.containerTick();
-		rangeField.tick();
 		healthLevelField.tick();
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Health: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "healthLevel")) + " HP", 6, 57, -12829636);
-		this.font.draw(poseStack, "Range: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "range")) + "", 6, 120, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.health_changer_block_gui.label_health_bnbtnumberhealthlevel"), 6, 29, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnRangeProcedure.execute(world, x, y, z), 33, 61, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.health_changer_block_gui.label_range"), 69, 47, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnHealthLevelProcedure.execute(world, x, y, z), 65, 29, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 93, 77, 20, new TextComponent("Apply"), e -> {
+		healthLevelField = new EditBox(this.font, this.leftPos + 7, this.topPos + 8, 133, 18, Component.translatable("gui.puzzle_code.health_changer_block_gui.healthLevelField"));
+		healthLevelField.setMaxLength(32767);
+		guistate.put("text:healthLevelField", healthLevelField);
+		this.addWidget(this.healthLevelField);
+		imagebutton_enter_button = new ImageButton(this.leftPos + 146, this.topPos + 7, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_enter_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new HealthChangerBlockGUIButtonMessage(0, x, y, z));
 				HealthChangerBlockGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		rangeField = new EditBox(this.font, this.leftPos + 6, this.topPos + 71, 162, 20, new TextComponent("Range")) {
-			{
-				setSuggestion("Range");
-			}
-
-			@Override
-			public void insertText(String text) {
-				super.insertText(text);
-				if (getValue().isEmpty())
-					setSuggestion("Range");
-				else
-					setSuggestion(null);
-			}
-
-			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
-				if (getValue().isEmpty())
-					setSuggestion("Range");
-				else
-					setSuggestion(null);
-			}
-		};
-		guistate.put("text:rangeField", rangeField);
-		rangeField.setMaxLength(32767);
-		this.addWidget(this.rangeField);
-		healthLevelField = new EditBox(this.font, this.leftPos + 6, this.topPos + 8, 162, 20, new TextComponent(""));
-		guistate.put("text:healthLevelField", healthLevelField);
-		healthLevelField.setMaxLength(32767);
-		this.addWidget(this.healthLevelField);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 30, 162, 20, new TextComponent("Apply"), e -> {
+		});
+		guistate.put("button:imagebutton_enter_button", imagebutton_enter_button);
+		this.addRenderableWidget(imagebutton_enter_button);
+		imagebutton_settings_button = new ImageButton(this.leftPos + 6, this.topPos + 56, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new HealthChangerBlockGUIButtonMessage(1, x, y, z));
 				HealthChangerBlockGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 93, 77, 20, new TextComponent("Edit"), e -> {
-			if (true) {
-				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new HealthChangerBlockGUIButtonMessage(2, x, y, z));
-				HealthChangerBlockGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
-			}
-		}));
+		});
+		guistate.put("button:imagebutton_settings_button", imagebutton_settings_button);
+		this.addRenderableWidget(imagebutton_settings_button);
 	}
 }

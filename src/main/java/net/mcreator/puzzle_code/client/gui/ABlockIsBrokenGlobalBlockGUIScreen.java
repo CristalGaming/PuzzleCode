@@ -1,21 +1,20 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.ABlockIsBrokenGlobalBlockGUIMenu;
+import net.mcreator.puzzle_code.procedures.ReturnzPosProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnyPosProcedure;
+import net.mcreator.puzzle_code.procedures.ReturnxPosProcedure;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class ABlockIsBrokenGlobalBlockGUIScreen extends AbstractContainerScreen<ABlockIsBrokenGlobalBlockGUIMenu> {
@@ -38,19 +37,18 @@ public class ABlockIsBrokenGlobalBlockGUIScreen extends AbstractContainerScreen<
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/a_block_is_broken_global_block_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -69,42 +67,28 @@ public class ABlockIsBrokenGlobalBlockGUIScreen extends AbstractContainerScreen<
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "X: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "xPos")) + "", 6, 25, -12829636);
-		this.font.draw(poseStack, "Y: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "yPos")) + "", 6, 39, -12829636);
-		this.font.draw(poseStack, "Z: " + (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getDouble(tag);
-				return 0;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "zPos")) + "", 6, 52, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.a_block_is_broken_global_block_gui.label_x_bnbtnumberxpos"), 6, 43, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.a_block_is_broken_global_block_gui.label_y_bnbtnumberypos"), 6, 57, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.puzzle_code.a_block_is_broken_global_block_gui.label_z_bnbtnumberzpos"), 6, 70, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnxPosProcedure.execute(world, x, y, z), 69, 43, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnyPosProcedure.execute(world, x, y, z), 69, 57, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnzPosProcedure.execute(world, x, y, z), 69, 70, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

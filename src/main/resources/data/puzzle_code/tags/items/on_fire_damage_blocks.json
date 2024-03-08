@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:fire_killer_block",
+    "puzzle_code:fire_damage_block",
+    "puzzle_code:fire_killer_slab",
+    "puzzle_code:fire_killer_stairs",
+    "puzzle_code:in_fire_killer_block",
+    "puzzle_code:in_fire_killer_slab",
+    "puzzle_code:in_fire_killer_stairs"
+  ]
+}

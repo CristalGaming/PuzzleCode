@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/fire_killer_item"
+    "layer0": "puzzle_code:item/fire_killer_item"
   }
 }

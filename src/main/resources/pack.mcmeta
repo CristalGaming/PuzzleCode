@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "puzzle_code mod resources",
-    "pack_format": 9
+    "pack_format": 15,
+    "description": "This mod adds many blocks and items useful for making any kind of maps or games."
   }
 }

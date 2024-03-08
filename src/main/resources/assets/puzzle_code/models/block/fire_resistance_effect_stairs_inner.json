@@ -1,8 +1,9 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/yellow_swiching_slab_off",
-    "top": "puzzle_code:blocks/fire_resistance_effect_stairs",
-    "side": "puzzle_code:blocks/fire_resistance_effect_stairs"
-  }
+    "bottom": "puzzle_code:block/yellow_swiching_slab_off",
+    "top": "puzzle_code:block/fire_resistance_effect_stairs",
+    "side": "puzzle_code:block/fire_resistance_effect_stairs"
+  },
+  "render_type": "solid"
 }

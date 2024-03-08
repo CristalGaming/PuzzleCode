@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:JumpBoostEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InJumpBoostEffectBlock"
+      },
+      {
+        "value": "CUSTOM:JumpBoostEffectStairs"
+      },
+      {
+        "value": "CUSTOM:JumpBoostEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InJumpBoostEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InJumpBoostEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/jump_boost",
+    "namespace": "mod"
+  }
+}

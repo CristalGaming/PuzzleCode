@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/advanced_placer_side",
-    "up": "puzzle_code:blocks/advanced_placer_side",
-    "north": "puzzle_code:blocks/advanced_placer_side",
-    "east": "puzzle_code:blocks/advanced_placer_side",
-    "south": "puzzle_code:blocks/advanced_placer",
-    "west": "puzzle_code:blocks/advanced_placer_side",
-    "particle": "puzzle_code:blocks/advanced_placer_side"
-  }
+    "down": "puzzle_code:block/advanced_placer_side",
+    "up": "puzzle_code:block/advanced_placer_side",
+    "north": "puzzle_code:block/advanced_placer_side",
+    "east": "puzzle_code:block/advanced_placer_side",
+    "south": "puzzle_code:block/advanced_placer",
+    "west": "puzzle_code:block/advanced_placer_side",
+    "particle": "puzzle_code:block/advanced_placer_side"
+  },
+  "render_type": "solid"
 }

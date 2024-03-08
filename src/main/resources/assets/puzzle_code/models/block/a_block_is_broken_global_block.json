@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "up": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "north": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "east": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "south": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "west": "puzzle_code:blocks/a_block_is_broken_global_block",
-    "particle": "puzzle_code:blocks/a_block_is_broken_global_block"
-  }
+    "down": "puzzle_code:block/a_block_is_broken_global_block",
+    "up": "puzzle_code:block/a_block_is_broken_global_block",
+    "north": "puzzle_code:block/a_block_is_broken_global_block",
+    "east": "puzzle_code:block/a_block_is_broken_global_block",
+    "south": "puzzle_code:block/a_block_is_broken_global_block",
+    "west": "puzzle_code:block/a_block_is_broken_global_block",
+    "particle": "puzzle_code:block/a_block_is_broken_global_block"
+  },
+  "render_type": "solid"
 }

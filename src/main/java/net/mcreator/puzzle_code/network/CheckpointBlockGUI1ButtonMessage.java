@@ -12,13 +12,11 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.puzzle_code.world.inventory.CheckpointBlockGUI1Menu;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetWalkingReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetRedstoneReactFalseProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactTrueProcedure;
-import net.mcreator.puzzle_code.procedures.SetClickingReactFalseProcedure;
+import net.mcreator.puzzle_code.procedures.OpenWalkingReactGUIPageProcedure;
+import net.mcreator.puzzle_code.procedures.OpenRedstoneReactGUIPageProcedure;
+import net.mcreator.puzzle_code.procedures.OpenClickingReactGUIPageProcedure;
 import net.mcreator.puzzle_code.procedures.CheckpointBlockPage2Procedure;
+import net.mcreator.puzzle_code.procedures.CheckpointBlockPage1Procedure;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.function.Supplier;
@@ -63,44 +61,35 @@ public class CheckpointBlockGUI1ButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = CheckpointBlockGUI1Menu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			SetWalkingReactTrueProcedure.execute(world, x, y, z);
+			CheckpointBlockPage2Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			SetWalkingReactFalseProcedure.execute(world, x, y, z);
+			CheckpointBlockPage1Procedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			SetClickingReactTrueProcedure.execute(world, x, y, z);
+			OpenWalkingReactGUIPageProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			SetClickingReactFalseProcedure.execute(world, x, y, z);
+			OpenClickingReactGUIPageProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 4) {
 
-			SetRedstoneReactTrueProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 5) {
-
-			SetRedstoneReactFalseProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 6) {
-
-			CheckpointBlockPage2Procedure.execute(world, x, y, z, entity);
+			OpenRedstoneReactGUIPageProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(CheckpointBlockGUI1ButtonMessage.class, CheckpointBlockGUI1ButtonMessage::buffer,
-				CheckpointBlockGUI1ButtonMessage::new, CheckpointBlockGUI1ButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(CheckpointBlockGUI1ButtonMessage.class, CheckpointBlockGUI1ButtonMessage::buffer, CheckpointBlockGUI1ButtonMessage::new, CheckpointBlockGUI1ButtonMessage::handler);
 	}
 }

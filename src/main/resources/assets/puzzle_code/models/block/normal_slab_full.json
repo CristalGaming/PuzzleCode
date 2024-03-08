@@ -1,8 +1,9 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "puzzle_code:blocks/normal_block",
-    "top": "puzzle_code:blocks/normal_block",
-    "side": "puzzle_code:blocks/normal_block_2"
-  }
+    "bottom": "puzzle_code:block/normal_block",
+    "top": "puzzle_code:block/normal_block",
+    "side": "puzzle_code:block/normal_block_2"
+  },
+  "render_type": "solid"
 }

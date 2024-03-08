@@ -60,7 +60,7 @@ public class TransferItemCodeBlockGUIButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = TransferItemCodeBlockGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -71,11 +71,11 @@ public class TransferItemCodeBlockGUIButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			ApplySetSlotIDProcedure.execute(world, x, y, z, guistate);
+			EditGetSlotIDProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 2) {
 
-			EditGetSlotIDProcedure.execute(world, x, y, z, guistate);
+			ApplySetSlotIDProcedure.execute(world, x, y, z, guistate);
 		}
 		if (buttonID == 3) {
 
@@ -85,7 +85,6 @@ public class TransferItemCodeBlockGUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(TransferItemCodeBlockGUIButtonMessage.class, TransferItemCodeBlockGUIButtonMessage::buffer,
-				TransferItemCodeBlockGUIButtonMessage::new, TransferItemCodeBlockGUIButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(TransferItemCodeBlockGUIButtonMessage.class, TransferItemCodeBlockGUIButtonMessage::buffer, TransferItemCodeBlockGUIButtonMessage::new, TransferItemCodeBlockGUIButtonMessage::handler);
 	}
 }

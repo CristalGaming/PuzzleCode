@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "puzzle_code:block/in_item_remover",
+    "up": "puzzle_code:block/in_item_remover",
+    "north": "puzzle_code:block/in_item_remover",
+    "east": "puzzle_code:block/in_item_remover",
+    "south": "puzzle_code:block/in_item_remover",
+    "west": "puzzle_code:block/in_item_remover",
+    "particle": "puzzle_code:block/in_item_remover"
+  },
+  "render_type": "translucent"
+}

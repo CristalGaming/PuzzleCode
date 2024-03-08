@@ -1,23 +1,27 @@
 
 /*
- *    MCreator note: This file will be REGENERATED on each build.
+ *	MCreator note: This file will be REGENERATED on each build.
  */
 package net.mcreator.puzzle_code.init;
 
-import net.minecraftforge.network.IContainerFactory;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 
 import net.mcreator.puzzle_code.world.inventory.YellowSwicherBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.WalkingReactGUIPageMenu;
 import net.mcreator.puzzle_code.world.inventory.WalkingBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.UnswitchableTermsNumberCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.TransferNeutralCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.world.inventory.TransferNeutralCodeBlockGUI1Menu;
 import net.mcreator.puzzle_code.world.inventory.TransferItemCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.TransferCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.TitleTextCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.TimedLogicCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.TextCodeItemGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.TextCodeBlockGuiMenu;
 import net.mcreator.puzzle_code.world.inventory.TeleporterTextCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.TeleporterTextCodeBlockGUI2Menu;
@@ -29,33 +33,53 @@ import net.mcreator.puzzle_code.world.inventory.TeleporterItemCodeBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.TeleporterItemCodeBlockGUI1Menu;
 import net.mcreator.puzzle_code.world.inventory.SwitchableTermsNumberCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ReplacerGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.RedstoneReactGUIPageMenu;
+import net.mcreator.puzzle_code.world.inventory.RangeGUIPageMenu;
 import net.mcreator.puzzle_code.world.inventory.RandomizerNumberCodeBlockGUIMenu;
-import net.mcreator.puzzle_code.world.inventory.PuzzleCrafterGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.RandomItemFromTagMenu;
+import net.mcreator.puzzle_code.world.inventory.RandomItemFromTagCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.PropertyTransferCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.PropertyToNBTCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.PositionSetGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.PositionGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.PositionCodeItemGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.PositionCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.NumberCodeItemGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.NumberCodeBlockGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.NeutralCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.NearReactGUIPageMenu;
+import net.mcreator.puzzle_code.world.inventory.NearEntityYellowSwitchingBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.NearEntitySwitchingBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.NBTVerifierGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.NBTToPropertyCodeBlockGUIMenu;
-import net.mcreator.puzzle_code.world.inventory.MessagerBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.LogicCodeItemGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.LogicCodeBlockGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.ItemPositionGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.ItemConfiguratorGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ItemCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.ItemAreaGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.IsDisabledGUIPageMenu;
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUI4Menu;
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUI3Menu;
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUI2Menu;
-import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI5Menu;
-import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI4Menu;
-import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI3Menu;
-import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI2Menu;
-import net.mcreator.puzzle_code.world.inventory.InEffectBlockGUI1Menu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorTextCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.ImitatorSwitchingBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.ImitatorSwitchingBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorNumberCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorLogicCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorItemCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.ImitatorItemCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.world.inventory.ImitatorDirectionCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIRangeMenu;
 import net.mcreator.puzzle_code.world.inventory.HealthChangerBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGuiClickingReactMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGUIWalkingReactMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGUIRedstoneReactMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGUIRangeMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGUINearReactMenu;
 import net.mcreator.puzzle_code.world.inventory.HealthBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.HealthBlockGUIIsDisabledMenu;
 import net.mcreator.puzzle_code.world.inventory.HealthBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI3Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerItemCodeBlockGUI2Menu;
@@ -66,188 +90,162 @@ import net.mcreator.puzzle_code.world.inventory.FillerCodeBlockGUI3Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerCodeBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.FillerCodeBlockGUI1Menu;
 import net.mcreator.puzzle_code.world.inventory.EntityDetectorGUIMenu;
-import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI5Menu;
-import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI4Menu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUIRedstoneContinuouslyMenu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUIPowerEffectMenu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUIParticlesMenu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUIDurationEffectMenu;
+import net.mcreator.puzzle_code.world.inventory.EffectBlockGUIAmbientMenu;
 import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI3Menu;
 import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI1Menu;
+import net.mcreator.puzzle_code.world.inventory.DirectionCodeItemGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.DirectionCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.CreativeSettingsGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.CreativeSettingsGUIGamerulesMenu;
 import net.mcreator.puzzle_code.world.inventory.CreativeSettingsGUICreativeItemsMenu;
 import net.mcreator.puzzle_code.world.inventory.CommandCodeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.CommandCodeBlockGUI2Menu;
+import net.mcreator.puzzle_code.world.inventory.ClickingReactGUIPageMenu;
 import net.mcreator.puzzle_code.world.inventory.CheckpointBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.CheckpointBlockGUI1Menu;
-import net.mcreator.puzzle_code.world.inventory.AdvencedTimeBlockGuiMenu;
+import net.mcreator.puzzle_code.world.inventory.ChainSwitchingBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.CatapulterItemGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.CatapulterBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.CatapulterBlockGUI2Menu;
+import net.mcreator.puzzle_code.world.inventory.AreaGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.AreaCodeBlockGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.AdvancedTimeBlockGUIMenu;
 import net.mcreator.puzzle_code.world.inventory.AdvancedTeleporterBlockGuiMenu;
 import net.mcreator.puzzle_code.world.inventory.AdvancedTeleporterBlockGUI3Menu;
 import net.mcreator.puzzle_code.world.inventory.AdvancedTeleporterBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.AdvancedPlacerGUIMenu;
+import net.mcreator.puzzle_code.world.inventory.AdvancedPlacerBlockRedstoneContinuouslyMenu;
+import net.mcreator.puzzle_code.world.inventory.AdvancedPlacerBlockGUIRedstoneReactMenu;
+import net.mcreator.puzzle_code.world.inventory.AdvancedPlacerBlockGUIRangeMenu;
 import net.mcreator.puzzle_code.world.inventory.AdvancedPlacerBlockGUI2Menu;
 import net.mcreator.puzzle_code.world.inventory.ABlockIsBrokenGlobalBlockGUIMenu;
+import net.mcreator.puzzle_code.PuzzleCodeMod;
 
-import java.util.List;
-import java.util.ArrayList;
-
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PuzzleCodeModMenus {
-	private static final List<MenuType<?>> REGISTRY = new ArrayList<>();
-	public static final MenuType<CreativeSettingsGUIMenu> CREATIVE_SETTINGS_GUI = register("creative_settings_gui",
-			(id, inv, extraData) -> new CreativeSettingsGUIMenu(id, inv, extraData));
-	public static final MenuType<AdvancedTeleporterBlockGuiMenu> ADVANCED_TELEPORTER_BLOCK_GUI = register("advanced_teleporter_block_gui",
-			(id, inv, extraData) -> new AdvancedTeleporterBlockGuiMenu(id, inv, extraData));
-	public static final MenuType<AdvencedTimeBlockGuiMenu> ADVENCED_TIME_BLOCK_GUI = register("advenced_time_block_gui",
-			(id, inv, extraData) -> new AdvencedTimeBlockGuiMenu(id, inv, extraData));
-	public static final MenuType<AdvancedPlacerGUIMenu> ADVANCED_PLACER_GUI = register("advanced_placer_gui",
-			(id, inv, extraData) -> new AdvancedPlacerGUIMenu(id, inv, extraData));
-	public static final MenuType<YellowSwicherBlockGUIMenu> YELLOW_SWICHER_BLOCK_GUI = register("yellow_swicher_block_gui",
-			(id, inv, extraData) -> new YellowSwicherBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<WalkingBlockGUIMenu> WALKING_BLOCK_GUI = register("walking_block_gui",
-			(id, inv, extraData) -> new WalkingBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<HealthChangerBlockGUIMenu> HEALTH_CHANGER_BLOCK_GUI = register("health_changer_block_gui",
-			(id, inv, extraData) -> new HealthChangerBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<NumberCodeBlockGuiMenu> NUMBER_CODE_BLOCK_GUI = register("number_code_block_gui",
-			(id, inv, extraData) -> new NumberCodeBlockGuiMenu(id, inv, extraData));
-	public static final MenuType<LogicCodeBlockGuiMenu> LOGIC_CODE_BLOCK_GUI = register("logic_code_block_gui",
-			(id, inv, extraData) -> new LogicCodeBlockGuiMenu(id, inv, extraData));
-	public static final MenuType<TextCodeBlockGuiMenu> TEXT_CODE_BLOCK_GUI = register("text_code_block_gui",
-			(id, inv, extraData) -> new TextCodeBlockGuiMenu(id, inv, extraData));
-	public static final MenuType<ReplacerGUIMenu> REPLACER_GUI = register("replacer_gui",
-			(id, inv, extraData) -> new ReplacerGUIMenu(id, inv, extraData));
-	public static final MenuType<MessagerBlockGUIMenu> MESSAGER_BLOCK_GUI = register("messager_block_gui",
-			(id, inv, extraData) -> new MessagerBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<ItemCodeBlockGUIMenu> ITEM_CODE_BLOCK_GUI = register("item_code_block_gui",
-			(id, inv, extraData) -> new ItemCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<CommandCodeBlockGUIMenu> COMMAND_CODE_BLOCK_GUI = register("command_code_block_gui",
-			(id, inv, extraData) -> new CommandCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<PositionSetGUIMenu> POSITION_SET_GUI = register("position_set_gui",
-			(id, inv, extraData) -> new PositionSetGUIMenu(id, inv, extraData));
-	public static final MenuType<CreativeSettingsGUICreativeItemsMenu> CREATIVE_SETTINGS_GUI_CREATIVE_ITEMS = register(
-			"creative_settings_gui_creative_items", (id, inv, extraData) -> new CreativeSettingsGUICreativeItemsMenu(id, inv, extraData));
-	public static final MenuType<PuzzleCrafterGUIMenu> PUZZLE_CRAFTER_GUI = register("puzzle_crafter_gui",
-			(id, inv, extraData) -> new PuzzleCrafterGUIMenu(id, inv, extraData));
-	public static final MenuType<FillerGui1Menu> FILLER_GUI_1 = register("filler_gui_1",
-			(id, inv, extraData) -> new FillerGui1Menu(id, inv, extraData));
-	public static final MenuType<FillerGui2Menu> FILLER_GUI_2 = register("filler_gui_2",
-			(id, inv, extraData) -> new FillerGui2Menu(id, inv, extraData));
-	public static final MenuType<RandomizerNumberCodeBlockGUIMenu> RANDOMIZER_NUMBER_CODE_BLOCK_GUI = register("randomizer_number_code_block_gui",
-			(id, inv, extraData) -> new RandomizerNumberCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<CreativeSettingsGUIGamerulesMenu> CREATIVE_SETTINGS_GUI_GAMERULES = register("creative_settings_gui_gamerules",
-			(id, inv, extraData) -> new CreativeSettingsGUIGamerulesMenu(id, inv, extraData));
-	public static final MenuType<ABlockIsBrokenGlobalBlockGUIMenu> A_BLOCK_IS_BROKEN_GLOBAL_BLOCK_GUI = register("a_block_is_broken_global_block_gui",
-			(id, inv, extraData) -> new ABlockIsBrokenGlobalBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TitleTextCodeBlockGUIMenu> TITLE_TEXT_CODE_BLOCK_GUI = register("title_text_code_block_gui",
-			(id, inv, extraData) -> new TitleTextCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<InventoryReplacerGUIMenu> INVENTORY_REPLACER_GUI = register("inventory_replacer_gui",
-			(id, inv, extraData) -> new InventoryReplacerGUIMenu(id, inv, extraData));
-	public static final MenuType<InventoryReplacerGUI2Menu> INVENTORY_REPLACER_GUI_2 = register("inventory_replacer_gui_2",
-			(id, inv, extraData) -> new InventoryReplacerGUI2Menu(id, inv, extraData));
-	public static final MenuType<InventoryReplacerGUI3Menu> INVENTORY_REPLACER_GUI_3 = register("inventory_replacer_gui_3",
-			(id, inv, extraData) -> new InventoryReplacerGUI3Menu(id, inv, extraData));
-	public static final MenuType<InventoryReplacerGUI4Menu> INVENTORY_REPLACER_GUI_4 = register("inventory_replacer_gui_4",
-			(id, inv, extraData) -> new InventoryReplacerGUI4Menu(id, inv, extraData));
-	public static final MenuType<ImitatorItemCodeBlockGUIMenu> IMITATOR_ITEM_CODE_BLOCK_GUI = register("imitator_item_code_block_gui",
-			(id, inv, extraData) -> new ImitatorItemCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<ImitatorItemCodeBlockGUI2Menu> IMITATOR_ITEM_CODE_BLOCK_GUI_2 = register("imitator_item_code_block_gui_2",
-			(id, inv, extraData) -> new ImitatorItemCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<SwitchableTermsNumberCodeBlockGUIMenu> SWITCHABLE_TERMS_NUMBER_CODE_BLOCK_GUI = register(
-			"switchable_terms_number_code_block_gui", (id, inv, extraData) -> new SwitchableTermsNumberCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<UnswitchableTermsNumberCodeBlockGUIMenu> UNSWITCHABLE_TERMS_NUMBER_CODE_BLOCK_GUI = register(
-			"unswitchable_terms_number_code_block_gui", (id, inv, extraData) -> new UnswitchableTermsNumberCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TransferItemCodeBlockGUIMenu> TRANSFER_ITEM_CODE_BLOCK_GUI = register("transfer_item_code_block_gui",
-			(id, inv, extraData) -> new TransferItemCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterItemCodeBlockGUI1Menu> TELEPORTER_ITEM_CODE_BLOCK_GUI_1 = register("teleporter_item_code_block_gui_1",
-			(id, inv, extraData) -> new TeleporterItemCodeBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<TeleporterItemCodeBlockGUI2Menu> TELEPORTER_ITEM_CODE_BLOCK_GUI_2 = register("teleporter_item_code_block_gui_2",
-			(id, inv, extraData) -> new TeleporterItemCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<NBTVerifierGUIMenu> NBT_VERIFIER_GUI = register("nbt_verifier_gui",
-			(id, inv, extraData) -> new NBTVerifierGUIMenu(id, inv, extraData));
-	public static final MenuType<TransferCodeBlockGUIMenu> TRANSFER_CODE_BLOCK_GUI = register("transfer_code_block_gui",
-			(id, inv, extraData) -> new TransferCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterNumberCodeBlockGUIMenu> TELEPORTER_NUMBER_CODE_BLOCK_GUI = register("teleporter_number_code_block_gui",
-			(id, inv, extraData) -> new TeleporterNumberCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<ImitatorNumberCodeBlockGUIMenu> IMITATOR_NUMBER_CODE_BLOCK_GUI = register("imitator_number_code_block_gui",
-			(id, inv, extraData) -> new ImitatorNumberCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterNumberCodeBlockGUI2Menu> TELEPORTER_NUMBER_CODE_BLOCK_GUI_2 = register(
-			"teleporter_number_code_block_gui_2", (id, inv, extraData) -> new TeleporterNumberCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<ImitatorLogicCodeBlockGUIMenu> IMITATOR_LOGIC_CODE_BLOCK_GUI = register("imitator_logic_code_block_gui",
-			(id, inv, extraData) -> new ImitatorLogicCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterLogicCodeBlockGUI2Menu> TELEPORTER_LOGIC_CODE_BLOCK_GUI_2 = register("teleporter_logic_code_block_gui_2",
-			(id, inv, extraData) -> new TeleporterLogicCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<TeleporterLogicCodeBlockGUIMenu> TELEPORTER_LOGIC_CODE_BLOCK_GUI = register("teleporter_logic_code_block_gui",
-			(id, inv, extraData) -> new TeleporterLogicCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<ImitatorTextCodeBlockGUIMenu> IMITATOR_TEXT_CODE_BLOCK_GUI = register("imitator_text_code_block_gui",
-			(id, inv, extraData) -> new ImitatorTextCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterTextCodeBlockGUIMenu> TELEPORTER_TEXT_CODE_BLOCK_GUI = register("teleporter_text_code_block_gui",
-			(id, inv, extraData) -> new TeleporterTextCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<TeleporterTextCodeBlockGUI2Menu> TELEPORTER_TEXT_CODE_BLOCK_GUI_2 = register("teleporter_text_code_block_gui_2",
-			(id, inv, extraData) -> new TeleporterTextCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<PropertyToNBTCodeBlockGUIMenu> PROPERTY_TO_NBT_CODE_BLOCK_GUI = register("property_to_nbt_code_block_gui",
-			(id, inv, extraData) -> new PropertyToNBTCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<NBTToPropertyCodeBlockGUIMenu> NBT_TO_PROPERTY_CODE_BLOCK_GUI = register("nbt_to_property_code_block_gui",
-			(id, inv, extraData) -> new NBTToPropertyCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<PropertyTransferCodeBlockGUIMenu> PROPERTY_TRANSFER_CODE_BLOCK_GUI = register("property_transfer_code_block_gui",
-			(id, inv, extraData) -> new PropertyTransferCodeBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<FillerCodeBlockGUI1Menu> FILLER_CODE_BLOCK_GUI_1 = register("filler_code_block_gui_1",
-			(id, inv, extraData) -> new FillerCodeBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<FillerCodeBlockGUI2Menu> FILLER_CODE_BLOCK_GUI_2 = register("filler_code_block_gui_2",
-			(id, inv, extraData) -> new FillerCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<FillerCodeBlockGUI3Menu> FILLER_CODE_BLOCK_GUI_3 = register("filler_code_block_gui_3",
-			(id, inv, extraData) -> new FillerCodeBlockGUI3Menu(id, inv, extraData));
-	public static final MenuType<FillerItemCodeBlockGUI1Menu> FILLER_ITEM_CODE_BLOCK_GUI_1 = register("filler_item_code_block_gui_1",
-			(id, inv, extraData) -> new FillerItemCodeBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<FillerItemCodeBlockGUI2Menu> FILLER_ITEM_CODE_BLOCK_GUI_2 = register("filler_item_code_block_gui_2",
-			(id, inv, extraData) -> new FillerItemCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<FillerItemCodeBlockGUI3Menu> FILLER_ITEM_CODE_BLOCK_GUI_3 = register("filler_item_code_block_gui_3",
-			(id, inv, extraData) -> new FillerItemCodeBlockGUI3Menu(id, inv, extraData));
-	public static final MenuType<EffectBlockGUI3Menu> EFFECT_BLOCK_GUI_3 = register("effect_block_gui_3",
-			(id, inv, extraData) -> new EffectBlockGUI3Menu(id, inv, extraData));
-	public static final MenuType<EffectBlockGUI4Menu> EFFECT_BLOCK_GUI_4 = register("effect_block_gui_4",
-			(id, inv, extraData) -> new EffectBlockGUI4Menu(id, inv, extraData));
-	public static final MenuType<EffectBlockGUI1Menu> EFFECT_BLOCK_GUI_1 = register("effect_block_gui_1",
-			(id, inv, extraData) -> new EffectBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<EffectBlockGUI2Menu> EFFECT_BLOCK_GUI_2 = register("effect_block_gui_2",
-			(id, inv, extraData) -> new EffectBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<EffectBlockGUI5Menu> EFFECT_BLOCK_GUI_5 = register("effect_block_gui_5",
-			(id, inv, extraData) -> new EffectBlockGUI5Menu(id, inv, extraData));
-	public static final MenuType<InEffectBlockGUI1Menu> IN_EFFECT_BLOCK_GUI_1 = register("in_effect_block_gui_1",
-			(id, inv, extraData) -> new InEffectBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<InEffectBlockGUI3Menu> IN_EFFECT_BLOCK_GUI_3 = register("in_effect_block_gui_3",
-			(id, inv, extraData) -> new InEffectBlockGUI3Menu(id, inv, extraData));
-	public static final MenuType<InEffectBlockGUI4Menu> IN_EFFECT_BLOCK_GUI_4 = register("in_effect_block_gui_4",
-			(id, inv, extraData) -> new InEffectBlockGUI4Menu(id, inv, extraData));
-	public static final MenuType<InEffectBlockGUI5Menu> IN_EFFECT_BLOCK_GUI_5 = register("in_effect_block_gui_5",
-			(id, inv, extraData) -> new InEffectBlockGUI5Menu(id, inv, extraData));
-	public static final MenuType<EntityDetectorGUIMenu> ENTITY_DETECTOR_GUI = register("entity_detector_gui",
-			(id, inv, extraData) -> new EntityDetectorGUIMenu(id, inv, extraData));
-	public static final MenuType<CheckpointBlockGUI1Menu> CHECKPOINT_BLOCK_GUI_1 = register("checkpoint_block_gui_1",
-			(id, inv, extraData) -> new CheckpointBlockGUI1Menu(id, inv, extraData));
-	public static final MenuType<CheckpointBlockGUI2Menu> CHECKPOINT_BLOCK_GUI_2 = register("checkpoint_block_gui_2",
-			(id, inv, extraData) -> new CheckpointBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<CommandCodeBlockGUI2Menu> COMMAND_CODE_BLOCK_GUI_2 = register("command_code_block_gui_2",
-			(id, inv, extraData) -> new CommandCodeBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<HealthBlockGUIMenu> HEALTH_BLOCK_GUI = register("health_block_gui",
-			(id, inv, extraData) -> new HealthBlockGUIMenu(id, inv, extraData));
-	public static final MenuType<HealthBlockGUI2Menu> HEALTH_BLOCK_GUI_2 = register("health_block_gui_2",
-			(id, inv, extraData) -> new HealthBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<AdvancedTeleporterBlockGUI2Menu> ADVANCED_TELEPORTER_BLOCK_GUI_2 = register("advanced_teleporter_block_gui_2",
-			(id, inv, extraData) -> new AdvancedTeleporterBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<AdvancedTeleporterBlockGUI3Menu> ADVANCED_TELEPORTER_BLOCK_GUI_3 = register("advanced_teleporter_block_gui_3",
-			(id, inv, extraData) -> new AdvancedTeleporterBlockGUI3Menu(id, inv, extraData));
-	public static final MenuType<AdvancedPlacerBlockGUI2Menu> ADVANCED_PLACER_BLOCK_GUI_2 = register("advanced_placer_block_gui_2",
-			(id, inv, extraData) -> new AdvancedPlacerBlockGUI2Menu(id, inv, extraData));
-	public static final MenuType<InEffectBlockGUI2Menu> IN_EFFECT_BLOCK_GUI_2 = register("in_effect_block_gui_2",
-			(id, inv, extraData) -> new InEffectBlockGUI2Menu(id, inv, extraData));
-
-	private static <T extends AbstractContainerMenu> MenuType<T> register(String registryname, IContainerFactory<T> containerFactory) {
-		MenuType<T> menuType = new MenuType<T>(containerFactory);
-		menuType.setRegistryName(registryname);
-		REGISTRY.add(menuType);
-		return menuType;
-	}
-
-	@SubscribeEvent
-	public static void registerContainers(RegistryEvent.Register<MenuType<?>> event) {
-		event.getRegistry().registerAll(REGISTRY.toArray(new MenuType[0]));
-	}
+	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, PuzzleCodeMod.MODID);
+	public static final RegistryObject<MenuType<CreativeSettingsGUIMenu>> CREATIVE_SETTINGS_GUI = REGISTRY.register("creative_settings_gui", () -> IForgeMenuType.create(CreativeSettingsGUIMenu::new));
+	public static final RegistryObject<MenuType<AdvancedTeleporterBlockGuiMenu>> ADVANCED_TELEPORTER_BLOCK_GUI = REGISTRY.register("advanced_teleporter_block_gui", () -> IForgeMenuType.create(AdvancedTeleporterBlockGuiMenu::new));
+	public static final RegistryObject<MenuType<AdvancedPlacerGUIMenu>> ADVANCED_PLACER_GUI = REGISTRY.register("advanced_placer_gui", () -> IForgeMenuType.create(AdvancedPlacerGUIMenu::new));
+	public static final RegistryObject<MenuType<YellowSwicherBlockGUIMenu>> YELLOW_SWICHER_BLOCK_GUI = REGISTRY.register("yellow_swicher_block_gui", () -> IForgeMenuType.create(YellowSwicherBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<WalkingBlockGUIMenu>> WALKING_BLOCK_GUI = REGISTRY.register("walking_block_gui", () -> IForgeMenuType.create(WalkingBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<HealthChangerBlockGUIMenu>> HEALTH_CHANGER_BLOCK_GUI = REGISTRY.register("health_changer_block_gui", () -> IForgeMenuType.create(HealthChangerBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<NumberCodeBlockGuiMenu>> NUMBER_CODE_BLOCK_GUI = REGISTRY.register("number_code_block_gui", () -> IForgeMenuType.create(NumberCodeBlockGuiMenu::new));
+	public static final RegistryObject<MenuType<LogicCodeBlockGuiMenu>> LOGIC_CODE_BLOCK_GUI = REGISTRY.register("logic_code_block_gui", () -> IForgeMenuType.create(LogicCodeBlockGuiMenu::new));
+	public static final RegistryObject<MenuType<TextCodeBlockGuiMenu>> TEXT_CODE_BLOCK_GUI = REGISTRY.register("text_code_block_gui", () -> IForgeMenuType.create(TextCodeBlockGuiMenu::new));
+	public static final RegistryObject<MenuType<ReplacerGUIMenu>> REPLACER_GUI = REGISTRY.register("replacer_gui", () -> IForgeMenuType.create(ReplacerGUIMenu::new));
+	public static final RegistryObject<MenuType<ItemCodeBlockGUIMenu>> ITEM_CODE_BLOCK_GUI = REGISTRY.register("item_code_block_gui", () -> IForgeMenuType.create(ItemCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<CommandCodeBlockGUIMenu>> COMMAND_CODE_BLOCK_GUI = REGISTRY.register("command_code_block_gui", () -> IForgeMenuType.create(CommandCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<PositionSetGUIMenu>> POSITION_SET_GUI = REGISTRY.register("position_set_gui", () -> IForgeMenuType.create(PositionSetGUIMenu::new));
+	public static final RegistryObject<MenuType<CreativeSettingsGUICreativeItemsMenu>> CREATIVE_SETTINGS_GUI_CREATIVE_ITEMS = REGISTRY.register("creative_settings_gui_creative_items",
+			() -> IForgeMenuType.create(CreativeSettingsGUICreativeItemsMenu::new));
+	public static final RegistryObject<MenuType<FillerGui1Menu>> FILLER_GUI_1 = REGISTRY.register("filler_gui_1", () -> IForgeMenuType.create(FillerGui1Menu::new));
+	public static final RegistryObject<MenuType<FillerGui2Menu>> FILLER_GUI_2 = REGISTRY.register("filler_gui_2", () -> IForgeMenuType.create(FillerGui2Menu::new));
+	public static final RegistryObject<MenuType<RandomizerNumberCodeBlockGUIMenu>> RANDOMIZER_NUMBER_CODE_BLOCK_GUI = REGISTRY.register("randomizer_number_code_block_gui", () -> IForgeMenuType.create(RandomizerNumberCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<CreativeSettingsGUIGamerulesMenu>> CREATIVE_SETTINGS_GUI_GAMERULES = REGISTRY.register("creative_settings_gui_gamerules", () -> IForgeMenuType.create(CreativeSettingsGUIGamerulesMenu::new));
+	public static final RegistryObject<MenuType<ABlockIsBrokenGlobalBlockGUIMenu>> A_BLOCK_IS_BROKEN_GLOBAL_BLOCK_GUI = REGISTRY.register("a_block_is_broken_global_block_gui", () -> IForgeMenuType.create(ABlockIsBrokenGlobalBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TitleTextCodeBlockGUIMenu>> TITLE_TEXT_CODE_BLOCK_GUI = REGISTRY.register("title_text_code_block_gui", () -> IForgeMenuType.create(TitleTextCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<InventoryReplacerGUIMenu>> INVENTORY_REPLACER_GUI = REGISTRY.register("inventory_replacer_gui", () -> IForgeMenuType.create(InventoryReplacerGUIMenu::new));
+	public static final RegistryObject<MenuType<InventoryReplacerGUI2Menu>> INVENTORY_REPLACER_GUI_2 = REGISTRY.register("inventory_replacer_gui_2", () -> IForgeMenuType.create(InventoryReplacerGUI2Menu::new));
+	public static final RegistryObject<MenuType<InventoryReplacerGUI3Menu>> INVENTORY_REPLACER_GUI_3 = REGISTRY.register("inventory_replacer_gui_3", () -> IForgeMenuType.create(InventoryReplacerGUI3Menu::new));
+	public static final RegistryObject<MenuType<InventoryReplacerGUI4Menu>> INVENTORY_REPLACER_GUI_4 = REGISTRY.register("inventory_replacer_gui_4", () -> IForgeMenuType.create(InventoryReplacerGUI4Menu::new));
+	public static final RegistryObject<MenuType<ImitatorItemCodeBlockGUIMenu>> IMITATOR_ITEM_CODE_BLOCK_GUI = REGISTRY.register("imitator_item_code_block_gui", () -> IForgeMenuType.create(ImitatorItemCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ImitatorItemCodeBlockGUI2Menu>> IMITATOR_ITEM_CODE_BLOCK_GUI_2 = REGISTRY.register("imitator_item_code_block_gui_2", () -> IForgeMenuType.create(ImitatorItemCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<SwitchableTermsNumberCodeBlockGUIMenu>> SWITCHABLE_TERMS_NUMBER_CODE_BLOCK_GUI = REGISTRY.register("switchable_terms_number_code_block_gui",
+			() -> IForgeMenuType.create(SwitchableTermsNumberCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<UnswitchableTermsNumberCodeBlockGUIMenu>> UNSWITCHABLE_TERMS_NUMBER_CODE_BLOCK_GUI = REGISTRY.register("unswitchable_terms_number_code_block_gui",
+			() -> IForgeMenuType.create(UnswitchableTermsNumberCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TransferItemCodeBlockGUIMenu>> TRANSFER_ITEM_CODE_BLOCK_GUI = REGISTRY.register("transfer_item_code_block_gui", () -> IForgeMenuType.create(TransferItemCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterItemCodeBlockGUI1Menu>> TELEPORTER_ITEM_CODE_BLOCK_GUI_1 = REGISTRY.register("teleporter_item_code_block_gui_1", () -> IForgeMenuType.create(TeleporterItemCodeBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<TeleporterItemCodeBlockGUI2Menu>> TELEPORTER_ITEM_CODE_BLOCK_GUI_2 = REGISTRY.register("teleporter_item_code_block_gui_2", () -> IForgeMenuType.create(TeleporterItemCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<NBTVerifierGUIMenu>> NBT_VERIFIER_GUI = REGISTRY.register("nbt_verifier_gui", () -> IForgeMenuType.create(NBTVerifierGUIMenu::new));
+	public static final RegistryObject<MenuType<TransferCodeBlockGUIMenu>> TRANSFER_CODE_BLOCK_GUI = REGISTRY.register("transfer_code_block_gui", () -> IForgeMenuType.create(TransferCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterNumberCodeBlockGUIMenu>> TELEPORTER_NUMBER_CODE_BLOCK_GUI = REGISTRY.register("teleporter_number_code_block_gui", () -> IForgeMenuType.create(TeleporterNumberCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ImitatorNumberCodeBlockGUIMenu>> IMITATOR_NUMBER_CODE_BLOCK_GUI = REGISTRY.register("imitator_number_code_block_gui", () -> IForgeMenuType.create(ImitatorNumberCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterNumberCodeBlockGUI2Menu>> TELEPORTER_NUMBER_CODE_BLOCK_GUI_2 = REGISTRY.register("teleporter_number_code_block_gui_2", () -> IForgeMenuType.create(TeleporterNumberCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<ImitatorLogicCodeBlockGUIMenu>> IMITATOR_LOGIC_CODE_BLOCK_GUI = REGISTRY.register("imitator_logic_code_block_gui", () -> IForgeMenuType.create(ImitatorLogicCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterLogicCodeBlockGUI2Menu>> TELEPORTER_LOGIC_CODE_BLOCK_GUI_2 = REGISTRY.register("teleporter_logic_code_block_gui_2", () -> IForgeMenuType.create(TeleporterLogicCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<TeleporterLogicCodeBlockGUIMenu>> TELEPORTER_LOGIC_CODE_BLOCK_GUI = REGISTRY.register("teleporter_logic_code_block_gui", () -> IForgeMenuType.create(TeleporterLogicCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ImitatorTextCodeBlockGUIMenu>> IMITATOR_TEXT_CODE_BLOCK_GUI = REGISTRY.register("imitator_text_code_block_gui", () -> IForgeMenuType.create(ImitatorTextCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterTextCodeBlockGUIMenu>> TELEPORTER_TEXT_CODE_BLOCK_GUI = REGISTRY.register("teleporter_text_code_block_gui", () -> IForgeMenuType.create(TeleporterTextCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TeleporterTextCodeBlockGUI2Menu>> TELEPORTER_TEXT_CODE_BLOCK_GUI_2 = REGISTRY.register("teleporter_text_code_block_gui_2", () -> IForgeMenuType.create(TeleporterTextCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<PropertyToNBTCodeBlockGUIMenu>> PROPERTY_TO_NBT_CODE_BLOCK_GUI = REGISTRY.register("property_to_nbt_code_block_gui", () -> IForgeMenuType.create(PropertyToNBTCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<NBTToPropertyCodeBlockGUIMenu>> NBT_TO_PROPERTY_CODE_BLOCK_GUI = REGISTRY.register("nbt_to_property_code_block_gui", () -> IForgeMenuType.create(NBTToPropertyCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<PropertyTransferCodeBlockGUIMenu>> PROPERTY_TRANSFER_CODE_BLOCK_GUI = REGISTRY.register("property_transfer_code_block_gui", () -> IForgeMenuType.create(PropertyTransferCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<FillerCodeBlockGUI1Menu>> FILLER_CODE_BLOCK_GUI_1 = REGISTRY.register("filler_code_block_gui_1", () -> IForgeMenuType.create(FillerCodeBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<FillerCodeBlockGUI2Menu>> FILLER_CODE_BLOCK_GUI_2 = REGISTRY.register("filler_code_block_gui_2", () -> IForgeMenuType.create(FillerCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<FillerCodeBlockGUI3Menu>> FILLER_CODE_BLOCK_GUI_3 = REGISTRY.register("filler_code_block_gui_3", () -> IForgeMenuType.create(FillerCodeBlockGUI3Menu::new));
+	public static final RegistryObject<MenuType<FillerItemCodeBlockGUI1Menu>> FILLER_ITEM_CODE_BLOCK_GUI_1 = REGISTRY.register("filler_item_code_block_gui_1", () -> IForgeMenuType.create(FillerItemCodeBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<FillerItemCodeBlockGUI2Menu>> FILLER_ITEM_CODE_BLOCK_GUI_2 = REGISTRY.register("filler_item_code_block_gui_2", () -> IForgeMenuType.create(FillerItemCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<FillerItemCodeBlockGUI3Menu>> FILLER_ITEM_CODE_BLOCK_GUI_3 = REGISTRY.register("filler_item_code_block_gui_3", () -> IForgeMenuType.create(FillerItemCodeBlockGUI3Menu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUI3Menu>> EFFECT_BLOCK_GUI_3 = REGISTRY.register("effect_block_gui_3", () -> IForgeMenuType.create(EffectBlockGUI3Menu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUI1Menu>> EFFECT_BLOCK_GUI_1 = REGISTRY.register("effect_block_gui_1", () -> IForgeMenuType.create(EffectBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<EntityDetectorGUIMenu>> ENTITY_DETECTOR_GUI = REGISTRY.register("entity_detector_gui", () -> IForgeMenuType.create(EntityDetectorGUIMenu::new));
+	public static final RegistryObject<MenuType<CheckpointBlockGUI1Menu>> CHECKPOINT_BLOCK_GUI_1 = REGISTRY.register("checkpoint_block_gui_1", () -> IForgeMenuType.create(CheckpointBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<CheckpointBlockGUI2Menu>> CHECKPOINT_BLOCK_GUI_2 = REGISTRY.register("checkpoint_block_gui_2", () -> IForgeMenuType.create(CheckpointBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<CommandCodeBlockGUI2Menu>> COMMAND_CODE_BLOCK_GUI_2 = REGISTRY.register("command_code_block_gui_2", () -> IForgeMenuType.create(CommandCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUIMenu>> HEALTH_BLOCK_GUI = REGISTRY.register("health_block_gui", () -> IForgeMenuType.create(HealthBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUI2Menu>> HEALTH_BLOCK_GUI_2 = REGISTRY.register("health_block_gui_2", () -> IForgeMenuType.create(HealthBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<AdvancedTeleporterBlockGUI2Menu>> ADVANCED_TELEPORTER_BLOCK_GUI_2 = REGISTRY.register("advanced_teleporter_block_gui_2", () -> IForgeMenuType.create(AdvancedTeleporterBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<AdvancedTeleporterBlockGUI3Menu>> ADVANCED_TELEPORTER_BLOCK_GUI_3 = REGISTRY.register("advanced_teleporter_block_gui_3", () -> IForgeMenuType.create(AdvancedTeleporterBlockGUI3Menu::new));
+	public static final RegistryObject<MenuType<AdvancedPlacerBlockGUI2Menu>> ADVANCED_PLACER_BLOCK_GUI_2 = REGISTRY.register("advanced_placer_block_gui_2", () -> IForgeMenuType.create(AdvancedPlacerBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUIPowerEffectMenu>> EFFECT_BLOCK_GUI_POWER_EFFECT = REGISTRY.register("effect_block_gui_power_effect", () -> IForgeMenuType.create(EffectBlockGUIPowerEffectMenu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUIDurationEffectMenu>> EFFECT_BLOCK_GUI_DURATION_EFFECT = REGISTRY.register("effect_block_gui_duration_effect", () -> IForgeMenuType.create(EffectBlockGUIDurationEffectMenu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUIAmbientMenu>> EFFECT_BLOCK_GUI_AMBIENT = REGISTRY.register("effect_block_gui_ambient", () -> IForgeMenuType.create(EffectBlockGUIAmbientMenu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUIParticlesMenu>> EFFECT_BLOCK_GUI_PARTICLES = REGISTRY.register("effect_block_gui_particles", () -> IForgeMenuType.create(EffectBlockGUIParticlesMenu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUIRedstoneContinuouslyMenu>> EFFECT_BLOCK_GUI_REDSTONE_CONTINUOUSLY = REGISTRY.register("effect_block_gui_redstone_continuously",
+			() -> IForgeMenuType.create(EffectBlockGUIRedstoneContinuouslyMenu::new));
+	public static final RegistryObject<MenuType<HealthChangerBlockGUIRangeMenu>> HEALTH_CHANGER_BLOCK_GUI_RANGE = REGISTRY.register("health_changer_block_gui_range", () -> IForgeMenuType.create(HealthChangerBlockGUIRangeMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUIRangeMenu>> HEALTH_BLOCK_GUI_RANGE = REGISTRY.register("health_block_gui_range", () -> IForgeMenuType.create(HealthBlockGUIRangeMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUINearReactMenu>> HEALTH_BLOCK_GUI_NEAR_REACT = REGISTRY.register("health_block_gui_near_react", () -> IForgeMenuType.create(HealthBlockGUINearReactMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGuiClickingReactMenu>> HEALTH_BLOCK_GUI_CLICKING_REACT = REGISTRY.register("health_block_gui_clicking_react", () -> IForgeMenuType.create(HealthBlockGuiClickingReactMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUIWalkingReactMenu>> HEALTH_BLOCK_GUI_WALKING_REACT = REGISTRY.register("health_block_gui_walking_react", () -> IForgeMenuType.create(HealthBlockGUIWalkingReactMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUIIsDisabledMenu>> HEALTH_BLOCK_GUI_IS_DISABLED = REGISTRY.register("health_block_gui_is_disabled", () -> IForgeMenuType.create(HealthBlockGUIIsDisabledMenu::new));
+	public static final RegistryObject<MenuType<HealthBlockGUIRedstoneReactMenu>> HEALTH_BLOCK_GUI_REDSTONE_REACT = REGISTRY.register("health_block_gui_redstone_react", () -> IForgeMenuType.create(HealthBlockGUIRedstoneReactMenu::new));
+	public static final RegistryObject<MenuType<AdvancedPlacerBlockGUIRangeMenu>> ADVANCED_PLACER_BLOCK_GUI_RANGE = REGISTRY.register("advanced_placer_block_gui_range", () -> IForgeMenuType.create(AdvancedPlacerBlockGUIRangeMenu::new));
+	public static final RegistryObject<MenuType<AdvancedPlacerBlockGUIRedstoneReactMenu>> ADVANCED_PLACER_BLOCK_GUI_REDSTONE_REACT = REGISTRY.register("advanced_placer_block_gui_redstone_react",
+			() -> IForgeMenuType.create(AdvancedPlacerBlockGUIRedstoneReactMenu::new));
+	public static final RegistryObject<MenuType<AdvancedPlacerBlockRedstoneContinuouslyMenu>> ADVANCED_PLACER_BLOCK_REDSTONE_CONTINUOUSLY = REGISTRY.register("advanced_placer_block_redstone_continuously",
+			() -> IForgeMenuType.create(AdvancedPlacerBlockRedstoneContinuouslyMenu::new));
+	public static final RegistryObject<MenuType<ChainSwitchingBlockGUIMenu>> CHAIN_SWITCHING_BLOCK_GUI = REGISTRY.register("chain_switching_block_gui", () -> IForgeMenuType.create(ChainSwitchingBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ImitatorSwitchingBlockGUIMenu>> IMITATOR_SWITCHING_BLOCK_GUI = REGISTRY.register("imitator_switching_block_gui", () -> IForgeMenuType.create(ImitatorSwitchingBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ImitatorSwitchingBlockGUI2Menu>> IMITATOR_SWITCHING_BLOCK_GUI_2 = REGISTRY.register("imitator_switching_block_gui_2", () -> IForgeMenuType.create(ImitatorSwitchingBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<NearEntitySwitchingBlockGUIMenu>> NEAR_ENTITY_SWITCHING_BLOCK_GUI = REGISTRY.register("near_entity_switching_block_gui", () -> IForgeMenuType.create(NearEntitySwitchingBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<NearEntityYellowSwitchingBlockGUIMenu>> NEAR_ENTITY_YELLOW_SWITCHING_BLOCK_GUI = REGISTRY.register("near_entity_yellow_switching_block_gui",
+			() -> IForgeMenuType.create(NearEntityYellowSwitchingBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<CatapulterBlockGUIMenu>> CATAPULTER_BLOCK_GUI = REGISTRY.register("catapulter_block_gui", () -> IForgeMenuType.create(CatapulterBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<CatapulterBlockGUI2Menu>> CATAPULTER_BLOCK_GUI_2 = REGISTRY.register("catapulter_block_gui_2", () -> IForgeMenuType.create(CatapulterBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<AdvancedTimeBlockGUIMenu>> ADVANCED_TIME_BLOCK_GUI = REGISTRY.register("advanced_time_block_gui", () -> IForgeMenuType.create(AdvancedTimeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ItemConfiguratorGUIMenu>> ITEM_CONFIGURATOR_GUI = REGISTRY.register("item_configurator_gui", () -> IForgeMenuType.create(ItemConfiguratorGUIMenu::new));
+	public static final RegistryObject<MenuType<RangeGUIPageMenu>> RANGE_GUI_PAGE = REGISTRY.register("range_gui_page", () -> IForgeMenuType.create(RangeGUIPageMenu::new));
+	public static final RegistryObject<MenuType<RedstoneReactGUIPageMenu>> REDSTONE_REACT_GUI_PAGE = REGISTRY.register("redstone_react_gui_page", () -> IForgeMenuType.create(RedstoneReactGUIPageMenu::new));
+	public static final RegistryObject<MenuType<WalkingReactGUIPageMenu>> WALKING_REACT_GUI_PAGE = REGISTRY.register("walking_react_gui_page", () -> IForgeMenuType.create(WalkingReactGUIPageMenu::new));
+	public static final RegistryObject<MenuType<ClickingReactGUIPageMenu>> CLICKING_REACT_GUI_PAGE = REGISTRY.register("clicking_react_gui_page", () -> IForgeMenuType.create(ClickingReactGUIPageMenu::new));
+	public static final RegistryObject<MenuType<EffectBlockGUI2Menu>> EFFECT_BLOCK_GUI_2 = REGISTRY.register("effect_block_gui_2", () -> IForgeMenuType.create(EffectBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<IsDisabledGUIPageMenu>> IS_DISABLED_GUI_PAGE = REGISTRY.register("is_disabled_gui_page", () -> IForgeMenuType.create(IsDisabledGUIPageMenu::new));
+	public static final RegistryObject<MenuType<DirectionCodeBlockGUIMenu>> DIRECTION_CODE_BLOCK_GUI = REGISTRY.register("direction_code_block_gui", () -> IForgeMenuType.create(DirectionCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<NearReactGUIPageMenu>> NEAR_REACT_GUI_PAGE = REGISTRY.register("near_react_gui_page", () -> IForgeMenuType.create(NearReactGUIPageMenu::new));
+	public static final RegistryObject<MenuType<ImitatorDirectionCodeBlockGUIMenu>> IMITATOR_DIRECTION_CODE_BLOCK_GUI = REGISTRY.register("imitator_direction_code_block_gui", () -> IForgeMenuType.create(ImitatorDirectionCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<PositionGUIMenu>> POSITION_GUI = REGISTRY.register("position_gui", () -> IForgeMenuType.create(PositionGUIMenu::new));
+	public static final RegistryObject<MenuType<ItemPositionGUIMenu>> ITEM_POSITION_GUI = REGISTRY.register("item_position_gui", () -> IForgeMenuType.create(ItemPositionGUIMenu::new));
+	public static final RegistryObject<MenuType<CatapulterItemGUIMenu>> CATAPULTER_ITEM_GUI = REGISTRY.register("catapulter_item_gui", () -> IForgeMenuType.create(CatapulterItemGUIMenu::new));
+	public static final RegistryObject<MenuType<NeutralCodeBlockGUIMenu>> NEUTRAL_CODE_BLOCK_GUI = REGISTRY.register("neutral_code_block_gui", () -> IForgeMenuType.create(NeutralCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<NumberCodeItemGUIMenu>> NUMBER_CODE_ITEM_GUI = REGISTRY.register("number_code_item_gui", () -> IForgeMenuType.create(NumberCodeItemGUIMenu::new));
+	public static final RegistryObject<MenuType<LogicCodeItemGUIMenu>> LOGIC_CODE_ITEM_GUI = REGISTRY.register("logic_code_item_gui", () -> IForgeMenuType.create(LogicCodeItemGUIMenu::new));
+	public static final RegistryObject<MenuType<TextCodeItemGUIMenu>> TEXT_CODE_ITEM_GUI = REGISTRY.register("text_code_item_gui", () -> IForgeMenuType.create(TextCodeItemGUIMenu::new));
+	public static final RegistryObject<MenuType<DirectionCodeItemGUIMenu>> DIRECTION_CODE_ITEM_GUI = REGISTRY.register("direction_code_item_gui", () -> IForgeMenuType.create(DirectionCodeItemGUIMenu::new));
+	public static final RegistryObject<MenuType<PositionCodeBlockGUIMenu>> POSITION_CODE_BLOCK_GUI = REGISTRY.register("position_code_block_gui", () -> IForgeMenuType.create(PositionCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<TransferNeutralCodeBlockGUI1Menu>> TRANSFER_NEUTRAL_CODE_BLOCK_GUI_1 = REGISTRY.register("transfer_neutral_code_block_gui_1", () -> IForgeMenuType.create(TransferNeutralCodeBlockGUI1Menu::new));
+	public static final RegistryObject<MenuType<TransferNeutralCodeBlockGUI2Menu>> TRANSFER_NEUTRAL_CODE_BLOCK_GUI_2 = REGISTRY.register("transfer_neutral_code_block_gui_2", () -> IForgeMenuType.create(TransferNeutralCodeBlockGUI2Menu::new));
+	public static final RegistryObject<MenuType<AreaGUIMenu>> AREA_GUI = REGISTRY.register("area_gui", () -> IForgeMenuType.create(AreaGUIMenu::new));
+	public static final RegistryObject<MenuType<AreaCodeBlockGUIMenu>> AREA_CODE_BLOCK_GUI = REGISTRY.register("area_code_block_gui", () -> IForgeMenuType.create(AreaCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<RandomItemFromTagMenu>> RANDOM_ITEM_FROM_TAG = REGISTRY.register("random_item_from_tag", () -> IForgeMenuType.create(RandomItemFromTagMenu::new));
+	public static final RegistryObject<MenuType<RandomItemFromTagCodeBlockGUIMenu>> RANDOM_ITEM_FROM_TAG_CODE_BLOCK_GUI = REGISTRY.register("random_item_from_tag_code_block_gui", () -> IForgeMenuType.create(RandomItemFromTagCodeBlockGUIMenu::new));
+	public static final RegistryObject<MenuType<ItemAreaGUIMenu>> ITEM_AREA_GUI = REGISTRY.register("item_area_gui", () -> IForgeMenuType.create(ItemAreaGUIMenu::new));
+	public static final RegistryObject<MenuType<PositionCodeItemGUIMenu>> POSITION_CODE_ITEM_GUI = REGISTRY.register("position_code_item_gui", () -> IForgeMenuType.create(PositionCodeItemGUIMenu::new));
+	public static final RegistryObject<MenuType<TimedLogicCodeBlockGUIMenu>> TIMED_LOGIC_CODE_BLOCK_GUI = REGISTRY.register("timed_logic_code_block_gui", () -> IForgeMenuType.create(TimedLogicCodeBlockGUIMenu::new));
 }

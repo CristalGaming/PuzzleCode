@@ -4,19 +4,22 @@ package net.mcreator.puzzle_code.item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.puzzle_code.procedures.PositionSetRightClickedOnBlockProcedure;
 import net.mcreator.puzzle_code.procedures.PositionSetItemInHandTickProcedure;
-import net.mcreator.puzzle_code.init.PuzzleCodeModTabs;
+
+import java.util.List;
 
 public class PositionSetItem extends Item {
 	public PositionSetItem() {
-		super(new Item.Properties().tab(PuzzleCodeModTabs.TAB_PUZZLE_CODE_TAB).stacksTo(64).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
 	}
 
 	@Override
@@ -25,11 +28,15 @@ public class PositionSetItem extends Item {
 	}
 
 	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+	}
+
+	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		InteractionResult retval = super.useOn(context);
-		PositionSetRightClickedOnBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
-				context.getClickedPos().getZ(), context.getPlayer());
-		return retval;
+		super.useOn(context);
+		PositionSetRightClickedOnBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getPlayer());
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

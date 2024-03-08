@@ -4,20 +4,20 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.level.LevelAccessor;
 
 import net.mcreator.puzzle_code.network.PuzzleCodeModVariables;
+import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class TimedSwichingBlockWorldUpdateProcedure {
 	@SubscribeEvent
-	public static void onWorldTick(TickEvent.WorldTickEvent event) {
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.world);
+			execute(event, event.level);
 		}
 	}
 
@@ -29,59 +29,15 @@ public class TimedSwichingBlockWorldUpdateProcedure {
 		double number1 = 0;
 		double number2 = 0;
 		if (PuzzleCodeModVariables.MapVariables.get(world).IsTimedSwitched) {
-			new Object() {
-				private int ticks = 0;
-				private float waitTicks;
-				private LevelAccessor world;
-
-				public void start(LevelAccessor world, int waitTicks) {
-					this.waitTicks = waitTicks;
-					MinecraftForge.EVENT_BUS.register(this);
-					this.world = world;
-				}
-
-				@SubscribeEvent
-				public void tick(TickEvent.ServerTickEvent event) {
-					if (event.phase == TickEvent.Phase.END) {
-						this.ticks += 1;
-						if (this.ticks >= this.waitTicks)
-							run();
-					}
-				}
-
-				private void run() {
-					PuzzleCodeModVariables.MapVariables.get(world).IsTimedSwitched = false;
-					PuzzleCodeModVariables.MapVariables.get(world).syncData(world);
-					MinecraftForge.EVENT_BUS.unregister(this);
-				}
-			}.start(world, 80);
+			PuzzleCodeMod.queueServerWork(80, () -> {
+				PuzzleCodeModVariables.MapVariables.get(world).IsTimedSwitched = false;
+				PuzzleCodeModVariables.MapVariables.get(world).syncData(world);
+			});
 		} else {
-			new Object() {
-				private int ticks = 0;
-				private float waitTicks;
-				private LevelAccessor world;
-
-				public void start(LevelAccessor world, int waitTicks) {
-					this.waitTicks = waitTicks;
-					MinecraftForge.EVENT_BUS.register(this);
-					this.world = world;
-				}
-
-				@SubscribeEvent
-				public void tick(TickEvent.ServerTickEvent event) {
-					if (event.phase == TickEvent.Phase.END) {
-						this.ticks += 1;
-						if (this.ticks >= this.waitTicks)
-							run();
-					}
-				}
-
-				private void run() {
-					PuzzleCodeModVariables.MapVariables.get(world).IsTimedSwitched = true;
-					PuzzleCodeModVariables.MapVariables.get(world).syncData(world);
-					MinecraftForge.EVENT_BUS.unregister(this);
-				}
-			}.start(world, 80);
+			PuzzleCodeMod.queueServerWork(80, () -> {
+				PuzzleCodeModVariables.MapVariables.get(world).IsTimedSwitched = true;
+				PuzzleCodeModVariables.MapVariables.get(world).syncData(world);
+			});
 		}
 	}
 }

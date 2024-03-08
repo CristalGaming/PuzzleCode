@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "chat_texter_code_block",
@@ -34,15 +34,17 @@
       }
     ],
     "name": "Messager Block",
-    "specialInfo": [
-      "§7no direct contact with source"
-    ],
+    "specialInformation": {
+      "fixedValue": [
+        "§7no direct contact with source"
+      ]
+    },
     "hardness": 3.0,
     "resistance": 30.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:PuzzleCodeTab"
+      "value": "CUSTOM:CodeBlocksTab"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
@@ -101,17 +103,11 @@
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": true,
-    "guiBoundTo": "MessagerBlockGUI",
+    "guiBoundTo": "TextCodeBlockGui",
     "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "inventorySize": 0,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -126,19 +122,25 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "MessagerBlockOnBlockRightClicked"
-    },
-    "onEntityWalksOn": {
-      "name": "MessagerBlockOnBlockRightClicked"
+      "name": "TextCodeBlockOnBlockRightClicked"
     },
     "onRedstoneOn": {
       "name": "MessagerBlockRedstoneOn"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

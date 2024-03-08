@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "puzzle_code:logic_code_block",
+    "puzzle_code:survival_logic_code_block",
+    "puzzle_code:chain_logic_code_block",
+    "puzzle_code:logic_clicking_switching_code_block",
+    "puzzle_code:logic_clicking_switching_code_block_off"
+  ]
+}

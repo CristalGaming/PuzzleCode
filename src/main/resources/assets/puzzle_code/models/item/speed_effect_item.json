@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/speed_item"
+    "layer0": "puzzle_code:item/speed_effect_item"
   }
 }

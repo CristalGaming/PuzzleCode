@@ -63,7 +63,7 @@ public class CreativeSettingsGUICreativeItemsButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = CreativeSettingsGUICreativeItemsMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -100,7 +100,7 @@ public class CreativeSettingsGUICreativeItemsButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		PuzzleCodeMod.addNetworkMessage(CreativeSettingsGUICreativeItemsButtonMessage.class, CreativeSettingsGUICreativeItemsButtonMessage::buffer,
-				CreativeSettingsGUICreativeItemsButtonMessage::new, CreativeSettingsGUICreativeItemsButtonMessage::handler);
+		PuzzleCodeMod.addNetworkMessage(CreativeSettingsGUICreativeItemsButtonMessage.class, CreativeSettingsGUICreativeItemsButtonMessage::buffer, CreativeSettingsGUICreativeItemsButtonMessage::new,
+				CreativeSettingsGUICreativeItemsButtonMessage::handler);
 	}
 }

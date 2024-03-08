@@ -1,0 +1,9 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "puzzle_code:block/conduit_power_effect_block",
+    "top": "puzzle_code:block/conduit_power_effect_block",
+    "side": "puzzle_code:block/conduit_power_effect_slab"
+  },
+  "render_type": "solid"
+}

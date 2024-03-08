@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 229,
-    "height": 134,
+    "width": 169,
+    "height": 164,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,188 +13,218 @@
       {
         "type": "label",
         "data": {
-          "text": "React when entity is near the range?",
+          "name": "label_react_when_entity_is_near_the_ra",
+          "text": {
+            "fixedValue": "React when entity is near?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "React when entity is near the range?",
-          "x": 105,
-          "y": 58
+          "x": 146,
+          "y": 44
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "True",
-          "onClick": {
-            "name": "SetNearReactTrue"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "True",
-          "x": 105,
-          "y": 71
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "False",
-          "onClick": {
-            "name": "SetNearReactFalse"
-          },
-          "width": 76,
-          "height": 20,
-          "name": "False",
-          "x": 186,
-          "y": 71
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:logic:nearReact>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:logic:nearReact>",
-          "x": 267,
-          "y": 76
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_2",
           "text": "2",
+          "isUndecorated": false,
           "onClick": {
             "name": "EntityTeleporterBlockPage2"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "2",
-          "x": 123,
-          "y": 161
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "[3]",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "[3]",
-          "x": 141,
-          "y": 166
+          "x": 204,
+          "y": 175
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "",
+          "name": "rangeField",
           "width": 108,
           "height": 20,
-          "name": "rangeField",
-          "x": 105,
-          "y": 94
+          "x": 137,
+          "y": 98
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Range: <BNBT:integer:range>",
+          "name": "label_range_bnbtintegerrange",
+          "text": {
+            "fixedValue": "Range: <BNBT:integer:range>",
+            "name": "ReturnRange"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Range: <BNBT:integer:range>",
-          "x": 105,
+          "x": 137,
           "y": 121
         }
       },
       {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyRange"
-          },
-          "width": 50,
-          "height": 20,
-          "name": "Apply",
-          "x": 218,
-          "y": 94
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditRange"
-          },
-          "width": 50,
-          "height": 20,
-          "name": "Edit",
-          "x": 272,
-          "y": 94
-        }
-      },
-      {
         "type": "label",
         "data": {
-          "text": "Is Disabled?",
+          "name": "label_is_disabled",
+          "text": {
+            "fixedValue": "Is Disabled?"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Is Disabled?",
-          "x": 164,
+          "x": 186,
           "y": 139
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Switch",
-          "onClick": {
-            "name": "SwitchIsDisabled"
-          },
-          "width": 56,
-          "height": 20,
-          "name": "Switch",
-          "x": 105,
-          "y": 134
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:logic:isDisabled>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:logic:isDisabled>",
-          "x": 231,
-          "y": 139
-        }
-      },
-      {
-        "type": "button",
-        "data": {
+          "name": "button_1",
           "text": "1",
+          "isUndecorated": false,
           "onClick": {
             "name": "EntityTeleporterBlockPage1"
           },
-          "width": 14,
+          "width": 18,
           "height": 20,
-          "name": "1",
-          "x": 105,
-          "y": 161
+          "x": 182,
+          "y": 175
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "NearReactDisplayOn"
+          },
+          "x": 218,
+          "y": 58
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "NearReactDisplayOff"
+          },
+          "x": 218,
+          "y": 58
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_true.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOn"
+          },
+          "x": 218,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "logic_false.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "IsDisabledDisplayOff"
+          },
+          "x": 218,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_3",
+          "text": "3",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EntityTeleporterBlockPage3"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 227,
+          "y": 175
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_range",
+          "text": {
+            "fixedValue": "Range"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 204,
+          "y": 85
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "x": 272,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "x": 249,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchNearReact"
+          },
+          "x": 191,
+          "y": 58
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_change_button1",
+          "image": "change_button.png",
+          "hoveredImage": "change_button_highlight.png",
+          "onClick": {
+            "name": "SwitchIsDisabled"
+          },
+          "x": 191,
+          "y": 152
         }
       }
     ],

@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "puzzle_code:blocks/poison_effect_block",
-    "up": "puzzle_code:blocks/poison_effect_block",
-    "north": "puzzle_code:blocks/poison_effect_block",
-    "east": "puzzle_code:blocks/poison_effect_block",
-    "south": "puzzle_code:blocks/poison_effect_block",
-    "west": "puzzle_code:blocks/poison_effect_block",
-    "particle": "puzzle_code:blocks/poison_effect_block"
-  }
+    "down": "puzzle_code:block/poison_effect_block",
+    "up": "puzzle_code:block/poison_effect_block",
+    "north": "puzzle_code:block/poison_effect_block",
+    "east": "puzzle_code:block/poison_effect_block",
+    "south": "puzzle_code:block/poison_effect_block",
+    "west": "puzzle_code:block/poison_effect_block",
+    "particle": "puzzle_code:block/poison_effect_block"
+  },
+  "render_type": "solid"
 }

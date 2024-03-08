@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:HasteEffectBlock"
+      },
+      {
+        "value": "CUSTOM:HasteEffectSlab"
+      },
+      {
+        "value": "CUSTOM:HasteEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InHasteEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InHasteEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InHasteEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/haste",
+    "namespace": "mod"
+  }
+}

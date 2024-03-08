@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 147,
+    "height": 80,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,170 +13,91 @@
       {
         "type": "label",
         "data": {
-          "text": "X Position: <BNBT:number:xPos>",
+          "name": "label_proc_return_number_code_block",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnNumberCodeBlock"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "X Position: <BNBT:number:xPos>",
-          "x": 132,
-          "y": 76
+          "x": 177,
+          "y": 130
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Y Position: <BNBT:number:yPos>",
+          "name": "label_number",
+          "text": {
+            "fixedValue": "Number:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Y Position: <BNBT:number:yPos>",
           "x": 132,
-          "y": 112
+          "y": 130
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Z Position: <BNBT:number:zPos>",
+          "name": "label_nbt_numbercodeblock",
+          "text": {
+            "fixedValue": "NBT: numberCodeBlock"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Z Position: <BNBT:number:zPos>",
           "x": 132,
-          "y": 148
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "xPosField",
-          "x": 132,
-          "y": 53
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyxPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 53
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "zPosField",
-          "x": 132,
-          "y": 125
-        }
-      },
-      {
-        "type": "textfield",
-        "data": {
-          "placeholder": "",
-          "width": 162,
-          "height": 20,
-          "name": "yPosField",
-          "x": 132,
-          "y": 89
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyyPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 89
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyzPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Apply",
-          "x": 299,
-          "y": 125
+          "y": 143
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Number: <BNBT:number:numberCodeBlock>",
+          "name": "label_proc_return_position",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnPosition"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Number: <BNBT:number:numberCodeBlock>",
           "x": 132,
-          "y": 170
+          "y": 116
         }
       },
       {
-        "type": "button",
+        "type": "imagebutton",
         "data": {
-          "text": "Edit",
+          "name": "imagebutton_settings_button",
+          "image": "settings_button.png",
+          "hoveredImage": "settings_button_highlight.png",
           "onClick": {
-            "name": "EditxPos"
+            "name": "OpenPositionGUI"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
-          "y": 53
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EdityPos"
-          },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
+          "x": 132,
           "y": 89
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditzPos"
+          "name": "label_position",
+          "text": {
+            "fixedValue": "Position"
           },
-          "width": 45,
-          "height": 20,
-          "name": "Edit",
-          "x": 83,
-          "y": 125
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 94
         }
       }
     ],

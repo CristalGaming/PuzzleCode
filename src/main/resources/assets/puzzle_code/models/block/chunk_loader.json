@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "puzzle_code:block/chunk_loader",
+    "particle": "puzzle_code:block/chunk_loader"
+  },
+  "render_type": "solid"
+}

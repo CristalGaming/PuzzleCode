@@ -1,0 +1,9 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "puzzle_code:block/conduit_power_effect_stairs",
+    "top": "puzzle_code:block/conduit_power_effect_stairs",
+    "side": "puzzle_code:block/conduit_power_effect_stairs"
+  },
+  "render_type": "solid"
+}

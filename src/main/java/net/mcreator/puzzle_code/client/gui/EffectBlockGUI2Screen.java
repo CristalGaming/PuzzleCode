@@ -1,25 +1,26 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.EffectBlockGUI2Menu;
+import net.mcreator.puzzle_code.procedures.ReturnRangeProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2ValueDisplayConditionProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2TextProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2LogicDisplayTrueProcedure;
+import net.mcreator.puzzle_code.procedures.EffectBlockGUIPage2LogicDisplayFalseProcedure;
 import net.mcreator.puzzle_code.network.EffectBlockGUI2ButtonMessage;
 import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class EffectBlockGUI2Screen extends AbstractContainerScreen<EffectBlockGUI2Menu> {
@@ -27,6 +28,14 @@ public class EffectBlockGUI2Screen extends AbstractContainerScreen<EffectBlockGU
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_1;
+	Button button_2;
+	Button button_3;
+	ImageButton imagebutton_settings_button;
+	ImageButton imagebutton_position_button;
+	ImageButton imagebutton_tab_potion_deselected;
+	ImageButton imagebutton_tab_interaction;
+	ImageButton imagebutton_tab_redstone;
 
 	public EffectBlockGUI2Screen(EffectBlockGUI2Menu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -35,26 +44,31 @@ public class EffectBlockGUI2Screen extends AbstractContainerScreen<EffectBlockGU
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 176;
-		this.imageHeight = 125;
+		this.imageWidth = 181;
+		this.imageHeight = 80;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/effect_block_gui_2.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		if (EffectBlockGUIPage2LogicDisplayTrueProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_true.png"), this.leftPos + 122, this.topPos + 50, 0, 0, 48, 20, 48, 20);
+		}
+		if (EffectBlockGUIPage2LogicDisplayFalseProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/logic_false.png"), this.leftPos + 122, this.topPos + 50, 0, 0, 48, 20, 48, 20);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -73,83 +87,87 @@ public class EffectBlockGUI2Screen extends AbstractContainerScreen<EffectBlockGU
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "[2]", 24, 100, -12829636);
-		this.font.draw(poseStack, "tick ambient: " + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "ambient")) + "", 6, 32, -12829636);
-		this.font.draw(poseStack, "particles: " + (new Object() {
-			public boolean getValue(BlockPos pos, String tag) {
-				BlockEntity BlockEntity = world.getBlockEntity(pos);
-				if (BlockEntity != null)
-					return BlockEntity.getTileData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "particles")) + "", 6, 73, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font,
+
+				EffectBlockGUIPage2TextProcedure.execute(world, x, y, z), 9, 32, -12829636, false);
+		if (EffectBlockGUIPage2ValueDisplayConditionProcedure.execute(world, x, y, z))
+			guiGraphics.drawString(this.font,
+
+					ReturnRangeProcedure.execute(world, x, y, z), 59, 54, -12829636, false);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 95, 14, 20, new TextComponent("1"), e -> {
+		button_1 = Button.builder(Component.translatable("gui.puzzle_code.effect_block_gui_2.button_1"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(0, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 10, 77, 20, new TextComponent("True"), e -> {
+		}).bounds(this.leftPos + 9, this.topPos + 5, 18, 20).build();
+		guistate.put("button:button_1", button_1);
+		this.addRenderableWidget(button_1);
+		button_2 = Button.builder(Component.translatable("gui.puzzle_code.effect_block_gui_2.button_2"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(1, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 10, 77, 20, new TextComponent("False"), e -> {
+		}).bounds(this.leftPos + 81, this.topPos + 5, 18, 20).build();
+		guistate.put("button:button_2", button_2);
+		this.addRenderableWidget(button_2);
+		button_3 = Button.builder(Component.translatable("gui.puzzle_code.effect_block_gui_2.button_3"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(2, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 6, this.topPos + 50, 77, 20, new TextComponent("True"), e -> {
+		}).bounds(this.leftPos + 153, this.topPos + 5, 18, 20).build();
+		guistate.put("button:button_3", button_3);
+		this.addRenderableWidget(button_3);
+		imagebutton_settings_button = new ImageButton(this.leftPos + 32, this.topPos + 50, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_settings_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(3, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 92, this.topPos + 50, 76, 20, new TextComponent("False"), e -> {
+		});
+		guistate.put("button:imagebutton_settings_button", imagebutton_settings_button);
+		this.addRenderableWidget(imagebutton_settings_button);
+		imagebutton_position_button = new ImageButton(this.leftPos + 9, this.topPos + 50, 20, 20, 0, 0, 20, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_position_button.png"), 20, 40, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(4, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 42, this.topPos + 95, 14, 20, new TextComponent("3"), e -> {
+		});
+		guistate.put("button:imagebutton_position_button", imagebutton_position_button);
+		this.addRenderableWidget(imagebutton_position_button);
+		imagebutton_tab_potion_deselected = new ImageButton(this.leftPos + 0, this.topPos + 77, 32, 32, 0, 0, 32, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_tab_potion_deselected.png"), 32, 64, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(5, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 95, 14, 20, new TextComponent("4"), e -> {
+		});
+		guistate.put("button:imagebutton_tab_potion_deselected", imagebutton_tab_potion_deselected);
+		this.addRenderableWidget(imagebutton_tab_potion_deselected);
+		imagebutton_tab_interaction = new ImageButton(this.leftPos + 147, this.topPos + 77, 32, 32, 0, 0, 32, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_tab_interaction.png"), 32, 64, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(6, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 95, 14, 20, new TextComponent("5"), e -> {
+		});
+		guistate.put("button:imagebutton_tab_interaction", imagebutton_tab_interaction);
+		this.addRenderableWidget(imagebutton_tab_interaction);
+		imagebutton_tab_redstone = new ImageButton(this.leftPos + 72, this.topPos + 77, 32, 32, 0, 0, 32, new ResourceLocation("puzzle_code:textures/screens/atlas/imagebutton_tab_redstone.png"), 32, 64, e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new EffectBlockGUI2ButtonMessage(7, x, y, z));
 				EffectBlockGUI2ButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:imagebutton_tab_redstone", imagebutton_tab_redstone);
+		this.addRenderableWidget(imagebutton_tab_redstone);
 	}
 }

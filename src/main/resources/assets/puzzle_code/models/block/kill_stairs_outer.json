@@ -1,8 +1,9 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "puzzle_code:blocks/kill_stairs",
-    "top": "puzzle_code:blocks/kill_stairs",
-    "side": "puzzle_code:blocks/kill_stairs"
-  }
+    "bottom": "puzzle_code:block/kill_stairs",
+    "top": "puzzle_code:block/kill_stairs",
+    "side": "puzzle_code:block/kill_stairs"
+  },
+  "render_type": "solid"
 }

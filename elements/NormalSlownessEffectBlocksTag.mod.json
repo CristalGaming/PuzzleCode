@@ -1,0 +1,25 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:SlownessEffectBlock"
+      },
+      {
+        "value": "CUSTOM:SlownessEffectStairs"
+      },
+      {
+        "value": "CUSTOM:SlownessEffectSlab"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "normal_effect_blocks/slowness",
+    "namespace": "mod"
+  }
+}

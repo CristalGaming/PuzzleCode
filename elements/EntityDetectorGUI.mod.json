@@ -1,10 +1,10 @@
 {
-  "_fv": 33,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
     "width": 176,
-    "height": 76,
+    "height": 65,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -14,52 +14,83 @@
         "type": "textfield",
         "data": {
           "placeholder": "range",
-          "width": 162,
-          "height": 20,
           "name": "rangeField",
-          "x": 132,
-          "y": 89
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Apply",
-          "onClick": {
-            "name": "ApplyRange"
-          },
-          "width": 77,
+          "width": 113,
           "height": 20,
-          "name": "Apply",
           "x": 132,
-          "y": 112
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Edit",
-          "onClick": {
-            "name": "EditRange"
-          },
-          "width": 77,
-          "height": 20,
-          "name": "Edit",
-          "x": 213,
-          "y": 112
+          "y": 94
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Range: <BNBT:integer:range>",
+          "name": "label_range_bnbtnumberrange",
+          "text": {
+            "fixedValue": "Range:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Range: <BNBT:integer:range>",
+          "x": 132,
+          "y": 121
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_nbt_range",
+          "text": {
+            "fixedValue": "NBT: range"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
           "x": 132,
           "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_range",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnRange"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 168,
+          "y": 121
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_enter_button",
+          "image": "enter_button.png",
+          "hoveredImage": "enter_button_hovered.png",
+          "onClick": {
+            "name": "ApplyRange"
+          },
+          "x": 272,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_edit_button_hovered",
+          "image": "edit_button.png",
+          "hoveredImage": "edit_button_hovered.png",
+          "onClick": {
+            "name": "EditRange"
+          },
+          "x": 249,
+          "y": 94
         }
       }
     ],

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "puzzle_code:items/red_or_blue_swiching_item"
+    "layer0": "puzzle_code:item/red_or_blue_switching_item"
   }
 }

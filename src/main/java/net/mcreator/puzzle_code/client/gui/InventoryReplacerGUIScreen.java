@@ -1,15 +1,13 @@
-
 package net.mcreator.puzzle_code.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.puzzle_code.world.inventory.InventoryReplacerGUIMenu;
 import net.mcreator.puzzle_code.network.InventoryReplacerGUIButtonMessage;
@@ -17,7 +15,6 @@ import net.mcreator.puzzle_code.PuzzleCodeMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class InventoryReplacerGUIScreen extends AbstractContainerScreen<InventoryReplacerGUIMenu> {
@@ -25,6 +22,10 @@ public class InventoryReplacerGUIScreen extends AbstractContainerScreen<Inventor
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_2;
+	Button button_3;
+	Button button_4;
+	Button button_1;
 
 	public InventoryReplacerGUIScreen(InventoryReplacerGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -40,22 +41,20 @@ public class InventoryReplacerGUIScreen extends AbstractContainerScreen<Inventor
 	private static final ResourceLocation texture = new ResourceLocation("puzzle_code:textures/screens/inventory_replacer_gui.png");
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		RenderSystem.setShaderTexture(0, texture);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"));
-		this.blit(ms, this.leftPos + 150, this.topPos + 64, 0, 0, -1, -1, -1, -1);
+		guiGraphics.blit(new ResourceLocation("puzzle_code:textures/screens/puzzle_jump_logo.png"), this.leftPos + 150, this.topPos + 64, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();
 	}
@@ -75,37 +74,48 @@ public class InventoryReplacerGUIScreen extends AbstractContainerScreen<Inventor
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "[1]", 6, 68, -12829636);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 2, this.topPos + -13, 13, 20, new TextComponent("2"), e -> {
+		button_2 = Button.builder(Component.translatable("gui.puzzle_code.inventory_replacer_gui.button_2"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new InventoryReplacerGUIButtonMessage(0, x, y, z));
 				InventoryReplacerGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 15, this.topPos + -13, 13, 20, new TextComponent("3"), e -> {
+		}).bounds(this.leftPos + 69, this.topPos + 62, 18, 20).build();
+		guistate.put("button:button_2", button_2);
+		this.addRenderableWidget(button_2);
+		button_3 = Button.builder(Component.translatable("gui.puzzle_code.inventory_replacer_gui.button_3"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new InventoryReplacerGUIButtonMessage(1, x, y, z));
 				InventoryReplacerGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addRenderableWidget(new Button(this.leftPos + 29, this.topPos + -13, 14, 20, new TextComponent("4"), e -> {
+		}).bounds(this.leftPos + 87, this.topPos + 62, 18, 20).build();
+		guistate.put("button:button_3", button_3);
+		this.addRenderableWidget(button_3);
+		button_4 = Button.builder(Component.translatable("gui.puzzle_code.inventory_replacer_gui.button_4"), e -> {
 			if (true) {
 				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new InventoryReplacerGUIButtonMessage(2, x, y, z));
 				InventoryReplacerGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
+		}).bounds(this.leftPos + 105, this.topPos + 62, 18, 20).build();
+		guistate.put("button:button_4", button_4);
+		this.addRenderableWidget(button_4);
+		button_1 = Button.builder(Component.translatable("gui.puzzle_code.inventory_replacer_gui.button_1"), e -> {
+			if (true) {
+				PuzzleCodeMod.PACKET_HANDLER.sendToServer(new InventoryReplacerGUIButtonMessage(3, x, y, z));
+				InventoryReplacerGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}).bounds(this.leftPos + 51, this.topPos + 62, 18, 20).build();
+		guistate.put("button:button_1", button_1);
+		this.addRenderableWidget(button_1);
 	}
 }

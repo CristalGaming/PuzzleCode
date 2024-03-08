@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:YellowSwitcherEffectBlock"
+      },
+      {
+        "value": "CUSTOM:InYellowSwitcherEffectBlock"
+      },
+      {
+        "value": "CUSTOM:YellowSwitcherEffectSlab"
+      },
+      {
+        "value": "CUSTOM:YellowSwitcherEffectStairs"
+      },
+      {
+        "value": "CUSTOM:InYellowSwitcherEffectSlab"
+      },
+      {
+        "value": "CUSTOM:InYellowSwitcherEffectStairs"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "effect_blocks/yellow_switcher",
+    "namespace": "mod"
+  }
+}

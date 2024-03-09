@@ -1,5 +1,5 @@
 ## Puzzle Code <br>
-Puzzle Code is a mod made in MCreator designed specially for Creative <br>
+Puzzle Jump is a mod that adds a lot of redstone components and blocks with different functionality especially for creating mini-game maps. 
 
 ## Available on: <br>
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/puzzle-code <br>
